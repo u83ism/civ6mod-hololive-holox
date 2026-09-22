@@ -1,0 +1,30 @@
+# {{REPO_NAME}} 設計メモ
+
+> civ6mod-hololive-reglossの姉妹リポジトリ。Modding基礎知識・デバッグ手順は`.claude/skills/bootstrap-mod`・`.claude/skills/bootstrap-leader`を参照(このMod固有の設計判断のみここに書く)。
+
+## 経緯
+
+{{このMod/リーダー固有の背景・経緯をここに}}
+
+## 基礎情報
+
+```
+CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}
+LEADER_{{PREFIX}}_{{LEADER_NAME}}
+TRAIT_LEADER_{{PREFIX}}_{{LEADER_NAME}}
+```
+
+カラー: Primary `{{#RRGGBB}}` / Secondary `{{#RRGGBB}}`。
+
+## 実装状況
+
+- [ ] リポジトリ雛形(bootstrap-mod Skill完了)
+- [ ] 基礎情報決定
+- [ ] リーダー能力の設計・実装(bootstrap-leader Skill参照)
+- [ ] 実機ロード確認
+- [ ] UniqueUnit / UniqueBuilding / CivilizationTrait
+- [ ] Art(Icon/Portrait)
+
+## 保留・未着手のTODO
+
+- [ ]

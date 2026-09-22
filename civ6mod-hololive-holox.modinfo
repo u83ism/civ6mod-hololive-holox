@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="c209c643-7ab4-4a22-b464-ec7241fa6a47" version="1">
+	<Properties>
+		<Name>Hololive HoloX</Name>
+		<Teaser>Adds a new civilization inspired by hololive holoX.</Teaser>
+		<Description>Adds a new civilization inspired by hololive holoX.[NEWLINE][NEWLINE]hololive holoXをモチーフにした新しい文明を追加する。</Description>
+		<Authors>yu-yami</Authors>
+		<CompatibleVersions>1.2,2.0</CompatibleVersions>
+	</Properties>
+	<!--
+		拡張パック依存を追加する場合はここに書く。GUIDはリテラル文字列titleで
+		(LOCキーだとMod一覧で解決できず生キーが表示されることがある)。
+		<Dependencies>
+			<Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+		</Dependencies>
+	-->
+	<ActionCriteria />
+	<FrontEndActions>
+		<UpdateDatabase id="Config">
+			<File>XML/Config.xml</File>
+		</UpdateDatabase>
+		<UpdateColors id="ConfigColors">
+			<File>XML/Colors.xml</File>
+		</UpdateColors>
+		<UpdateText id="ConfigText">
+			<File>Text/en_US/Text.xml</File>
+			<File>Text/ja_JP/Text.xml</File>
+		</UpdateText>
+		<UpdateIcons id="ConfigIcons">
+			<File>Art/Icons/Icons.xml</File>
+		</UpdateIcons>
+	</FrontEndActions>
+	<InGameActions>
+		<UpdateDatabase id="Gameplay">
+			<File>XML/Civilizations.xml</File>
+			<File>XML/Leaders.xml</File>
+		</UpdateDatabase>
+		<UpdateColors id="Colors">
+			<File>XML/Colors.xml</File>
+		</UpdateColors>
+		<UpdateText id="Text">
+			<File>Text/en_US/Text.xml</File>
+			<File>Text/ja_JP/Text.xml</File>
+		</UpdateText>
+		<UpdateIcons id="Icons">
+			<File>Art/Icons/Icons.xml</File>
+		</UpdateIcons>
+	</InGameActions>
+	<Files>
+		<File>XML/Civilizations.xml</File>
+		<File>XML/Leaders.xml</File>
+		<File>XML/Colors.xml</File>
+		<File>XML/Config.xml</File>
+		<File>Text/en_US/Text.xml</File>
+		<File>Text/ja_JP/Text.xml</File>
+		<File>Art/Icons/Icons.xml</File>
+		<!-- Art/Icons配下の各サイズPNGもここに追加していく(bootstrap-leader Skill参照) -->
+	</Files>
+</Mod>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!--
+		リーダー選択画面(フロントエンド)用の登録。
+		Playersテーブルはここに並ぶ列のほぼ全てがNOT NULL制約(Icon/Ability/Portrait系も含む)。
+		Art未着手でも仮のType文字列を入れておく必要がある(実体を指す先が無いので表示は空/デフォルトになる想定)。
+		Domainはプレイ中のルールセット(Standard/Rise and Fall/Gathering Storm)ごとに別なので3つとも登録する。
+	-->
+	<Players>
+		<Row>
+			<Domain>Players:StandardPlayers</Domain>
+			<CivilizationType>CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}</CivilizationType>
+			<LeaderType>LEADER_{{PREFIX}}_{{LEADER_NAME}}</LeaderType>
+			<CivilizationName>LOC_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}_NAME</CivilizationName>
+			<LeaderName>LOC_LEADER_{{PREFIX}}_{{LEADER_NAME}}_NAME</LeaderName>
+			<CivilizationIcon>ICON_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}</CivilizationIcon>
+			<LeaderIcon>ICON_LEADER_{{PREFIX}}_{{LEADER_NAME}}</LeaderIcon>
+			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}_NAME</CivilizationAbilityName>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityIcon>ICON_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}</CivilizationAbilityIcon>
+			<LeaderAbilityIcon>ICON_LEADER_{{PREFIX}}_{{LEADER_NAME}}</LeaderAbilityIcon>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_{{PREFIX}}_{{LEADER_NAME}}_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_{{PREFIX}}_{{LEADER_NAME}}_DESCRIPTION</LeaderAbilityDescription>
+			<Portrait>IMG_LEADER_{{PREFIX}}_{{LEADER_NAME}}_FOREGROUND</Portrait>
+			<PortraitBackground>IMG_LEADER_{{PREFIX}}_{{LEADER_NAME}}_BACKGROUND</PortraitBackground>
+		</Row>
+		<Row>
+			<Domain>Players:Expansion1_Players</Domain>
+			<CivilizationType>CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}</CivilizationType>
+			<LeaderType>LEADER_{{PREFIX}}_{{LEADER_NAME}}</LeaderType>
+			<CivilizationName>LOC_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}_NAME</CivilizationName>
+			<LeaderName>LOC_LEADER_{{PREFIX}}_{{LEADER_NAME}}_NAME</LeaderName>
+			<CivilizationIcon>ICON_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}</CivilizationIcon>
+			<LeaderIcon>ICON_LEADER_{{PREFIX}}_{{LEADER_NAME}}</LeaderIcon>
+			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}_NAME</CivilizationAbilityName>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityIcon>ICON_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}</CivilizationAbilityIcon>
+			<LeaderAbilityIcon>ICON_LEADER_{{PREFIX}}_{{LEADER_NAME}}</LeaderAbilityIcon>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_{{PREFIX}}_{{LEADER_NAME}}_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_{{PREFIX}}_{{LEADER_NAME}}_DESCRIPTION</LeaderAbilityDescription>
+			<Portrait>IMG_LEADER_{{PREFIX}}_{{LEADER_NAME}}_FOREGROUND</Portrait>
+			<PortraitBackground>IMG_LEADER_{{PREFIX}}_{{LEADER_NAME}}_BACKGROUND</PortraitBackground>
+		</Row>
+		<Row>
+			<Domain>Players:Expansion2_Players</Domain>
+			<CivilizationType>CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}</CivilizationType>
+			<LeaderType>LEADER_{{PREFIX}}_{{LEADER_NAME}}</LeaderType>
+			<CivilizationName>LOC_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}_NAME</CivilizationName>
+			<LeaderName>LOC_LEADER_{{PREFIX}}_{{LEADER_NAME}}_NAME</LeaderName>
+			<CivilizationIcon>ICON_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}</CivilizationIcon>
+			<LeaderIcon>ICON_LEADER_{{PREFIX}}_{{LEADER_NAME}}</LeaderIcon>
+			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}_NAME</CivilizationAbilityName>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityIcon>ICON_CIVILIZATION_{{PREFIX}}_{{CIV_NAME}}</CivilizationAbilityIcon>
+			<LeaderAbilityIcon>ICON_LEADER_{{PREFIX}}_{{LEADER_NAME}}</LeaderAbilityIcon>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_{{PREFIX}}_{{LEADER_NAME}}_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_{{PREFIX}}_{{LEADER_NAME}}_DESCRIPTION</LeaderAbilityDescription>
+			<Portrait>IMG_LEADER_{{PREFIX}}_{{LEADER_NAME}}_FOREGROUND</Portrait>
+			<PortraitBackground>IMG_LEADER_{{PREFIX}}_{{LEADER_NAME}}_BACKGROUND</PortraitBackground>
+		</Row>
+	</Players>
+</GameData>
