@@ -23,12 +23,16 @@ description: Hololive系リーダーMod(このリポジトリの姉妹Mod)を、
      Art/Source/.gitkeep
      Art/Icons/.gitkeep
      docs/design.md
+     docs/civ6-research/
      README.md
      .gitignore
-     .claude/skills/bootstrap-mod/     (このSkillごとコピーする)
-     .claude/skills/bootstrap-leader/  (次のSkillごとコピーする)
+     .claude/rules/
+     .claude/skills/
+     tools/png2dds/
    ```
-   `.claude/skills/`配下の2つのSkillは、civ6mod-hololive-regloss(このMod)から**フォルダごとコピー**すること。個人グローバルのSkillフォルダには置かない(このMod系列固有の知見であり、ユーザーの全プロジェクトに影響を与えるべきではないため)
+   `.claude/rules/`・`.claude/skills/`・`tools/png2dds/`・`docs/civ6-research/`は、civ6mod-hololive-regloss(このMod)から**丸ごとコピー**すること。個人グローバルのSkillフォルダには置かない(このMod系列固有の知見であり、ユーザーの全プロジェクトに影響を与えるべきではないため)
+   - `.claude/skills/`は`bootstrap-mod`/`bootstrap-leader`の2つに絞らず、全Skillをコピーする。他のSkill(`make-leader-icons`/`make-fallback-portrait`/`write-official-*-text-style`/`research-mod`等)もReGLOSSキャラ固有ではなくCiv6 Modding全般の知識であり、後から必要になるたび個別にコピーする手間を避けられる
+   - `tools/png2dds/`はキャラ名(`civilizationId`/`leaderId`等)をCLI引数で受け取る作りになっているため、定数の書き換えなしにそのままコピーして使える
 3. **modinfo雛形を作る**: `assets/template.modinfo.template`を`<mod-name>.modinfo`としてコピーし、以下を置換する
    - `{{MOD_GUID}}`: 新しいGUIDを発行(PowerShellなら`[guid]::NewGuid().ToString()`)
    - `{{MOD_NAME}}`: Mod名。**グループ名にする(個別リーダー名にしない)** — 1グループ=1リポジトリ=1Modで複数リーダーを後から追加していく方針のため(実例: `civ6mod-hololive-regloss`は`Name="Hololive ReGLOSS"`であって`Hololive Ichijou Ririka`ではない)。例: "Hololive HoloX"。**LOCキーではなくリテラル文字列でよい** — HktkNban氏・Neox氏の実働Modは両方ともProperties.Name/Teaser/Descriptionを生文字列にしており、これによりMod名解決専用のLocalizedTextブロックが不要になり、後述の重複INSERT問題を未然に回避できる
