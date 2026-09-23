@@ -35,6 +35,20 @@ description: Civ6 Modで文明能力/指導者能力(Trait)の効果を実装す
 
 **罠(必須・当初UU化を試みて撤回した経緯)**: 同じ「労働者の使用回数+1」を狙って`UnitReplaces`でUU化するアプローチは、`Improvement_ValidBuildUnits`(ImprovementType×UnitTypeのホワイトリスト、`UnitReplaces`では自動継承されない)を置換元と同じ数だけ手動で完全再現しないと「労働者の完全上位互換」にならない。この一覧はバニラ+全DLCで50件超あり、しかもRise and Fall/Gathering Storm本体限定分(`GameCoreInUse`判定でロードされるかどうかがルールセット依存)と個別文明DLC限定分(そのDLCが無いと`Improvements`テーブルに行自体が存在しない)が混在するため、1行でも参照先が欠けると`FOREIGN KEY constraint failed`で`XML`全体の検証が落ち、**ゲームが起動不能になる**(2026-09-22実機で発生)。「UU化して完全上位互換にする」コストは、単純な数値ブースト1個の実装コストとして見合わない場合が多いので、まずTraitへの直接Modifierで足りないか検討すること。詳しくは`add-unique-content` SKILL.mdの該当セクションを参照。
 
+## Luaでしか組めない能力(GameplayScript)
+
+Modifier/Requirementの組み合わせでは表現できない効果(例:「倒した敵ユニットの戦闘力に応じて動的な量の偉人ポイントを得る」。`MODIFIER_PLAYER_UNITS_ADJUST_POST_COMBAT_YIELD`にはYield版しか無く、GreatPersonPoints版のEffectTypeが存在しない)は、`.modinfo`の`AddGameplayScripts`で登録するLuaファイルに`Events.Combat.Add(handler)`のようにイベントフックする形で実装する(civ6mod-hololive-holoxで実機確認済み、2026-09-23)。着手前に、実装したい効果が既存のModifier/Requirementの組み合わせで本当に組めないか確認すること(Luaは最後の手段)。
+
+**罠(必須)**: **Luaファイル名は他Mod(特にHololive系の他作者Mod)と衝突しないユニークな名前にする**。`GameplayScript.lua`のような汎用名にすると、別Modが同じ汎用名のファイルを`AddGameplayScripts`で登録していた場合、Civ6のLuaモジュールがファイル名ベースでキャッシュされ、後から読み込まれた側にサイレントに上書きされてこちらのコードが一切実行されない(エラーもログも一切出ない)事故が起きる(2026-09-23実機で発覚、`Hololive GAMERS`Modの`Scripts/GameplayScript.lua`と衝突していた)。`<キャラ名>GameplayScript.lua`のようにキャラ名を含めた名前にすること。`.modinfo`の`AddGameplayScripts id="..."`側の`id`もユニークにする。
+
+**罠(必須)**: **`Events.Combat`ハンドラ内で`unit:SetDamage(n)`を呼んでユニットを強制的に撃破しようとしても、実際の生死判定には反映されない**。`Events.Combat`はこの戦闘の生死判定が確定した後に発火するイベントのようで、事後にダメージ値だけ書き換えても、ユニットは盤面に残り続ける(次に攻撃すると改めて死に、効果が二重発火する)。ユニットをその場で確実に除去したい場合は、DLCシナリオスクリプト(`AlexanderScenario.lua`等)で使われている`UnitManager.Kill(unit, false)`(ユニットを即座に削除する公式API)を使うこと。`CombatResultParameters.MAX_HIT_POINTS`は必ずしも100とは限らないため、生死判定に固定値100を使わずこのフィールドを都度参照すること。
+
+**便利なAPI(実機確認済み)**:
+- `GetGreatPeoplePoints():ChangePointsTotal(classID, amount)` — 偉人ポイントを動的加算する。`classID`は`0`=Great General、`1`=Great Admiral、`2`=Great Engineer、`3`=Great Merchant、`4`=Great Prophet、`5`=Great Scientist、`6`=Great Writer、`7`=Great Artist、`8`=Great Musicianの並び(FireTunerパネル`Debug/Player.ltp`の各アクションボタンのLua実装で確認)
+- `Game.AddWorldViewText(playerID, text, x, y)` — 戦闘結果等をワールド上にフロートテキストで表示する。`text`は`Locale.Lookup("LOC_...", param1, ...)`で多言語対応させること(ハードコード文字列を直接渡さない)。`[COLOR_RED]...[ENDCOLOR]`のような色タグはこのフロートテキストでも機能する(バニラの`LOC_WORLD_UNIT_DAMAGE_INCREASE_FLOATER`で実際に使われている記法)
+
+実例は`Lua/SakamataChloeGameplayScript.lua`、詳細な実機デバッグ記録は`docs/design.md`の「沙花叉クロヱ」節を参照。
+
 ## civ6wiki.info要約: Trait/Modifierの基本構造、文明カラー・AIの好み、多言語化(未検証)
 
 まだ着手していないTrait実装パターンに手を付けるときは、先に`docs/civ6-research/trait-and-identity-patterns.md`を読むこと。文明特性・指導者特性のXML構造(`TraitModifiers`→`Modifiers`→`ModifierArguments`、地形条件の`RequirementSets`系)、文明カラー(`Colors`/`PlayerColors`)、AIの好み(`AiListTypes`/`AiLists`/`AiFavoredItems`)、多言語対応(`LocalizedText`への変換手順)、Civilopedia/都市名ランダム化などの細部調整をciv6wiki.info(2017〜2020年執筆、SDKサンプルを素材にした写経チュートリアル)から要約してある。**このリポジトリで実機確認した事実ではない**ので、上記の実機確認済みパターンと矛盾したらそちらを優先する。実機確認できたらこのSKILL.mdへ確認済みパターンとして書き足すこと。
