@@ -1,1 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><GameData></GameData>
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Types>
+		<Row Type="CIVILIZATION_HOLOX_ORCA_POD" Kind="KIND_CIVILIZATION"/>
+		<Row Type="TRAIT_CIVILIZATION_HOLOX_ORCA_POD" Kind="KIND_TRAIT"/>
+	</Types>
+
+	<Civilizations>
+		<Row CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" Name="LOC_CIVILIZATION_HOLOX_ORCA_POD_NAME" Description="LOC_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Adjective="LOC_CIVILIZATION_HOLOX_ORCA_POD_ADJECTIVE" StartingCivilizationLevelType="CIVILIZATION_LEVEL_FULL_CIV" RandomCityNameDepth="1"/>
+	</Civilizations>
+
+	<CivilizationLeaders>
+		<Row CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" LeaderType="LEADER_HOLOX_SAKAMATA_CHLOE" CapitalName="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ"/>
+	</CivilizationLeaders>
+
+	<!-- 都市名は暫定で首都1件のみ。フルの都市名リストは今後整備(README.mdのTODO参照) -->
+	<CityNames>
+		<Row CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" CityName="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ"/>
+	</CityNames>
+
+	<!--
+		開始地点補正: 海沿い(TERRAIN_COAST)。イギリス/日本/ノルウェーと同じTier3を採用
+		(リスボン/ナンマドールはTier1で軽め、クロヱは海が世界観の根幹なのでTier3側に寄せた)。
+	-->
+	<StartBiasTerrains>
+		<Row CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" TerrainType="TERRAIN_COAST" Tier="3"/>
+	</StartBiasTerrains>
+
+	<Traits>
+		<!--
+			文明固有能力: 名称・効果ともに未定(海洋/水族館関連バフの中身は検討中、docs/design.md参照)。
+			NOT NULL制約を満たすための暫定プレースホルダーテキストを入れてある。
+		-->
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_ORCA_POD" Name="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Description="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION"/>
+	</Traits>
+
+	<CivilizationTraits>
+		<Row CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" TraitType="TRAIT_CIVILIZATION_HOLOX_ORCA_POD"/>
+	</CivilizationTraits>
+</GameData>

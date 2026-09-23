@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	<Types>
+		<Row Type="LEADER_HOLOX_SAKAMATA_CHLOE" Kind="KIND_LEADER"/>
+		<Row Type="TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE" Kind="KIND_TRAIT"/>
+	</Types>
+
+	<Leaders>
+		<Row LeaderType="LEADER_HOLOX_SAKAMATA_CHLOE" Name="LOC_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" InheritFrom="LEADER_DEFAULT"/>
+	</Leaders>
+
+	<LeaderTraits>
+		<Row LeaderType="LEADER_HOLOX_SAKAMATA_CHLOE" TraitType="TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE"/>
+	</LeaderTraits>
+
+	<!--
+		指導者固有能力(名称は暫定、docs/design.md参照)。
+		効果本体(25%の確率で攻撃戦闘時に敵ユニットを即座に撃破/戦闘勝利時に撃破戦闘力に応じた
+		大音楽家ポイントを獲得)はXML(Modifier/Requirement)では組めず、Scripts/GameplayScript.luaの
+		Events.Combatフックで実装している(戌神ころね「ぶっころね」の実装を参考、詳細はdesign.md参照)。
+		このTraits行はNOT NULL制約を満たすための名前/説明テキストの登録のみで、効果自体はLua側にある。
+	-->
+	<Traits>
+		<Row TraitType="TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE" Name="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" Description="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION"/>
+	</Traits>
+
 	<!--
 		ローディング画面(LoadingInfo)。LoadScreen.luaの実機コード上、ForegroundImage/BackgroundImage未指定時の
 		フォールバック名がそもそも<LeaderType>_NEUTRAL/<LeaderType>_BACKGROUNDなので、この行自体は省略しても

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!--
+		リーダー選択画面(フロントエンド)用の登録。
+		Playersテーブルはここに並ぶ列のほぼ全てがNOT NULL制約(Icon/Ability/Portrait系も含む)。
+		Icon/Portraitの実体(BLP/DDS)はまだ無いが、Type文字列だけ登録しておけば「？」アイコンのまま
+		選択画面には出る(bootstrap-leader Skill 3節・4節参照)。実際の絵作りはmake-leader-icons/
+		make-fallback-portrait Skillで別途行う。
+		Domainはプレイ中のルールセット(Standard/Rise and Fall/Gathering Storm)ごとに別なので3つとも登録する。
+	-->
+	<Players>
+		<Row>
+			<Domain>Players:StandardPlayers</Domain>
+			<CivilizationType>CIVILIZATION_HOLOX_ORCA_POD</CivilizationType>
+			<LeaderType>LEADER_HOLOX_SAKAMATA_CHLOE</LeaderType>
+			<PlayerColor>LEADER_HOLOX_SAKAMATA_CHLOE</PlayerColor>
+			<CivilizationName>LOC_CIVILIZATION_HOLOX_ORCA_POD_NAME</CivilizationName>
+			<LeaderName>LOC_LEADER_HOLOX_SAKAMATA_CHLOE_NAME</LeaderName>
+			<CivilizationIcon>ICON_CIVILIZATION_HOLOX_ORCA_POD</CivilizationIcon>
+			<LeaderIcon>ICON_LEADER_HOLOX_SAKAMATA_CHLOE</LeaderIcon>
+			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME</CivilizationAbilityName>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityIcon>ICON_CIVILIZATION_HOLOX_ORCA_POD</CivilizationAbilityIcon>
+			<LeaderAbilityIcon>ICON_LEADER_HOLOX_SAKAMATA_CHLOE</LeaderAbilityIcon>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION</LeaderAbilityDescription>
+			<Portrait>LEADER_HOLOX_SAKAMATA_CHLOE_NEUTRAL</Portrait>
+			<PortraitBackground>LEADER_HOLOX_SAKAMATA_CHLOE_BACKGROUND</PortraitBackground>
+		</Row>
+		<Row>
+			<Domain>Players:Expansion1_Players</Domain>
+			<CivilizationType>CIVILIZATION_HOLOX_ORCA_POD</CivilizationType>
+			<LeaderType>LEADER_HOLOX_SAKAMATA_CHLOE</LeaderType>
+			<PlayerColor>LEADER_HOLOX_SAKAMATA_CHLOE</PlayerColor>
+			<CivilizationName>LOC_CIVILIZATION_HOLOX_ORCA_POD_NAME</CivilizationName>
+			<LeaderName>LOC_LEADER_HOLOX_SAKAMATA_CHLOE_NAME</LeaderName>
+			<CivilizationIcon>ICON_CIVILIZATION_HOLOX_ORCA_POD</CivilizationIcon>
+			<LeaderIcon>ICON_LEADER_HOLOX_SAKAMATA_CHLOE</LeaderIcon>
+			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME</CivilizationAbilityName>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityIcon>ICON_CIVILIZATION_HOLOX_ORCA_POD</CivilizationAbilityIcon>
+			<LeaderAbilityIcon>ICON_LEADER_HOLOX_SAKAMATA_CHLOE</LeaderAbilityIcon>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION</LeaderAbilityDescription>
+			<Portrait>LEADER_HOLOX_SAKAMATA_CHLOE_NEUTRAL</Portrait>
+			<PortraitBackground>LEADER_HOLOX_SAKAMATA_CHLOE_BACKGROUND</PortraitBackground>
+		</Row>
+		<Row>
+			<Domain>Players:Expansion2_Players</Domain>
+			<CivilizationType>CIVILIZATION_HOLOX_ORCA_POD</CivilizationType>
+			<LeaderType>LEADER_HOLOX_SAKAMATA_CHLOE</LeaderType>
+			<PlayerColor>LEADER_HOLOX_SAKAMATA_CHLOE</PlayerColor>
+			<CivilizationName>LOC_CIVILIZATION_HOLOX_ORCA_POD_NAME</CivilizationName>
+			<LeaderName>LOC_LEADER_HOLOX_SAKAMATA_CHLOE_NAME</LeaderName>
+			<CivilizationIcon>ICON_CIVILIZATION_HOLOX_ORCA_POD</CivilizationIcon>
+			<LeaderIcon>ICON_LEADER_HOLOX_SAKAMATA_CHLOE</LeaderIcon>
+			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME</CivilizationAbilityName>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityIcon>ICON_CIVILIZATION_HOLOX_ORCA_POD</CivilizationAbilityIcon>
+			<LeaderAbilityIcon>ICON_LEADER_HOLOX_SAKAMATA_CHLOE</LeaderAbilityIcon>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION</LeaderAbilityDescription>
+			<Portrait>LEADER_HOLOX_SAKAMATA_CHLOE_NEUTRAL</Portrait>
+			<PortraitBackground>LEADER_HOLOX_SAKAMATA_CHLOE_BACKGROUND</PortraitBackground>
+		</Row>
+	</Players>
+</GameData>

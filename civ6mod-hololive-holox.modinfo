@@ -48,6 +48,15 @@
 		<UpdateIcons id="Icons">
 			<File>Art/Icons/Icons.xml</File>
 		</UpdateIcons>
+		<!--
+			ファイル名は他Mod(Hololive GAMERS等)と衝突しないユニークな名前にする。
+			`GameplayScript.lua`という汎用名は戌神ころねのMod(Scripts/GameplayScript.lua)と同名で、
+			Civ6のLuaモジュールがファイル名ベースでキャッシュされ後読み込みのMod側にサイレントに
+			上書きされる(=こちらのコードが一切実行されない)事故が2026-09-23実機で発覚したため改名した。
+		-->
+		<AddGameplayScripts id="SakamataChloeGameplayScript">
+			<File>Lua/SakamataChloeGameplayScript.lua</File>
+		</AddGameplayScripts>
 		<UpdateArt id="Art">
 			<File>civ6mod-hololive-holox.dep</File>
 		</UpdateArt>
@@ -60,6 +69,7 @@
 		<File>Text/en_US/Text.xml</File>
 		<File>Text/ja_JP/Text.xml</File>
 		<File>Art/Icons/Icons.xml</File>
+		<File>Lua/SakamataChloeGameplayScript.lua</File>
 		<File>civ6mod-hololive-holox.dep</File>
 		<File>Platforms/Windows/BLPs/LeaderFallbackImages.blp</File>
 		<File>Platforms/MacOS/BLPs/LeaderFallbackImages.blp</File>

@@ -1,1 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><GameData><LocalizedText></LocalizedText></GameData>
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="en_US">
+			<Text>Orca Pod</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="en_US">
+			<Text>Orca Pod</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_ORCA_POD_ADJECTIVE" Language="en_US">
+			<Text>Orca Pod</Text>
+		</Row>
+
+		<Row Tag="LOC_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" Language="en_US">
+			<Text>Sakamata Chloe</Text>
+		</Row>
+
+		<!-- Leader ability: draft name/description (implemented 2026-09-23, wording to be polished later) -->
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" Language="en_US">
+			<Text>Singing Cleaner</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION" Language="en_US">
+			<Text>When attacking in combat, has a 25% chance to instantly defeat the enemy unit. On combat victory, gains [ICON_GreatMusician] Great Musician points equal to the defeated unit's [ICON_Strength] Combat Strength.</Text>
+		</Row>
+
+		<!-- Civilization ability: name/effect not yet decided (ocean/aquarium buff, see docs/design.md). Placeholder text to satisfy NOT NULL -->
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="en_US">
+			<Text>Bond of the Pod</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="en_US">
+			<Text>Ocean/aquarium-related civilization ability. Details to be implemented.</Text>
+		</Row>
+
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="en_US">
+			<Text>Orca Bay</Text>
+		</Row>
+
+		<!-- Leader ability world-view floating text (combat). Looked up from Lua via Locale.Lookup -->
+		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_CRITICAL_WORLDTEXT" Language="en_US">
+			<Text>[COLOR_RED]Critical![ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_MUSICIAN_POINTS_WORLDTEXT" Language="en_US">
+			<Text>[ICON_GreatMusician] Great Musician +{1_Num}</Text>
+		</Row>
+	</LocalizedText>
+</GameData>

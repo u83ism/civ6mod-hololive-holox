@@ -1,1 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><GameData><LocalizedText></LocalizedText></GameData>
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="ja_JP">
+			<Text>シャチの群れ</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="ja_JP">
+			<Text>シャチの群れ</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_ORCA_POD_ADJECTIVE" Language="ja_JP">
+			<Text>シャチの群れ</Text>
+		</Row>
+
+		<Row Tag="LOC_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" Language="ja_JP">
+			<Text>沙花叉クロヱ</Text>
+		</Row>
+
+		<!-- 指導者固有能力: 名称・説明文とも暫定(2026-09-23実装、最終的な文体・ネーミングは今後調整) -->
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" Language="ja_JP">
+			<Text>歌好きの掃除屋</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION" Language="ja_JP">
+			<Text>攻撃戦闘時、25%の確率で敵ユニットを即座に撃破する。戦闘に勝利すると、倒した敵ユニットの [ICON_Strength] 戦闘力に応じた [ICON_GreatMusician] 大音楽家ポイントを獲得する。</Text>
+		</Row>
+
+		<!-- 文明固有能力: 名称・効果とも未定(海洋/水族館関連バフ、docs/design.md参照)。NOT NULL制約回避の暫定テキスト -->
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="ja_JP">
+			<Text>群れの絆</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="ja_JP">
+			<Text>水族館・海洋に関する固有能力。詳細は今後実装。</Text>
+		</Row>
+
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="ja_JP">
+			<Text>オルカベイ</Text>
+		</Row>
+
+		<!-- 指導者固有能力のワールドフロートテキスト(戦闘時)。Lua側でLocale.Lookupして使う -->
+		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_CRITICAL_WORLDTEXT" Language="ja_JP">
+			<Text>[COLOR_RED]クリティカル！[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_MUSICIAN_POINTS_WORLDTEXT" Language="ja_JP">
+			<Text>[ICON_GreatMusician] 大音楽家ポイント +{1_Num}</Text>
+		</Row>
+	</LocalizedText>
+</GameData>
