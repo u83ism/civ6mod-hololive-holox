@@ -1,7 +1,10 @@
 // Regenerate Art/Icons/ICON_*.png at every required size from the master source art in
 // Art/Source/. Master art must be square and at least as large as the biggest required size.
-// Usage: tsx gen-icon-sources.ts <civilizationId> <leaderId> <civFullColorMasterFileName> <civSilhouetteMasterFileName> <leaderFaceMasterFileName>
-// Example: tsx gen-icon-sources.ts REGLOSS_ICHIJOU REGLOSS_ICHIJOU_RIRIKA ichijou-corporation-logo-circle.png ichijou-corporation-logo-circle-for-transparent.png ichijou-ririka-face.png
+// The leader arguments are optional so the civilization badge can be generated on its own
+// before leader face master art exists (a common ordering: civ icon first, leader icon later).
+// Usage: tsx gen-icon-sources.ts <civilizationId> <civFullColorMasterFileName> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]
+// Example (civ only): tsx gen-icon-sources.ts HOLOX_ORCA_POD orca-full-color.png orca-silhouette.png
+// Example (civ + leader): tsx gen-icon-sources.ts REGLOSS_ICHIJOU ichijou-corporation-logo-circle.png ichijou-corporation-logo-circle-for-transparent.png REGLOSS_ICHIJOU_RIRIKA ichijou-ririka-face.png
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { PNG } from "pngjs";
@@ -11,20 +14,20 @@ const [
   ,
   ,
   civilizationId,
-  leaderId,
   civilizationFullColorMasterFileName,
   civilizationSilhouetteMasterFileName,
+  leaderId,
   leaderFaceMasterFileName,
 ] = process.argv;
 if (
   !civilizationId ||
-  !leaderId ||
   !civilizationFullColorMasterFileName ||
   !civilizationSilhouetteMasterFileName ||
-  !leaderFaceMasterFileName
+  (leaderId && !leaderFaceMasterFileName) ||
+  (!leaderId && leaderFaceMasterFileName)
 ) {
   console.error(
-    "Usage: tsx gen-icon-sources.ts <civilizationId> <leaderId> <civFullColorMasterFileName> <civSilhouetteMasterFileName> <leaderFaceMasterFileName>",
+    "Usage: tsx gen-icon-sources.ts <civilizationId> <civFullColorMasterFileName> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]",
   );
   process.exit(1);
 }
@@ -142,6 +145,9 @@ type IconSourceSpec = {
 const sourceDirectory = join(import.meta.dirname, "..", "..", "Art", "Source");
 const outputDirectory = join(import.meta.dirname, "..", "..", "Art", "Icons");
 
+// 2026-09-23: 色バグの原因はアイコンのピクセル形式ではなくUpdateColorsのファイル形式(XML)だったと
+// 判明した(docs/civ6-icon-color-bug-investigation.md参照、Colors.sqlへの切り替えで解決)。
+// 白シルエット方式に戻す。45pxのみ技術/社会制度ツリー表示用にフルカラーのまま。
 const civilizationFullColorSizes = civilizationIconSizes.filter((size) => size === 45);
 const civilizationSilhouetteSizes = civilizationIconSizes.filter((size) => size !== 45);
 
@@ -165,14 +171,18 @@ const iconSources: readonly IconSourceSpec[] = [
     clipToCircle: false,
     isFullColor: false,
   },
-  {
-    masterFileName: leaderFaceMasterFileName,
-    sizes: leaderIconSizes,
-    nameForSize: (size) => leaderIconName(leaderId, size),
-    clipToCircle: true,
-    // Leader portraits are never tinted by the game, so they stay full color at every size.
-    isFullColor: true,
-  },
+  ...(leaderId && leaderFaceMasterFileName
+    ? [
+        {
+          masterFileName: leaderFaceMasterFileName,
+          sizes: leaderIconSizes,
+          nameForSize: (size: number) => leaderIconName(leaderId, size),
+          clipToCircle: true,
+          // Leader portraits are never tinted by the game, so they stay full color at every size.
+          isFullColor: true,
+        },
+      ]
+    : []),
 ];
 
 for (const { masterFileName, sizes, nameForSize, clipToCircle, isFullColor } of iconSources) {

@@ -19,8 +19,9 @@
 		<UpdateDatabase id="Config">
 			<File>XML/Config.xml</File>
 		</UpdateDatabase>
+		<!-- 2026-09-23実験: PlayerColors解決バグの切り分けのためColors.xmlではなくColors.sqlを読ませる(docs/civ6-icon-color-bug-investigation.md参照) -->
 		<UpdateColors id="ConfigColors">
-			<File>XML/Colors.xml</File>
+			<File>XML/Colors.sql</File>
 		</UpdateColors>
 		<UpdateText id="ConfigText">
 			<File>Text/en_US/Text.xml</File>
@@ -38,8 +39,9 @@
 			<File>XML/Civilizations.xml</File>
 			<File>XML/Leaders.xml</File>
 		</UpdateDatabase>
+		<!-- 2026-09-23実験: PlayerColors解決バグの切り分けのためColors.xmlではなくColors.sqlを読ませる(docs/civ6-icon-color-bug-investigation.md参照) -->
 		<UpdateColors id="Colors">
-			<File>XML/Colors.xml</File>
+			<File>XML/Colors.sql</File>
 		</UpdateColors>
 		<UpdateText id="Text">
 			<File>Text/en_US/Text.xml</File>
@@ -64,7 +66,7 @@
 	<Files>
 		<File>XML/Civilizations.xml</File>
 		<File>XML/Leaders.xml</File>
-		<File>XML/Colors.xml</File>
+		<File>XML/Colors.sql</File>
 		<File>XML/Config.xml</File>
 		<File>Text/en_US/Text.xml</File>
 		<File>Text/ja_JP/Text.xml</File>
@@ -73,6 +75,8 @@
 		<File>civ6mod-hololive-holox.dep</File>
 		<File>Platforms/Windows/BLPs/LeaderFallbackImages.blp</File>
 		<File>Platforms/MacOS/BLPs/LeaderFallbackImages.blp</File>
+		<File>Platforms/Windows/BLPs/UI/HoloX_Icons.blp</File>
+		<File>Platforms/MacOS/BLPs/UI/HoloX_Icons.blp</File>
 		<File>Platforms/Windows/BLPs/UI/HoloX_Loading.blp</File>
 		<File>Platforms/MacOS/BLPs/UI/HoloX_Loading.blp</File>
 		<File>Platforms/Windows/BLPs/UI/HoloX_LoadingPortrait.blp</File>

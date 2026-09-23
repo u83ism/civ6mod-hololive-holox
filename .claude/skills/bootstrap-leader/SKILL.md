@@ -40,11 +40,36 @@ TRAIT_LEADER_REGLOSS_<キャラ名ローマ字>
 
 `assets/Config.xml.template`に全項目埋め済みのテンプレートを置いてあるので、これをコピーして`{{...}}`を置換するだけでこの罠を全部回避できる。`Domain`は`Players:StandardPlayers` / `Players:Expansion1_Players` / `Players:Expansion2_Players`の3つとも登録する(プレイ中のルールセットによって参照先が変わるため)。
 
-## 4. アイコン/ポートレートは別Skillの範囲
+## 4. PlayerColors(`Colors.xml`/`Colors.sql`)は必ずSQLファイルで登録する
+
+**`UpdateColors`アクションに渡すファイルは、XML(`<Colors><Row Type=... />`/`<PlayerColors><Row><Type>...</Type>...</Row></PlayerColors>`形式)ではなく、必ずSQL(`INSERT OR REPLACE INTO Colors/PlayerColors (...) VALUES (...)`形式)で書くこと。** civ6mod-hololive-regloss(莉々華)・civ6mod-hololive-holox(沙花叉クロヱ)の両方で、XML形式の`Colors.xml`を使うと以下の実機バグを踏んだ(2026-09-23、詳細な調査経緯・実機ログの数値的な裏取りは`docs/civ6-icon-color-bug-investigation.md`参照):
+
+- `Modding.log`/`Database.log`にエラーは一切出ず、ファイル自体は正常に読み込まれる(ように見える)
+- しかし実行時、`UI.GetPlayerColorValues(leaderType, index)`(リーダー選択画面の能力アイコンが使う)は自分の`PlayerColors`行を一切見つけられず常に`nil`を返し、`UI.GetPlayerColors(playerID)`(パウズメニュー・外交パネル・ゲーム中の文明バッジが使う)は`Usage="Major"`の汎用色プール(`PLAYERCOLOR_ORANGE`等)へ静かにフォールバックする
+- 症状として、外交交渉画面のバッジは正常なのに、**リーダー選択画面の能力アイコン・パウズメニュー・ゲーム中の文明アイコンだけが、自分で設定した配色ではなく汎用のオレンジ/紺系の色になる**
+
+**修正方法**: 全く同じ内容を`.sql`ファイル(拡張子だけ`.xml`→`.sql`)に書き直し、`.modinfo`の`UpdateColors`(`FrontEndActions`/`InGameActions`両方)が読むファイルをそちらに差し替えるだけで直る。実機で正しく着色されている他のHololive公式Mod(`Hololive 2nd Generation`等)は最初から`Colors.sql`形式を使っていた。書式は単純:
+
+```sql
+INSERT OR REPLACE INTO Colors
+		(Type, Color)
+	VALUES
+		('COLOR_PLAYER_<ID>_PRIMARY', 'R,G,B,255'),
+		('COLOR_PLAYER_<ID>_SECONDARY', 'R,G,B,255');
+
+INSERT OR REPLACE INTO PlayerColors
+		(Type, Usage, PrimaryColor, SecondaryColor)
+	VALUES
+		('LEADER_<ID>', 'Unique', 'COLOR_PLAYER_<ID>_PRIMARY', 'COLOR_PLAYER_<ID>_SECONDARY');
+```
+
+`Alt1〜Alt3PrimaryColor/SecondaryColor`(GatheringStormのJersey System用)は無くても正常に動く(実機で正しく着色されている公式Mod側にも無い)。**この`UpdateColors`アクション特有の問題であり、`UpdateDatabase`で読む他のXML(Civilizations.xml/Leaders.xml等)は問題なくXMLのまま動く**ので、他のテーブルまで無理にSQL化する必要はない。
+
+## 5. アイコン/ポートレートは別Skillの範囲
 
 Config.xmlの`CivilizationIcon`/`LeaderIcon`/`Portrait`等は3節の通りプレースホルダー値で登録さえしておけば、指導者は「？」アイコンのまま選択画面に出て**動くには動く**。実際のバッジアイコン・ポートレート画像の作り込み(ModBuddy/BLPパイプライン)は工数が重く独立した作業なので`make-leader-icons`/`make-fallback-portrait` Skillを使うこと。
 
-## 5. 実機デバッグの手順
+## 6. 実機デバッグの手順
 
 1. **ログを有効化する**(デフォルト無効): `%LOCALAPPDATA%\Firaxis Games\Sid Meier's Civilization VI\AppOptions.txt`に`LoggingEnabled 1`と書く
 2. **ログの出力先は`%LOCALAPPDATA%\Firaxis Games\Sid Meier's Civilization VI\Logs\`**。`Documents\My Games\Sid Meier's Civilization VI\Logs`ではない(READMEや一般的な解説記事はこちらを指していることが多いので注意)

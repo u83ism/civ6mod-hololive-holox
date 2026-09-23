@@ -1,20 +1,20 @@
 // Build XLPs/HoloX_Icons.xlp using the exact header/footer structure of Firaxis's own
 // Civ6 SDK Assets pantry/XLPs/Icons.xlp, with only our own icon entries.
-// Usage: tsx gen-xlp.ts <civilizationId> <leaderId>
+// Usage: tsx gen-xlp.ts <civilizationId> [<leaderId>]
 // Example: tsx gen-xlp.ts REGLOSS_ICHIJOU REGLOSS_ICHIJOU_RIRIKA
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { civilizationIconName, civilizationIconSizes, leaderIconName, leaderIconSizes } from "./icon-manifest.js";
 
 const [, , civilizationId, leaderId] = process.argv;
-if (!civilizationId || !leaderId) {
-  console.error("Usage: tsx gen-xlp.ts <civilizationId> <leaderId>");
+if (!civilizationId) {
+  console.error("Usage: tsx gen-xlp.ts <civilizationId> [<leaderId>]");
   process.exit(1);
 }
 
 const entries = [
   ...civilizationIconSizes.map((size) => civilizationIconName(civilizationId, size)),
-  ...leaderIconSizes.map((size) => leaderIconName(leaderId, size)),
+  ...(leaderId ? leaderIconSizes.map((size) => leaderIconName(leaderId, size)) : []),
 ];
 
 const elements = entries

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AssetObjects..XLP>
+	<m_Version>
+		<major>4</major>
+		<minor>0</minor>
+		<build>434</build>
+		<revision>920</revision>
+	</m_Version>
+	<m_ClassName text="UITexture"/>
+	<m_PackageName text="UI/HoloX_Icons"/>
+	<m_Entries>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_22"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_22"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_30"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_30"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_32"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_32"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_36"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_36"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_44"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_44"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_45"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_45"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_48"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_48"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_50"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_50"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_64"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_64"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_80"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_80"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_128"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_128"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_ORCA_POD_256"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_ORCA_POD_256"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_32"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_32"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_45"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_45"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_48"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_48"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_50"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_50"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_55"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_55"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_64"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_64"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_80"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_80"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_256"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_256"/>
+		</Element>
+	</m_Entries>
+	<m_AllowedPlatforms>
+		<Element>WINDOWS</Element>
+		<Element>LINUX</Element>
+		<Element>MACOS</Element>
+		<Element>IOS</Element>
+	</m_AllowedPlatforms>
+</AssetObjects..XLP>

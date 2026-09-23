@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!--
+		文明アイコン(シャチの群れ)はArt/Source/orca.svgから、指導者アイコン(沙花叉クロヱ)は
+		Art/Source/sakamata_chloe-face.pngから、それぞれ各サイズを再生成したもの。
+	-->
+	<IconTextureAtlases>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_22.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_30.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_32.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="36" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_36.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="44" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_44.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_45.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_48.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_50.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_64.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_80.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_128.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_256.dds"/>
+
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_32.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_45.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_48.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_50.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_55.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_64.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_80.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_256.dds"/>
+	</IconTextureAtlases>
+	<IconDefinitions>
+		<Row Name="ICON_CIVILIZATION_HOLOX_ORCA_POD" Atlas="ICON_ATLAS_CIV_HOLOX_ORCA_POD" Index="0"/>
+		<Row Name="ICON_LEADER_HOLOX_SAKAMATA_CHLOE" Atlas="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" Index="0"/>
+	</IconDefinitions>
+</GameData>

@@ -558,6 +558,7 @@
 		<Element>
 			<LibraryName text="UITexture"/>
 			<PackageDependencies>
+				<Element text="UI/HoloX_Icons.blp"/>
 				<Element text="UI/HoloX_Loading.blp"/>
 				<Element text="UI/HoloX_LoadingPortrait.blp"/>
 			</PackageDependencies>

@@ -6,9 +6,14 @@
 	</Colors>
 
 	<!--
-		シャチ配色(黒/白、2026-09-23本人確認)。GatheringStormの「Jersey System」用にAlt1〜Alt3も
-		明示登録する(regloss/一条莉々華と同じ理由: 未設定だとUI.GetPlayerColorValues等がnilを返し、
-		ポーズメニュー等のアイコンが着色されず黒く見えるバグがあるため通常色を流用)。
+		シャチ配色(黒/白、2026-09-23本人確認)。
+		2026-09-23実験: Alt1〜Alt3をあえて登録しない。バッジアイコンの色バグ調査
+		(docs/civ6-icon-color-bug-investigation.md)で、実機で正しく着色されているHololive公式Mod
+		(Hololive 2nd Generation、湊あくあ等)のPlayerColorsがUsage="Unique"+Primary/Secondaryのみで
+		Alt1〜3を一切持たないと判明したため、それに合わせて最小構成にした。以前はAlt1〜3未設定だと
+		パウズメニューが黒くなる症状があり通常色の使い回しで登録していたが、Alt1〜3の有無自体が
+		リーダー選択画面の能力アイコン色バグの原因になっている可能性を切り分けるため、
+		一旦完全に外して実機確認する(パウズメニューが黒に戻るかどうかも合わせて観察すること)。
 	-->
 	<PlayerColors>
 		<Row>
@@ -16,12 +21,6 @@
 			<Usage>Unique</Usage>
 			<PrimaryColor>COLOR_PLAYER_HOLOX_SAKAMATA_CHLOE_PRIMARY</PrimaryColor>
 			<SecondaryColor>COLOR_PLAYER_HOLOX_SAKAMATA_CHLOE_SECONDARY</SecondaryColor>
-			<Alt1PrimaryColor>COLOR_PLAYER_HOLOX_SAKAMATA_CHLOE_PRIMARY</Alt1PrimaryColor>
-			<Alt1SecondaryColor>COLOR_PLAYER_HOLOX_SAKAMATA_CHLOE_SECONDARY</Alt1SecondaryColor>
-			<Alt2PrimaryColor>COLOR_PLAYER_HOLOX_SAKAMATA_CHLOE_PRIMARY</Alt2PrimaryColor>
-			<Alt2SecondaryColor>COLOR_PLAYER_HOLOX_SAKAMATA_CHLOE_SECONDARY</Alt2SecondaryColor>
-			<Alt3PrimaryColor>COLOR_PLAYER_HOLOX_SAKAMATA_CHLOE_PRIMARY</Alt3PrimaryColor>
-			<Alt3SecondaryColor>COLOR_PLAYER_HOLOX_SAKAMATA_CHLOE_SECONDARY</Alt3SecondaryColor>
 		</Row>
 	</PlayerColors>
 </GameData>
