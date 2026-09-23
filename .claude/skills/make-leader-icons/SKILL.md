@@ -28,9 +28,30 @@ Civ/Leaderの選択画面自体は`bootstrap-leader` Skillの範囲で(アイコ
 - `npm run gen-icon-sources -- <civilizationId> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]`: `Art/Source/`のマスター素材から各サイズのPNGを`Art/Icons/`に生成(`icon-manifest.ts`にサイズ一覧、`gen-icon-sources.ts`にトリミング/マスク処理)。文明アイコンはバニラの45pxのようなフルカラー版を作らず、全サイズを白シルエットにする(理由は`docs/civ6-icon-color-bug-investigation.md`末尾)
 - `npm run build-icons`: `Art/Icons/*.png`を`tools/IconBuild/Textures/*.dds`に変換(ファイル名から自動判定するため引数なし)
 - `npm run gen-tex -- <civilizationId> <leaderId>`: 公式`.tex`テンプレートをコピーして`tools/IconBuild/Textures/*.tex`を生成
-- `npm run gen-xlp -- <civilizationId> <leaderId>`: `tools/IconBuild/XLPs/RegLoss_Icons.xlp`を生成
+- `npm run gen-xlp -- <civilizationId> <leaderId>`: `tools/IconBuild/XLPs/HoloX_Icons.xlp`を生成
 - `npm run gen-dep -- <Mod.Art.xml> <out.dep>`: `.dep`を機械生成
 
-## 未解決の色バグ
+## 色バグは解決済み(旧: 未解決の色バグ)
 
-リーダー選択画面の能力アイコン色/パウズメニューの黒表示に関する未解決の調査(白シルエット化を試して撤回した経緯を含む)は本Mod固有のデバッグログのため、`docs/civ6-icon-color-bug-investigation.md`に分離してある。次にこの領域を触るセッションは、まずそちらを読んでから着手すること。
+リーダー選択画面の能力アイコン色/パウズメニューの黒表示に関する調査(白シルエット化を試して撤回→再挑戦→解決に至った経緯)は本Mod固有のデバッグログのため、`docs/civ6-icon-color-bug-investigation.md`に分離してある。原因は`UpdateColors`アクションにXML形式のファイルを渡していたことで、SQL形式(`.sql`)に切り替えれば解決する(恒久的な手順は`.claude/skills/bootstrap-leader/SKILL.md`4節に昇格済み)。アイコンのピクセル形式(白シルエットかフルカラーか)自体はこのバグの原因ではなかった。
+
+## 白い模様部分を透過(切り抜き)にする時は、2回レンダリングして合成(dest-out)しない
+
+キャラクター元絵(SVG等)に「白い塗り」で描かれた模様(目のハイライト、腹の白い斑点等)があり、それをバッジのシルエット上で「背景円の色が透けて見える穴」として表現したい場合(2色構成のまま模様を出す手法、`docs/civ6-icon-color-bug-investigation.md`参照ではなく本Mod沙花叉クロヱの文明アイコンで実施)、**白い模様部分だけを別途レンダリングしてマスクを作り、`dest-out`ブレンドモードで本体から差し引く、という2回レンダリング方式は避けること**。実機で以下の不具合を踏んだ(2026-09-24):
+
+- 2つの独立したラスタライズ結果(本体全体のレンダリングと、模様部分だけのレンダリング)は、境界のアンチエイリアシングが微妙に食い違う。これを`dest-out`で合成すると、**細い線状の模様が実際より大きく・丸く歪んで切り抜かれる**(本人から「パスを捏造している」と指摘された不具合)。単体のレンダリング結果を目視しても分かりにくく、合成後の結果を元絵と拡大比較して初めて気づいた
+
+**正しい方法**: 元のフルカラー画像を**1回だけ**レンダリングし、その画像自身のピクセルデータを直接読んで、明るい(白い)ピクセルは`alpha=0`に、暗い(黒い)ピクセルは不透明黒にする、という単純な閾値判定に置き換える。同じピクセルデータから導出するため、位置ズレやアンチエイリアシングの不一致が原理的に起こらない。
+
+```js
+// full-color PNGを1回だけレンダリングし、そのピクセルを直接閾値判定する
+const { data, info } = await sharp(fullColorPngPath).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+for (let i = 0; i < data.length; i += 4) {
+  if (data[i + 3] === 0) continue; // 元々透明な部分はそのまま
+  const brightness = data[i] + data[i + 1] + data[i + 2];
+  if (brightness > 600) { data[i + 3] = 0; } // 白い模様 → 透過(切り抜き)
+  else { data[i] = 0; data[i + 1] = 0; data[i + 2] = 0; } // それ以外 → 不透明黒
+}
+```
+
+**関連する落とし穴**: 切り抜いた模様(特に細い線)が小サイズ(32px等)のバッジに縮小すると消えてしまう場合、SVGの`stroke-width`を大きくして太らせる対処は有効だが、`stroke-linecap="round" stroke-linejoin="round"`を安易に使うと、元の模様が持つ**尖った先端等の特徴的な形状が丸く鈍って別物に見える**(三日月形の細い線が単なる丸い塊に化けた実例あり)。太らせる場合も、元の輪郭の特徴(尖り・テーパー)を壊していないか、拡大比較で必ず確認すること。
