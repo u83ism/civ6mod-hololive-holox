@@ -20,7 +20,7 @@
 			<File>XML/Config.xml</File>
 		</UpdateDatabase>
 		<UpdateColors id="ConfigColors">
-			<File>XML/Colors.xml</File>
+			<File>XML/Colors.sql</File>
 		</UpdateColors>
 		<UpdateText id="ConfigText">
 			<File>Text/en_US/Text.xml</File>
@@ -36,7 +36,7 @@
 			<File>XML/Leaders.xml</File>
 		</UpdateDatabase>
 		<UpdateColors id="Colors">
-			<File>XML/Colors.xml</File>
+			<File>XML/Colors.sql</File>
 		</UpdateColors>
 		<UpdateText id="Text">
 			<File>Text/en_US/Text.xml</File>
@@ -49,7 +49,7 @@
 	<Files>
 		<File>XML/Civilizations.xml</File>
 		<File>XML/Leaders.xml</File>
-		<File>XML/Colors.xml</File>
+		<File>XML/Colors.sql</File>
 		<File>XML/Config.xml</File>
 		<File>Text/en_US/Text.xml</File>
 		<File>Text/ja_JP/Text.xml</File>
