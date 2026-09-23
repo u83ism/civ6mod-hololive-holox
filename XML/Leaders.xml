@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!--
+		ローディング画面(LoadingInfo)。LoadScreen.luaの実機コード上、ForegroundImage/BackgroundImage未指定時の
+		フォールバック名がそもそも<LeaderType>_NEUTRAL/<LeaderType>_BACKGROUNDなので、この行自体は省略しても
+		同じテクスチャに解決されるはずだが、公式データ(Expansion1_LoadingInfo.xml)もこの通り明示している。
+	-->
+	<LoadingInfo>
+		<Row LeaderType="LEADER_HOLOX_SAKAMATA_CHLOE" ForegroundImage="LEADER_HOLOX_SAKAMATA_CHLOE_NEUTRAL" BackgroundImage="LEADER_HOLOX_SAKAMATA_CHLOE_BACKGROUND"/>
+	</LoadingInfo>
+
+	<!--
+		外交交渉画面の背景(DiplomacyInfo)。LeaderScene.luaの実機コード上、この行が無いと
+		Leaders.SceneLayers(本Mod未設定=0)を見て"CLEOPATRA_1"〜"_4"のパララックス層にフォールバックする
+		(=これまで表示されていた背景は実はクレオパトラの交渉背景だった)。ローディング画面用に生成済みの
+		LEADER_HOLOX_SAKAMATA_CHLOE_BACKGROUNDをそのまま流用する(新規アセット・XLP追加は不要)。
+	-->
+	<DiplomacyInfo>
+		<Row Type="LEADER_HOLOX_SAKAMATA_CHLOE" BackgroundImage="LEADER_HOLOX_SAKAMATA_CHLOE_BACKGROUND"/>
+	</DiplomacyInfo>
+</GameData>

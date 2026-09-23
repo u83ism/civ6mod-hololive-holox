@@ -76,7 +76,7 @@ const buildPortraitTex = (width: number, height: number): void => {
   console.log(`${outputPath} (from ${TEX_TEMPLATE_NAME}.tex, ${width}x${height}, ${numMipMaps} mips)`);
 };
 
-// Same package as gen-loading-background.ts's RegLoss_Loading.xlp would be reasonable too, but
+// Same package as gen-loading-background.ts's HoloX_Loading.xlp would be reasonable too, but
 // kept separate here since the two are independently regenerated and it avoids one script
 // needing to read-and-merge the other's output.
 const buildPortraitXlp = (): void => {
@@ -89,7 +89,7 @@ const buildPortraitXlp = (): void => {
 \t\t<revision>920</revision>
 \t</m_Version>
 \t<m_ClassName text="UITexture"/>
-\t<m_PackageName text="UI/RegLoss_LoadingPortrait"/>
+\t<m_PackageName text="UI/HoloX_LoadingPortrait"/>
 \t<m_Entries>
 \t\t<Element>
 \t\t\t<m_EntryID text="${OUR_NAME}"/>
@@ -104,7 +104,7 @@ const buildPortraitXlp = (): void => {
 \t</m_AllowedPlatforms>
 </AssetObjects..XLP>
 `;
-  const outputPath = join(xlpOutputDirectory, "RegLoss_LoadingPortrait.xlp");
+  const outputPath = join(xlpOutputDirectory, "HoloX_LoadingPortrait.xlp");
   writeFileSync(outputPath, xml);
   console.log(outputPath);
 };

@@ -83,7 +83,7 @@ const buildMomentIllustrationXlp = (): void => {
 \t\t<revision>920</revision>
 \t</m_Version>
 \t<m_ClassName text="UITexture"/>
-\t<m_PackageName text="UI/RegLoss_Moments"/>
+\t<m_PackageName text="UI/HoloX_Moments"/>
 \t<m_Entries>
 \t\t<Element>
 \t\t\t<m_EntryID text="${OUR_NAME}"/>
@@ -98,7 +98,7 @@ const buildMomentIllustrationXlp = (): void => {
 \t</m_AllowedPlatforms>
 </AssetObjects..XLP>
 `;
-  const outputPath = join(xlpOutputDirectory, "RegLoss_Moments.xlp");
+  const outputPath = join(xlpOutputDirectory, "HoloX_Moments.xlp");
   writeFileSync(outputPath, xml);
   console.log(outputPath);
 };

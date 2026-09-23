@@ -29,6 +29,9 @@
 		<UpdateIcons id="ConfigIcons">
 			<File>Art/Icons/Icons.xml</File>
 		</UpdateIcons>
+		<UpdateArt id="ConfigArt">
+			<File>civ6mod-hololive-holox.dep</File>
+		</UpdateArt>
 	</FrontEndActions>
 	<InGameActions>
 		<UpdateDatabase id="Gameplay">
@@ -45,6 +48,9 @@
 		<UpdateIcons id="Icons">
 			<File>Art/Icons/Icons.xml</File>
 		</UpdateIcons>
+		<UpdateArt id="Art">
+			<File>civ6mod-hololive-holox.dep</File>
+		</UpdateArt>
 	</InGameActions>
 	<Files>
 		<File>XML/Civilizations.xml</File>
@@ -54,6 +60,13 @@
 		<File>Text/en_US/Text.xml</File>
 		<File>Text/ja_JP/Text.xml</File>
 		<File>Art/Icons/Icons.xml</File>
+		<File>civ6mod-hololive-holox.dep</File>
+		<File>Platforms/Windows/BLPs/LeaderFallbackImages.blp</File>
+		<File>Platforms/MacOS/BLPs/LeaderFallbackImages.blp</File>
+		<File>Platforms/Windows/BLPs/UI/HoloX_Loading.blp</File>
+		<File>Platforms/MacOS/BLPs/UI/HoloX_Loading.blp</File>
+		<File>Platforms/Windows/BLPs/UI/HoloX_LoadingPortrait.blp</File>
+		<File>Platforms/MacOS/BLPs/UI/HoloX_LoadingPortrait.blp</File>
 		<!-- Art/Icons配下の各サイズPNGもここに追加していく(bootstrap-leader Skill参照) -->
 	</Files>
 </Mod>

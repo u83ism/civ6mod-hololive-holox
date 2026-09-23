@@ -70,7 +70,7 @@ const buildBackgroundXlp = (): void => {
 \t\t<revision>920</revision>
 \t</m_Version>
 \t<m_ClassName text="UITexture"/>
-\t<m_PackageName text="UI/RegLoss_Loading"/>
+\t<m_PackageName text="UI/HoloX_Loading"/>
 \t<m_Entries>
 \t\t<Element>
 \t\t\t<m_EntryID text="${OUR_NAME}"/>
@@ -85,7 +85,7 @@ const buildBackgroundXlp = (): void => {
 \t</m_AllowedPlatforms>
 </AssetObjects..XLP>
 `;
-  const outputPath = join(xlpOutputDirectory, "RegLoss_Loading.xlp");
+  const outputPath = join(xlpOutputDirectory, "HoloX_Loading.xlp");
   writeFileSync(outputPath, xml);
   console.log(outputPath);
 };

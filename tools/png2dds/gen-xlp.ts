@@ -1,4 +1,4 @@
-// Build XLPs/RegLoss_Icons.xlp using the exact header/footer structure of Firaxis's own
+// Build XLPs/HoloX_Icons.xlp using the exact header/footer structure of Firaxis's own
 // Civ6 SDK Assets pantry/XLPs/Icons.xlp, with only our own icon entries.
 // Usage: tsx gen-xlp.ts <civilizationId> <leaderId>
 // Example: tsx gen-xlp.ts REGLOSS_ICHIJOU REGLOSS_ICHIJOU_RIRIKA
@@ -30,7 +30,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8" ?>
 \t\t<revision>920</revision>
 \t</m_Version>
 \t<m_ClassName text="UITexture"/>
-\t<m_PackageName text="UI/RegLoss_Icons"/>
+\t<m_PackageName text="UI/HoloX_Icons"/>
 \t<m_Entries>
 ${elements}
 \t</m_Entries>
@@ -45,6 +45,6 @@ ${elements}
 
 const outputDirectory = join(import.meta.dirname, "..", "IconBuild", "XLPs");
 mkdirSync(outputDirectory, { recursive: true });
-const outputPath = join(outputDirectory, "RegLoss_Icons.xlp");
+const outputPath = join(outputDirectory, "HoloX_Icons.xlp");
 writeFileSync(outputPath, xml);
 console.log(outputPath);
