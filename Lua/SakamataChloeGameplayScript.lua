@@ -14,7 +14,7 @@
 -- (0=General/1=Admiral/2=Engineer/3=Merchant/4=Prophet/5=Scientist/6=Writer/7=Artist/8=Musicianの並び)。
 --
 -- 実装方式は`Hololive GAMERS`Mod(戌神ころね「ぶっころね」、攻撃時50%で敵を瀕死=HP1にする)を参考にしたが、
--- 即死効果自体は`SetDamage()`ではなく`UnitManager.Kill(unit, false)`で実装している。コロネの実装は
+-- 即死効果自体は`SetDamage()`ではなく`UnitManager.Kill(unit, false)`で実装している。ころねの実装は
 -- ダメージ調整(SetDamage(99)、あえて殺しきらない)止まりなのでこの問題を踏まない設計だったが、クロヱは
 -- 確実に撃破したいので当初`SetDamage(100)`→`SetDamage(MAX_HIT_POINTS)`と試したところ、実機で「撃破音楽家
 -- ポイントは発生するのに敵ユニットが盤面に残り続け、次に攻撃すると改めて死んでポイントが二重発火する」
