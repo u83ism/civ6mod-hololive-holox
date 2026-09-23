@@ -36,7 +36,7 @@ Language属性の正確な値は`Base/Assets/Text/Vanilla_zh_Hans_CN.xml`(簡体
 - **HktkNban氏(Hololive JP 1〜5期生)**: 実翻訳はせず、`Text/Update_Text_zh_CN.sql`で「言語設定が中国語の場合、日本語を表示」という趣旨のコメント付きで`INSERT OR REPLACE INTO LocalizedText (Tag, Language, Text) SELECT Tag, 'zh_Hans_CN', Text FROM LocalizedText WHERE Tag LIKE '%キャラ名%'`(`zh_Hant_HK`にも同様)を実行し、既存の(恐らくja_JP)テキストをそのまま中国語スロットにコピーするフォールバック手法。翻訳コスト0で「文字化け/空欄表示を防ぐ」目的と思われる
 - **Neox氏(HoloEN)**: `Core/Civilization_Localisation.sql`・`Leader/Leader_Localisation.sql`に`zh_Hant_HK`(繁体字)の実訳608行を保有(ファイル冒頭のコメントに翻訳協力者`ChimpanG, SeelingCat`のクレジットあり)。**ただし`zh_Hans_CN`(簡体字)は0件**、繁体字のみの対応
 
-このMod(civ6mod-hololive-regloss)では中国語対応は未着手。着手する場合、HktkNban方式(ja_JPテキストをzh_Hans_CN/zh_Hant_HKにコピーするだけの.sql、翻訳コスト0)が最も低コストな第一歩になる。
+civ6mod-hololive-reglossは2026-09-23時点で中国語対応(zh_Hans_CN/zh_Hant_HK)を実装済み(`Text/zh_Hans_CN/Text.xml`・`Text/zh_Hant_HK/Text.xml`に実訳、`add-language` Skill手順通りmodinfoの3箇所に登録)。このMod(civ6mod-hololive-holox)ではまだ未着手。着手する場合、HktkNban方式(ja_JPテキストをzh_Hans_CN/zh_Hant_HKにコピーするだけの.sql、翻訳コスト0)が最も低コストな第一歩になる。
 
 ## 文明のその他表示調整
 
