@@ -27,14 +27,145 @@
 	</StartBiasTerrains>
 
 	<Traits>
-		<!--
-			文明固有能力: 名称・効果ともに未定(海洋/水族館関連バフの中身は検討中、docs/design.md参照)。
-			NOT NULL制約を満たすための暫定プレースホルダーテキストを入れてある。
-		-->
+		<!-- 文明固有能力「群れの絆」(docs/design.md参照) -->
 		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_ORCA_POD" Name="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Description="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION"/>
 	</Traits>
 
 	<CivilizationTraits>
 		<Row CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" TraitType="TRAIT_CIVILIZATION_HOLOX_ORCA_POD"/>
 	</CivilizationTraits>
+
+	<!--
+		群れの絆: 沿岸(湖を除く)・海タイルに食料+1/生産力+1。
+		ロシア(TRAIT_INCREASED_TUNDRA_*)・インカ(TRAIT_PRODUCTION_MOUNTAIN)と同じMODIFIER_PLAYER_ADJUST_PLOT_YIELD+地形条件の型。
+		湖は地形上TERRAIN_COAST扱いなのでREQUIREMENT_PLOT_IS_LAKEのInverseで除外する。
+		「沿岸かつ湖でない」OR「海」はRequirementSetの入れ子を避け、条件ごとにModifierを分けて表現している(食料/生産力×沿岸/海の4本)。
+	-->
+	<TraitModifiers>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_ORCA_POD" ModifierId="HOLOX_ORCA_POD_COAST_FOOD"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_ORCA_POD" ModifierId="HOLOX_ORCA_POD_COAST_PRODUCTION"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_ORCA_POD" ModifierId="HOLOX_ORCA_POD_OCEAN_FOOD"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_ORCA_POD" ModifierId="HOLOX_ORCA_POD_OCEAN_PRODUCTION"/>
+	</TraitModifiers>
+
+	<Modifiers>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_COAST_FOOD</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>HOLOX_ORCA_POD_REQSET_PLOT_SEA_COAST</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_COAST_PRODUCTION</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>HOLOX_ORCA_POD_REQSET_PLOT_SEA_COAST</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_OCEAN_FOOD</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>HOLOX_ORCA_POD_REQSET_PLOT_OCEAN</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_OCEAN_PRODUCTION</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>HOLOX_ORCA_POD_REQSET_PLOT_OCEAN</SubjectRequirementSetId>
+		</Row>
+	</Modifiers>
+
+	<ModifierArguments>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_COAST_FOOD</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_FOOD</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_COAST_FOOD</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_COAST_PRODUCTION</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_PRODUCTION</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_COAST_PRODUCTION</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_OCEAN_FOOD</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_FOOD</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_OCEAN_FOOD</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_OCEAN_PRODUCTION</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_PRODUCTION</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_POD_OCEAN_PRODUCTION</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+	</ModifierArguments>
+
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_POD_REQSET_PLOT_SEA_COAST</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_POD_REQSET_PLOT_OCEAN</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_POD_REQSET_PLOT_SEA_COAST</RequirementSetId>
+			<RequirementId>HOLOX_ORCA_POD_REQ_PLOT_IS_COAST</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_POD_REQSET_PLOT_SEA_COAST</RequirementSetId>
+			<RequirementId>HOLOX_ORCA_POD_REQ_PLOT_IS_NOT_LAKE</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_POD_REQSET_PLOT_OCEAN</RequirementSetId>
+			<RequirementId>HOLOX_ORCA_POD_REQ_PLOT_IS_OCEAN</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+
+	<Requirements>
+		<Row>
+			<RequirementId>HOLOX_ORCA_POD_REQ_PLOT_IS_COAST</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_ORCA_POD_REQ_PLOT_IS_NOT_LAKE</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_IS_LAKE</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_ORCA_POD_REQ_PLOT_IS_OCEAN</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+		</Row>
+	</Requirements>
+
+	<RequirementArguments>
+		<Row>
+			<RequirementId>HOLOX_ORCA_POD_REQ_PLOT_IS_COAST</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_COAST</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_ORCA_POD_REQ_PLOT_IS_OCEAN</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_OCEAN</Value>
+		</Row>
+	</RequirementArguments>
 </GameData>

@@ -23,12 +23,12 @@
 			<Text>When attacking in combat, has a 25% chance to instantly defeat the enemy unit. On combat victory, gains [ICON_GreatMusician] Great Musician points equal to the defeated unit's [ICON_Strength] Combat Strength.</Text>
 		</Row>
 
-		<!-- Civilization ability: name/effect not yet decided (ocean/aquarium buff, see docs/design.md). Placeholder text to satisfy NOT NULL -->
+		<!-- Civilization ability "Bond of the Pod" (see docs/design.md). Wording follows Russia's "Mother Russia" Tundra yield bonus -->
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="en_US">
 			<Text>Bond of the Pod</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="en_US">
-			<Text>Ocean/aquarium-related civilization ability. Details to be implemented.</Text>
+			<Text>+1 [ICON_Food] Food and +1 [ICON_Production] Production from Coast (excluding Lake) and Ocean tiles.</Text>
 		</Row>
 
 		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="en_US">

@@ -23,12 +23,12 @@
 			<Text>攻撃戦闘時、25%の確率で敵ユニットを即座に撃破する。戦闘に勝利すると、倒した敵ユニットの [ICON_Strength] 戦闘力に応じた [ICON_GreatMusician] 大音楽家ポイントを獲得する。</Text>
 		</Row>
 
-		<!-- 文明固有能力: 名称・効果とも未定(海洋/水族館関連バフ、docs/design.md参照)。NOT NULL制約回避の暫定テキスト -->
+		<!-- 文明固有能力「群れの絆」(docs/design.md参照)。文面はロシア「母なるロシア」のツンドラ産出ボーナスの言い回しに合わせた -->
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="ja_JP">
 			<Text>群れの絆</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="ja_JP">
-			<Text>水族館・海洋に関する固有能力。詳細は今後実装。</Text>
+			<Text>湖を除く沿岸タイルと海タイルから [ICON_Food] 食料+1と [ICON_Production] 生産力+1を得る。</Text>
 		</Row>
 
 		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="ja_JP">

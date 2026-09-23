@@ -4,7 +4,7 @@ Civilization VI の新規文明追加Mod。hololive holoXをモチーフにし�
 
 ## 現状
 
-`bootstrap-mod` Skillでリポジトリ雛形を作成済み。沙花叉クロヱ(文明: シャチの群れ)の指導者/文明の骨格(`XML/Civilizations.xml`・`Leaders.xml`・`Colors.xml`・`Config.xml`)を実装済み。指導者固有能力「歌好きの掃除屋」(Lua実装、`Lua/SakamataChloeGameplayScript.lua`: 攻撃時25%の確率で敵ユニットを即座に撃破+撃破戦闘力に応じた大音楽家ポイント獲得)は実機で動作確認済み。文明固有能力(海洋/水族館バフ)は中身未定。
+`bootstrap-mod` Skillでリポジトリ雛形を作成済み。沙花叉クロヱ(文明: シャチの群れ)の指導者/文明の骨格(`XML/Civilizations.xml`・`Leaders.xml`・`Colors.xml`・`Config.xml`)を実装済み。指導者固有能力「歌好きの掃除屋」(Lua実装、`Lua/SakamataChloeGameplayScript.lua`: 攻撃時25%の確率で敵ユニットを即座に撃破+撃破戦闘力に応じた大音楽家ポイント獲得)は実機で動作確認済み。文明固有能力「群れの絆」(湖を除く沿岸タイルと海タイルに食料+1/生産力+1、XMLのみ)は実機で動作確認済み。固有区域「シャチたちの楽園」(ウォーターパーク置換)は設計中(`docs/design.md`参照)。
 
 ## 構成
 
@@ -22,7 +22,7 @@ Civilization VI の新規文明追加Mod。hololive holoXをモチーフにし�
 
 ## TODO
 
-- [ ] 文明固有能力(海洋/水族館バフ)の中身を決めて実装
+- [ ] 固有区域「シャチたちの楽園」(ウォーターパーク置換)の未決の論点を決めて実装(`docs/design.md`参照)
 - [ ] 都市名リストの整備(現状は首都1件のみ)
 - [ ] バッジアイコン・ポートレートの作り込み(`make-leader-icons`/`make-fallback-portrait` Skill)
 - [ ] 指導者/文明能力のテキストを`write-official-jp-text-style`/`write-official-en-text-style` Skillで文体調整(現状は暫定文言)
