@@ -25,7 +25,7 @@ Civ/Leaderの選択画面自体は`bootstrap-leader` Skillの範囲で(アイコ
 
 `civilizationId`/`leaderId`は`ICON_CIVILIZATION_`/`ICON_LEADER_`を除いた部分(例: `REGLOSS_ICHIJOU`/`REGLOSS_ICHIJOU_RIRIKA`)。キャラ名はハードコードされておらずCLI引数で渡す作りなので、2人目以降のリーダーでもファイルの書き換えは不要。
 
-- `npm run gen-icon-sources -- <civilizationId> <leaderId> <civFullColorMasterFileName> <civSilhouetteMasterFileName> <leaderFaceMasterFileName>`: `Art/Source/`のマスター素材から各サイズのPNGを`Art/Icons/`に生成(`icon-manifest.ts`にサイズ一覧、`gen-icon-sources.ts`にトリミング/マスク処理)
+- `npm run gen-icon-sources -- <civilizationId> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]`: `Art/Source/`のマスター素材から各サイズのPNGを`Art/Icons/`に生成(`icon-manifest.ts`にサイズ一覧、`gen-icon-sources.ts`にトリミング/マスク処理)。文明アイコンはバニラの45pxのようなフルカラー版を作らず、全サイズを白シルエットにする(理由は`docs/civ6-icon-color-bug-investigation.md`末尾)
 - `npm run build-icons`: `Art/Icons/*.png`を`tools/IconBuild/Textures/*.dds`に変換(ファイル名から自動判定するため引数なし)
 - `npm run gen-tex -- <civilizationId> <leaderId>`: 公式`.tex`テンプレートをコピーして`tools/IconBuild/Textures/*.tex`を生成
 - `npm run gen-xlp -- <civilizationId> <leaderId>`: `tools/IconBuild/XLPs/RegLoss_Icons.xlp`を生成
