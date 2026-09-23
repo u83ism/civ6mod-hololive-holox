@@ -2,32 +2,23 @@
 // Art/Source/. Master art must be square and at least as large as the biggest required size.
 // The leader arguments are optional so the civilization badge can be generated on its own
 // before leader face master art exists (a common ordering: civ icon first, leader icon later).
-// Usage: tsx gen-icon-sources.ts <civilizationId> <civFullColorMasterFileName> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]
-// Example (civ only): tsx gen-icon-sources.ts HOLOX_ORCA_POD orca-full-color.png orca-silhouette.png
-// Example (civ + leader): tsx gen-icon-sources.ts REGLOSS_ICHIJOU ichijou-corporation-logo-circle.png ichijou-corporation-logo-circle-for-transparent.png REGLOSS_ICHIJOU_RIRIKA ichijou-ririka-face.png
+// Usage: tsx gen-icon-sources.ts <civilizationId> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]
+// Example (civ only): tsx gen-icon-sources.ts HOLOX_ORCA_POD orca-icon-silhouette-master.png
+// Example (civ + leader): tsx gen-icon-sources.ts HOLOX_ORCA_POD orca-icon-silhouette-master.png HOLOX_SAKAMATA_CHLOE sakamata_chloe-face.png
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { PNG } from "pngjs";
 import { civilizationIconName, civilizationIconSizes, leaderIconName, leaderIconSizes } from "./icon-manifest.js";
 
-const [
-  ,
-  ,
-  civilizationId,
-  civilizationFullColorMasterFileName,
-  civilizationSilhouetteMasterFileName,
-  leaderId,
-  leaderFaceMasterFileName,
-] = process.argv;
+const [, , civilizationId, civilizationSilhouetteMasterFileName, leaderId, leaderFaceMasterFileName] = process.argv;
 if (
   !civilizationId ||
-  !civilizationFullColorMasterFileName ||
   !civilizationSilhouetteMasterFileName ||
   (leaderId && !leaderFaceMasterFileName) ||
   (!leaderId && leaderFaceMasterFileName)
 ) {
   console.error(
-    "Usage: tsx gen-icon-sources.ts <civilizationId> <civFullColorMasterFileName> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]",
+    "Usage: tsx gen-icon-sources.ts <civilizationId> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]",
   );
   process.exit(1);
 }
@@ -81,14 +72,13 @@ const downsampleImage = (source: RgbaImage, targetWidth: number, targetHeight: n
   return { data: destinationData, width: targetWidth, height: targetHeight };
 };
 
-// Civ6 tints most civilization badge sizes at runtime via SetColor(playerColor) (see
+// Civ6 tints civilization badges at runtime via SetColor(playerColor) (see
 // Instances/LeaderIcon.lua, Instances/CivilizationIcon.lua), so the shipped asset must be a
-// white silhouette (RGB=255,255,255) carrying only the shape in its alpha channel. The 45px
-// size is the one documented exception: it is displayed as-is without tinting (civics/tech
-// tree), so it must stay full color. Verified against vanilla CivAztec22/32/45.dds pixel data.
-// See icon-blp-pipeline.md's "白シルエット化" section for the full story (this was tried,
-// reverted to full-color-everywhere because of a still-unresolved leader-picker/pause-menu
-// color bug, and is now being re-tried).
+// white silhouette (RGB=255,255,255) carrying only the shape in its alpha channel.
+// Vanilla ships its 45px size as a pre-colored badge instead, but that size is only shown
+// (untinted) by PlayerSetupLogic.lua's fallback for when player colors fail to resolve, so
+// this mod keeps 45px a silhouette too for a consistent look across sizes.
+// See docs/civ6-icon-color-bug-investigation.md for the full story.
 const toWhiteSilhouette = (image: RgbaImage): RgbaImage => {
   const silhouetteData = Buffer.from(image.data);
   for (let pixelIndex = 0; pixelIndex < silhouetteData.length; pixelIndex += 4) {
@@ -145,28 +135,13 @@ type IconSourceSpec = {
 const sourceDirectory = join(import.meta.dirname, "..", "..", "Art", "Source");
 const outputDirectory = join(import.meta.dirname, "..", "..", "Art", "Icons");
 
-// 2026-09-23: 色バグの原因はアイコンのピクセル形式ではなくUpdateColorsのファイル形式(XML)だったと
-// 判明した(docs/civ6-icon-color-bug-investigation.md参照、Colors.sqlへの切り替えで解決)。
-// 白シルエット方式に戻す。45pxのみ技術/社会制度ツリー表示用にフルカラーのまま。
-const civilizationFullColorSizes = civilizationIconSizes.filter((size) => size === 45);
-const civilizationSilhouetteSizes = civilizationIconSizes.filter((size) => size !== 45);
-
 const iconSources: readonly IconSourceSpec[] = [
   {
-    // Civ6 displays this one size as-is (civics/tech tree) instead of tinting it at
-    // runtime, so it's the only civilization badge size that stays full color.
-    masterFileName: civilizationFullColorMasterFileName,
-    sizes: civilizationFullColorSizes,
-    nameForSize: (size) => civilizationIconName(civilizationId, size),
-    clipToCircle: true, // math-precise circle edge, matching the leader portrait treatment
-    isFullColor: true,
-  },
-  {
-    // Every other civilization badge size is tinted at runtime via SetColor(playerColor),
-    // so the source must already be a white-on-transparent silhouette (see toWhiteSilhouette
-    // above): white background made transparent, only the logo mark left opaque.
+    // Every civilization badge size is tinted at runtime via SetColor(playerColor), so the
+    // source must already be a white-on-transparent silhouette (see toWhiteSilhouette above):
+    // white background made transparent, only the logo mark left opaque.
     masterFileName: civilizationSilhouetteMasterFileName,
-    sizes: civilizationSilhouetteSizes,
+    sizes: civilizationIconSizes,
     nameForSize: (size) => civilizationIconName(civilizationId, size),
     clipToCircle: false,
     isFullColor: false,

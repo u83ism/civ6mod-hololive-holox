@@ -19,7 +19,7 @@ self.Controls.CivIndicator:SetColor(backColor);   -- 円形の背景をプレイ
 self.Controls.CivIcon:SetColor(frontColor);        -- アイコン本体をセカンダリカラーで着色
 ```
 
-`Instances/CivilizationIcon.lua`(ランキング画面・交易画面・エスピオナージ画面等の汎用文明バッジ)、`Menus/InGameTopOptionsMenu.lua`(ESCメニュー上部)も同じ`SetColor(secondaryColor)`パターン。45x45だけは技術・社会制度ツリーで生のまま(着色なし)表示されるため、この45pxだけフルカラーのままにする。
+`Instances/CivilizationIcon.lua`(ランキング画面・交易画面・エスピオナージ画面等の汎用文明バッジ)、`Menus/InGameTopOptionsMenu.lua`(ESCメニュー上部)も同じ`SetColor(secondaryColor)`パターン。~~45x45だけは技術・社会制度ツリーで生のまま(着色なし)表示されるため、この45pxだけフルカラーのままにする。~~ → この記述はwikiの推測の受け売りで誤りだった。45pxの実際の使われ方は末尾の「2026-09-24: 45pxのフルカラー版は不要と判断」を参照。
 
 **裏取り**: バニラの`Sid Meier's Civilization VI SDK Assets\Civ6\pantry\Textures\CivAztec22.dds`/`CivAztec32.dds`をDDSバイナリレベルで直接読むと、全不透明ピクセルのRGBが`(255,255,255)`固定でアルファだけが形状を表現していた。`CivAztec45.dds`だけはRGBに実際の色(濃紺系)が入っていた。DDSは128バイトヘッダ+ABGR8生ピクセル(`tools/png2dds/png2dds.ts`のコメント参照)なので、Node.jsで`readFileSync`して128バイト目以降を読むだけで検証できる。
 
@@ -146,3 +146,27 @@ UI.GetPlayerColorValues( LEADER_HOLOX_SAKAMATA_CHLOE , 3 ) ok=true backColor=nil
 **civ6mod-hololive-regloss側への示唆**: 莉々華Modの`XML/Colors.xml`も同じXML形式で登録されており、この投稿冒頭からの症状(白シルエット版のオレンジ/紺色化等)は同一原因の可能性が高い。`Data/Colors.sql`形式への切り替えで同様に直る見込みが高いので、次にregloss側を触るセッションはこの節を読んでから対応すること
 
 **後片付け**: 診断用に追加した`Lua/HoloXColorDebug.lua`/`.xml`(`AddUserInterfaces id="HoloXColorDebug"`)は目的を終えたため削除してよい。`XML/Colors.xml`(旧XML版)は`.modinfo`から参照されなくなったが、経緯を残す観点で当面残置している
+
+## 2026-09-24: 45pxのフルカラー版は不要と判断し、全サイズ白シルエットに統一
+
+色バグ解決後、「リーダー選択画面では公式もModも全員プライマリ/セカンダリカラーで着色された文明アイコンを使っており、45pxだけフルカラーにしても浮くし、他サイズと絵柄の差分が出たら違和感がある」という本人の疑問から、45pxの実際の使われ方を調べ直した。
+
+**45pxが無着色で表示されるのは、プレイヤーカラーの解決に失敗したときのフォールバックだけ**: Civ6本体(Base+全DLC)のUI Luaで、サイズ45を明示して文明アイコンを取得しているのは`Base/Assets/UI/FrontEnd/PlayerSetupLogic.lua`の3箇所(1088/1220/1293行目)だけで、いずれも以下の形:
+
+```lua
+if(backColor and frontColor and backColor ~= 0 and frontColor ~= 0) then
+    civIcon:SetIcon(icons.CivIcon)        -- 36px、frontColorで着色
+    ...
+else
+    civIcon:SetIcon(icons.CivIcon, 45)    -- 45px、白tint(無着色)でそのまま表示
+```
+
+「技術・社会制度ツリーで45pxが無着色表示される」というwiki由来の説明は裏付けが取れなかった(`CivicsTree.lua`/`TechTree.lua`の進捗マーカーは指導者ポートレートで、文明アイコンは使っていない)。シヴィロペディアの「固有:」欄は`SetColor(1,1,1)`で無着色だが50px枠。前述の「2026-09-23実験」で指導者アイコン横の文明バッジだけフルカラーで正常に見えたのは、当時`UI.GetPlayerColorValues`が`nil`を返していたためこの`else`側(45px無着色)に落ちていたと考えると辻褄が合う。色バグが直った今、通常プレイでこの経路は通らない。
+
+**バニラ素材の実態**: SDK Assets(`pantry/Textures`)のDDSを直接読んで画像化した結果:
+- `CivDefaults45.dds`(360x360 = 45px x 8x8のアトラス)は基本ゲーム文明の45px版で、背景色・紋章色・ベベル付きの縁まで焼き込んだ**完成品バッジ**。本体のIcons.xmlにも`<!--Baked in color-->`とコメントがある
+- ところが`CivPoland45.dds`は**アステカの紋章(双頭の蛇)を背景色だけ変えて流用したもの**で、ポーランドの紋章になっていない(他サイズ22〜256pxはちゃんとポーランドの紋章)。初期DLCの時点で既に誰も45pxを目視確認していなかったことを示す
+- `Baked in color`コメントが付いているのは基本ゲーム・アステカ・ポーランド(とポーランドシナリオ)の初期素材だけ。後発DLC(XP1/XP2・ポルトガル・ビザンティン/ガリア等)も45pxアトラス自体は定義しているが、中身は`.blp`内のため未確認
+- 余談: ポーランドの非45pxは純白ではなく黒/グレーのピクセルが混ざる(着色後に縁取り・陰影として残る作り)。アステカは100%白
+
+**判断**: 45pxのフルカラー版は開発初期の形式の名残で、実用上は色解決失敗時にしか見えない。その場面でも他サイズと絵柄が食い違うだけなので、本Modでは45pxも白シルエットに統一した(`gen-icon-sources.ts`からフルカラー用マスター引数を削除)。`Icons.xml`の`IconSize="45"`のアトラス定義自体は、フォールバックの`SetIcon(..., 45)`で解決失敗しないよう残す。2026-09-24、45pxもシルエット化したBLPで実機確認し、表示上の問題が出ないことを確認した
