@@ -73,13 +73,15 @@ else {
 
 # --- 3. Node tooling ------------------------------------------------------------------------
 if (Get-Command npm -ErrorAction SilentlyContinue) {
-    Push-Location (Join-Path $repositoryRoot 'tools\png2dds')
-    try {
-        npm ci
-        if ($LASTEXITCODE -ne 0) { $warnings.Add('npm ci failed in tools/png2dds.') }
-        else { Write-Host '[done] npm ci in tools/png2dds' }
+    foreach ($toolDirectory in @('png2dds', 'loc-lookup')) {
+        Push-Location (Join-Path $repositoryRoot "tools\$toolDirectory")
+        try {
+            npm ci
+            if ($LASTEXITCODE -ne 0) { $warnings.Add("npm ci failed in tools/$toolDirectory.") }
+            else { Write-Host "[done] npm ci in tools/$toolDirectory" }
+        }
+        finally { Pop-Location }
     }
-    finally { Pop-Location }
 }
 else {
     $warnings.Add('npm not found. Install Node.js, then re-run this script.')

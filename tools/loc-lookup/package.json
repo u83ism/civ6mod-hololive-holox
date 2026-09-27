@@ -1,0 +1,16 @@
+{
+  "name": "loc-lookup",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Look up Civ6 official localized text (all languages) by LOC tag or by text, from the game install and this mod's Text/ files.",
+  "scripts": {
+    "lookup": "tsx lookup-loc.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
