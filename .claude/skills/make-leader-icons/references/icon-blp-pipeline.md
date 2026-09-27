@@ -37,6 +37,7 @@
 6. `Icons.xml`の`IconTextureAtlases`/`IconDefinitions`は今まで通りの書き方でよい(`Filename`はddsファイル名のまま)
 7. **ModBuddyでビルド**。成功すると`Platforms/{Windows,MacOS}/BLPs/{SHARED_DATA,UI}/[m_PackageNameから決まる名前].blp`が生成される。**出力先はプロジェクトのソースフォルダではなく`Documents/My Games/Sid Meier's Civilization VI/Mods/<.civ6projのName>/`**(ModBuddyがローカルテスト用に直接デプロイする場所)。`.blp`はここからコピーして本体Modへ持っていく
 8. ビルドが失敗したら**`cooker.log`**(MOD開発環境フォルダ直下)を見る。大半は`.tex`内のdds名指定ミス
+   - **ModBuddyが`Build: 1 succeeded`と出してもBLPが生成されているとは限らない。** AssetCookerがクラッシュしてもビルド全体は成功扱いになる(2026-09-27、`exited with code -1073740791`(0xC0000409)が全XLPで出ていたのに`1 succeeded`だった)。ビルド後は出力先に`.blp`が実在し更新日時が新しいことを必ず確認する。無ければ「ソリューションのリビルド」で出力ウィンドウの`exited with code`行を見る(通常ビルドは`up-to-date`扱いでCookerの出力が出ないことがある)
 
 ## ModBuddyはOSSではない
 
