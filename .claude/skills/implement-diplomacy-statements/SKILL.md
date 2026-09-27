@@ -1,6 +1,6 @@
 ---
 name: implement-diplomacy-statements
-description: Civ6 Modで外交交渉画面の台詞(`LOC_DIPLO_*`、DiplomacyStatements系)を実装する時に使う。「外交台詞を書く」「宣戦布告のセリフ」「GREETINGってどんな場面?」「FROM_AIとFROM_HUMANの違い」「KUDO_EXITって何」のように言われたとき、または`DiplomacyStatements_*`系のLOCキーを新規に書く/調べる場面で使う。テキストの文体は`write-official-jp-text-style`の対象外(そちらはTrait `_NAME`/`_DESCRIPTION`等の公式文体、こちらはキャラクター性格ベースの台詞)。bootstrap-leaderで指導者が選択画面に出るところまで終わった後、`implement-leader-abilities`と並行して使う独立作業。
+description: Civ6 Modで外交交渉画面の台詞(`LOC_DIPLO_*`、DiplomacyStatements系)を実装する時に使う。「外交台詞を書く」「宣戦布告のセリフ」「GREETINGってどんな場面?」「FROM_AIとFROM_HUMANの違い」「KUDO_EXITって何」のように言われたとき、または`DiplomacyStatements_*`系のLOCキーを新規に書く/調べる場面で使う。テキストの文体は`write-game-text`の対象外(そちらはTrait `_NAME`/`_DESCRIPTION`等の公式文体、こちらはキャラクター性格ベースの台詞)。bootstrap-leaderで指導者が選択画面に出るところまで終わった後、`implement-leader-abilities`と並行して使う独立作業。
 ---
 
 # 外交交渉画面の台詞(DiplomacyStatements)の実装
@@ -9,7 +9,7 @@ description: Civ6 Modで外交交渉画面の台詞(`LOC_DIPLO_*`、DiplomacySta
 
 ## 台詞は「公式文体」ではなくキャラクター性格ベースで書く
 
-`write-official-jp-text-style` Skill(Trait説明文等の統一書式ルール)とは違い、外交台詞にはFirsaxisの統一文体ルールが存在しない。実機のバニラテキスト(`Base/Assets/Text/en_US/DiplomacyStatements_*_Text.xml`)で検証済み: トラヤヌスの`GREETING`は「息災にしておられるか。」(古風・威厳)、クレオパトラは「私に何か用かしら？」(高慢)、ガンジーは「平和を、あなたに。」(穏やか)と、リーダーごとに口調が完全に異なる。日本語版でも語尾・言い回しでキャラ差が維持されている。**このMODでもリーダーの性格をそのまま台詞に反映させてよい(それが公式の作法)。**
+`write-game-text` Skill(Trait説明文等の統一書式ルール)とは違い、外交台詞にはFirsaxisの統一文体ルールが存在しない。実機のバニラテキスト(`Base/Assets/Text/en_US/DiplomacyStatements_*_Text.xml`)で検証済み: トラヤヌスの`GREETING`は「息災にしておられるか。」(古風・威厳)、クレオパトラは「私に何か用かしら？」(高慢)、ガンジーは「平和を、あなたに。」(穏やか)と、リーダーごとに口調が完全に異なる。日本語版でも語尾・言い回しでキャラ差が維持されている。**このMODでもリーダーの性格をそのまま台詞に反映させてよい(それが公式の作法)。**
 
 ## タグの命名規則
 

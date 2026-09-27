@@ -1,6 +1,6 @@
 # 英語(en_US)ゲーム内テキストのスタイルガイド(公式テキスト調査)
 
-2026-09-22、Civ6公式(バニラ+DLC全種+拡張2本)の文明/指導者Trait説明文をen_US/zh_Hans_CN/zh_Hant_HKの3言語対訳で抽出し調査した結果。日本語調査(`write-official-jp-text-style/references/official-jp-text-style.md`)の英語版にあたる。**このMod自体の翻訳ワークフローはJP→EN→ZHの順で書くが、英語はCiv6本体の開発言語(マスター言語)なので、他言語のような「翻訳の癖」ではなくFiraxis公式の作文規則そのものとして扱うこと。**
+2026-09-22、Civ6公式(バニラ+DLC全種+拡張2本)の文明/指導者Trait説明文をen_US/zh_Hans_CN/zh_Hant_HKの3言語対訳で抽出し調査した結果。日本語調査(`official-jp-text-style.md`)の英語版にあたる。**このMod自体の翻訳ワークフローはJP→EN→ZHの順で書くが、英語はCiv6本体の開発言語(マスター言語)なので、他言語のような「翻訳の癖」ではなくFiraxis公式の作文規則そのものとして扱うこと。**
 
 ## 調査方法(再現手順)
 
@@ -56,7 +56,7 @@ Steamの`Sid Meier's Civilization VI`インストールフォルダから直接�
 
 ## 実務ルール(このMod系列で英語のTrait説明文を書くときに従うこと)
 
-1. **似た効果の公式Traitを先に探す**。日本語版と同じ考え方(`write-official-jp-text-style`参照)。ゼロから言い回しを考えない
+1. **似た効果の公式Traitを先に探す**。日本語版と同じ考え方(`lang-jp.md`・`official-jp-text-style.md`参照)。ゼロから言い回しを考えない
 2. **数字はアイコン+効果名の前に置く**: `+N [ICON_XXX] YieldName`(日本語の`[ICON_XXX] 効果名+数値`と逆順であることを意識する)
 3. **固有名詞は引用符で囲まず、Title Caseで表現する**
 4. **アイコンタグの直後は半角スペース1つ**
@@ -65,4 +65,4 @@ Steamの`Sid Meier's Civilization VI`インストールフォルダから直接�
 
 ## 未検証の範囲
 
-調査対象はTrait説明文(198件)のみで、Civilopedia・ユニット/建造物説明文等の他のテキスト種別で同じ規則を直接検証したわけではない。UU(ユニット)のDescription特有の構文パターン(`"[Civ] unique [era] era [class] unit that replaces the [置換元]. [効果]."`)は`write-official-jp-text-style/SKILL.md`側に実機確認済みの記載がある(英語側の語順も含む)ので、そちらを参照すること。
+調査対象はTrait説明文(198件)のみで、Civilopedia・ユニット/建造物説明文等の他のテキスト種別で同じ規則を直接検証したわけではない。UU(ユニット)のDescription特有の構文パターン(`"[Civ] unique [era] era [class] unit that replaces the [置換元]. [効果]."`)は`lang-en.md`・`lang-jp.md`に実機確認済みの記載がある。

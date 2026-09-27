@@ -31,7 +31,7 @@ description: Hololive系リーダーMod(このリポジトリの姉妹Mod)を、
      tools/png2dds/
    ```
    `.claude/rules/`・`.claude/skills/`・`tools/png2dds/`・`docs/civ6-research/`は、civ6mod-hololive-regloss(このMod)から**丸ごとコピー**すること。個人グローバルのSkillフォルダには置かない(このMod系列固有の知見であり、ユーザーの全プロジェクトに影響を与えるべきではないため)
-   - `.claude/skills/`は`bootstrap-mod`/`bootstrap-leader`の2つに絞らず、全Skillをコピーする。他のSkill(`make-leader-icons`/`make-fallback-portrait`/`write-official-*-text-style`/`research-mod`等)もReGLOSSキャラ固有ではなくCiv6 Modding全般の知識であり、後から必要になるたび個別にコピーする手間を避けられる
+   - `.claude/skills/`は`bootstrap-mod`/`bootstrap-leader`の2つに絞らず、全Skillをコピーする。他のSkill(`make-leader-icons`/`make-fallback-portrait`/`write-game-text`/`research-mod`等)もReGLOSSキャラ固有ではなくCiv6 Modding全般の知識であり、後から必要になるたび個別にコピーする手間を避けられる
    - `tools/png2dds/`はキャラ名(`civilizationId`/`leaderId`等)をCLI引数で受け取る作りになっているため、定数の書き換えなしにそのままコピーして使える
 3. **modinfo雛形を作る**: `assets/template.modinfo.template`を`<mod-name>.modinfo`としてコピーし、以下を置換する
    - `{{MOD_GUID}}`: 新しいGUIDを発行(PowerShellなら`[guid]::NewGuid().ToString()`)

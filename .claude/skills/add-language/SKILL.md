@@ -1,6 +1,6 @@
 ---
 name: add-language
-description: Civ6 Modに新しい言語のローカライズを追加する時に使う。「言語を追加する」「多言語対応を増やす」と言われたとき、または`Text/<lang>/`ディレクトリを新規に作る場面で使う。Language属性値の確認・ファイル構成/modinfo登録・完了確認など**言語非依存**の手順のみを扱う。個別言語の文体・語彙・句読点等の癖は`write-official-<lang>-text-style`Skill(例: `write-official-jp-text-style`/`write-official-zh-text-style`)側の担当(該当Skillが無い言語は本Skillの一般原則に従いつつ実機で確認し、知見が溜まったら該当Skillを新設する)。2026-09-22、中国語(zh_Hans_CN/zh_Hant_HK)対応で確立した手順がベース。
+description: Civ6 Modに新しい言語のローカライズを追加する時に使う。「言語を追加する」「多言語対応を増やす」と言われたとき、または`Text/<lang>/`ディレクトリを新規に作る場面で使う。Language属性値の確認・ファイル構成/modinfo登録・完了確認など**言語非依存**の手順のみを扱う。個別言語の文体・語彙・句読点等の癖は`write-game-text`Skill(言語別の資料`references/lang-<lang>.md`)の担当(該当Skillが無い言語は本Skillの一般原則に従いつつ実機で確認し、知見が溜まったら該当Skillを新設する)。2026-09-22、中国語(zh_Hans_CN/zh_Hant_HK)対応で確立した手順がベース。
 ---
 
 # Civ6 Modに新しい言語を追加する
@@ -29,20 +29,20 @@ Vanilla_ru_RU.xml  Vanilla_zh_Hans_CN.xml  Vanilla_zh_Hant_HK.xml
 
 ## 3. ゲーム用語は一次資料で正式訳を確認してから訳す
 
-Civ6の用語(Yield名・建造物名・資源クラス名・ゲームモード固有語など)は先に公式訳を確認し、フレーバーテキスト(外交台詞等)だけ自分で訳す。確認先:
+Civ6の用語(Yield名・建造物名・資源クラス名・ゲームモード固有語など)は先に公式訳を確認し、フレーバーテキスト(外交台詞等)だけ自分で訳す。手順は`.claude/rules/game-terms.md`(`tools/loc-lookup`でLOCタグを指定すると全言語の公式訳がまとめて出る)。新しい言語を追加するときは、`tools/loc-lookup/lookup-loc.ts`の既定の表示言語にその言語を加えるか、`--all-langs`を付けて引く。公式訳の置き場所は次のとおり(ツールが自動で読むので通常は意識しなくてよい):
 
 - バニラ語彙: `Base/Assets/Text/Vanilla_<lang>.xml`(例: `LOC_YIELD_GOLD_NAME`、`LOC_BUILDING_MARKET_NAME`)
 - DLC固有の語彙(モード名・改善名等): 各DLCの`Text/<DLCName>_Translations_Text*.xml`(統合ファイル、`<Replace Tag="..." Language="...">`で全言語まとまっている)。例: 独占/大企業モードなら`DLC/KublaiKhan_Vietnam/Text/KublaiKhan_Vietnam_Translations_Text_MODE.xml`
 
-grepでタグ名指定して該当行だけ読む(ファイル全体は読まない)。確認した用語は`idea`リポジトリの`用語対訳/<ゲーム名>-用語対訳.csv`(`map-terms` Skill管轄)に追記して再利用する。**本人から許可を得た場合のみ、そのCSVのカラム自体(例: 簡体字名/繁體字名列の追加)を拡張してよい。**
+`idea`リポジトリの`用語対訳/<ゲーム名>-用語対訳.csv`(`map-terms` Skill管轄)は、ゲーム本体を引けない場面向けの早引き。追記する場合、**本人から許可を得た場合のみ、そのCSVのカラム自体(例: 簡体字名/繁體字名列の追加)を拡張してよい。**
 
-その言語固有の語彙差・句読点・引用符・機械変換ツールの癖等は、`write-official-<lang>-text-style`Skillがあれば必ず参照する(例: 中国語は`write-official-zh-text-style`)。無ければ本節の原則(一次資料で確認)に従い、知見が溜まったら該当Skillの新設を検討する。
+その言語固有の語彙差・句読点・引用符・機械変換ツールの癖等は、`write-game-text`Skillの言語別の資料(`references/lang-<lang>.md`)があれば必ず参照する(例: 中国語は`lang-zh.md`)。無ければ本節の原則(一次資料で確認)に従い、知見が溜まったら該当Skillの新設を検討する。
 
 ## 4. テキストの翻訳元(ソース・オブ・トゥルース)を決める
 
-2026-09-22の設計検討で確定した方針。複数言語のテキストを揃える際、前段で書いた言語の文をそのまま逐語訳しない(JP→EN→ZHのように順に書く場合でも、後発言語は前段の文の翻訳ではなく、以下のソースから改めて組み立て直す)。テキストの種類によって翻訳元が異なる:
+2026-09-22の設計検討で確定した方針。本人が日本語話者なので**日本語を確認用の原本**にし(日本語で書いて本人が確認してから他言語に展開する)、ただし後発言語は日本語文の逐語訳ではなく、以下のソースから改めて組み立て直す(日本語特有の言い回しや誤りを持ち込まないため、2026-09-27に整理)。効果テキストの具体的な手順は`write-game-text` Skill。テキストの種類によって翻訳元が異なる:
 
-- **効果テキスト**(Trait/UU/UB/UDの`_DESCRIPTION`、Civilopediaの効果説明など、ゲームメカニクスを説明するテキスト): 翻訳元は実装している`Modifier`/`Requirement`のXML(効果・数値・条件)そのもの。各言語は対象言語の`write-official-<lang>-text-style`Skillのテンプレ・語彙を使ってXMLから直接組み立てる。既存言語の文とは「効果の過不足(パリティ)が無いか」だけを突き合わせ、言い回しはコピーしない
+- **効果テキスト**(Trait/UU/UB/UDの`_DESCRIPTION`、Civilopediaの効果説明など、ゲームメカニクスを説明するテキスト): 翻訳元は実装している`Modifier`/`Requirement`のXML(効果・数値・条件)そのもの。各言語は対象言語の公式テンプレート・語彙を使ってXMLから直接組み立てる(具体的な手順は`write-game-text`Skill)。既存言語の文とは「効果の過不足(パリティ)が無いか」だけを突き合わせ、言い回しはコピーしない
 - **フレーバー/キャラクター性のテキスト**(外交台詞`LOC_DIPLO_*`等、性格・口調ベースの文章): 翻訳元はXMLではなくキャラクターの性格・トーン(`implement-diplomacy-statements`Skill、ideaリポジトリのpersona/topics)。逐語訳ではなく、キャラ性・意図を保ったまま対象言語で書き直す
 
 どちらに該当するか迷う場合、対象のLOCキーが`Modifier`/`Requirement`のXMLと直接対応しているかどうかで判断する。
