@@ -23,7 +23,8 @@ Civilization VI の新規文明追加Mod。hololive holoXをモチーフにし�
 
 ## TODO
 
-- [ ] 固有区域「シャチたちの楽園」(ウォーターパーク置換)の未決の論点を決めて実装(`docs/design.md`参照)
+- [ ] 固有区域「シャチたちの楽園」(ウォーターパーク置換)の未決の論点を決めて実装(`docs/design.md`参照)。UD本体の効果(海タイルの食料+1/生産力+1、大音楽家ポイント)は確定済み
+- [ ] 文明固有能力「群れの絆」の効果(海タイルの食料+1/生産力+1)を固有区域に移植し、空いた文明能力の枠に新しい効果を決めて実装
 - [ ] 都市名リストの整備(現状は首都1件のみ)
 - [ ] バッジアイコン・ポートレートの作り込み(`make-leader-icons`/`make-fallback-portrait` Skill)
 - [ ] 外交交渉画面の台詞の英語版(en_US)を追加・実機確認(日本語版76タグは`Text/ja_JP/Text.xml`に実装・実機確認済み、原案は`docs/diplomacy-statements-sakamata-chloe.md`)
