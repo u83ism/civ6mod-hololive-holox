@@ -4,9 +4,10 @@
 -- 守備時は発動しない、という設計。戦闘力差による補正はしない、素の確率)。
 --
 -- 戦闘勝利時(攻撃・防御どちらでも)、倒した敵ユニットの戦闘力に応じた大音楽家(Great Musician)ポイントを
--- 獲得する。ゴルゴー(CULTURE_KILLS_TRAIT、MODIFIER_PLAYER_UNITS_ADJUST_POST_COMBAT_YIELD)と同じ「撃破トリガー」の
--- 効果だが、あちらはXML(Modifier)側の実装で攻撃/防御を問わず発動する。GreatPersonPoints版のEffectTypeは
--- 存在しないためLuaで同等の挙動(攻撃側が倒した場合・防御側が反撃で倒した場合の両方)を再現している。
+-- 獲得する。都市国家ヴォリン(宗主国ボーナス、撃破した敵の戦闘力に比例した大将軍/大提督ポイント)と同じロジックで、
+-- あちらはXML(`EFFECT_ADJUST_GREAT_PEOPLE_POINTS_PER_KILL_BY_DEFEATED_STRENGTH`)で実装されている。即死効果は
+-- `UnitManager.Kill`で消すため撃破扱いにならずポイントが出ない見込みで、即死分だけLuaが残って二重実装になる。
+-- そのためLuaに一本化し、攻撃側が倒した場合・防御側が反撃で倒した場合の両方を再現している(2026-09-27)。
 -- 即死効果と違い、こちらは攻撃側限定にしない(2026-09-23、本人確認: 音楽家ポイントは防衛戦闘でも発動する)。
 --
 -- GetGreatPeoplePoints():ChangePointsTotal(classID, amount)のclassID=8がGreat Musicianであることは
@@ -34,7 +35,8 @@
 -- ワールドフロートテキスト(2026-09-23、UX方針確定): 指導者固有能力は1つのTrait「歌好きの掃除屋」として
 -- 見せたいので、「即死能力/音楽家ポイント能力」という内部の2分割を前面に出すテキストにはしない。
 -- 即死が発動した時だけ追加で[COLOR_RED]クリティカル！[ENDCOLOR]を出し、音楽家ポイント獲得は
--- (即死経由・通常撃破経由を問わず常に)獲得量を数値で見せる+{1_Num}形式にした。テキストは全て
+-- (即死経由・通常撃破経由を問わず常に)獲得量を数値で見せる+{1_Num}形式にした。音楽家ポイントの色は
+-- バニラの撃破時偉人ポイント(`LOC_KILL_GREATPERSON_BONUS`)と同じ`[COLOR_FLOAT_FOOD]`に揃えた(2026-09-27)。テキストは全て
 -- `Locale.Lookup("LOC_...")`経由で多言語対応(Text/ja_JP・Text/en_US)。`[COLOR_RED]`はバニラの
 -- ダメージフロートテキスト(`LOC_WORLD_UNIT_DAMAGE_INCREASE_FLOATER`)で実際に使われている記法を踏襲した。
 function SakamataChloeCombatHandler(CombatResult)

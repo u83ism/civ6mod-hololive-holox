@@ -40,7 +40,7 @@
 			<Text>[COLOR_RED]クリティカル！[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_MUSICIAN_POINTS_WORLDTEXT" Language="ja_JP">
-			<Text>[ICON_GreatMusician] 大音楽家ポイント +{1_Num}</Text>
+			<Text>[COLOR_FLOAT_FOOD][ICON_GreatMusician] 大音楽家ポイント +{1_Num}[ENDCOLOR]</Text>
 		</Row>
 
 		<!-- 外交台詞: 初対面・挨拶 -->

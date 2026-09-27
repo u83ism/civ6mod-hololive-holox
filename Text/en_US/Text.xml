@@ -40,7 +40,7 @@
 			<Text>[COLOR_RED]Critical![ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_MUSICIAN_POINTS_WORLDTEXT" Language="en_US">
-			<Text>[ICON_GreatMusician] Great Musician +{1_Num}</Text>
+			<Text>[COLOR_FLOAT_FOOD][ICON_GreatMusician] Great Musician +{1_Num}[ENDCOLOR]</Text>
 		</Row>
 	</LocalizedText>
 </GameData>
