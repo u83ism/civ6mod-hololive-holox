@@ -42,5 +42,265 @@
 		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_MUSICIAN_POINTS_WORLDTEXT" Language="ja_JP">
 			<Text>[ICON_GreatMusician] 大音楽家ポイント +{1_Num}</Text>
 		</Row>
+
+		<!-- 外交台詞: 初対面・挨拶 -->
+		<Row Tag="LOC_DIPLO_GREETING_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ばっくばっくばく〜ん。沙花叉に何か用？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ばっくばっくばく〜ん！秘密結社holoXの掃除屋でインターン、シャチの沙花叉クロヱです。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>近くに沙花叉たちの群れの街があるんだけど、寄ってく？……あ、沙花叉の部屋は見ないでね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>行く行く！そっちの街、ちょっと気になってたんだよね。おいしいものある？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>お互いけっこう遠いみたいだね。地図、交換しとく？沙花叉の字が読めるかは知らないけど</Text>
+		</Row>
+
+		<!-- 外交台詞: 宣戦布告・敗北(DEFEATはバニラの慣習どおりFROM_AI/FROM_HUMANで同じ文言) -->
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ごめんね、そっちはお掃除対象になっちゃった。……ばっくばっくばく〜ん</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>は？新人潰しですか？……いいよ、沙花叉、掃除は得意なんで</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>もぉ〜やだぁ〜……沙花叉、まだ全然歌い足りないのに</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>もぉ〜やだぁ〜……沙花叉、まだ全然歌い足りないのに</Text>
+		</Row>
+
+		<!-- 外交台詞: 友好宣言・同盟 -->
+		<Row Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ねぇ、そっちと仲良くしたいんだけど。……べ、別に深い意味はないからね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>やった！じゃあ今日から友達ね！……浮気したらお掃除対象だからね？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>え……好きじゃないってこと……？……ふーん、いいもん別に</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>え、沙花叉と？しょうがないなぁ〜、仲良くしてあげる！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ぽえぽえぽえ〜？まだそこまで仲良くないと思うけどな〜</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ねぇ、沙花叉たちの群れに入らない？シャチは群れで狩りをするんだよ</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>よし、これで同じ群れだね！背中は沙花叉が守ってあげる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>そっか……一匹狼ならぬ一匹シャチってこと？寂しくなったらいつでも言ってね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>いいよ！沙花叉、守られるより守りたい派なんで</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>うーん、群れに入れるにはまだ早いかな。もうちょっと様子見させて？</Text>
+		</Row>
+
+		<!-- 外交台詞: 非難 -->
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ねぇ↑えぇ↓……そっち、ひどくな〜い？みんなに言いふらしちゃお</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>え、沙花叉のこと嫌いなの……？……ふーん。そっちがその気なら、容赦しないから</Text>
+		</Row>
+
+		<!-- 外交台詞: 退室時の褒め言葉・警告(理由は書かない。理由付きの文はアジェンダ側の別系統) -->
+		<Row Tag="LOC_DIPLO_KUDO_EXIT_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>そっちの国、なんかいいね！沙花叉、けっこう好きかも。……ちょっとだけね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_EXIT_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>最近のそっち見てると、ちょっとイライラカチカチしてくるんだけど。……気をつけてね？</Text>
+		</Row>
+
+		<!-- 外交台詞: 使節団 -->
+		<Row Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>沙花叉の群れから使節を送ってもいい？ちゃんとお風呂入ってから行かせるから</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ありがと！手土産はお魚でいいよね？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>え、だめ？……ちゃんとお風呂入るって言ったのに</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>いいよ、いらっしゃい！沙花叉の部屋以外なら案内するね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ごめん、今ちょっと散らかってて……人に見せられる状態じゃないの</Text>
+		</Row>
+
+		<!-- 外交台詞: 大使館 -->
+		<Row Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>そっちに沙花叉の大使館置かせてよ。お掃除担当も付けとくからさ</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>交渉成立！住み心地よさそうなとこ選んどくね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ねぇ↑えぇ↓……なんでよ〜</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>いいよ。散らかさないでね……って、沙花叉が言うのもあれだけど</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>それはまだダメ。沙花叉の秘密、そんな簡単に覗かせないよ</Text>
+		</Row>
+
+		<!-- 外交台詞: 国境開放 -->
+		<Row Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>お互いの国、自由に行き来できるようにしない？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>やった！これでいつでも遊びに行けるね！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ふーん。沙花叉、けっこう根に持つタイプなんで</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>いいよ〜。でも変なとこ覗いたらしばくぞ？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>やだやだやだ！まだそこまで許してないもん</Text>
+		</Row>
+
+		<!-- 外交台詞: 取引 -->
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>お金の話なら大歓迎！それでいこ</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ぽえぽえぽえ〜？それで沙花叉が頷くと思った？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>惜しい！ここ、ちょっとだけいじらせて？これでどう？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>交渉成立〜！話がわかるじゃん</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ねぇ↑えぇ↓……いい話だと思ったのにな〜</Text>
+		</Row>
+
+		<!-- 外交台詞: 講和 -->
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>……ねぇ、そろそろ終わりにしない？沙花叉、もう眠くなってきちゃった</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>うん、それでいいよ。お掃除はここまでね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>は？黙れマジで。そんな条件、飲むわけないでしょ</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>よかったぁ……。これでやっと、ゆっくり寝れる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>そっちがその気なら、最後まで綺麗にお掃除してあげる</Text>
+		</Row>
+
+		<!-- 外交台詞: 要求 -->
+		<Row Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>……わかったよ、今回だけね。沙花叉、お姉ちゃんなんで</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>やだやだやだ！絶対あげないもん！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>さっすが〜！そういうとこ好きだよ、ちょっとだけね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_REFUSE_DEMAND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ふーん……沙花叉、そういうのちゃんと覚えてるからね？</Text>
+		</Row>
+
+		<!-- 外交台詞: 個別警告: 近くに入植するな -->
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>そこ、沙花叉たちの群れの縄張りなんですけど？それ以上近づいたら……わかるよね？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>わかればよろしい♪</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>……ふーん。じゃあ、縄張りのお掃除から始めよっか</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>え、そんな近かった？ごめんごめん、地図読むの苦手で</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>海は誰のものでもないんですけど〜？ぽえぽえぽえ〜</Text>
+		</Row>
+
+		<!-- 外交台詞: 個別警告: 布教するな -->
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>うちの群れに変なこと教えないでくれる？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ん、ありがと</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>……もう知らない。沙花叉、根に持つよ？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>はーい。……好きなものって、ついつい広めたくなっちゃうんだよね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>えー、いいものは広めたいじゃん。そっちもそのうちハマるって</Text>
+		</Row>
+
+		<!-- 外交台詞: 個別警告: 遺物を掘るな -->
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ねぇ、沙花叉たちの土地を勝手に掘らないで？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ありがと。わかってくれればいいの</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>あーあ、やっちゃった。……お掃除リスト、一件追加ね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>え、そっちの土地だった？ごめん、全然気づかなかった……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>埋まってたんだから、見つけた人のものでしょ？</Text>
+		</Row>
+
+		<!-- 外交台詞: 個別警告: スパイするな -->
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>こそこそ覗くのやめてくれる？そういうのは沙花叉の本職なんですけど</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>素直でよろしい</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ふーん。じゃあ、そっちのスパイから先にお掃除しちゃおっか</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>……バレた？ごめんね、もうしない。……たぶん</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>掃除屋にそれ言う？情報集めも仕事のうちなんで</Text>
+		</Row>
+
+		<!-- 外交台詞: 個別警告: 国境に軍を集めすぎ(HUMAN_RESPONSE_NEGATIVEは仕様上存在しない) -->
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>ねぇ、国境に軍隊並べすぎじゃない？沙花叉、そういうの見るとお掃除したくなっちゃうんだけど</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>わかってくれてよかった。……命拾いしたね？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>あ、ごめん！蛮族のお掃除に来てただけだから</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
+			<Text>うちの子たちがどこにいようと、沙花叉の勝手でしょ？</Text>
+		</Row>
 	</LocalizedText>
 </GameData>

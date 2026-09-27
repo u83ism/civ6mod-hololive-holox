@@ -26,4 +26,6 @@ Civilization VI の新規文明追加Mod。hololive holoXをモチーフにし�
 - [ ] 固有区域「シャチたちの楽園」(ウォーターパーク置換)の未決の論点を決めて実装(`docs/design.md`参照)
 - [ ] 都市名リストの整備(現状は首都1件のみ)
 - [ ] バッジアイコン・ポートレートの作り込み(`make-leader-icons`/`make-fallback-portrait` Skill)
+- [ ] 外交交渉画面の台詞の英語版(en_US)を追加・実機確認(日本語版76タグは`Text/ja_JP/Text.xml`に実装・実機確認済み、原案は`docs/diplomacy-statements-sakamata-chloe.md`)
+- [ ] ユニークアジェンダを設計・実装(アジェンダの理由文`LOC_DIPLO_KUDO/WARNING_LEADER_ANY_REASON_AGENDA_*`もこの時に書く)
 - [ ] 指導者/文明能力のテキストを`write-official-jp-text-style`/`write-official-en-text-style` Skillで文体調整(現状は暫定文言)
