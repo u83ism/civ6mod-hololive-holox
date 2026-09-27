@@ -37,7 +37,7 @@ description: Civ6 Modで文明能力/指導者能力(Trait)の効果を実装す
 
 ## Luaでしか組めない能力(GameplayScript)
 
-Modifier/Requirementの組み合わせでは表現できない効果(例:「倒した敵ユニットの戦闘力に応じて動的な量の偉人ポイントを得る」。`MODIFIER_PLAYER_UNITS_ADJUST_POST_COMBAT_YIELD`にはYield版しか無く、GreatPersonPoints版のEffectTypeが存在しない)は、`.modinfo`の`AddGameplayScripts`で登録するLuaファイルに`Events.Combat.Add(handler)`のようにイベントフックする形で実装する(civ6mod-hololive-holoxで実機確認済み、2026-09-23)。着手前に、実装したい効果が既存のModifier/Requirementの組み合わせで本当に組めないか確認すること(Luaは最後の手段)。
+Modifier/Requirementの組み合わせでは表現できない効果(例:「倒した敵ユニットの戦闘力に応じて動的な量の偉人ポイントを得る」。`MODIFIER_PLAYER_UNITS_ADJUST_POST_COMBAT_YIELD`にはYield版しか無く、GreatPersonPoints版のEffectTypeが存在しない)は、`.modinfo`の`AddGameplayScripts`で登録するLuaファイルに`GameEvents.OnCombatOccurred.Add(handler)`のようにゲーム本体側のイベント(`GameEvents.*`)にフックする形で実装する。`Events.*`(演出側のイベント)はマルチプレイで一部のPCでしか発火しない可能性があるので、ゲームの状態を変える処理や同期された乱数には使わない(公式のシナリオスクリプトも`GameEvents.*`を使う。CivFanaticsでGedemonが指摘)(civ6mod-hololive-holoxで実機確認済み、2026-09-23)。着手前に、実装したい効果が既存のModifier/Requirementの組み合わせで本当に組めないか確認すること(Luaは最後の手段)。
 
 **罠(必須)**: **Luaファイル名は他Mod(特にHololive系の他作者Mod)と衝突しないユニークな名前にする**。`GameplayScript.lua`のような汎用名にすると、別Modが同じ汎用名のファイルを`AddGameplayScripts`で登録していた場合、Civ6のLuaモジュールがファイル名ベースでキャッシュされ、後から読み込まれた側にサイレントに上書きされてこちらのコードが一切実行されない(エラーもログも一切出ない)事故が起きる(2026-09-23実機で発覚、`Hololive GAMERS`Modの`Scripts/GameplayScript.lua`と衝突していた)。`<キャラ名>GameplayScript.lua`のようにキャラ名を含めた名前にすること。`.modinfo`の`AddGameplayScripts id="..."`側の`id`もユニークにする。
 
