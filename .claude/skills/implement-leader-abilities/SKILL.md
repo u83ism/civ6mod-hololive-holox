@@ -43,6 +43,8 @@ Modifier/Requirementの組み合わせでは表現できない効果(例:「倒�
 
 **罠(必須)**: **`Events.Combat`ハンドラ内で`unit:SetDamage(n)`を呼んでユニットを強制的に撃破しようとしても、実際の生死判定には反映されない**。`Events.Combat`はこの戦闘の生死判定が確定した後に発火するイベントのようで、事後にダメージ値だけ書き換えても、ユニットは盤面に残り続ける(次に攻撃すると改めて死に、効果が二重発火する)。ユニットをその場で確実に除去したい場合は、DLCシナリオスクリプト(`AlexanderScenario.lua`等)で使われている`UnitManager.Kill(unit, false)`(ユニットを即座に削除する公式API)を使うこと。`CombatResultParameters.MAX_HIT_POINTS`は必ずしも100とは限らないため、生死判定に固定値100を使わずこのフィールドを都度参照すること。
 
+**罠(必須)**: **確率判定に`math.random`を使わず、`Game.GetRandNum(最大値, "理由")`を使う**(戻り値は0〜最大値-1の整数。25%なら`Game.GetRandNum(100, "...") < 25`)。ゲームプレイ用スクリプトは参加者全員のPCで実行されるので、`math.random`だとPCごとに判定が割れてマルチプレイの同期が崩れる。公式のシナリオスクリプト(`BlackDeathScenario.lua`・`WarMachineScenario.lua`等)はゲームプレイの判定に例外なく`Game.GetRandNum`を使い、`math.random`はUIスクリプトにしか使っていない(第2引数の文字列は同期ずれ調査用のラベル)。`TerrainBuilder.GetRandomNumber`は公式ではマップ生成スクリプトでしか使われておらず、ゲーム中の判定に使ってよい裏付けは無い。他作者のHololive系Mod(戌神ころねの`math.random`等)の書き方をそのまま真似ない(2026-09-28確認、マルチプレイでの実機確認はまだ)
+
 **便利なAPI(実機確認済み)**:
 - `GetGreatPeoplePoints():ChangePointsTotal(classID, amount)` — 偉人ポイントを動的加算する。`classID`は`0`=Great General、`1`=Great Admiral、`2`=Great Engineer、`3`=Great Merchant、`4`=Great Prophet、`5`=Great Scientist、`6`=Great Writer、`7`=Great Artist、`8`=Great Musicianの並び(FireTunerパネル`Debug/Player.ltp`の各アクションボタンのLua実装で確認)
 - `Game.AddWorldViewText(playerID, text, x, y)` — 戦闘結果等をワールド上にフロートテキストで表示する。`text`は`Locale.Lookup("LOC_...", param1, ...)`で多言語対応させること(ハードコード文字列を直接渡さない)。`[COLOR_RED]...[ENDCOLOR]`のような色タグはこのフロートテキストでも機能する(バニラの`LOC_WORLD_UNIT_DAMAGE_INCREASE_FLOATER`で実際に使われている記法)
