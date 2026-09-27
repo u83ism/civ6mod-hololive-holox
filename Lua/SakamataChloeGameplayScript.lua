@@ -1,44 +1,18 @@
--- 沙花叉クロヱ 指導者固有能力(Lua実装、2026-09-23)
+-- 沙花叉クロヱ 指導者固有能力「歌好きの掃除屋」
 --
--- 攻撃戦闘時、25%の確率で敵ユニットを即座に撃破する(攻撃時限定。暗殺者は自分から仕掛ける時だけ発動する、
--- 守備時は発動しない、という設計。戦闘力差による補正はしない、素の確率)。
+-- (1) 攻撃戦闘時、25%の確率で敵ユニットを即座に撃破する(攻撃時限定、戦闘力差による補正なし)。
+-- (2) 戦闘勝利時(攻撃・防御どちらでも)、倒した敵ユニットの戦闘力と同量の大音楽家ポイントを獲得する。
+-- 設計の理由(確率・攻撃時限定・Luaに一本化した理由等)はdocs/design.mdの「沙花叉クロヱ」節を参照。
 --
--- 戦闘勝利時(攻撃・防御どちらでも)、倒した敵ユニットの戦闘力に応じた大音楽家(Great Musician)ポイントを
--- 獲得する。都市国家ヴォリン(宗主国ボーナス、撃破した敵の戦闘力に比例した大将軍/大提督ポイント)と同じロジックで、
--- あちらはXML(`EFFECT_ADJUST_GREAT_PEOPLE_POINTS_PER_KILL_BY_DEFEATED_STRENGTH`)で実装されている。即死効果は
--- `UnitManager.Kill`で消すため撃破扱いにならずポイントが出ない見込みで、即死分だけLuaが残って二重実装になる。
--- そのためLuaに一本化し、攻撃側が倒した場合・防御側が反撃で倒した場合の両方を再現している(2026-09-27)。
--- 即死効果と違い、こちらは攻撃側限定にしない(2026-09-23、本人確認: 音楽家ポイントは防衛戦闘でも発動する)。
---
--- GetGreatPeoplePoints():ChangePointsTotal(classID, amount)のclassID=8がGreat Musicianであることは
--- FireTunerパネル(Debug/Player.ltp)の"+50 Great Musician Points"アクションで確認した
--- (0=General/1=Admiral/2=Engineer/3=Merchant/4=Prophet/5=Scientist/6=Writer/7=Artist/8=Musicianの並び)。
---
--- 実装方式は`Hololive GAMERS`Mod(戌神ころね「ぶっころね」、攻撃時50%で敵を瀕死=HP1にする)を参考にしたが、
--- 即死効果自体は`SetDamage()`ではなく`UnitManager.Kill(unit, false)`で実装している。ころねの実装は
--- ダメージ調整(SetDamage(99)、あえて殺しきらない)止まりなのでこの問題を踏まない設計だったが、クロヱは
--- 確実に撃破したいので当初`SetDamage(100)`→`SetDamage(MAX_HIT_POINTS)`と試したところ、実機で「撃破音楽家
--- ポイントは発生するのに敵ユニットが盤面に残り続け、次に攻撃すると改めて死んでポイントが二重発火する」
--- 不具合が発覚した(2026-09-23)。`Events.Combat`はこの戦闘の生死判定が確定した後に発火するイベントのようで、
--- 事後に`SetDamage`でダメージ値だけ書き換えても実際の生死判定には反映されないらしいと判断し、DLCシナリオ
--- スクリプト(`AlexanderScenario.lua`等)で実際に使われている`UnitManager.Kill(unit, false)`(ユニットを
--- その場で即座に削除する公式API)に差し替えた。詳細はdocs/design.mdの「沙花叉クロヱ」節を参照。
---
--- ファイル名注意: 他Mod(Hololive GAMERS)と同名の`GameplayScript.lua`にしていたところ、
--- Luaモジュールがファイル名ベースでキャッシュされ後読み込みのMod側に上書きされて一切発動しない事故が
--- 2026-09-23に実機で発覚したため、`SakamataChloeGameplayScript.lua`にリネームして解消した(実機確認済み)。
---
--- 実機での動作確認: `Events.Combat`ハンドラが呼ばれること・25%即死・撃破戦闘力に応じた音楽家ポイント加算は
--- 2026-09-23に確認済み。ただし`UnitManager.Kill`への差し替え後の再確認はまだ(ユニットがその場で正しく
--- 消えるか、二重発火が解消したか)。都市への攻撃時の扱い、防御側分岐(反撃キル)の動作も未検証。
---
--- ワールドフロートテキスト(2026-09-23、UX方針確定): 指導者固有能力は1つのTrait「歌好きの掃除屋」として
--- 見せたいので、「即死能力/音楽家ポイント能力」という内部の2分割を前面に出すテキストにはしない。
--- 即死が発動した時だけ追加で[COLOR_RED]クリティカル！[ENDCOLOR]を出し、音楽家ポイント獲得は
--- (即死経由・通常撃破経由を問わず常に)獲得量を数値で見せる+{1_Num}形式にした。音楽家ポイントの色は
--- バニラの撃破時偉人ポイント(`LOC_KILL_GREATPERSON_BONUS`)と同じ`[COLOR_FLOAT_FOOD]`に揃えた(2026-09-27)。テキストは全て
--- `Locale.Lookup("LOC_...")`経由で多言語対応(Text/ja_JP・Text/en_US)。`[COLOR_RED]`はバニラの
--- ダメージフロートテキスト(`LOC_WORLD_UNIT_DAMAGE_INCREASE_FLOATER`)で実際に使われている記法を踏襲した。
+-- 実装上の注意:
+-- - 即死は`UnitManager.Kill(unit, false)`で行う。`Events.Combat`は生死判定の確定後に発火するため、
+--   `SetDamage`でダメージ値を書き換えてもユニットが盤面に残り、次の攻撃で音楽家ポイントが二重に入る。
+-- - `ChangePointsTotal(classID, amount)`のclassIDは8=Great Musician
+--   (0=General/1=Admiral/2=Engineer/3=Merchant/4=Prophet/5=Scientist/6=Writer/7=Artist/8=Musician)。
+-- - ファイル名は他Modと衝突しない固有名にする。Luaモジュールはファイル名ベースでキャッシュされるため、
+--   `Hololive GAMERS`Modと同名の`GameplayScript.lua`だと後から読み込まれた側に上書きされて一切発動しない。
+-- - 浮遊テキスト: 即死発動時のみ`[COLOR_RED]`のクリティカル表示を追加し、音楽家ポイントは経路を問わず
+--   獲得量を`[COLOR_FLOAT_FOOD]`(バニラの撃破時偉人ポイントと同じ色)で出す。テキストは`Locale.Lookup`経由。
 function SakamataChloeCombatHandler(CombatResult)
 	local attacker = CombatResult[CombatResultParameters.ATTACKER]
 	local defender = CombatResult[CombatResultParameters.DEFENDER]
