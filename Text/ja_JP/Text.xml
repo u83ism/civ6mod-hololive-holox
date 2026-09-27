@@ -23,12 +23,26 @@
 			<Text>攻撃戦闘時、25%の確率で敵ユニットを即座に撃破する。戦闘に勝利すると、倒した敵ユニットの [ICON_Strength] 戦闘力に応じた [ICON_GreatMusician] 大音楽家ポイントを獲得する。</Text>
 		</Row>
 
-		<!-- 文明固有能力「群れの絆」(docs/design.md参照)。文面はロシア「母なるロシア」のツンドラ産出ボーナスの言い回しに合わせた -->
+		<!-- 文明固有能力「群れの絆」(docs/design.md参照)。文面はコンゴ「ンキシ」・政策「衛星放送」の言い回しに合わせた(暫定) -->
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="ja_JP">
 			<Text>群れの絆</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="ja_JP">
-			<Text>湖を除く沿岸タイルと海タイルから [ICON_Food] 食料+1と [ICON_Production] 生産力+1を得る。</Text>
+			<Text>[ICON_GreatWork_Music] 傑作 (音楽) から得られる [ICON_Culture] 文化力+2、 [ICON_Tourism] 観光力+50%。宮殿に [ICON_GreatWork_Music] 音楽を入れられるスロットが6つ追加される。</Text>
+		</Row>
+
+		<!-- 固有区域「シャチたちの楽園」・固有建造物「シャチの水族館」(XML/OrcaParadise.xml)。公式の固有区域・固有建造物に倣い、置き換え元と違う効果と設置制限だけを書く(文面はコパカバーナ・女王の図書館・航海学校等に合わせた、暫定) -->
+		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Language="ja_JP">
+			<Text>シャチたちの楽園</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" Language="ja_JP">
+			<Text>シャチの群れ固有の区域。ウォーターパークに取ってかわる。社会制度「遊びと娯楽」で建設可能になる。[NEWLINE][NEWLINE]この都市の湖を除く沿岸タイルと海タイルから [ICON_Food] 食料+1、 [ICON_Production] 生産力+1。ターン毎の [ICON_GreatMusician] 大音楽家ポイント+2。総合娯楽施設がある都市には建設できない。礁には建設できない。</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Language="ja_JP">
+			<Text>シャチの水族館</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" Language="ja_JP">
+			<Text>シャチの群れ固有の建造物。 [ICON_GreatWork_Music] 音楽を入れられるスロットを2つ持つ。この都市の [ICON_GreatWork_Music] 傑作 (音楽) による [ICON_Tourism] 観光力+150%。</Text>
 		</Row>
 
 		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="ja_JP">

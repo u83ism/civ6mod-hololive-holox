@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	固有区域「シャチたちの楽園」(ウォーターパーク置換UD)と固有建造物「シャチの水族館」(水族館置換UB)。設計はdocs/design.md参照。
+	ウォーターパーク・水族館は拡張パック限定の要素なので、.modinfoのActionCriteriaで嵐の訪れのルールセットのときだけ読み込む
+	(Standardルールセットでは置換元が存在せず、外部キー制約違反で起動不能になるため)。
+	数値は嵐の訪れのバニラ定義(DLC/Expansion2/Data/Expansion1_Districts.xml・Expansion1_Buildings.xml・Expansion2_Buildings.xmlのUpdate後)を写したもの。
+-->
+<GameData>
+	<Types>
+		<Row Type="DISTRICT_HOLOX_ORCA_PARADISE" Kind="KIND_DISTRICT"/>
+		<Row Type="BUILDING_HOLOX_ORCA_AQUARIUM" Kind="KIND_BUILDING"/>
+		<Row Type="TRAIT_CIVILIZATION_DISTRICT_HOLOX_ORCA_PARADISE" Kind="KIND_TRAIT"/>
+		<Row Type="TRAIT_CIVILIZATION_BUILDING_HOLOX_ORCA_AQUARIUM" Kind="KIND_TRAIT"/>
+	</Types>
+
+	<!-- 固有要素ごとに専用Traitを新設する(文明本体のTraitを使い回すと文明能力の表示が消える。add-unique-content Skill参照) -->
+	<Traits>
+		<Row TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_ORCA_PARADISE" Name="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME"/>
+		<Row TraitType="TRAIT_CIVILIZATION_BUILDING_HOLOX_ORCA_AQUARIUM" Name="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME"/>
+	</Traits>
+	<CivilizationTraits>
+		<Row CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_ORCA_PARADISE"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" TraitType="TRAIT_CIVILIZATION_BUILDING_HOLOX_ORCA_AQUARIUM"/>
+	</CivilizationTraits>
+
+	<!-- ===== 固有区域「シャチたちの楽園」 ===== -->
+
+	<DistrictReplaces>
+		<Row CivUniqueDistrictType="DISTRICT_HOLOX_ORCA_PARADISE" ReplacesDistrictType="DISTRICT_WATER_ENTERTAINMENT_COMPLEX"/>
+	</DistrictReplaces>
+
+	<!-- 置き換え区域は元の区域の排他を自動では引き継がない(公式もコパカバーナの排他行を個別に書いている)ので、総合娯楽施設との排他を明示する -->
+	<MutuallyExclusiveDistricts>
+		<Row District="DISTRICT_ENTERTAINMENT_COMPLEX" MutuallyExclusiveDistrict="DISTRICT_HOLOX_ORCA_PARADISE"/>
+		<Row District="DISTRICT_HOLOX_ORCA_PARADISE" MutuallyExclusiveDistrict="DISTRICT_ENTERTAINMENT_COMPLEX"/>
+	</MutuallyExclusiveDistricts>
+
+	<!-- ウォーターパークとの違いは解禁(博物学→遊びと娯楽)とTraitTypeのみ -->
+	<Districts>
+		<Row DistrictType="DISTRICT_HOLOX_ORCA_PARADISE" Name="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Description="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" PrereqCivic="CIVIC_GAMES_RECREATION" PlunderType="PLUNDER_HEAL" PlunderAmount="50" AdvisorType="ADVISOR_GENERIC" Cost="54" Entertainment="1" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH" CostProgressionParam1="40" Maintenance="1" Coast="true" AdjacentToLand="true" RequiresPlacement="true" RequiresPopulation="true" Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Appeal="1" CityStrengthModifier="2" TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_ORCA_PARADISE"/>
+	</Districts>
+
+	<District_TradeRouteYields>
+		<Row DistrictType="DISTRICT_HOLOX_ORCA_PARADISE" YieldType="YIELD_FOOD" YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="1" YieldChangeAsInternationalDestination="1"/>
+	</District_TradeRouteYields>
+
+	<District_GreatPersonPoints>
+		<Row DistrictType="DISTRICT_HOLOX_ORCA_PARADISE" GreatPersonClassType="GREAT_PERSON_CLASS_MUSICIAN" PointsPerTurn="2"/>
+	</District_GreatPersonPoints>
+
+	<!-- 劇場広場・アクロポリスの隣接ボーナスもウォーターパーク分(WaterPark_Culture)は引き継がれないので、コパカバーナ(Copacabana_Culture)と同様に個別に登録する -->
+	<Adjacency_YieldChanges>
+		<Row ID="HOLOX_OrcaParadise_Culture" Description="LOC_DISTRICT_WATER_PARK_CULTURE" YieldType="YIELD_CULTURE" YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_HOLOX_ORCA_PARADISE"/>
+	</Adjacency_YieldChanges>
+	<District_Adjacencies>
+		<Row DistrictType="DISTRICT_THEATER" YieldChangeId="HOLOX_OrcaParadise_Culture"/>
+		<Row DistrictType="DISTRICT_ACROPOLIS" YieldChangeId="HOLOX_OrcaParadise_Culture"/>
+	</District_Adjacencies>
+
+	<!--
+		この都市の海タイル(湖を除く沿岸・深海)に食料+1/生産力+1(旧「群れの絆」から移植)。
+		湊あくあの「あくあ港」と同じMODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELDをDistrictModifiersに登録する型。
+		「沿岸かつ湖でない」OR「深海」はRequirementSetの入れ子を避け、条件ごとにModifierを分けて表現する(食料/生産力×沿岸/深海の4本)。
+	-->
+	<DistrictModifiers>
+		<Row DistrictType="DISTRICT_HOLOX_ORCA_PARADISE" ModifierId="HOLOX_ORCA_PARADISE_COAST_FOOD"/>
+		<Row DistrictType="DISTRICT_HOLOX_ORCA_PARADISE" ModifierId="HOLOX_ORCA_PARADISE_COAST_PRODUCTION"/>
+		<Row DistrictType="DISTRICT_HOLOX_ORCA_PARADISE" ModifierId="HOLOX_ORCA_PARADISE_OCEAN_FOOD"/>
+		<Row DistrictType="DISTRICT_HOLOX_ORCA_PARADISE" ModifierId="HOLOX_ORCA_PARADISE_OCEAN_PRODUCTION"/>
+	</DistrictModifiers>
+
+	<!-- ===== 固有建造物「シャチの水族館」 ===== -->
+
+	<BuildingReplaces>
+		<Row CivUniqueBuildingType="BUILDING_HOLOX_ORCA_AQUARIUM" ReplacesBuildingType="BUILDING_AQUARIUM"/>
+	</BuildingReplaces>
+
+	<!-- バニラ水族館の列値をそのまま写す(コストは嵐の訪れのUpdate後の360) -->
+	<Buildings>
+		<Row BuildingType="BUILDING_HOLOX_ORCA_AQUARIUM" Name="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Description="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" PrereqCivic="CIVIC_NATURAL_HISTORY" PrereqDistrict="DISTRICT_WATER_ENTERTAINMENT_COMPLEX" PurchaseYield="YIELD_GOLD" Cost="360" AdvisorType="ADVISOR_GENERIC" Maintenance="2" Entertainment="1" RegionalRange="9" TraitType="TRAIT_CIVILIZATION_BUILDING_HOLOX_ORCA_AQUARIUM"/>
+	</Buildings>
+
+	<!-- 置き換え施設自身の前提施設は自動では引き継がれない(公式の温泉も動物園と同じ前提行を個別に書いている)。水泳施設側の前提(水族館)はBuildingReplacesで満たされる -->
+	<BuildingPrereqs>
+		<Row Building="BUILDING_HOLOX_ORCA_AQUARIUM" PrereqBuilding="BUILDING_FERRIS_WHEEL"/>
+	</BuildingPrereqs>
+
+	<Building_GreatWorks>
+		<Row BuildingType="BUILDING_HOLOX_ORCA_AQUARIUM" GreatWorkSlotType="GREATWORKSLOT_MUSIC" NumSlots="2"/>
+	</Building_GreatWorks>
+
+	<!-- 科学力の2本はバニラ水族館のModifierIdをそのまま使い回す -->
+	<BuildingModifiers>
+		<Row BuildingType="BUILDING_HOLOX_ORCA_AQUARIUM" ModifierId="AQUARIUM_SEARESOURCE_SCIENCE"/>
+		<Row BuildingType="BUILDING_HOLOX_ORCA_AQUARIUM" ModifierId="AQUARIUM_REEF_SCIENCE"/>
+		<Row BuildingType="BUILDING_HOLOX_ORCA_AQUARIUM" ModifierId="HOLOX_ORCA_AQUARIUM_MUSIC_TOURISM"/>
+	</BuildingModifiers>
+
+	<!-- ===== Modifier定義 ===== -->
+
+	<Modifiers>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_COAST_FOOD</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>HOLOX_ORCA_PARADISE_REQSET_PLOT_SEA_COAST</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_COAST_PRODUCTION</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>HOLOX_ORCA_PARADISE_REQSET_PLOT_SEA_COAST</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_OCEAN_FOOD</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>HOLOX_ORCA_PARADISE_REQSET_PLOT_OCEAN</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_OCEAN_PRODUCTION</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>HOLOX_ORCA_PARADISE_REQSET_PLOT_OCEAN</SubjectRequirementSetId>
+		</Row>
+		<!-- この都市の傑作(音楽)の観光力+150%(群れの絆の+50%と足して、衛星放送と同じ+200%になる) -->
+		<Row>
+			<ModifierId>HOLOX_ORCA_AQUARIUM_MUSIC_TOURISM</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_TOURISM</ModifierType>
+		</Row>
+	</Modifiers>
+
+	<ModifierArguments>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_COAST_FOOD</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_FOOD</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_COAST_FOOD</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_COAST_PRODUCTION</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_PRODUCTION</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_COAST_PRODUCTION</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_OCEAN_FOOD</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_FOOD</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_OCEAN_FOOD</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_OCEAN_PRODUCTION</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_PRODUCTION</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_PARADISE_OCEAN_PRODUCTION</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_AQUARIUM_MUSIC_TOURISM</ModifierId>
+			<Name>GreatWorkObjectType</Name>
+			<Value>GREATWORKOBJECT_MUSIC</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ORCA_AQUARIUM_MUSIC_TOURISM</ModifierId>
+			<Name>ScalingFactor</Name>
+			<Value>250</Value>
+		</Row>
+	</ModifierArguments>
+
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_PARADISE_REQSET_PLOT_SEA_COAST</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_PARADISE_REQSET_PLOT_OCEAN</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_PARADISE_REQSET_PLOT_SEA_COAST</RequirementSetId>
+			<RequirementId>HOLOX_ORCA_PARADISE_REQ_PLOT_IS_COAST</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_PARADISE_REQSET_PLOT_SEA_COAST</RequirementSetId>
+			<RequirementId>HOLOX_ORCA_PARADISE_REQ_PLOT_IS_NOT_LAKE</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_ORCA_PARADISE_REQSET_PLOT_OCEAN</RequirementSetId>
+			<RequirementId>HOLOX_ORCA_PARADISE_REQ_PLOT_IS_OCEAN</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+
+	<!-- 湖は地形上TERRAIN_COAST扱いなのでREQUIREMENT_PLOT_IS_LAKEのInverseで除外する -->
+	<Requirements>
+		<Row>
+			<RequirementId>HOLOX_ORCA_PARADISE_REQ_PLOT_IS_COAST</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_ORCA_PARADISE_REQ_PLOT_IS_NOT_LAKE</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_IS_LAKE</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_ORCA_PARADISE_REQ_PLOT_IS_OCEAN</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+		</Row>
+	</Requirements>
+
+	<RequirementArguments>
+		<Row>
+			<RequirementId>HOLOX_ORCA_PARADISE_REQ_PLOT_IS_COAST</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_COAST</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_ORCA_PARADISE_REQ_PLOT_IS_OCEAN</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_OCEAN</Value>
+		</Row>
+	</RequirementArguments>
+</GameData>

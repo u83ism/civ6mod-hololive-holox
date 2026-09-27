@@ -31,4 +31,41 @@
 		<Row Name="ICON_CIVILIZATION_HOLOX_ORCA_POD" Atlas="ICON_ATLAS_CIV_HOLOX_ORCA_POD" Index="0"/>
 		<Row Name="ICON_LEADER_HOLOX_SAKAMATA_CHLOE" Atlas="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" Index="0"/>
 	</IconDefinitions>
+	<!--
+		固有区域・固有建造物のアイコンは置き換え元(ウォーターパーク・水族館)と同じ画像を使う。
+		公式のアイコン名(ICON_DISTRICT_WATER_ENTERTAINMENT_COMPLEX等)へのIconAliasesにはしない: 水族館のアイコン定義
+		(Expansion1_Icons_District_Buildings.xml)はフロントエンドでは読み込まれないため、選択画面の固有要素一覧でアイコンが
+		解決できず、使い回しの枠に直前の指導者の画像が残る。画像(XP1_Districts*.dds・XP1_DistrictBuildings*.dds)自体は
+		文明の興亡のUI/Icons.blpに同梱されていて選択画面でも読めるので、同じ画像を指す自前のアトラスを定義する。
+		アトラスの寸法・Indexは公式(Expansion1_Icons_Districts.xml・Expansion1_Icons_District_Buildings.xml)の写し。
+	-->
+	<IconTextureAtlases>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICTS" IconSize="22" IconsPerRow="8" IconsPerColumn="8" Filename="XP1_Districts22.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICTS" IconSize="32" IconsPerRow="8" IconsPerColumn="8" Filename="XP1_Districts32.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICTS" IconSize="38" IconsPerRow="8" IconsPerColumn="8" Filename="XP1_Districts38.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICTS" IconSize="50" IconsPerRow="8" IconsPerColumn="8" Filename="XP1_Districts50.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICTS" IconSize="80" IconsPerRow="8" IconsPerColumn="8" Filename="XP1_Districts80.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICTS" IconSize="128" IconsPerRow="8" IconsPerColumn="8" Filename="XP1_Districts128.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICTS" IconSize="256" IconsPerRow="8" IconsPerColumn="8" Filename="XP1_Districts256.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICTS_FOW" IconSize="256" IconsPerRow="8" IconsPerColumn="8" Filename="XP1_Districts256.dds"/>
+
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS" IconSize="32" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings32.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS" IconSize="38" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings38.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS" IconSize="50" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings50.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS" IconSize="80" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings80.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS" IconSize="128" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings128.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS" IconSize="256" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings256.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" IconSize="32" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings32_FOW.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" IconSize="38" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings38_FOW.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" IconSize="50" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings50_FOW.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" IconSize="80" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings80_FOW.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" IconSize="128" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings128_FOW.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" IconSize="256" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings256_FOW.dds"/>
+	</IconTextureAtlases>
+	<IconDefinitions>
+		<Row Name="ICON_DISTRICT_HOLOX_ORCA_PARADISE" Atlas="ICON_ATLAS_HOLOX_XP1_DISTRICTS" Index="1"/>
+		<Row Name="ICON_DISTRICT_HOLOX_ORCA_PARADISE_FOW" Atlas="ICON_ATLAS_HOLOX_XP1_DISTRICTS_FOW" Index="1"/>
+		<Row Name="ICON_BUILDING_HOLOX_ORCA_AQUARIUM" Atlas="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS" Index="9"/>
+		<Row Name="ICON_BUILDING_HOLOX_ORCA_AQUARIUM_FOW" Atlas="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" Index="9"/>
+	</IconDefinitions>
 </GameData>
