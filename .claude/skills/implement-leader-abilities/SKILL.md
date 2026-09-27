@@ -48,6 +48,9 @@ Modifier/Requirementの組み合わせでは表現できない効果(例:「倒�
 **便利なAPI(実機確認済み)**:
 - `GetGreatPeoplePoints():ChangePointsTotal(classID, amount)` — 偉人ポイントを動的加算する。`classID`は`0`=Great General、`1`=Great Admiral、`2`=Great Engineer、`3`=Great Merchant、`4`=Great Prophet、`5`=Great Scientist、`6`=Great Writer、`7`=Great Artist、`8`=Great Musicianの並び(FireTunerパネル`Debug/Player.ltp`の各アクションボタンのLua実装で確認)
 - `Game.AddWorldViewText(playerID, text, x, y)` — 戦闘結果等をワールド上にフロートテキストで表示する。`text`は`Locale.Lookup("LOC_...", param1, ...)`で多言語対応させること(ハードコード文字列を直接渡さない)。`[COLOR_RED]...[ENDCOLOR]`のような色タグはこのフロートテキストでも機能する(バニラの`LOC_WORLD_UNIT_DAMAGE_INCREASE_FLOATER`で実際に使われている記法)
+- `GameEvents.OnCombatOccurred(attackerPlayerID, attackerUnitID, defenderPlayerID, defenderUnitID, attackerDistrictID, defenderDistrictID)` — 戦闘の後に発火するゲーム本体側のイベント。IDしか渡さないので`Players[playerID]:GetUnits():FindID(unitID)`でユニットを引き、撃破は`unit:IsDead() or unit:IsDelayedDeath()`で判定する(公式`PiratesScenario_StartScript.lua`と同じ形)。戦闘で倒れたユニットもこの時点ではまだ引けるので、攻撃側が倒れた場合も種類・位置を取れる。ユニットID・プレイヤーIDが無いときは-1(2026-09-28、civ6mod-hololive-holoxで実機確認)
+- 戦闘力の基本値: ユニットの定義`GameInfo.Units[unit:GetType()]`の`Combat`/`RangedCombat`/`Bombard`。なお`Events.Combat`の戦闘結果テーブルの`COMBAT_STRENGTH`も補正前の基本値(遠隔攻撃なら遠隔戦闘力)で、補正は`STRENGTH_MODIFIER`に別に入っている(公式UIの`UnitPanel.lua`は両者を足して合計を表示する)
+- `Game.GetRandNum(n, "理由")` — 0〜n-1の整数を返す同期された乱数。1000回まとめて引いた場合・イベントごとに1回ずつ引いた場合のどちらも偏りは無かった(2026-09-28、civ6mod-hololive-holoxで計測)。端数のある確率は`Game.GetRandNum(10000, ...)`で万分率にして比べる
 
 実例は`Lua/SakamataChloeGameplayScript.lua`、詳細な実機デバッグ記録は`docs/design.md`の「沙花叉クロヱ」節を参照。
 
