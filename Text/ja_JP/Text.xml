@@ -20,7 +20,7 @@
 			<Text>歌好きの掃除屋</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION" Language="ja_JP">
-			<Text>攻撃戦闘時、25%の確率で敵ユニットを即座に撃破する。戦闘に勝利すると、倒した敵ユニットの [ICON_Strength] 戦闘力に応じた [ICON_GreatMusician] 大音楽家ポイントを獲得する。</Text>
+			<Text>攻撃戦闘時、敵ユニットを即座に倒すことがある。戦闘に勝利すると、倒した敵ユニットの [ICON_Strength] 戦闘力に応じた [ICON_GreatMusician] 大音楽家ポイントを獲得する。</Text>
 		</Row>
 
 		<!-- 文明固有能力「群れの絆」(docs/design.md参照)。文面はコンゴ「ンキシ」・政策「衛星放送」の言い回しに合わせた(暫定) -->

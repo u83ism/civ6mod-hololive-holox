@@ -20,7 +20,7 @@
 			<Text>Singing Cleaner</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION" Language="en_US">
-			<Text>When attacking in combat, has a 25% chance to instantly defeat the enemy unit. On combat victory, gains [ICON_GreatMusician] Great Musician points equal to the defeated unit's [ICON_Strength] Combat Strength.</Text>
+			<Text>When attacking in combat, has a chance to instantly defeat the enemy unit. On combat victory, gains [ICON_GreatMusician] Great Musician points equal to the defeated unit's [ICON_Strength] Combat Strength.</Text>
 		</Row>
 
 		<!-- Civilization ability "Bond of the Pod" (see docs/design.md). Wording follows Kongo's "Nkisi" and the Satellite Broadcasts policy (draft) -->
