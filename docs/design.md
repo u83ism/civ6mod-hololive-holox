@@ -25,7 +25,7 @@
 - バニラの音楽は下記「音楽・観光力まわりの前提」の三重苦を抱えているので、各能力で1つずつ手当てする:
   - 偉人ポイント → 指導者固有能力「歌好きの掃除屋」(撃破で大音楽家ポイント)、固有区域「シャチたちの楽園」(大音楽家ポイント+2)
   - 傑作1つあたりの産出 → 文明固有能力「群れの絆」(傑作(音楽)の文化力+2・観光力+50%)
-  - 置き場所(スロット) → 文明固有能力「群れの絆」(宮殿に音楽スロット+6、序盤から使える)、固有建造物「シャチの水族館」(音楽スロット+2・この都市の傑作(音楽)の観光力+200%)
+  - 置き場所(スロット) → 文明固有能力「群れの絆」(宮殿に音楽スロット+6、序盤から使える)、固有建造物「シャチの水族館」(音楽スロット+2・この都市の傑作(音楽)の観光力+150%)
 - 海洋の底支え(海タイルの食料・生産力)は文化/音楽の軸に無理に合わせず、独立した経済バフとして固有区域に持たせる
 
 #### 音楽・観光力まわりの前提
@@ -47,16 +47,16 @@
 - **傑作スロットを増やす文明能力には公式の前例がある**: コンゴ(ンキシ、宮殿の傑作スロット+4、`TRAIT_EXTRA_PALACE_SLOTS`)、イングランド(考古学博物館の秘宝スロット倍増、`TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS`)。いずれも`MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS`で、引数に建造物・スロット種類・数を指定するだけ
 - **傑作は置いた時点から観光力を生む**: 技術/社会制度の前提条件は無く、技術が絡むのは倍率だけ(印刷機で書物2倍、コンピュータで全観光力+100%)
 - **観光力が序盤に伸びない理由**は、出力を止める仕組みがあるからではなく次の3点の重なり: (1)改善/施設の文化力→観光力変換は技術「飛行」研究後のみ(`Improvement_Tourism`の`PrereqTech="TECH_FLIGHT"`等)で、序盤の観光力源は遺産(基本2)・聖地(8)・少数の傑作くらい (2)倍率(コンピュータ・衛星放送・オンライン・コミュニティ等)が後半に集中 (3)勝利判定が観光力に不利(相手の国内観光客=累計文化力÷100、こちらが呼べる外国人観光客=相手への累計観光力÷200。バニラは150、拡張で200)。本人見解: 前半から観光力を出せると抵抗できないままゲームが終わるので、この「後半に効いてくる」バランス自体は妥当
-- **「傑作(音楽)の観光力+200%」の政策は「衛星放送」**(経済政策、宇宙開発競争で解禁、`MODIFIER_PLAYER_CITIES_ADJUST_TOURISM`に`GreatWorkObjectType=GREATWORKOBJECT_MUSIC`/`ScalingFactor=300`=3倍)。類似に遺産観光(芸術と秘宝+100%、`ScalingFactor=200`)。同種の倍率を重ねたときに加算か乗算かは未確認
+- **「傑作(音楽)の観光力+200%」の政策は「衛星放送」**(経済政策、宇宙開発競争で解禁、`MODIFIER_PLAYER_CITIES_ADJUST_TOURISM`に`GreatWorkObjectType=GREATWORKOBJECT_MUSIC`/`ScalingFactor=300`=3倍)。類似に遺産観光(芸術と秘宝+100%、`ScalingFactor=200`)。同種の倍率は元の観光力に対して足し算で重なる(2026-09-28実機確認。群れの絆の+50%と水族館の+200%(当時)、合わせて+250%で、傑作(音楽)1つの観光力4が14=4x(1+2.5)になった。掛け算なら18)
 
 #### 文明固有能力「群れの絆」
 
-名前はAIの仮案を本人了承で採用(説明文の文体調整は`write-official-jp-text-style`/`write-official-en-text-style` Skillで別途)。
+名前はAIの仮案を本人了承で採用(説明文の文体調整は`write-game-text` Skillで別途)。
 
 - **効果: 傑作(音楽)の文化力+2、観光力+50%**。音楽1つあたり文化力4・観光力4を6・6にし、テーマ化済みの芸術(6・4)・秘宝(6・6)と同水準にする。観光力だけに特化させず文化力も上げる。テーマ化のための手間や追加コストは要らない代わりに入手・スロットのコストは重いまま、という位置づけで、これで音楽を軸の一つにする(本人)
   - 文化力+2: `MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD`(`GreatWorkObjectType=GREATWORKOBJECT_MUSIC`/`YieldType=YIELD_CULTURE`/`YieldChange=2`)。公式前例はコンゴの文明能力ンキシ(`TRAIT_CIVILIZATION_NKISI`の`TRAIT_GREAT_WORK_FAITH_SCULPTURE`等、傑作の種類ごとに産出を加算)
   - 観光力: 傑作1つに観光力を固定値で足すEffectは無い(Modding Companionの`Effects`・ゲーム本体XMLで確認。傑作の種類を指定できる観光力のEffectは倍率の`EFFECT_ADJUST_CITY_TOURISM`のみ)。そのため衛星放送と同じ`MODIFIER_PLAYER_CITIES_ADJUST_TOURISM`(`GreatWorkObjectType=GREATWORKOBJECT_MUSIC`/`ScalingFactor=150`)で+50%にする。音楽の傑作は全38件が観光力4なので4×1.5=6で+2と同値、端数も出ない。説明文は「観光力+50%」と書く
-  - シャチの水族館の観光力+200%・衛星放送の+200%と重ねたときに加算か乗算かは未確認(水族館のある都市の音楽1つあたり、加算なら4×(1+0.5+2)=14、乗算なら4×1.5×3=18)。実機で強さと合わせて確認する
+  - **倍率は元の観光力4に対して足し算で重なる**(2026-09-28実機確認、上記「音楽・観光力まわりの前提」)。群れの絆の+50%は固定値+2の代用なので、他の倍率も6ではなく4にかかる(「土台6の3倍=18」にはならない)
 - **効果: 宮殿に音楽スロット+6**。音楽家を序盤に取っても置き場所が無く腐る問題への対策で、最初からある宮殿に置き場所を用意する。6は音楽家2〜3人分(音楽家は18人中16人が傑作2つ、2人が3つ)
   - `MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS`(`BuildingType=BUILDING_PALACE`/`GreatWorkSlotType=GREATWORKSLOT_MUSIC`/`Amount=6`)。公式前例はコンゴのンキシ(`TRAIT_EXTRA_PALACE_SLOTS`、宮殿に`GREATWORKSLOT_PALACE`を+4)
   - スロットは宮殿用(`GREATWORKSLOT_PALACE`、秘宝以外なら何でも置ける)ではなく音楽専用にする。音楽の置き場所という狙いをはっきりさせ、絵画置き場として使われないようにするため。1つの施設に種類の違うスロットを持たせる形は公式にも前例がある(ボリショイ劇場・ブロードウェイ・女王の図書館)
@@ -67,13 +67,18 @@
 
 戦闘関連の2効果をまとめて指導者Trait側に置く。
 
-- **攻撃戦闘時、25%の固定確率で敵ユニットを即座に撃破する**(攻撃時限定 — 暗殺者は自分から仕掛ける時だけ発動する、という設計)。戌神ころねの「ぶっころね」の50%ではなく25%にしたのは、掃除屋という設定と、本人の「ぽんこつ」というキャラ付けを踏まえたバランス。戦闘力差による補正は入れず素の確率のまま(「見た目の説明が確率なら中身も確率にする」という本人の判断)。拿捕(自軍に変換、イングランドのシードッグ型)は「仲間にする」がクロヱのイメージに合わないため不採用
+- **攻撃戦闘時、戦闘力の差に応じた確率で敵ユニットを即座に撃破する**(攻撃時限定 — 暗殺者は自分から仕掛ける時だけ発動する、という設計)。確率は公式の拿捕(イングランドのシードッグ等)と同じ一次式の係数を半分にしたもの: `(攻撃側の戦闘力 - 防御側の戦闘力 + 20) x 1.25%`を0〜50%に収める。互角で25%、格上相手には下がり、差が-20以下で0%、格下相手には最大50%まで上がる。戦闘力は補正前の基本値(ユニットの定義の値。攻撃側は遠隔戦闘力>砲撃戦闘力>戦闘力の順に持っているもの、防御側は戦闘力。拿捕も昇進・政策等の補正を含まない基本値で判定する)。拿捕(自軍に変換)そのものは「仲間にする」がクロヱのイメージに合わないため不採用で、確率の式だけを借りた
+  - **経緯**: 当初は戦闘力差による補正を入れない一律25%(ころねの「ぶっころね」の50%を、掃除屋という設定と本人の「ぽんこつ」というキャラ付けで半分にした値。「見た目の説明が確率なら中身も確率にする」という判断)だった。英語圏のHololive系コミュニティで「剣士が巨大戦闘ロボットを落とせる」「戦闘力差で確率を変えるべき」(Neox)、「確率が高すぎる」との指摘を受け、剣士と巨大戦闘ロボットほどの差はさすがに違和感があるとして、拿捕の式に揃えた(2026-09-28本人判断)。拿捕の式そのまま(互角で50%)は素の確率が高すぎるので係数を半分にした。ジャイアントキリング(格上を確率で倒すこと)はデザインの肝なので、差が20未満の格上には低い確率で発動する形で残す。25%(互角時)はこれ以上下げると発動頻度が低すぎて設定している意味がなくなる下限
+  - **説明文は確率の数字を出さず「敵ユニットを即座に倒すことがある」とする**。「撃破」ではなく「倒す」なのは、公式の能力の説明文では「倒す」が標準(33件、「撃破」はトミュリス等4件)で、後半の「倒した敵ユニット」とも揃うため。公式の拿捕も「敵の船を拿捕できる可能性がある」(シードッグ)、「一定の確率で捕獲する」(チンギス・ハン)とだけ書き、戦闘力差の式を見せていないのに倣った。一律25%と書いたまま条件を黙って入れると、説明と中身がずれる
+  - **攻撃側のユニットが戦闘で負けて倒れても即死判定は行う(道連れ)**。Civ6の戦闘は必ず勝者がいて相打ちは無いが、暗殺能力を持つ側が負けて倒れた場合でも相手を道連れにしうる。実機で発生を確認したうえで、アリとして残す(2026-09-28本人判断)。ハンドラは防御側の生死だけを見ていて、攻撃側の生死は判定条件に入れていない
 - **戦闘勝利時、倒した敵ユニットの戦闘力と同量の大音楽家ポイントを獲得する**(都市国家ヴォリンの宗主国ボーナス「撃破した敵の戦闘力の25%の大将軍/大提督ポイント」と同じロジックの大音楽家版)。即死効果と違い**攻撃/防御を問わず発動する**(防衛戦闘での反撃キルでもよい、本人確認)
 
 **実装方式**:
 
-- **Luaで実装する**(`Lua/SakamataChloeGameplayScript.lua`、`Events.Combat`フック)。戌神ころねの「ぶっころね」(`Hololive GAMERS`Mod、攻撃時50%で敵を瀕死=HP1にする、完全Lua実装)を土台にした。(a)クロヱが攻撃側かつ防御側ユニットが死亡した場合(通常撃破/即死効果いずれでも) (b)クロヱが防御側かつ攻撃側ユニットが反撃で死亡した場合、の2パターンを別々に判定する
+- **Luaで実装する**(`Lua/SakamataChloeGameplayScript.lua`、`GameEvents.OnCombatOccurred`フック)。戌神ころねの「ぶっころね」(`Hololive GAMERS`Mod、攻撃時50%で敵を瀕死=HP1にする、完全Lua実装)を土台にした。(a)クロヱが攻撃側かつ防御側ユニットが死亡した場合(通常撃破/即死効果いずれでも) (b)クロヱが防御側かつ攻撃側ユニットが反撃で死亡した場合、の2パターンを別々に判定する
+- **戦闘は`GameEvents.OnCombatOccurred`(ゲーム本体側のイベント)で受ける**(2026-09-28、`Events.Combat`から移行)。`Events.Combat`は演出側のイベントで、マルチプレイでは一部のPCでしか発火しない可能性があり、そこで同期された乱数を引くと以降の乱数がずれる(CivFanaticsでGedemonが指摘)。公式のシナリオスクリプトも戦闘は`GameEvents.OnCombatOccurred`で受けている。(移行のきっかけの一つだった「`Events.Combat`の中で引いた乱数だけ偏る」疑いは、その後のデータでは裏付けられなかった。下記「実機デバッグ記録」参照)。`GameEvents.OnCombatOccurred`はユニットIDしか渡さないので、ユニットをIDから引き、撃破は`IsDead()`/`IsDelayedDeath()`、戦闘力はユニットの定義(`GameInfo.Units`)から取る(公式の`PiratesScenario_StartScript.lua`と同じ形。戦闘で倒れたユニットもこの時点ではまだ引けるので、道連れも扱える)
 - **即死は`UnitManager.Kill(unit, false)`で行う**。ころねと同じ`SetDamage`では実際の生死判定に反映されない(下記「実機デバッグ記録」参照)
+- **確率判定は`Game.GetRandNum(10000, "HoloX Chloe: Insta-kill Roll")`と万分率の確率を比べて行う(6.25%のような端数が出るため)**(マルチプレイで同期される乱数)。当初は戌神ころねと同じ`math.random`だったが、ゲームプレイ用スクリプトは参加者全員のPCで実行されるため、PCごとに判定が割れて同期が崩れる(公式のシナリオスクリプトは`Game.GetRandNum`を使い、`math.random`はUIにしか使っていない)。マルチプレイで遊ぶ人がいるかもしれないので切り替えた(2026-09-28)
 - **大音楽家ポイントもLuaで加算する**(`GetGreatPeoplePoints():ChangePointsTotal(8, amount)`)。元ネタのヴォリンはXML(`EFFECT_ADJUST_GREAT_PEOPLE_POINTS_PER_KILL_BY_DEFEATED_STRENGTH`)で、固定量版の`EFFECT_ADJUST_GREAT_PEOPLE_POINTS_PER_KILL`(ヘタイロイ・近衛兵)もあるが、即死効果は`UnitManager.Kill`で消すため撃破扱いにならずポイントが出ない見込みで、即死分だけLuaが残る二重実装になるため、Luaに一本化した
 - **`ChangePointsTotal(classID, amount)`のclassID**: `0`=Great General、`1`=Great Admiral、`2`=Great Engineer、`3`=Great Merchant、`4`=Great Prophet、`5`=Great Scientist、`6`=Great Writer、`7`=Great Artist、`8`=Great Musician(FireTunerパネル`Debug/Player.ltp`の各アクションボタンのLua実装で確認)
 - **浮遊テキスト**: 指導者固有能力は1つのTrait「歌好きの掃除屋」として見せたいので、内部の2効果(即死/音楽家ポイント)の分割は前面に出さない。即死が発動した時だけ追加で`[COLOR_RED]クリティカル！[ENDCOLOR]`(バニラのダメージ表示`LOC_WORLD_UNIT_DAMAGE_INCREASE_FLOATER`と同じ`[COLOR_RED]`)を出し、音楽家ポイントは経路を問わず常に獲得量を`+{1_Num}`で見せる。音楽家ポイントの色は、バニラの撃破時偉人ポイント(`LOC_KILL_GREATPERSON_BONUS`)と同じ`[COLOR_FLOAT_FOOD]`。Luaの`AddWorldViewText`は色タグが無いと白になる。テキストは`Locale.Lookup("LOC_...")`経由で多言語対応
@@ -83,7 +88,11 @@
 ウォーターパーク(`DISTRICT_WATER_ENTERTAINMENT_COMPLEX`)を置き換えるUD。
 
 - **UDにした理由**: 解禁時期・設置条件のような「区域の定義」は、テーブルを直接書き換えると全プレイヤー(AI含む)のウォーターパークが変わってしまう。文明TraitのModifierはそのプレイヤーにだけ効くが、変えられるのは産出・傑作スロット・観光力倍率等の「効果」だけで、定義を特定プレイヤーにだけ変えるModifierは存在しない。定義をクロヱ専用に変えるにはUD(文明専用の別区域として新規定義し差し替える)しかない。公式にもブラジルのコパカバーナ(`DISTRICT_WATER_STREET_CARNIVAL`)という同区域の置換UDの前例がある
-- **見た目・アイコンはウォーターパークをそのまま流用**(本人確認)。IconDefinitionsのコピー+`Name`書き換え、Artdefの`m_Name`書き換えで済む(`docs/civ6-research/unique-content-patterns.md`参照)。BLPの新規ビルドは不要
+- **見た目・アイコンはウォーターパーク・水族館をそのまま流用**(本人確認)。BLPの新規ビルドは不要
+  - アイコンは置換元と同じ画像(`XP1_Districts*.dds`・`XP1_DistrictBuildings*.dds`)を指す自前のアトラスを`Art/Icons/Icons.xml`に定義する。公式のコパカバーナのように`IconAliases`で置換元のアイコン名を指す方式は不可: 水族館のアイコン定義(`Expansion1_Icons_District_Buildings.xml`)はどの拡張のフロントエンドでも読み込まれないため、選択画面の固有要素一覧でアイコンが解決できない。選択画面(`PlayerSetupLogic.lua`)は固有要素のアイコン枠を使い回して`SetIcon`するだけなので、解決できないと直前に選んでいた指導者の画像が残る(実機で発生)。画像自体は文明の興亡の`UI/Icons.blp`に入っていて選択画面でも読める
+  - 3D表示はartdefが要る。新しいDistrictType/BuildingTypeには置換元の見た目が自動では割り当たらず、公式の固有建造物(電子工場等)もランドマークに個別の定義を持っている。嵐の訪れの`DLC/Expansion2/ArtDefs/*_Shared.artdef`から、ウォーターパークの区域定義(`Districts_Shared`)・ランドマーク(`Landmarks_Shared`)と水族館の建造物定義(`Buildings_Shared`)を丸ごと複製し、名前と水族館への参照だけ差し替えた(`ArtDefs/Districts.artdef`・`Landmarks.artdef`・`Buildings.artdef`)。ランドマークは区域側から参照するので、公式のウォーターパークのランドマークには手を付けていない
+  - 施設の段階(観覧車→水族館→水泳施設)と見た目を対応付ける`BuildingChains`の`WaterEntertainment`には、同名要素で区域とシャチの水族館を追記する(同名要素はマージされる。セイレーンの岩礁が灯台を`MaritimeBuildings`に追記しているのと同じ形)
+  - artdefは`tools/IconBuild/HoloX_IconBuild.Art.xml`の`Landmarks`・`StrategicView_Sprite`・`WorldView_Translate`・`StrategicView_Translate`に登録し、`gen-dep`で`.dep`を再生成する(登録先はセイレーンの岩礁の`.dep`に倣った)。`gen-dep`は`Art.xml`のプロジェクト名/IDをそのまま写すので、`.dep`の`ID`は本体Modの名前/IDに戻す
 - **解禁は総合娯楽施設と同時(社会制度「遊びと娯楽」、古典時代)**に前倒しする。本来のウォーターパークは「博物学」(産業時代)。古典時代にウォーターパーク(や観覧車)が建つ世界観上の違和感は、「総合娯楽施設(闘技場)と同じ枠と思えば、後半は大して違和感が出ない」という本人判断で許容。区域の効果を「海の群れの縄張り」のような時代を問わない解釈に寄せる案は、3Dモデル(ウォーターパークの流用)と矛盾するため不採用
 - **目的はウォーターパーク本体と水族館**。観覧車・水泳施設はこだわらない(本人確認)
 - **区域だけが立っている期間が長いので、UD本体と水族館の両方で強くなる設計にする**。区域は古典時代から置けるが、観覧車・水族館は博物学まで建たないため、UD本体に効果が無いと区域だけの期間が長く続く
@@ -102,7 +111,7 @@
 
 - **効果**: バニラ水族館の効果(科学力を含む)はすべて維持し、次を上乗せする
   - **音楽スロット+2**(`Building_GreatWorks`に`GREATWORKSLOT_MUSIC`/`NumSlots=2`を1行。ネリッサ・レイヴンクロフトのセイレーンの岩礁(`HoloEN Advent`Mod、灯台置換に音楽スロット1)と同じ書き方)
-  - **この都市の傑作(音楽)の観光力+200%**(衛星放送の都市版。`BuildingModifiers`に`MODIFIER_SINGLE_CITY_ADJUST_TOURISM`、引数`GreatWorkObjectType=GREATWORKOBJECT_MUSIC`/`ScalingFactor=300`。1都市版の公式前例は`CURATOR_DOUBLE_MUSIC_TOURISM`(`ScalingFactor=200`)、`RELIQUARIES_RELIC_TOURISM_MODIFIER`(遺物、`ScalingFactor=300`))。スロット2つ分で観光力8→24。同じ都市の放送センター・遺産の音楽スロットにも効く
+  - **この都市の傑作(音楽)の観光力+150%**(群れの絆の+50%と足して、水族館のある都市で衛星放送と同じ+200%になる。`BuildingModifiers`に`MODIFIER_SINGLE_CITY_ADJUST_TOURISM`、引数`GreatWorkObjectType=GREATWORKOBJECT_MUSIC`/`ScalingFactor=250`。1都市版の公式前例は`CURATOR_DOUBLE_MUSIC_TOURISM`(`ScalingFactor=200`)、`RELIQUARIES_RELIC_TOURISM_MODIFIER`(遺物、`ScalingFactor=300`))。群れの絆込みで傑作(音楽)1つの観光力は4x(1+0.5+1.5)=12、スロット2つ分で24。当初は衛星放送と同じ+200%だったが、群れの絆と足すと+250%で衛星放送を超えるため+150%に下げた(2026-09-28本人判断。水族館+200%・群れの絆と合わせて+250%のときの実測は1つあたり14)。同じ都市の放送センター・遺産の音楽スロットにも効く
 - **バニラ効果の維持**: 置き換え施設は新しく定義し直した別の建造物で、元の効果(`BuildingModifiers`・産出・傑作スロット・偉人ポイント)は自動では引き継がれないので、自分で書き直す。バニラ水族館のModifierは`AQUARIUM_SEARESOURCE_SCIENCE`/`AQUARIUM_REEF_SCIENCE`の2本だけで、公式のModifierIdを`BuildingModifiers`にそのまま登録すればよい(セイレーンの岩礁が灯台の`LIGHTHOUSE_TRADE_ROUTE_CAPACITY`を使い回しているのと同じ)。残りは`Buildings`の列値(快適性`Entertainment=1`・`RegionalRange=9`・維持費2・コスト360(嵐の訪れの`Update`後)・解禁`CIVIC_NATURAL_HISTORY`・`PrereqDistrict`)で、XMLなので値を書き写す。`BuildingPrereqs`(観覧車が前提、水泳施設の前提)は`BuildingReplaces`で元の水族館と同じ扱いになる
 - **科学力は残す**。水族館の科学力は「取ってつけたよう」なので外して別の効果に差し替える案もあったが、「そのままでもいい」(本人)
 - **不採用: UB化せずUDだけで済ませる案**。バニラの水族館をそのまま活かしたいという本人の意向から、UDの`DistrictModifiers`から上記2つを足す案も検討した(スロットは`MODIFIER_SINGLE_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS`で`BuildingType=BUILDING_AQUARIUM`、観光力は`MODIFIER_SINGLE_CITY_ADJUST_TOURISM`。区域から`MODIFIER_SINGLE_CITY_*`を付ける前例は尾丸ポルカの「海のおまる座」)。スロットの前例は大商人ジョヴァンニ・デ・メディチ(区域に付けて本来スロットの無い銀行に傑作スロット2を足す。隠し施設やUBではなく、`MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE`でバニラの銀行をその場で建てた上で別のModifierでスロットを足す2本立て)だが、スロットを足す時点で銀行が建っているので、後から建つ水族館に効くかは分からない。加えて(1)スロットが水族館のツールチップに出ずUDの説明文でしか伝わらない (2)「水族館のある都市」の条件(`REQUIREMENT_CITY_HAS_BUILDING`)が区域に付けたModifierで正しく判定されるか未確認、のためUB化を選んだ
@@ -129,7 +138,8 @@
 
 - ウォーターパーク: 沿岸タイルかつ陸地隣接(`Coast="true"`/`AdjacentToLand="true"`)、礁には不可、**総合娯楽施設と同じ都市に共存不可**(`MutuallyExclusiveDistricts`)、人口による区域数上限の対象。快適性+1・アピール+1。**劇場広場**(とアクロポリス)がウォーターパーク隣接で文化力+2の隣接ボーナスを得る(海沿いに劇場広場+ウォーターパークを並べる都市設計に誘導できる)。沿岸都市でしか建たないので、UD強化の恩恵は沿岸都市に集中し、その都市では総合娯楽施設を諦めさせる形になる
 - 水族館(`BUILDING_AQUARIUM`): 快適性+1(9タイル以内の都心に及ぶ)、この都市の沿岸資源・沈没船・礁タイル1つにつき科学力+1(`BUILDING_AQUARIUM`に付いたModifierで、ウォーターパーク(区域)側の効果ではない)。**バニラは科学寄りで文化/音楽とは無関係**なので、文化/音楽バフは丸ごと自前で付ける。尾丸ポルカの「海のおまる座」(ウォーターパーク置換UD)は施設には手を付けていない
-- 文明の興亡で追加された区域だが、このModは嵐の訪れ依存(`.modinfo`の`Dependencies`)なのでDLC有無の問題はない
+- 文明の興亡で追加された区域・施設なので、Standardルールセットには存在しない。`.modinfo`の`Dependencies`で拡張を要求しても、そのルールセットでゲームを始めればModは読み込まれ、置換元が無いまま`DistrictReplaces`等が外部キー制約違反になって起動不能になる(`add-unique-content` Skillの落とし穴3と同じ)。そのため固有区域・固有建造物は`XML/OrcaParadise.xml`に分け、`.modinfo`の`ActionCriteria`(`GameCoreInUse`=`Expansion2`)で嵐の訪れのときだけ読み込む。選択画面の固有要素一覧(`Config.xml`の`PlayerItems`)も`Players:Expansion2_Players`にだけ登録する。文明の興亡のルールセットは、水族館のコスト(445、嵐の訪れの`Update`前)などが違うので対象外にした
+- 劇場広場・アクロポリスのウォーターパーク隣接ボーナス(`WaterPark_Culture`)も置き換え区域には引き継がれない(公式はコパカバーナ用に`Copacabana_Culture`を別に書いている)ので、同じ値の隣接ボーナスを個別に登録する。総合娯楽施設との排他(`MutuallyExclusiveDistricts`)も同様に両方向で書く
 
 **未決の論点**:
 
@@ -177,3 +187,13 @@ TRAIT_CIVILIZATION_HOLOX_ORCA_POD
 **2026-09-23、Lua(指導者固有能力)が一切発動しない → 他Modとのファイル名衝突**。`Events.Combat`ハンドラ内の`print()`もリーダー判定前の無条件ゴールド付与も効かず、関数自体が一度も呼ばれていなかった。Modding.logを見ると、`Hololive GAMERS`Mod(戌神ころね)も同じベースファイル名`GameplayScript.lua`を`AddGameplayScripts`で登録していた(パスは違う)。Luaモジュールがファイル名ベースでキャッシュされ、後から読み込まれた同名ファイルにサイレントに上書きされていたと判断し、`Lua/SakamataChloeGameplayScript.lua`にリネーム(`.modinfo`の`AddGameplayScripts`の`id`も変更)して解消を実機確認した。**Luaファイル名は他Modと衝突しない固有名にすること**。
 
 **2026-09-23、即死させたユニットが盤面に残り、次の攻撃で音楽家ポイントが二重に入る → `SetDamage`では撃破にならない**。ログで同じユニット(戦闘力25)への3回目の攻撃が`defender_final_damage=146`(100超、本来あり得ない値)を記録しており、`SetDamage`で撃破扱いにしたはずのユニットが残っていたことの直接の証拠になった。`Events.Combat`は生死判定が確定した後に発火するので、事後にダメージ値だけ書き換えても実際のユニット除去には反映されない。DLCシナリオスクリプト(`AlexanderScenario.lua`等)で使われている`UnitManager.Kill(unit, false)`に差し替え、ユニットがその場で消えること・二重発火しないこと・撃破戦闘力どおりのポイント(斥候=戦闘力10→10ポイント)が入ることを実機確認した。
+
+**2026-09-27〜28、即死(クリティカル)の発生率の調査 → `math.random`をやめ、`GameEvents.OnCombatOccurred`+`Game.GetRandNum`に移行**。一律25%のはずが体感5割出るという報告から、判定ごとに乱数の値をログに出して調べた。
+
+- `Events.Combat`内の`math.random()`は9回で平均0.22・全て0.55以下、0.2969と0.2971のようにほぼ同じ値が組で出た(一様なら平均0.5、9回とも0.55以下になる確率は約0.5%)。他Mod・公式のゲームプレイ用スクリプトに`math.randomseed`は無く、原因は分からないまま
+- 比較のため、`math.random()`と`Game.GetRandNum(10000)`を(1)1回の処理で各1000回 (2)ユニットの移動(`GameEvents.OnUnitMoved`)ごとに各1回ずつ500回×3、引いて要約した。どちらも平均0.49〜0.53・0.25未満の割合20〜26%・10区間ほぼ均等で、偏りは無かった
+- `Events.Combat`の中でだけ偏る可能性を見るため、全戦闘で各乱数を10回続けて引いた。クロヱ以外の戦闘の1回目の`Game.GetRandNum`は21戦中10回が5000未満で偏りは無く、「戦闘ごとに種が設定し直され1回目が偏る」仮説は裏付けられなかった。一方クロヱの判定の値は(`Events.Combat`時代と`OnCombatOccurred`移行後を合わせて)16回中5000未満が3回・平均約6350とやや高めだが、偶然の範囲も否定できない(z≈1.9)。
+- マルチプレイの観点(CivFanaticsのLeeS・Gedemonの指摘): `math.random`はPCの時計で種を決めるのでPCごとに値が割れる。ゲームプレイ用スクリプトは`Game.GetRandNum`(公式シナリオが使う同期された乱数)を使い、UI側のイベント(`Events.*`)から同期された乱数を引かない。これに従い判定を`GameEvents.OnCombatOccurred`+`Game.GetRandNum`に移した
+  - 出典: [TerrainBuilder.GetRandomNumber vs Game.GetRandNum and other MP Desync Questions](https://forums.civfanatics.com/threads/terrainbuilder-getrandomnumber-vs-game-getrandnum-and-other-mp-desync-questions.672623/)、[gameplay related lua scripts in multiplayer](https://forums.civfanatics.com/threads/gameplay-related-lua-scripts-in-multiplayer.626600/)
+
+**2026-09-28、宮殿の音楽スロット+6が効いていないように見えた件**。左上の傑作一覧のボタンが出ないことから効いていないと判断したが、このボタンはスロットの有無ではなく「傑作を1つでも持っているか」で表示が決まる(`Base/Assets/UI/LaunchBar.lua`の`RefreshGreatWorks`/`OnGreatWorkCreated`)ので、判断材料にならない。宮殿のスロット数・種類を`GetNumGreatWorkSlots`/`GetGreatWorkSlotType`でログに出す診断を入れた。その後FireTunerで大音楽家を出して傑作(音楽)を置き、宮殿のスロットが元の1つ+音楽6つの計7つあること、傑作(音楽)1つあたり文化力6・観光力6(群れの絆の文化力+2・観光力+50%込み)になることを実機で確認した(2026-09-28)。書き方自体は公式に前例がある(スロットの種類を持たない建物に別の種類を足す: 総督の昇進で円形劇場に宮殿型、大商人メディチで銀行に宮殿型、スンジャタ・ケイタで市場に書物)
