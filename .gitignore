@@ -11,6 +11,8 @@ obj/
 # regenerate via ModBuddy build / npm run build-icons in tools/png2dds/)
 tools/IconBuild/*.dep
 tools/IconBuild/Textures/*.dds
+# gen-moment-illustration.tsが.ddsの前に書き出す確認用PNG
+tools/IconBuild/Textures/*.png
 
 # Local playtest logs
 *.log

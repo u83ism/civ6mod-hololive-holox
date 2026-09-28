@@ -561,6 +561,7 @@
 				<Element text="UI/HoloX_Icons.blp"/>
 				<Element text="UI/HoloX_Loading.blp"/>
 				<Element text="UI/HoloX_LoadingPortrait.blp"/>
+				<Element text="UI/HoloX_Moments.blp"/>
 			</relativePackagePaths>
 		</Element>
 		<Element>

@@ -76,12 +76,17 @@
     <Content Include="Textures\FALLBACK_NEUTRAL_HOLOX_SAKAMATA_CHLOE.tex"><SubType>Content</SubType></Content>
     <Content Include="Textures\LEADER_HOLOX_SAKAMATA_CHLOE_BACKGROUND.dds"><SubType>Content</SubType></Content>
     <Content Include="Textures\LEADER_HOLOX_SAKAMATA_CHLOE_BACKGROUND.tex"><SubType>Content</SubType></Content>
+    <Content Include="Textures\Moment_Infrastructure_HoloxOrcaParadise.dds"><SubType>Content</SubType></Content>
+    <Content Include="Textures\Moment_Infrastructure_HoloxOrcaParadise.tex"><SubType>Content</SubType></Content>
+    <Content Include="Textures\Moment_Infrastructure_HoloxOrcaAquarium.dds"><SubType>Content</SubType></Content>
+    <Content Include="Textures\Moment_Infrastructure_HoloxOrcaAquarium.tex"><SubType>Content</SubType></Content>
     <Content Include="Textures\LEADER_HOLOX_SAKAMATA_CHLOE_NEUTRAL.dds"><SubType>Content</SubType></Content>
     <Content Include="Textures\LEADER_HOLOX_SAKAMATA_CHLOE_NEUTRAL.tex"><SubType>Content</SubType></Content>
     <Content Include="XLPs\HoloX_Icons.xlp"><SubType>Content</SubType></Content>
     <Content Include="XLPs\LeaderFallbackImages.xlp"><SubType>Content</SubType></Content>
     <Content Include="XLPs\HoloX_Loading.xlp"><SubType>Content</SubType></Content>
     <Content Include="XLPs\HoloX_LoadingPortrait.xlp"><SubType>Content</SubType></Content>
+    <Content Include="XLPs\HoloX_Moments.xlp"><SubType>Content</SubType></Content>
     <Content Include="ArtDefs\FallbackLeaders.artdef"><SubType>Content</SubType></Content>
   </ItemGroup>
   <ItemGroup>

@@ -100,7 +100,9 @@
 		<File>Platforms/Windows/BLPs/UI/HoloX_Loading.blp</File>
 		<File>Platforms/MacOS/BLPs/UI/HoloX_Loading.blp</File>
 		<File>Platforms/Windows/BLPs/UI/HoloX_LoadingPortrait.blp</File>
+		<File>Platforms/Windows/BLPs/UI/HoloX_Moments.blp</File>
 		<File>Platforms/MacOS/BLPs/UI/HoloX_LoadingPortrait.blp</File>
+		<File>Platforms/MacOS/BLPs/UI/HoloX_Moments.blp</File>
 		<!-- Art/Icons配下の各サイズPNGもここに追加していく(bootstrap-leader Skill参照) -->
 	</Files>
 </Mod>

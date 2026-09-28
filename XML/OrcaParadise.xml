@@ -234,4 +234,14 @@
 			<Value>TERRAIN_OCEAN</Value>
 		</Row>
 	</RequirementArguments>
+
+	<!--
+		初めて固有区域/固有建造物を完成させた時の歴史的瞬間(MOMENT_DISTRICT_CONSTRUCTED_FIRST_UNIQUE/MOMENT_BUILDING_CONSTRUCTED_FIRST_UNIQUE)の挿絵。
+		ウォーターパーク/水族館を置き換える公式の固有要素には挿絵の登録がない(コパカバーナのみ)ため専用画像を用意した。
+		Textureはtools/png2dds/gen-moment-illustration.ts(photoモード)で生成し、tools/IconBuild(ModBuddy)でビルドしたUI/HoloX_Moments.blpに含まれる。
+	-->
+	<MomentIllustrations>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_DISTRICT" MomentDataType="MOMENT_DATA_DISTRICT" GameDataType="DISTRICT_HOLOX_ORCA_PARADISE" Texture="Moment_Infrastructure_HoloxOrcaParadise.dds"/>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_BUILDING" MomentDataType="MOMENT_DATA_BUILDING" GameDataType="BUILDING_HOLOX_ORCA_AQUARIUM" Texture="Moment_Infrastructure_HoloxOrcaAquarium.dds"/>
+	</MomentIllustrations>
 </GameData>
