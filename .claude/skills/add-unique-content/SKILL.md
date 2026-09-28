@@ -46,14 +46,9 @@ UU(ユニット)/UD(区域)/UI(地形改善)/UB(建造物)は全て同じ8手順
 
 **見た目(3Dモデル・アイコン)を置換元とまったく同じにしたいUU(モデル差し替えをしない)は、専用Artdefを新規に用意しなくても実機で問題なく表示される**(社員UU実装時、UU「うに」で2026-09-22実機確認済み)。Artdefの罠(UB向けの記述、および`docs/civ6-research/unique-content-patterns.md`)は「新しいモデルに差し替えたい」場合の話で、モデルを変えないなら踏まなくてよい(3Dモデルとゲームプレイ上のUnitTypeとの紐付け機構自体は未解明のままだが、結果として置換元のモデルがそのまま出る)。アイコンは`Art/Icons/Icons.xml`の`IconDefinitions`に、置換元アイコンと同じ`Atlas`/`Index`を指す新規行(`Name`だけ新UnitType用に変える)を追加するだけでよい。**`IconTextureAtlases`側の新規登録は不要**(バニラの既存アトラス名、例: ユニット本体`ICON_ATLAS_UNITS`、マップ上の旗`ICON_ATLAS_UNIT_FLAG_SYMBOLS_WHITE`/`_BLACK`、選択パネルの顔`ICON_ATLAS_UNIT_PORTRAITS`をそのまま指せる)。置換元の`Atlas`/`Index`は`Base/Assets/UI/Icons/Icons_Units.xml`・`Icons_UnitFlags.xml`・`Icons_UnitPortraits.xml`をUnitType名でgrepすれば分かる。UU「うに」(斥候置換)でこの方式を実装し、選択画面・アイコン表示とも実機で問題なく動作することを確認した(2026-09-22)。
 
-### UU生産時のHistoric Moment演出画像を追加したい場合
+### 初めて完成/生産した時の歴史的瞬間の挿絵を付けたい場合
 
-UUを初めて生産すると、バニラでは`MOMENT_UNIT_CREATED_FIRST_UNIQUE`という時代スコア(Historic Moment)ポップアップが自動発火する(UU実装側で追加のModifier等は不要、エンジン側が拾う)。専用イラストを未登録のまま放置すると汎用フォールバック画像になるが、以下で差し替えられる(UU「うに」で2026-09-22実機確認済み)。
-
-- **スキーマ**: `MomentIllustrations`テーブル(`MomentIllustrationType`/`MomentDataType`/`GameDataType`/`Texture`の4列、`GameDataType`は`Types(Type)`への外部キー、`Expansion1_Schema.sql`で確認)に1行追加するだけ。`<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_UNIT" MomentDataType="MOMENT_DATA_UNIT" GameDataType="<UnitType>" Texture="<ファイル名>.dds"/>`。
-- **画像規格**: 456×332px、R8G8B8A8_UNORM(非圧縮)、フルミップチェーン。Civ6 SDK Assetsの`pantry/Textures/Expansion1/Moment_UniqueUnit_*.dds`+`.tex`(7件確認、全て同一サイズ・フォーマット)が正規のソース素材そのものなので、新規作成時は`.tex`をテンプレートとしてコピーし名前だけ差し替えればよい(`tools/png2dds/gen-moment-illustration.ts -- <momentIllustrationName> <unitType> <sourceFileName>`、UnitType名はハードコードされていないので他のUUでもそのまま使える)。CivFanaticsフォーラムの経験則(幅350px程度という体感値)よりこちらの実測値を優先すること。
-- **アルファは中心ほぼ不透明・四隅完全透明の楕円ビネット**。公式`Moment_UniqueUnit_Cree.dds`の生アルファ値を実測(中心242、四隅0、辺の中点0付近)して確認した。自前実装は`tools/png2dds/moment-illustration-compositing.ts`の`applyEllipticalVignette`(内側半径フラクション0.55前後)。
-- **配線・ビルド手順はバッジアイコンと全く同じパイプライン**(新規BLPパッケージのXLP作成→`tools/IconBuild`(共有ModBuddyプロジェクト)にテクスチャ/XLPを追加登録→ModBuddyで実ビルド→生成された`.blp`を本体`Platforms/{Windows,MacOS}/BLPs/UI/`へコピー→本体`.modinfo`の`<Files>`に追加→`tools/png2dds/gen-dep.ts`で`.dep`再生成)。ModBuddyでの実ビルドは自動化できない点、Windowsかつユーザー名が日本語の環境ではModBuddy経由でBLPが生成されない点(回避策: `make-leader-icons`の`references/japanese-username-workaround.md`)を含め、詳細な手順・罠は`make-leader-icons` Skillを参照(ここでは重複させない)。XLPの`m_ClassName`は`UITexture`、`m_PackageName`は自由な新規パス(例: `UI/RegLoss_Moments`)でよく、公式の`UI/PrideMoments`と衝突させる必要はない(`Texture`列の値=BLPエントリ名がグローバルに解決される)。
+UU/UD/UB/UIを初めて完成/生産すると時代スコアの歴史的瞬間が自動で発火する(実装側でModifier等は不要)。その挿絵の生成・組み込みは`make-moment-illustration` Skillを使う。
 
 アイコンの新規作成が必要な場合は`make-leader-icons` Skillを使う。既存アイコンの使い回しで済ませる場合の手順は`docs/civ6-research/unique-content-patterns.md`に書いてある。
 
