@@ -54,5 +54,30 @@ const applyEllipticalVignette = (image: RgbaImage, innerRadiusFraction: number):
   return { data: vignetted, width: image.width, height: image.height };
 };
 
-export { centerOnCanvas, applyEllipticalVignette };
-export type { RgbaImage };
+type CropBox = {
+  readonly left: number;
+  readonly top: number;
+  readonly width: number;
+  readonly height: number;
+};
+
+// Largest box of the target aspect ratio that fits in the source, anchored to the bottom edge
+// and centered horizontally (photos of buildings keep their ground line; the sky is what gets
+// cut when the source is taller than the target).
+const computeBottomCenteredCropBox = (
+  sourceWidth: number,
+  sourceHeight: number,
+  targetAspectRatio: number,
+): CropBox => {
+  const width = Math.min(sourceWidth, Math.round(sourceHeight * targetAspectRatio));
+  const height = Math.min(sourceHeight, Math.round(width / targetAspectRatio));
+  return {
+    left: Math.floor((sourceWidth - width) / 2),
+    top: sourceHeight - height,
+    width,
+    height,
+  };
+};
+
+export { centerOnCanvas, applyEllipticalVignette, computeBottomCenteredCropBox };
+export type { RgbaImage, CropBox };
