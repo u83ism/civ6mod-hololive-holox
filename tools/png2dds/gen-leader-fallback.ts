@@ -1,5 +1,5 @@
 // Build the diplomacy-screen fallback portrait (FALLBACK_NEUTRAL_<leaderId>) from
-// the full-body master art in Art/Source/ (read-only; never modified by this script). Trims the
+// the full-body master art in Art/Source/ (path relative to Art/Source/, e.g. sakamata-chloe/foo.png; read-only; never modified by this script). Trims the
 // transparent margin around the character, crops off the bottom (below-knee) portion to match
 // official/Hololive EN-ID fallback portraits (they cut off just below the knee, not full body),
 // resizes to canvas height 1080 (matching every official FALLBACK_NEUTRAL_*.dds in Civ6 SDK

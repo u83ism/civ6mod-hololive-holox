@@ -11,7 +11,7 @@ Civilization VI の新規文明追加Mod。hololive holoXをモチーフにし�
 - `civ6mod-hololive-holox.modinfo` — Modのエントリポイント。ActionGroupsで参照するファイルはすべて`Files`にも列挙する必要がある
 - `XML/` — Civilization / Leader / Trait / Colors / Config などのDB定義(XML)
 - `Text/ja_JP/`, `Text/en_US/` — ローカライズテキスト(`ja_JP`が正本)
-- `Art/` — アイコン・リーダーシーン等のアセット(`Art/Source/`が元画像、`Art/Icons/`が各サイズ展開済みPNG)
+- `Art/` — アイコン・リーダーシーン等のアセット(`Art/Source/`が元画像でキャラごとにサブディレクトリを切る(例: `Art/Source/sakamata-chloe/`)、`Art/Icons/`が各サイズ展開済みPNG)
 - `tools/setup-dev-env.ps1` — 新しいPCでの開発環境セットアップ(`pwsh tools/setup-dev-env.ps1`、何度実行しても安全)。Modsフォルダへのジャンクション作成・`AppOptions.txt`のログ有効化(`-EnableTuner`でFireTunerも)・`npm ci`を行い、Development Tools/SDK Assets/`Art/Source/`の有無をチェックする
 - `tools/loc-lookup/` — Civ6本体(Base+DLC)とこのModの`Text/`から、LOCタグまたは本文で公式の各言語訳を引くスクリプト(`npm run lookup -- <タグ正規表現>`、`--text <文字列>`で逆引き)。公式用語の確認に使う(`.claude/rules/game-terms.md`)
 - `tools/png2dds/` — 元画像からアイコン各サイズのPNG/DDSを自動生成するビルドスクリプト(TypeScript、`tsx`で実行。`civ6mod-hololive-regloss`から移植したもので、キャラ名はハードコードされておらずCLI引数で指定する)

@@ -1,5 +1,5 @@
 // Build the loading-screen portrait (LEADER_<leaderId>_NEUTRAL) from the full-body
-// master art in Art/Source/ (read-only; never modified by this script). This is the
+// master art in Art/Source/ (path relative to Art/Source/, e.g. sakamata-chloe/foo.png; read-only; never modified by this script). This is the
 // LoadScreen-specific sibling of the diplomacy-screen fallback portrait
 // (FALLBACK_NEUTRAL_<leaderId>, see gen-leader-fallback.ts / the
 // make-fallback-portrait Skill): same source art, same knee-crop + top-margin + bottom-fade

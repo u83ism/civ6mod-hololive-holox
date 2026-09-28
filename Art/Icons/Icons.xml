@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<!--
-		文明アイコン(シャチの群れ)はArt/Source/orca.svgから、指導者アイコン(沙花叉クロヱ)は
-		Art/Source/sakamata_chloe-face.pngから、それぞれ各サイズを再生成したもの。
+		文明アイコン(シャチの群れ)はArt/Source/sakamata-chloe/orca.svgから、指導者アイコン(沙花叉クロヱ)は
+		Art/Source/sakamata-chloe/sakamata_chloe-face.pngから、それぞれ各サイズを再生成したもの。
 	-->
 	<IconTextureAtlases>
 		<Row Name="ICON_ATLAS_CIV_HOLOX_ORCA_POD" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_ORCA_POD_22.dds"/>

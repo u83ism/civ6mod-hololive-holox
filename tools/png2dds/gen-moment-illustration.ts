@@ -1,6 +1,6 @@
 // Build a Historic Moment illustration (e.g. Moment_UniqueUnit_ReglossIchijou_Uni) shown when a
 // UU (e.g. UNIT_REGLOSS_ICHIJOU_UNI, uses UU_uni.md naming) is trained for the first time, from
-// a flat illustration in Art/Source/ (read-only; never modified by this script).
+// a flat illustration in Art/Source/ (path relative to Art/Source/, e.g. sakamata-chloe/foo.png; read-only; never modified by this script).
 // Canvas size 456x332 and format (uncompressed RGBA, full mip chain) match every official
 // Moment_UniqueUnit_*.dds in Civ6 SDK Assets pantry/Textures/Expansion1 (7 of 7 samples
 // identical). The elliptical alpha vignette (fully opaque center, fully transparent corners)

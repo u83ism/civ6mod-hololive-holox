@@ -1,5 +1,5 @@
 // Build the loading-screen background (LEADER_<leaderId>_BACKGROUND) from the
-// wallpaper master art in Art/Source/ (read-only; never modified by this script). This is a
+// wallpaper master art in Art/Source/ (path relative to Art/Source/, e.g. sakamata-chloe/foo.png; read-only; never modified by this script). This is a
 // separate layer from the loading-screen portrait (LEADER_<leaderId>_NEUTRAL,
 // made by make-fallback-portrait's sibling pipeline): LoadScreen.xml nests a "Portrait" Image
 // control inside "BackgroundImage" as its own independent control, and LoadScreen.lua sets

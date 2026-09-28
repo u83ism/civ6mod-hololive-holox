@@ -1,10 +1,10 @@
 // Regenerate Art/Icons/ICON_*.png at every required size from the master source art in
-// Art/Source/. Master art must be square and at least as large as the biggest required size.
+// Art/Source/ (file name arguments are paths relative to Art/Source/, e.g. sakamata-chloe/foo.png). Master art must be square and at least as large as the biggest required size.
 // The leader arguments are optional so the civilization badge can be generated on its own
 // before leader face master art exists (a common ordering: civ icon first, leader icon later).
 // Usage: tsx gen-icon-sources.ts <civilizationId> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]
-// Example (civ only): tsx gen-icon-sources.ts HOLOX_ORCA_POD orca-icon-silhouette-master.png
-// Example (civ + leader): tsx gen-icon-sources.ts HOLOX_ORCA_POD orca-icon-silhouette-master.png HOLOX_SAKAMATA_CHLOE sakamata_chloe-face.png
+// Example (civ only): tsx gen-icon-sources.ts HOLOX_ORCA_POD sakamata-chloe/orca-icon-silhouette-master.png
+// Example (civ + leader): tsx gen-icon-sources.ts HOLOX_ORCA_POD sakamata-chloe/orca-icon-silhouette-master.png HOLOX_SAKAMATA_CHLOE sakamata-chloe/sakamata_chloe-face.png
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { PNG } from "pngjs";
