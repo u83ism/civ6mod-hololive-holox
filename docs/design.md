@@ -147,6 +147,18 @@
 2. 水族館の前提(観覧車)を外すか。シャチの水族館をUBにしたので、`BuildingPrereqs`を書かなければ外せる
 3. 建設コスト・設置条件(深海にも置けるようにする等)
 
+#### 強化案(保留): 固有ユニット「シャチ」(ガレー船置換)
+
+現状の能力構成で強さが足りないと分かったときに足す候補(2026-09-29本人案)。今は実装しない。
+
+- **案**: ガレー船を置き換えるUU。生産コスト・維持費・戦闘力をガレー船より下げて小回りを利かせ、1体生産するごとにもう1体手に入る(群れで狩るシャチのイメージ)。見た目はガレー船をそのまま流用する
+- **2体生産の公式前例**: スキタイの文明能力「草原の民」(`TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY`。トミュリスの指導者能力ではない)。ゲーム本体の`Civilizations.xml`で確認した構成は次の2本
+  - 軽騎兵全般: `MODIFIER_PLAYER_UNITS_ADJUST_EXTRA_UNIT_COPY_TAG`(`Tag=CLASS_LIGHT_CAVALRY`/`Amount=1`)
+  - UUのサカ族弓騎兵: `MODIFIER_PLAYER_UNITS_ADJUST_EXTRA_UNIT_COPY`(`UnitType=UNIT_SCYTHIAN_HORSE_ARCHER`/`Amount=1`)。UU自身のTraitではなく文明能力側に付いている
+  - 海軍の前例は世界遺産「アルセナーレ・ディ・ヴェネツィア」(都市版の`MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_UNIT_COPY_TAG`で海軍の白兵戦・遠距離・空母クラスを2体に)
+- **実装するなら**: サカ族弓騎兵と同じ`UnitType`版を使い、シャチだけを2体にする(`_TAG`版で`CLASS_NAVAL_MELEE`を指定するとガレー船系列の海軍白兵戦ユニットすべてが対象になる)
+- **未確認**: ゴールド・信仰力での購入でも2体になるか(説明文は「訓練するたびに」)、アルセナーレ・ディ・ヴェネツィアと重なって3体になるか
+
 ### ラプラス・ダークネス
 
 (未記入)
