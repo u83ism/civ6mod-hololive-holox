@@ -19,8 +19,8 @@ description: Civ6 Modで、キャラクター立ち絵から静止画ベース�
 
 ## 1. 前提: 元絵の要件
 
-- `FALLBACK_NEUTRAL_*`/`LEADER_*_NEUTRAL`用: `Art/Source/`配下に、**全身立ち絵・透過背景(アルファチャンネルあり)**の画像を置く(頭から膝下より先まで描かれていること。膝から下は後述の膝下クロップでどのみち切り落とすので、足先まで描かれていて構わない)
-- `LEADER_*_BACKGROUND`用: `Art/Source/`配下に、**キャラクターの写り込みが無い環境イラスト**(アルファ不要)を置く。アスペクト比が1920:960(2:1)と合わなくて構わない(中央クロップで自動調整)
+- `FALLBACK_NEUTRAL_*`/`LEADER_*_NEUTRAL`用: `Art/Source/<キャラ名>/`配下に、**全身立ち絵・透過背景(アルファチャンネルあり)**の画像を置く(頭から膝下より先まで描かれていること。膝から下は後述の膝下クロップでどのみち切り落とすので、足先まで描かれていて構わない)
+- `LEADER_*_BACKGROUND`用: `Art/Source/<キャラ名>/`配下に、**キャラクターの写り込みが無い環境イラスト**(アルファ不要)を置く。アスペクト比が1920:960(2:1)と合わなくて構わない(中央クロップで自動調整)
 - フォーマットは問わない(webp/png等。`sharp`パッケージでデコードするので大抵の形式が読める)
 - **元絵ファイル自体は生成パイプラインが一切書き換えない**(読み込み専用)。加工結果は別ファイルに出力する
 
@@ -28,7 +28,7 @@ description: Civ6 Modで、キャラクター立ち絵から静止画ベース�
 
 ### 2a. `FALLBACK_NEUTRAL_*`/`LEADER_*_NEUTRAL`共通(`gen-leader-fallback.ts`/`gen-loading-portrait.ts`)
 
-`tools/png2dds`ディレクトリで`npm run gen-leader-fallback -- <leaderId> <standingArtFileName>`または`npm run gen-loading-portrait -- <leaderId> <standingArtFileName>`を実行すると、以下を一括生成する(両スクリプトは`KNEE_CROP_FRACTION`/`TOP_MARGIN_FRACTION`/`BOTTOM_FADE_START_FRACTION`の値と対象の高さ(1080 or 1024)以外ほぼ同じ処理)。`leaderId`は`LEADER_`を除いた部分(例: `REGLOSS_ICHIJOU_RIRIKA`)、`standingArtFileName`は`Art/Source/`配下の全身立ち絵ファイル名(例: `ichijou-ririka-stand.webp`):
+`tools/png2dds`ディレクトリで`npm run gen-leader-fallback -- <leaderId> <standingArtFileName>`または`npm run gen-loading-portrait -- <leaderId> <standingArtFileName>`を実行すると、以下を一括生成する(両スクリプトは`KNEE_CROP_FRACTION`/`TOP_MARGIN_FRACTION`/`BOTTOM_FADE_START_FRACTION`の値と対象の高さ(1080 or 1024)以外ほぼ同じ処理)。`leaderId`は`LEADER_`を除いた部分(例: `REGLOSS_ICHIJOU_RIRIKA`)、`standingArtFileName`は`Art/Source/`からの相対パス(キャラごとのサブディレクトリ込み、例: `sakamata-chloe/sakamata_chloe-stand.png`):
 
 1. **透明余白のトリム**(`sharp().trim()`)
 2. **膝下クロップ**(`KNEE_CROP_FRACTION`、既定0.25): トリム後の全身高さの下25%をカットし、膝のちょい下までにする。公式リーダーおよび他言語版Hololive Mod(EN/ID)は全身ではなくこの高さまでしか描いていないため、それに合わせている
