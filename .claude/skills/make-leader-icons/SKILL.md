@@ -1,6 +1,6 @@
 ---
 name: make-leader-icons
-description: Civ6 Modで文明/指導者のバッジアイコン(`ICON_CIVILIZATION_*`/`ICON_LEADER_*`)を、キャラクター元絵から実際に生成する時に使う。「アイコンを作る」「バッジアイコンを差し替える」「選択画面が？のまま」「BLPをビルドする」「XLP/.texを書く」と言われたとき、または`tools/png2dds/gen-icon-sources.ts`・`build-icons.ts`・`gen-tex.ts`・`gen-xlp.ts`を新規に書く/実機デバッグする場面で使う。`FALLBACK_NEUTRAL_*`/`LEADER_*_NEUTRAL`/`LEADER_*_BACKGROUND`(外交交渉画面・ローディング画面)は`make-fallback-portrait` Skillの範囲。`bootstrap-leader`で指導者が選択画面に出るところまで終わった後、または並行して使う独立作業。
+description: Civ6 Modで文明/指導者のバッジアイコン(`ICON_CIVILIZATION_*`/`ICON_LEADER_*`)を、キャラクター元絵から実際に生成する時に使う。「アイコンを作る」「バッジアイコンを差し替える」「選択画面が？のまま」「BLPをビルドする」「XLP/.texを書く」「ビルドは成功したのにBLPが出ない/見た目が変わらない」と言われたとき、または`tools/png2dds/gen-icon-sources.ts`・`build-icons.ts`・`gen-tex.ts`・`gen-xlp.ts`を新規に書く/実機デバッグする場面で使う。`FALLBACK_NEUTRAL_*`/`LEADER_*_NEUTRAL`/`LEADER_*_BACKGROUND`(外交交渉画面・ローディング画面)は`make-fallback-portrait` Skillの範囲。`bootstrap-leader`で指導者が選択画面に出るところまで終わった後、または並行して使う独立作業。
 ---
 
 # バッジアイコンの制作手順
@@ -17,6 +17,7 @@ Civ/Leaderの選択画面自体は`bootstrap-leader` Skillの範囲で(アイコ
 
 - **PNG直置きでは動かない(実機確認済み)。ModBuddy必須。** `IconTextureAtlases`の`Filename`は実ファイルパスではなく、ModBuddyのAssetEditorで作る**XLP(UITextureクラス)のEntryID**を指しており、実体ピクセルはModBuddyビルドで生成される`.blp`の中にしか無い
 - 文明アイコン: 22, 30, 32, 36, 44, 45, 48, 50, 64, 80, 128, 256 px。指導者アイコン: 32, 45, 48, 50, 55, 64, 80, 256 px
+- **Windowsかつユーザー名が日本語(ASCII外)の環境では、ModBuddyのビルドが「成功」と出てもBLPが生成されない。** AssetCookerが日本語パスでクラッシュするため。ビルドの前に`C:\Users\<ユーザー名>`が英数字だけか確認し、英数字でなければ`references/japanese-username-workaround.md`の手順(AssetCookerを英数字パスで直接実行)でBLPを作る
 - `.dep`ファイル(`AssetObjects..GameDependencyData`)が実在し`.modinfo`の`<Files>`に列挙されていないと、`UpdateArt`アクションごと無視される。ModBuddyが自動生成しないケースがあったため、`tools/png2dds/gen-dep.ts`(`npm run gen-dep --`)で`Mod.Art.xml`から機械的に生成する運用にしている
 
 本体Modの`.modinfo`(動作実績のある一段階古いスキーマ)をModBuddyに触らせないため、アイコン画像のビルドパイプライン(`tools/IconBuild/`)は本体Modとは別のModBuddyプロジェクトとして分離してある。再生成手順(`tools/png2dds/`の各スクリプト→ModBuddyでビルド→`.blp`を本体にコピー)も`references/icon-blp-pipeline.md`に書いてある。

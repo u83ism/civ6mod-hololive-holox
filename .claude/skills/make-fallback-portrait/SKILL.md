@@ -67,6 +67,8 @@ description: Civ6 Modで、キャラクター立ち絵から静止画ベース�
 
 1. 該当する`npm run gen-* -- <leaderId> <ファイル名>`(3節で調整済みの状態で最終生成)
 2. `tools/IconBuild/RegLoss_IconBuild.civ6sln`をModBuddyで開いてビルド
+   - **Windowsかつユーザー名が日本語(ASCII外)の環境では、ModBuddyのビルドは「成功」と出るがBLPが生成されない。** ModBuddyは使わず、`make-leader-icons` Skillの`references/japanese-username-workaround.md`の手順でAssetCookerを直接実行してBLPを作る
+   - どの環境でも、ビルド後は出力先に`.blp`が実在し更新日時が新しいことを確認してから次へ進む
 3. 生成物に対応するblpを本体Modの同パスにコピー:
    - `FALLBACK_NEUTRAL_*` → `Platforms/{Windows,MacOS}/BLPs/LeaderFallbackImages.blp`
    - `LEADER_*_NEUTRAL` → `Platforms/{Windows,MacOS}/BLPs/UI/RegLoss_LoadingPortrait.blp`
