@@ -56,5 +56,235 @@
 		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_MUSICIAN_POINTS_WORLDTEXT" Language="zh_Hant_HK">
 			<Text>[COLOR_FLOAT_FOOD][ICON_GreatMusician] 大音樂家點數 +{1_Num}[ENDCOLOR]</Text>
 		</Row>
+
+		<!-- 外交台詞(參見docs/diplomacy-statements-sakamata-chloe.md) -->
+		<Row Tag="LOC_DIPLO_GREETING_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>Bakku bakku baku~n！找沙花叉有什麼事嗎？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>Bakku bakku baku~n！我是秘密結社holoX的掃除屋兼實習生，殺人鯨沙花叉克蘿伊。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>附近有沙花叉她們群裡的城市，要不要順路來看看？……啊，別偷看沙花叉的房間哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>好呀好呀！我一直有點好奇你們的城市呢。有什麼好吃的嗎？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>我們好像離得挺遠的。要不要交換一下地圖？不過不知道你看不看得懂沙花叉的字就是了。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>抱歉哦，你們成了沙花叉的清理對象了。……Bakku bakku baku~n。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>哈？要欺負新人嗎？……行啊，沙花叉可是很擅長打掃的哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>嗚哇——不要啦……沙花叉明明還沒唱夠呢！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>嗚哇——不要啦……沙花叉明明還沒唱夠呢！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>呐，沙花叉想跟你好好相處。……才、才沒有什麼深意啦！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>太好啦！那從今天起我們就是朋友了！……不過要是敢劈腿，可是會被清理掉的哦？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>欸……意思是不喜歡我嗎……？……哼，無所謂啦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>欸，跟沙花叉？真拿你沒辦法～那就跟你好好相處吧！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>欸～？現在就說這個是不是太早了？我們還沒那麼熟吧～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>呐，要不要加入沙花叉的群？殺人鯨可是成群捕獵的哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>好！這下我們就是同一個群的了！沙花叉會守護你的後背。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>這樣啊……你是想當獨行狼，不對，是獨行殺人鯨嗎？寂寞的話隨時告訴沙花叉哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>好啊！沙花叉可是寧願保護別人也不想被保護的類型！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>嗯……讓你加入群還太早了吧。再讓沙花叉觀察一陣子好不好？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>喂——你這樣是不是有點過分呀？沙花叉要去告訴大家！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>欸，你討厭沙花叉嗎……？……哼。你要這樣的話，沙花叉可不會手下留情。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_KUDO_EXIT_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>你們的國家，感覺還不錯嘛！沙花叉挺喜歡的。……只是有一點點哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_EXIT_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>最近看著你們的所作所為，沙花叉越來越煩躁了。……你自己小心點哦？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>沙花叉的群可以派代表團過去嗎？會先洗好澡再讓他們去的。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>謝謝！禮物送魚可以吧？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>欸，不行嗎？……人家明明說了會好好洗澡的。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>好呀，歡迎歡迎！除了沙花叉的房間，哪裡都帶你參觀！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>抱歉，現在有點亂……還沒法給人看。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>讓沙花叉在你們那裡設個使館吧。也會派個負責清理的人一起去哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>成交！沙花叉會挑個住著舒服的地方。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>喂——為什麼啦～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>好啊。別弄亂哦……雖然由沙花叉來說這話有點那個。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>這可不行。沙花叉的秘密，可沒那麼容易讓你窺探。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>我們互相開放邊界，讓彼此的國民能自由往來吧？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>太好啦！這樣沙花叉隨時都能去玩了！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>哼。沙花叉可是很記仇的類型哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>好呀～。不過要是亂看奇怪的地方，就揍你哦？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>不要不要不要！還沒原諒你到那種程度啦！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>說到錢的事就歡迎！就這麼辦吧。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>欸～？你覺得沙花叉會點頭答應這種條件嗎？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>差一點！這裡讓沙花叉稍微改一下好嗎？這樣如何？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>成交～！你還挺懂事的嘛。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>喂——明明是筆不錯的買賣嘛……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>……呐，差不多該結束了吧？沙花叉已經睏了。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>嗯，這樣就行。清理到此為止。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>哈？閉嘴，說真的。這種條件沙花叉怎麼可能接受。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>太好了……總算能好好睡一覺了。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>你要這樣的話，沙花叉就把你清理到最後一刻。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>……知道了，就這一次哦。誰讓沙花叉是姐姐呢。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>不要不要不要！絕對不給你！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>不愧是你～！我就喜歡你這一點，只有一點點哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_REFUSE_DEMAND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>哼……沙花叉可是會好好記住這種事的哦？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>那裡可是沙花叉她們群的地盤哦？再靠近的話……你知道會怎樣吧？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>懂了就好。♪</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>……哼。那就從清理地盤開始吧。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>欸，有那麼近嗎？抱歉抱歉，沙花叉不太會看地圖。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>大海可不屬於任何人哦～？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>能不能別給我們群裡灌輸奇怪的東西？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>嗯，謝謝。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>……我不管你了。沙花叉可是很記仇的哦？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>好～。……不過喜歡的東西，總是忍不住想推廣給別人嘛。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>欸，好東西不是就想讓大家知道嗎？你遲早也會迷上的。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>呐，別擅自挖沙花叉她們的土地好不好？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>謝謝。你能明白就好。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>啊——你還是做了。……清理名單又多了一條。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>欸，那是你們的土地嗎？抱歉，完全沒注意到……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>既然是埋在地下的，那就該歸找到的人吧？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>能不能別偷偷摸摸地窺探我？那可是沙花叉的本職工作啊。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>很好，夠老實。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>哼。那就先把你們的間諜清理掉吧。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>……被發現了？抱歉，不會再做了。……大概吧。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>你對掃除屋說這個？收集情報也是工作的一部分啊。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>呐，邊境線上擺這麼多軍隊是不是太過分了？沙花叉看到這種場面就想清理了。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>你能明白真是太好了。……你撿回一條命呢？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>啊，抱歉！我們只是來清理野蠻人的。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
+			<Text>我家孩子們在哪裡，不都是沙花叉的自由嗎？</Text>
+		</Row>
 	</LocalizedText>
 </GameData>
