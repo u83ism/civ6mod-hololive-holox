@@ -15,7 +15,7 @@
 			<Text>沙花叉クロヱ</Text>
 		</Row>
 
-		<!-- 指導者固有能力: 名称・説明文とも暫定(2026-09-23実装、最終的な文体・ネーミングは今後調整) -->
+		<!-- 指導者固有能力 -->
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" Language="ja_JP">
 			<Text>歌好きの掃除屋</Text>
 		</Row>
@@ -23,7 +23,7 @@
 			<Text>攻撃戦闘時、敵ユニットを即座に倒すことがある。戦闘に勝利すると、倒した敵ユニットの [ICON_Strength] 戦闘力に応じた [ICON_GreatMusician] 大音楽家ポイントを獲得する。</Text>
 		</Row>
 
-		<!-- 文明固有能力「群れの絆」(docs/design.md参照)。文面はコンゴ「ンキシ」・政策「衛星放送」の言い回しに合わせた(暫定) -->
+		<!-- 文明固有能力「群れの絆」(docs/design.md参照)。文面はコンゴ「ンキシ」・政策「衛星放送」の言い回しに合わせた -->
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="ja_JP">
 			<Text>群れの絆</Text>
 		</Row>
@@ -31,7 +31,7 @@
 			<Text>[ICON_GreatWork_Music] 傑作 (音楽) から得られる [ICON_Culture] 文化力+2、 [ICON_Tourism] 観光力+50%。宮殿に [ICON_GreatWork_Music] 音楽を入れられるスロットが6つ追加される。</Text>
 		</Row>
 
-		<!-- 固有区域「シャチたちの楽園」・固有建造物「シャチの水族館」(XML/OrcaParadise.xml)。公式の固有区域・固有建造物に倣い、置き換え元と違う効果と設置制限だけを書く(文面はコパカバーナ・女王の図書館・航海学校等に合わせた、暫定) -->
+		<!-- 固有区域「シャチたちの楽園」・固有建造物「シャチの水族館」(XML/OrcaParadise.xml)。公式の固有区域・固有建造物に倣い、置き換え元と違う効果と設置制限だけを書く(文面はコパカバーナ・女王の図書館・航海学校等に合わせた) -->
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Language="ja_JP">
 			<Text>シャチたちの楽園</Text>
 		</Row>
