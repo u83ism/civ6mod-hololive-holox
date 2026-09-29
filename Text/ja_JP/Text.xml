@@ -45,8 +45,68 @@
 			<Text>シャチの群れ固有の建造物。 [ICON_GreatWork_Music] 音楽を入れられるスロットを2つ持つ。この都市の [ICON_GreatWork_Music] 傑作 (音楽) による [ICON_Tourism] 観光力+150%。</Text>
 		</Row>
 
-		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="ja_JP">
-			<Text>オルカベイ</Text>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_RAUSU" Language="ja_JP">
+			<Text>羅臼</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SHIRETOKO" Language="ja_JP">
+			<Text>知床</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_NEMURO" Language="ja_JP">
+			<Text>根室</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_KAMCHATKA" Language="ja_JP">
+			<Text>カムチャツカ</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_JOHNSTONE_STRAIT" Language="ja_JP">
+			<Text>ジョンストン海峡</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_ROBSON_BIGHT" Language="ja_JP">
+			<Text>ロブソン・バイト</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_TYSFJORD" Language="ja_JP">
+			<Text>ティスフィヨルド</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_VALDES" Language="ja_JP">
+			<Text>バルデス</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_GIBRALTAR" Language="ja_JP">
+			<Text>ジブラルタル</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SHIBETSU" Language="ja_JP">
+			<Text>標津</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SKJERVOY" Language="ja_JP">
+			<Text>スクェルヴォイ</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SHETLAND" Language="ja_JP">
+			<Text>シェトランド</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_BREMER_CANYON" Language="ja_JP">
+			<Text>ブレマー・キャニオン</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_VESTMANNAEYJAR" Language="ja_JP">
+			<Text>ヴェストマン諸島</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_PRINCE_WILLIAM_SOUND" Language="ja_JP">
+			<Text>プリンス・ウィリアム湾</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HAIDA_GWAII" Language="ja_JP">
+			<Text>ハイダ・グアイ</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_NOTSUKE" Language="ja_JP">
+			<Text>野付</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_CROZET" Language="ja_JP">
+			<Text>クローゼ</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_MONTEREY" Language="ja_JP">
+			<Text>モントレー</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_PUGET_SOUND" Language="ja_JP">
+			<Text>ピュージェット湾</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_GRUNDARFJORDUR" Language="ja_JP">
+			<Text>グルンダルフィヨルズル</Text>
 		</Row>
 
 		<!-- 指導者固有能力のワールドフロートテキスト(戦闘時)。Lua側でLocale.Lookupして使う -->

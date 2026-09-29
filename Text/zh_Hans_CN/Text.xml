@@ -45,8 +45,68 @@
 			<Text>杀人鲸群特色建筑。该建筑包含2个可放置 [ICON_GreatWork_Music] 音乐巨作的槽位。该城市中 [ICON_GreatWork_Music] 音乐巨作提供的 [ICON_Tourism] 旅游业绩+150%。</Text>
 		</Row>
 
-		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="zh_Hans_CN">
-			<Text>杀人鲸湾</Text>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_RAUSU" Language="zh_Hans_CN">
+			<Text>罗臼</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SHIRETOKO" Language="zh_Hans_CN">
+			<Text>知床</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_NEMURO" Language="zh_Hans_CN">
+			<Text>根室</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_KAMCHATKA" Language="zh_Hans_CN">
+			<Text>堪察加</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_JOHNSTONE_STRAIT" Language="zh_Hans_CN">
+			<Text>约翰斯通海峡</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_ROBSON_BIGHT" Language="zh_Hans_CN">
+			<Text>罗布森湾</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_TYSFJORD" Language="zh_Hans_CN">
+			<Text>蒂斯峡湾</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_VALDES" Language="zh_Hans_CN">
+			<Text>瓦尔德斯</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_GIBRALTAR" Language="zh_Hans_CN">
+			<Text>直布罗陀</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SHIBETSU" Language="zh_Hans_CN">
+			<Text>标津</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SKJERVOY" Language="zh_Hans_CN">
+			<Text>谢尔沃伊</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SHETLAND" Language="zh_Hans_CN">
+			<Text>设得兰</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_BREMER_CANYON" Language="zh_Hans_CN">
+			<Text>布雷默峡谷</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_VESTMANNAEYJAR" Language="zh_Hans_CN">
+			<Text>韦斯特曼群岛</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_PRINCE_WILLIAM_SOUND" Language="zh_Hans_CN">
+			<Text>威廉王子湾</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HAIDA_GWAII" Language="zh_Hans_CN">
+			<Text>海达瓜伊</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_NOTSUKE" Language="zh_Hans_CN">
+			<Text>野付</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_CROZET" Language="zh_Hans_CN">
+			<Text>克罗泽</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_MONTEREY" Language="zh_Hans_CN">
+			<Text>蒙特雷</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_PUGET_SOUND" Language="zh_Hans_CN">
+			<Text>普吉特湾</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_GRUNDARFJORDUR" Language="zh_Hans_CN">
+			<Text>格伦达尔峡湾</Text>
 		</Row>
 
 		<!-- 指导者固有能力的世界浮动文字(战斗时)。由Lua通过Locale.Lookup调用 -->

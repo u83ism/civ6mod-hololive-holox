@@ -45,8 +45,68 @@
 			<Text>殺人鯨群特色建築。此建築提供2個可放置 [ICON_GreatWork_Music] 音樂巨作的槽位。來自該城市 [ICON_GreatWork_Music] 音樂巨作的 [ICON_Tourism] 旅遊業績+150%。</Text>
 		</Row>
 
-		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="zh_Hant_HK">
-			<Text>殺人鯨灣</Text>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_RAUSU" Language="zh_Hant_HK">
+			<Text>羅臼</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SHIRETOKO" Language="zh_Hant_HK">
+			<Text>知床</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_NEMURO" Language="zh_Hant_HK">
+			<Text>根室</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_KAMCHATKA" Language="zh_Hant_HK">
+			<Text>堪察加</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_JOHNSTONE_STRAIT" Language="zh_Hant_HK">
+			<Text>約翰斯通海峽</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_ROBSON_BIGHT" Language="zh_Hant_HK">
+			<Text>羅布森灣</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_TYSFJORD" Language="zh_Hant_HK">
+			<Text>蒂斯峽灣</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_VALDES" Language="zh_Hant_HK">
+			<Text>瓦爾德斯</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_GIBRALTAR" Language="zh_Hant_HK">
+			<Text>直布羅陀</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SHIBETSU" Language="zh_Hant_HK">
+			<Text>標津</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SKJERVOY" Language="zh_Hant_HK">
+			<Text>謝爾沃伊</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_SHETLAND" Language="zh_Hant_HK">
+			<Text>設得蘭</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_BREMER_CANYON" Language="zh_Hant_HK">
+			<Text>布雷默峽谷</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_VESTMANNAEYJAR" Language="zh_Hant_HK">
+			<Text>韋斯特曼群島</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_PRINCE_WILLIAM_SOUND" Language="zh_Hant_HK">
+			<Text>威廉王子灣</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HAIDA_GWAII" Language="zh_Hant_HK">
+			<Text>海達瓜伊</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_NOTSUKE" Language="zh_Hant_HK">
+			<Text>野付</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_CROZET" Language="zh_Hant_HK">
+			<Text>克羅澤</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_MONTEREY" Language="zh_Hant_HK">
+			<Text>蒙特雷</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_PUGET_SOUND" Language="zh_Hant_HK">
+			<Text>普吉特灣</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_GRUNDARFJORDUR" Language="zh_Hant_HK">
+			<Text>格倫達爾峽灣</Text>
 		</Row>
 
 		<!-- 指導者固有能力的世界浮動文字(戰鬥時)。由Lua透過Locale.Lookup呼叫 -->
