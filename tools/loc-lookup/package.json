@@ -6,6 +6,7 @@
   "description": "Look up Civ6 official localized text (all languages) by LOC tag or by text, from the game install and this mod's Text/ files.",
   "scripts": {
     "lookup": "tsx lookup-loc.ts",
+    "check": "tsx check-text.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

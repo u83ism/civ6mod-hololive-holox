@@ -11,34 +11,12 @@
 //   --include-scenarios    also read scenario DLC text (excluded by default: they override names for scenarios)
 // Environment:
 //   CIV6_PATH              game install directory (default: the standard Steam location)
-import { readdirSync, readFileSync, statSync } from "node:fs";
-import { basename, dirname, join, relative, sep } from "node:path";
+import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { filterEntries, filterLanguages, formatEntries, parseLocEntries, type LocEntry, type LookupQuery } from "./loc-entries.js";
+import { filterEntries, filterLanguages, formatEntries, type LookupQuery } from "./loc-entries.js";
+import { defaultGamePath, loadEntries } from "./load-entries.js";
 
-const defaultGamePath = "C:/Program Files (x86)/Steam/steamapps/common/Sid Meier's Civilization VI";
 const defaultLanguages: ReadonlySet<string> = new Set(["en_US", "ja_JP", "zh_Hans_CN", "zh_Hant_HK"]);
-
-const listXmlFiles = (directory: string): readonly string[] =>
-  readdirSync(directory).flatMap((name) => {
-    const path = join(directory, name);
-    if (statSync(path).isDirectory()) return listXmlFiles(path);
-    return name.toLowerCase().endsWith(".xml") ? [path] : [];
-  });
-
-// Only files under a Text directory are localization files (Gameplay Data XML is skipped).
-const isTextFile = (path: string): boolean => path.split(sep).some((segment) => segment === "Text");
-
-// Rows without a Language attribute belong to the language directory they live in (en_US/...).
-const directoryLanguage = (path: string): string | undefined =>
-  path.split(sep).find((segment) => /^[a-z]{2}_[A-Za-z]+(_[A-Z]{2})?$/.test(segment));
-
-const loadEntries = (rootDirectory: string, sourceLabel: string, includeScenarios: boolean): readonly LocEntry[] =>
-  listXmlFiles(rootDirectory)
-    .filter((path) => isTextFile(path) && (includeScenarios || !/scenario/i.test(path)))
-    .flatMap((path) =>
-      parseLocEntries(readFileSync(path, "utf8"), `${sourceLabel}/${relative(rootDirectory, path).split(sep).join("/")}`, directoryLanguage(path)),
-    );
 
 // Values of --text/--lang are not positional arguments.
 const positionalArguments = (argumentList: readonly string[]): readonly string[] =>
