@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="zh_Hans_CN">
+			<Text>杀人鲸群</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>杀人鲸群</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_ORCA_POD_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>杀人鲸群</Text>
+		</Row>
+
+		<Row Tag="LOC_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" Language="zh_Hans_CN">
+			<Text>沙花叉克萝伊</Text>
+		</Row>
+
+		<!-- 指导者固有能力 -->
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" Language="zh_Hans_CN">
+			<Text>爱唱歌的扫除屋</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>我方单位发动攻击时，有几率立即击杀敌方单位。战斗胜利后，获得等同于被击杀单位 [ICON_Strength] 战斗力的 [ICON_GreatMusician] 大音乐家点数。</Text>
+		</Row>
+
+		<!-- 文明固有能力“群的羁绊”(参见docs/design.md) -->
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="zh_Hans_CN">
+			<Text>群的羁绊</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>从每个 [ICON_GreatWork_Music] 音乐巨作中获得+2 [ICON_Culture] 文化值和+50% [ICON_Tourism] 旅游业绩。宫殿额外拥有6个 [ICON_GreatWork_Music] 音乐巨作槽位。</Text>
+		</Row>
+
+		<!-- 固有区域“杀人鲸乐园”・固有建筑“杀人鲸水族馆”(XML/OrcaParadise.xml) -->
+		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Language="zh_Hans_CN">
+			<Text>杀人鲸乐园</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>杀人鲸群特色区域，代替水上乐园。研究“游戏和娱乐”市政后可建造。[NEWLINE][NEWLINE]该城市中每个海岸（不含湖泊）和海洋单元格+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。每回合+2 [ICON_GreatMusician] 大音乐家点数。无法建在拥有“娱乐中心”的城市中。无法建在礁石上。</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Language="zh_Hans_CN">
+			<Text>杀人鲸水族馆</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>杀人鲸群特色建筑。该建筑包含2个可放置 [ICON_GreatWork_Music] 音乐巨作的槽位。该城市中 [ICON_GreatWork_Music] 音乐巨作提供的 [ICON_Tourism] 旅游业绩+150%。</Text>
+		</Row>
+
+		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="zh_Hans_CN">
+			<Text>杀人鲸湾</Text>
+		</Row>
+
+		<!-- 指导者固有能力的世界浮动文字(战斗时)。由Lua通过Locale.Lookup调用 -->
+		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_CRITICAL_WORLDTEXT" Language="zh_Hans_CN">
+			<Text>[COLOR_RED]暴击！[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_MUSICIAN_POINTS_WORLDTEXT" Language="zh_Hans_CN">
+			<Text>[COLOR_FLOAT_FOOD][ICON_GreatMusician] 大音乐家点数 +{1_Num}[ENDCOLOR]</Text>
+		</Row>
+	</LocalizedText>
+</GameData>
