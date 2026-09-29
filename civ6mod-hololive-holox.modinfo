@@ -31,6 +31,8 @@
 		<UpdateText id="ConfigText">
 			<File>Text/en_US/Text.xml</File>
 			<File>Text/ja_JP/Text.xml</File>
+			<File>Text/zh_Hans_CN/Text.xml</File>
+			<File>Text/zh_Hant_HK/Text.xml</File>
 		</UpdateText>
 		<UpdateIcons id="ConfigIcons">
 			<File>Art/Icons/Icons.xml</File>
@@ -62,6 +64,8 @@
 		<UpdateText id="Text">
 			<File>Text/en_US/Text.xml</File>
 			<File>Text/ja_JP/Text.xml</File>
+			<File>Text/zh_Hans_CN/Text.xml</File>
+			<File>Text/zh_Hant_HK/Text.xml</File>
 		</UpdateText>
 		<UpdateIcons id="Icons">
 			<File>Art/Icons/Icons.xml</File>
@@ -87,6 +91,8 @@
 		<File>XML/Config.xml</File>
 		<File>Text/en_US/Text.xml</File>
 		<File>Text/ja_JP/Text.xml</File>
+		<File>Text/zh_Hans_CN/Text.xml</File>
+		<File>Text/zh_Hant_HK/Text.xml</File>
 		<File>Art/Icons/Icons.xml</File>
 		<File>Lua/SakamataChloeGameplayScript.lua</File>
 		<File>civ6mod-hololive-holox.dep</File>
