@@ -15,34 +15,34 @@
 			<Text>Sakamata Chloe</Text>
 		</Row>
 
-		<!-- Leader ability: draft name/description (implemented 2026-09-23, wording to be polished later) -->
+		<!-- Leader ability -->
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_NAME" Language="en_US">
 			<Text>Singing Cleaner</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_SAKAMATA_CHLOE_DESCRIPTION" Language="en_US">
-			<Text>When attacking in combat, has a chance to instantly defeat the enemy unit. On combat victory, gains [ICON_GreatMusician] Great Musician points equal to the defeated unit's [ICON_Strength] Combat Strength.</Text>
+			<Text>Your units have a chance to instantly defeat the enemy unit when attacking. Combat victories provide [ICON_GreatMusician] Great Musician points equal to the [ICON_Strength] Combat Strength of the defeated unit.</Text>
 		</Row>
 
-		<!-- Civilization ability "Bond of the Pod" (see docs/design.md). Wording follows Kongo's "Nkisi" and the Satellite Broadcasts policy (draft) -->
+		<!-- Civilization ability "Bond of the Pod" (see docs/design.md). Wording follows Kongo's "Nkisi" and the Satellite Broadcasts policy -->
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_NAME" Language="en_US">
 			<Text>Bond of the Pod</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_ORCA_POD_DESCRIPTION" Language="en_US">
-			<Text>+2 [ICON_Culture] Culture and +50% [ICON_Tourism] Tourism from [ICON_GreatWork_Music] Great Works of Music. Palace gains 6 additional slots for [ICON_GreatWork_Music] Great Works of Music.</Text>
+			<Text>+2 [ICON_Culture] Culture and +50% [ICON_Tourism] Tourism from each [ICON_GreatWork_Music] Great Work of Music. Palace has 6 additional slots for [ICON_GreatWork_Music] Great Works of Music.</Text>
 		</Row>
 
-		<!-- Unique district "Orca Paradise" and unique building "Orca Aquarium" (XML/OrcaParadise.xml). Following official unique districts/buildings, only effects that differ from the replaced one and placement restrictions are listed (draft) -->
+		<!-- Unique district "Orca Paradise" and unique building "Orca Aquarium" (XML/OrcaParadise.xml). Following official unique districts/buildings, only effects that differ from the replaced one and placement restrictions are listed -->
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Language="en_US">
 			<Text>Orca Paradise</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" Language="en_US">
-			<Text>A district unique to the Orca Pod. Replaces the Water Park district. Can be built after the Games and Recreation civic.[NEWLINE][NEWLINE]+1 [ICON_Food] Food and +1 [ICON_Production] Production from Coast (excluding Lake) and Ocean tiles in this city. +2 [ICON_GreatMusician] Great Musician points per turn. Cannot be built in a city with an Entertainment Complex. Cannot be built on Reef.</Text>
+			<Text>A district unique to the Orca Pod. Replaces the Water Park district. Can be built after researching the Games and Recreation civic.[NEWLINE][NEWLINE]+1 [ICON_Food] Food and +1 [ICON_Production] Production from Coast (excluding Lake) and Ocean tiles in this city. +2 [ICON_GreatMusician] Great Musician points per turn. Cannot be built in a city with an Entertainment Complex. Cannot be built on Reef.</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Language="en_US">
 			<Text>Orca Aquarium</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" Language="en_US">
-			<Text>A building unique to the Orca Pod. Has 2 slots for [ICON_GreatWork_Music] Great Works of Music. +150% [ICON_Tourism] Tourism from [ICON_GreatWork_Music] Great Works of Music in this city.</Text>
+			<Text>A building unique to the Orca Pod. Provides 2 slots for [ICON_GreatWork_Music] Great Works of Music. +150% [ICON_Tourism] Tourism from [ICON_GreatWork_Music] Great Works of Music in this city.</Text>
 		</Row>
 
 		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_HQ" Language="en_US">
