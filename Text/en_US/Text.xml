@@ -56,5 +56,235 @@
 		<Row Tag="LOC_HOLOX_SAKAMATA_CHLOE_MUSICIAN_POINTS_WORLDTEXT" Language="en_US">
 			<Text>[COLOR_FLOAT_FOOD][ICON_GreatMusician] Great Musician +{1_Num}[ENDCOLOR]</Text>
 		</Row>
+
+		<!-- Diplomacy statements (see docs/diplomacy-statements-sakamata-chloe.md) -->
+		<Row Tag="LOC_DIPLO_GREETING_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Bakku bakku baku~n! Need something from Chloe?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Bakku bakku baku~n! I'm Sakamata Chloe, an orca, and the cleaner-slash-intern of Secret Society holoX.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>There's a city of Chloe's pod nearby. Wanna stop by? …Oh, and don't peek into Chloe's room, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Sure, sure! I've been kinda curious about your city. Got any good food?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Looks like we're pretty far apart. Wanna swap maps? Not sure you can read Chloe's handwriting, though.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Sorry, but you just made it onto Chloe's cleanup list. …Bakku bakku baku~n.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Huh? Picking on the new hire? …Fine. Chloe's really good at cleaning.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Noooo, come on… Chloe hasn't even sung enough yet!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Noooo, come on… Chloe hasn't even sung enough yet!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Hey, Chloe wants to be friends with you. …N-not that it means anything, okay!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Yay! Then we're friends starting today! …If you cheat on me, you're getting cleaned up, though, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Huh… so you don't like me…? …Hmph. Fine, whatever.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Huh, you want to be friends with Chloe? Ugh, fine, if you insist~ I'll be nice to you!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Ohhh~? Aren't we a little early for that? We're not that close yet~</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Hey, why not join Chloe's pod? Orcas hunt in packs, you know.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>All right, now we're the same pod! Chloe'll watch your back.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Oh… so you're a lone orca, huh? Tell me anytime if you get lonely.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Sure! Chloe's more of a protect-others type than a be-protected type.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Hmm, it's a bit early to let you into the pod. Let Chloe watch how it goes a little longer, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Heeey… isn't that kind of awful? Chloe's gonna tell everyone.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Huh, you hate Chloe…? …Hmph. If that's how you want it, I'm not holding back.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_KUDO_EXIT_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Your country's kinda nice! Chloe kinda likes it. …Just a little, though.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_EXIT_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Watching what you've been up to lately is getting Chloe really irritated. …Be careful, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Can Chloe send a delegation from her pod? They'll take a bath first, promise.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Thanks! Fish as a gift is fine, right?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Huh, no? …But I said they'd take a bath.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Sure, come on in! I'll show you around — anywhere but Chloe's room.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Sorry, it's kind of a mess right now… not exactly presentable.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Let Chloe set up an embassy over there. I'll send a cleaning person along, too.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Deal! I'll pick somewhere nice to live.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Heeey… why not~?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Sure. Don't make a mess… though Chloe's the last one who should say that.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Not yet. Chloe's secrets aren't something you get to peek at that easily.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Wanna open our borders so we can come and go freely?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Yay! Now Chloe can come visit anytime!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Hmph. Chloe's the type to hold a grudge, you know.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Sure~. But if you peek anywhere weird, I'll smack you, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Nooo, no, no! I haven't forgiven you that much yet!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>If it's about money, I'm all for it! Let's do it.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Ohhh~? Did you really think Chloe would nod at that?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>So close! Let Chloe tweak this part a little? How about this?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Deal~! You get it, don't you?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Heeey… I thought it was a good offer, though~</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>…Hey, shall we wrap this up? Chloe's getting sleepy.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Yeah, that works. The cleanup ends here.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>What? Shut up, seriously. As if I'd accept terms like that.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Whew… now I can finally get some proper sleep.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>If that's how you want it, Chloe will clean you up all the way to the end.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>…Fine, just this once. Chloe's the big sister, after all.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>No, no, no! I'm never giving it to you!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>That's what I like about you! …Just a little, though.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_REFUSE_DEMAND_FROM_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Hmph… Chloe remembers these things, you know?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>That's Chloe's pod's territory, you know? If you get any closer… you get it, right?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Good, that's better. ♪</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>…Hmph. Then let's start by cleaning up the territory.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Huh, was it that close? Sorry, sorry — I'm bad at reading maps.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>The sea doesn't belong to anybody, you know~?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Could you not teach my pod weird stuff?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Mm, thanks.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>…I'm done with you. Chloe holds grudges, you know?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Okay~. …When you love something, you just can't help spreading it, you know?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Aw, but you want to spread good things, right? You'll get into it eventually, too.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Hey, could you stop digging up Chloe's land without asking?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Thanks. That's all I wanted you to understand.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Aw, you did it. …One more for the cleanup list.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Huh, that was your land? Sorry, I totally didn't notice…</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>It was buried, so it belongs to whoever finds it, right?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Could you stop sneaking around looking at me? That's Chloe's specialty, you know.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Good. Nice and honest.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Hmph. Then let's start by cleaning up your spies.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>…Busted? Sorry, I won't do it again. …Probably.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>You're saying that to a cleaner? Gathering intel is part of the job.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Hey, aren't you lining up too many troops on the border? Seeing that makes Chloe want to clean up.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Glad you understand. …You got lucky, huh?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Oh, sorry! They were only here to clean up the barbarians.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
+			<Text>Wherever my kids are is Chloe's business, isn't it?</Text>
+		</Row>
 	</LocalizedText>
 </GameData>
