@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Types>
+		<Row Type="CIVILIZATION_HOLOX_KAZAMA_TAI" Kind="KIND_CIVILIZATION"/>
+		<Row Type="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" Kind="KIND_TRAIT"/>
+		<Row Type="LEADER_HOLOX_KAZAMA_IROHA" Kind="KIND_LEADER"/>
+		<Row Type="TRAIT_LEADER_HOLOX_KAZAMA_IROHA" Kind="KIND_TRAIT"/>
+	</Types>
+
+	<Civilizations>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" Name="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Description="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Adjective="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_ADJECTIVE" StartingCivilizationLevelType="CIVILIZATION_LEVEL_FULL_CIV" RandomCityNameDepth="10"/>
+	</Civilizations>
+
+	<CivilizationLeaders>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" CapitalName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL"/>
+	</CivilizationLeaders>
+
+	<Leaders>
+		<Row LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Name="LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME" InheritFrom="LEADER_DEFAULT"/>
+	</Leaders>
+
+	<LeaderTraits>
+		<Row LeaderType="LEADER_HOLOX_KAZAMA_IROHA" TraitType="TRAIT_LEADER_HOLOX_KAZAMA_IROHA"/>
+	</LeaderTraits>
+
+	<!--
+		能力(名称・効果とも仮)。選択画面に出すためのNOT NULL制約を満たすだけのプレースホルダーで、
+		効果(Modifier)はまだ無い。設計はdocs/design.mdの「風真いろは」を参照。
+	-->
+	<Traits>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" Name="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Description="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION"/>
+		<Row TraitType="TRAIT_LEADER_HOLOX_KAZAMA_IROHA" Name="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Description="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION"/>
+	</Traits>
+
+	<CivilizationTraits>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI"/>
+	</CivilizationTraits>
+
+	<!-- ローディング画面・外交交渉画面の背景。沙花叉と同じく、生成済みの_NEUTRAL/_BACKGROUNDをそのまま流用する(Leaders.xmlのコメント参照) -->
+	<LoadingInfo>
+		<Row LeaderType="LEADER_HOLOX_KAZAMA_IROHA" ForegroundImage="LEADER_HOLOX_KAZAMA_IROHA_NEUTRAL" BackgroundImage="LEADER_HOLOX_KAZAMA_IROHA_BACKGROUND"/>
+	</LoadingInfo>
+
+	<DiplomacyInfo>
+		<Row Type="LEADER_HOLOX_KAZAMA_IROHA" BackgroundImage="LEADER_HOLOX_KAZAMA_IROHA_BACKGROUND"/>
+	</DiplomacyInfo>
+</GameData>

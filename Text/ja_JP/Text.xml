@@ -376,5 +376,32 @@
 		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
 			<Text>うちの子たちがどこにいようと、沙花叉の勝手でしょ？</Text>
 		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="ja_JP">
+			<Text>かざま隊</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="ja_JP">
+			<Text>かざま隊</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_ADJECTIVE" Language="ja_JP">
+			<Text>かざま隊</Text>
+		</Row>
+		<Row Tag="LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="ja_JP">
+			<Text>風真いろは</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="ja_JP">
+			<Text>（仮）文明能力</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="ja_JP">
+			<Text>（未設定）</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="ja_JP">
+			<Text>（仮）指導者能力</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="ja_JP">
+			<Text>（未設定）</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="ja_JP">
+			<Text>山里</Text>
+		</Row>
 	</LocalizedText>
 </GameData>

@@ -45,6 +45,7 @@
 		<UpdateDatabase id="Gameplay">
 			<File>XML/Civilizations.xml</File>
 			<File>XML/Leaders.xml</File>
+			<File>XML/KazamaTai.xml</File>
 		</UpdateDatabase>
 		<!--
 			固有区域「シャチたちの楽園」・固有建造物「シャチの水族館」。置換元が拡張パック限定なので嵐の訪れのときだけ読み込む
@@ -87,6 +88,7 @@
 		<File>XML/Civilizations.xml</File>
 		<File>XML/Leaders.xml</File>
 		<File>XML/OrcaParadise.xml</File>
+		<File>XML/KazamaTai.xml</File>
 		<File>XML/Colors.sql</File>
 		<File>XML/Config.xml</File>
 		<File>Text/en_US/Text.xml</File>

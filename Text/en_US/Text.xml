@@ -346,5 +346,32 @@
 		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="en_US">
 			<Text>Wherever my kids are is Chloe's business, isn't it?</Text>
 		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="en_US">
+			<Text>Kazama-tai</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="en_US">
+			<Text>Kazama-tai</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_ADJECTIVE" Language="en_US">
+			<Text>Kazama-tai</Text>
+		</Row>
+		<Row Tag="LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="en_US">
+			<Text>Kazama Iroha</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="en_US">
+			<Text>(Provisional) Civilization Ability</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="en_US">
+			<Text>(Not yet set)</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="en_US">
+			<Text>(Provisional) Leader Ability</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="en_US">
+			<Text>(Not yet set)</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="en_US">
+			<Text>Yamazato</Text>
+		</Row>
 	</LocalizedText>
 </GameData>

@@ -346,5 +346,32 @@
 		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
 			<Text>我家孩子們在哪裡，不都是沙花叉的自由嗎？</Text>
 		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="zh_Hant_HK">
+			<Text>かざま隊</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>かざま隊</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_ADJECTIVE" Language="zh_Hant_HK">
+			<Text>かざま隊</Text>
+		</Row>
+		<Row Tag="LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="zh_Hant_HK">
+			<Text>風真いろは</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="zh_Hant_HK">
+			<Text>（暫定）文明能力</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>（尚未設定）</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="zh_Hant_HK">
+			<Text>（暫定）領袖能力</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>（尚未設定）</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="zh_Hant_HK">
+			<Text>山里</Text>
+		</Row>
 	</LocalizedText>
 </GameData>
