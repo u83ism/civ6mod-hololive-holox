@@ -29,7 +29,7 @@ Civ/Leaderの選択画面自体は`bootstrap-leader` Skillの範囲で(アイコ
 - `npm run gen-icon-sources -- <civilizationId> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]`: `Art/Source/`のマスター素材(ファイル名引数は`Art/Source/`からの相対パス、例: `sakamata-chloe/sakamata_chloe-face.png`)から各サイズのPNGを`Art/Icons/`に生成(`icon-manifest.ts`にサイズ一覧、`gen-icon-sources.ts`にトリミング/マスク処理)。文明アイコンはバニラの45pxのようなフルカラー版を作らず、全サイズを白シルエットにする(理由は`docs/civ6-icon-color-bug-investigation.md`末尾)
 - `npm run build-icons`: `Art/Icons/*.png`を`tools/IconBuild/Textures/*.dds`に変換(ファイル名から自動判定するため引数なし)
 - `npm run gen-tex -- <civilizationId> <leaderId>`: 公式`.tex`テンプレートをコピーして`tools/IconBuild/Textures/*.tex`を生成
-- `npm run gen-xlp -- <civilizationId> <leaderId>`: `tools/IconBuild/XLPs/HoloX_Icons.xlp`を生成
+- `npm run gen-xlp -- <civilizationId> <leaderId> [<civilizationId> <leaderId> ...]`: `tools/IconBuild/XLPs/HoloX_Icons.xlp`を生成。**毎回ファイルを作り直すので、残したい全リーダーの組を一度に渡すこと**(2人目を1組だけで実行すると1人目のエントリが消える。2026-10-01、風真いろは追加時に発覚)
 - `npm run gen-dep -- <Mod.Art.xml> <out.dep>`: `.dep`を機械生成
 
 ## 色バグは解決済み(旧: 未解決の色バグ)
