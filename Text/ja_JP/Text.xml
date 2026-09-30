@@ -31,7 +31,7 @@
 			<Text>[ICON_GreatWork_Music] 傑作 (音楽) から得られる [ICON_Culture] 文化力+2、 [ICON_Tourism] 観光力+50%。宮殿に [ICON_GreatWork_Music] 音楽を入れられるスロットが6つ追加される。</Text>
 		</Row>
 
-		<!-- 固有区域「シャチたちの楽園」・固有建造物「シャチの水族館」(XML/OrcaParadise.xml)。公式の固有区域・固有建造物に倣い、置き換え元と違う効果と設置制限だけを書く(文面はコパカバーナ・女王の図書館・航海学校等に合わせた) -->
+		<!-- 固有区域「シャチたちの楽園」・固有建造物「シャチの水族館」(XML/OrcaParadise.xml)。公式の固有区域・固有建造物に倣い、置き換え元の説明文にある特殊効果は公式の文のまま再掲し、固有の効果と設置制限を書き足す(文面はコパカバーナ・女王の図書館・航海学校等に合わせた) -->
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Language="ja_JP">
 			<Text>シャチたちの楽園</Text>
 		</Row>
@@ -42,7 +42,7 @@
 			<Text>シャチの水族館</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" Language="ja_JP">
-			<Text>シャチの群れ固有の建造物。 [ICON_GreatWork_Music] 音楽を入れられるスロットを2つ持つ。この都市の [ICON_GreatWork_Music] 傑作 (音楽) による [ICON_Tourism] 観光力+150%。</Text>
+			<Text>シャチの群れ固有の建造物。9タイル以内にある都心に [ICON_Amenities] 快適性ボーナスが及ぶ。このボーナスは1つの都市に対して一度だけ適用され、都心の9タイル以内に同種の建造物が2つ以上あってもボーナスが増えることはない。この都市の沿岸資源、沈没船、礁タイル1つにつき [ICON_SCIENCE] 科学力+1。 [ICON_GreatWork_Music] 音楽を入れられるスロットを2つ持つ。この都市の [ICON_GreatWork_Music] 傑作 (音楽) による [ICON_Tourism] 観光力+150%。</Text>
 		</Row>
 
 		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_RAUSU" Language="ja_JP">

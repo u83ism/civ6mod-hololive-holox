@@ -31,7 +31,7 @@
 			<Text>+2 [ICON_Culture] Culture and +50% [ICON_Tourism] Tourism from each [ICON_GreatWork_Music] Great Work of Music. Palace has 6 additional slots for [ICON_GreatWork_Music] Great Works of Music.</Text>
 		</Row>
 
-		<!-- Unique district "Orca Paradise" and unique building "Orca Aquarium" (XML/OrcaParadise.xml). Following official unique districts/buildings, only effects that differ from the replaced one and placement restrictions are listed -->
+		<!-- Unique district "Orca Paradise" and unique building "Orca Aquarium" (XML/OrcaParadise.xml). Following official unique districts/buildings, the replaced one's description effects are restated verbatim, followed by the unique effects and placement restrictions -->
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Language="en_US">
 			<Text>Orca Paradise</Text>
 		</Row>
@@ -42,7 +42,7 @@
 			<Text>Orca Aquarium</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" Language="en_US">
-			<Text>A building unique to the Orca Pod. This building provides 2 slots of [ICON_GreatWork_Music] Music. +150% [ICON_Tourism] Tourism from [ICON_GreatWork_Music] Great Works of Music in this city.</Text>
+			<Text>A building unique to the Orca Pod. Bonus [ICON_Amenities]  Amenity extends to each city center within 9 tiles. This bonus applies once to a city, and multiple copies of this building within 9 tiles of a city center do not provide additional bonuses. +1 [ICON_SCIENCE] Science to each coastal resource, Shipwreck, and Reef tile in this city. This building provides 2 slots of [ICON_GreatWork_Music] Music. +150% [ICON_Tourism] Tourism from [ICON_GreatWork_Music] Great Works of Music in this city.</Text>
 		</Row>
 
 		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_RAUSU" Language="en_US">

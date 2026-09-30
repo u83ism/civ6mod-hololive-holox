@@ -42,7 +42,7 @@
 			<Text>殺人鯨水族館</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" Language="zh_Hant_HK">
-			<Text>殺人鯨群特色建築。此建築提供2個可放置 [ICON_GreatWork_Music] 音樂巨作的槽位。來自該城市 [ICON_GreatWork_Music] 音樂巨作的 [ICON_Tourism] 旅遊業績+150%。</Text>
+			<Text>殺人鯨群特色建築。距離9單元格範圍內的所有市中心可獲得 [ICON_Amenities] 滿意度加成。此加成僅能在同座城市內施用1次，在市中心9單元格範圍內建造多座此建築並不會提供額外加成。此城市中的每個海岸資源、遇難船隻遺址與礁石單元格+1 [ICON_SCIENCE] 科技值。此建築提供2個可放置 [ICON_GreatWork_Music] 音樂巨作的槽位。來自該城市 [ICON_GreatWork_Music] 音樂巨作的 [ICON_Tourism] 旅遊業績+150%。</Text>
 		</Row>
 
 		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_RAUSU" Language="zh_Hant_HK">
