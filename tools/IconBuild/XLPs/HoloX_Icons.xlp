@@ -89,6 +89,86 @@
 			<m_EntryID text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_256"/>
 			<m_ObjectName text="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_256"/>
 		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_22"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_22"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_30"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_30"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_32"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_32"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_36"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_36"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_44"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_44"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_45"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_45"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_48"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_48"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_50"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_50"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_64"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_64"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_80"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_80"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_128"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_128"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_256"/>
+			<m_ObjectName text="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_256"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_KAZAMA_IROHA_32"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_KAZAMA_IROHA_32"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_KAZAMA_IROHA_45"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_KAZAMA_IROHA_45"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_KAZAMA_IROHA_48"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_KAZAMA_IROHA_48"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_KAZAMA_IROHA_50"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_KAZAMA_IROHA_50"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_KAZAMA_IROHA_55"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_KAZAMA_IROHA_55"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_KAZAMA_IROHA_64"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_KAZAMA_IROHA_64"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_KAZAMA_IROHA_80"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_KAZAMA_IROHA_80"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_LEADER_HOLOX_KAZAMA_IROHA_256"/>
+			<m_ObjectName text="ICON_LEADER_HOLOX_KAZAMA_IROHA_256"/>
+		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
 		<Element>WINDOWS</Element>
