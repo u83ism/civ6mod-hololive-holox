@@ -359,16 +359,16 @@
 			<Text>風真いろは</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="zh_Hant_HK">
-			<Text>（暫定）文明能力</Text>
+			<Text>風真一族</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="zh_Hant_HK">
-			<Text>（尚未設定）</Text>
+			<Text>所有陸地單位+1 [ICON_Movement] 移動力。</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="zh_Hant_HK">
-			<Text>（暫定）領袖能力</Text>
+			<Text>武者修行</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="zh_Hant_HK">
-			<Text>（尚未設定）</Text>
+			<Text>所有陸地單位獲得+50%戰鬥經驗。</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="zh_Hant_HK">
 			<Text>山里</Text>

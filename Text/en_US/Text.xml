@@ -359,16 +359,16 @@
 			<Text>Kazama Iroha</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="en_US">
-			<Text>(Provisional) Civilization Ability</Text>
+			<Text>Kazama Clan</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="en_US">
-			<Text>(Not yet set)</Text>
+			<Text>+1 [ICON_Movement] Movement to all land units.</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="en_US">
-			<Text>(Provisional) Leader Ability</Text>
+			<Text>Warrior's Pilgrimage</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="en_US">
-			<Text>(Not yet set)</Text>
+			<Text>All land units gain +50% combat experience.</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="en_US">
 			<Text>Yamazato</Text>
