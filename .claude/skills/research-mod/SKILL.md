@@ -20,7 +20,7 @@ Civ6のModBuddy/Art Pipeline周りは公式ドキュメントが薄く、英語�
    - `bootstrap-leader/references/firetuner.md`(FireTunerによる実機Live操作・God Mode的デバッグ、実機確認済み)
 2. **Modifier/Requirement/Collection/Event固有の疑問(引数・対象クラス・データ型・DLC対応)は「Civilization VI Modding Companion 2.0」を最優先で見る**。詳細は6節参照。DLLから抽出/実機検証されたコミュニティ製の逆引き辞典で、`implement-leader-abilities`のModifier実装時に「このEffectTypeにこの引数を渡せるか」「このModが対応するDLCでそのEffectが使えるか」を裏取りするのに向く
 3. **GSLeaderTemplate・実際に動くModサンプル(サンプル・テンプレート)**。詳細は3節参照。実際に動作するModBuddyプロジェクトファイル一式で、スキーマの実例として非常に有用
-4. **実機にインストール済みの参考Mod**(`Documents/My Games/Sid Meier's Civilization VI/Mods/`配下)。実際に動いている他ModのXML/modinfoは伝聞より確実な一次情報。複数の独立したMod(できれば作者違い)で同じパターンが確認できれば、それはほぼ確定的な事実として扱ってよい
+4. **実機にインストール済みの参考Mod**(`Documents/My Games/Sid Meier's Civilization VI/Mods/`配下)。実際に動いている他ModのXML/modinfoは伝聞より確実な一次情報。複数の独立したMod(できれば作者違い)で同じパターンが確認できれば、それはほぼ確定的な事実として扱ってよい。**他のホロライブMod(JP/EN等)の既存Trait・固有要素の効果と数値は、`docs/civ6-research/existing-trait-catalog.md`に整理済み**。強さ・数値(戦闘力+N、産出+N%等)を提案する前に、まずここで他メンバーの前例を見る(由来: 2026-10-01、戦闘力+5/+3の議論で獅白ぼたん・桃鈴ねね・森カリオペの前例を確認せずに提案し、本人に指摘されてから探した)
 5. **Civ6 SDK同梱ドキュメント/サンプル**(`Sid Meier's Civilization VI SDK/Documentation/Civ6Docs.html`、`Examples/Example Art Mod/`)。公式だが英語かつ量が多いので、上記1-4で仮説が立った後の裏取りに向く
 6. **CivFanatics forums等の英語コミュニティ**。最後の手段。Civ5とCiv6の情報が検索結果に混在しやすく、"Import into VFS"のようなCiv5専用概念をCiv6の話として誤読しやすいので要注意
 
