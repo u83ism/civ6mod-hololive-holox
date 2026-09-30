@@ -36,7 +36,7 @@
 			<Text>Orca Paradise</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" Language="en_US">
-			<Text>A district unique to the Orca Pod. Replaces the Water Park district. Can be built after researching the Games and Recreation civic.[NEWLINE][NEWLINE]+1 [ICON_Food] Food and +1 [ICON_Production] Production from Coast (excluding Lake) and Ocean tiles in this city. +2 [ICON_GreatMusician] Great Musician points per turn. Cannot be built in a city with an Entertainment Complex. Cannot be built on Reef.</Text>
+			<Text>A district unique to the Orca Pod. Replaces the Water Park district. Can be built after researching the Games and Recreation civic.[NEWLINE][NEWLINE]+1 [ICON_Food] Food and +1 [ICON_Production] Production from Coast (excluding Lake) and Ocean tiles in this city. +1 [ICON_Amenities] Amenity. +2 [ICON_GreatMusician] Great Musician points per turn. Cannot be built in a city with an Entertainment Complex. Cannot be built on Reef.</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Language="en_US">
 			<Text>Orca Aquarium</Text>
