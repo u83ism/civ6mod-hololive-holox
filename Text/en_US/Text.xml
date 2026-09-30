@@ -42,7 +42,7 @@
 			<Text>Orca Aquarium</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" Language="en_US">
-			<Text>A building unique to the Orca Pod. Provides 2 slots for [ICON_GreatWork_Music] Great Works of Music. +150% [ICON_Tourism] Tourism from [ICON_GreatWork_Music] Great Works of Music in this city.</Text>
+			<Text>A building unique to the Orca Pod. This building provides 2 slots of [ICON_GreatWork_Music] Music. +150% [ICON_Tourism] Tourism from [ICON_GreatWork_Music] Great Works of Music in this city.</Text>
 		</Row>
 
 		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_RAUSU" Language="en_US">
