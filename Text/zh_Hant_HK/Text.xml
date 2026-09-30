@@ -36,7 +36,7 @@
 			<Text>殺人鯨樂園</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" Language="zh_Hant_HK">
-			<Text>殺人鯨群特色區域。取代水上樂園。研究「遊戲和娛樂」市政後可建造。[NEWLINE][NEWLINE]該城市中每個海岸（不含湖泊）和海洋單元格+1 [ICON_Food] 食物和+1 [ICON_Production] 生產力。+1 [ICON_Amenities] 滿意度。每回合+2 [ICON_GreatMusician] 大音樂家點數。無法建造在擁有「娛樂中心」的城市中。無法建造在礁石單元格上。</Text>
+			<Text>殺人鯨群特色區域。取代水上樂園。研究「遊戲和娛樂」市政後可建造。[NEWLINE][NEWLINE]該城市中每個海岸（不含湖泊）和海洋單元格+1 [ICON_Food] 食物和+1 [ICON_Production] 生產力。能增加 [ICON_Amenities] 滿意度，讓人民開心。每回合+2 [ICON_GreatMusician] 大音樂家點數。無法建造在擁有「娛樂中心」的城市中。無法建造在礁石單元格上。</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Language="zh_Hant_HK">
 			<Text>殺人鯨水族館</Text>
