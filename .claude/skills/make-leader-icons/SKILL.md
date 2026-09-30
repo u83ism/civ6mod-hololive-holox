@@ -26,11 +26,16 @@ Civ/Leaderの選択画面自体は`bootstrap-leader` Skillの範囲で(アイコ
 
 `civilizationId`/`leaderId`は`ICON_CIVILIZATION_`/`ICON_LEADER_`を除いた部分(例: `REGLOSS_ICHIJOU`/`REGLOSS_ICHIJOU_RIRIKA`)。キャラ名はハードコードされておらずCLI引数で渡す作りなので、2人目以降のリーダーでもファイルの書き換えは不要。
 
+- `npm run gen-silhouette-master -- <svgFileName> <outputFileName> [<fillFraction>]`: 線画・フラットなSVG(`Art/Source/`からの相対パス)から、文明アイコンの元絵(白シルエット・透明背景、1024px)を生成して`Art/Source/`に保存する。暗い線→不透明の白、白い面→透明(バッジの背景色が透ける穴)。出力を下の`gen-icon-sources`の文明元絵に渡す。注意点(いずれも2026-10-01、風真いろはの葉のアイコンで踏んだ):
+  - **線が純黒でないSVGは、輝度をそのままalphaにすると最大alphaが下がる**(`#231f20`の線だと87%止まり)。線の色(最も暗い不透明ピクセル)で正規化する作りにしてある
+  - **円形バッジでは、図案が外接矩形ぴったりだと縁に接する**。図案の長辺をキャンバスの65%に収める(`fillFraction`で調整、小さいほど余白が増える)。**作ったら円形バッジに重ねたプレビューで、余白と小サイズ(22〜32px)の線の細さを目視で確認すること**(数値だけ見て確認した気になり、縁に接したまま出した前例がある)
 - `npm run gen-icon-sources -- <civilizationId> <civSilhouetteMasterFileName> [<leaderId> <leaderFaceMasterFileName>]`: `Art/Source/`のマスター素材(ファイル名引数は`Art/Source/`からの相対パス、例: `sakamata-chloe/sakamata_chloe-face.png`)から各サイズのPNGを`Art/Icons/`に生成(`icon-manifest.ts`にサイズ一覧、`gen-icon-sources.ts`にトリミング/マスク処理)。文明アイコンはバニラの45pxのようなフルカラー版を作らず、全サイズを白シルエットにする(理由は`docs/civ6-icon-color-bug-investigation.md`末尾)
 - `npm run build-icons`: `Art/Icons/*.png`を`tools/IconBuild/Textures/*.dds`に変換(ファイル名から自動判定するため引数なし)
 - `npm run gen-tex -- <civilizationId> <leaderId>`: 公式`.tex`テンプレートをコピーして`tools/IconBuild/Textures/*.tex`を生成
 - `npm run gen-xlp -- <civilizationId> <leaderId> [<civilizationId> <leaderId> ...]`: `tools/IconBuild/XLPs/HoloX_Icons.xlp`を生成。**毎回ファイルを作り直すので、残したい全リーダーの組を一度に渡すこと**(2人目を1組だけで実行すると1人目のエントリが消える。2026-10-01、風真いろは追加時に発覚)
 - `npm run gen-dep -- <Mod.Art.xml> <out.dep>`: `.dep`を機械生成
+
+**生成スクリプトを実行したら、コミット前に`git diff`で共有ファイル(`tools/IconBuild/XLPs/*.xlp`・`ArtDefs/FallbackLeaders.artdef`)の変更が追加行のみ(削除行なし)か確認する。** 2人目のリーダーを追加したとき、スクリプトが共有ファイルを作り直して1人目のエントリが消えたまま、BLPのサイズが小さいことで後から気づいた前例がある(2026-10-01、現在は追記方式に直してある)。
 
 ## 色バグは解決済み(旧: 未解決の色バグ)
 
