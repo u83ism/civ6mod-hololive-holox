@@ -10,8 +10,8 @@
 	<m_PackageName text="UI/HoloX_LoadingPortrait"/>
 	<m_Entries>
 		<Element>
-			<m_EntryID text="LEADER_HOLOX_KAZAMA_IROHA_NEUTRAL"/>
-			<m_ObjectName text="LEADER_HOLOX_KAZAMA_IROHA_NEUTRAL"/>
+			<m_EntryID text="LEADER_HOLOX_SAKAMATA_CHLOE_NEUTRAL"/>
+			<m_ObjectName text="LEADER_HOLOX_SAKAMATA_CHLOE_NEUTRAL"/>
 		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>

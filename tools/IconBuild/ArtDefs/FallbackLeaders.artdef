@@ -23,7 +23,7 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="FALLBACK_NEUTRAL_HOLOX_KAZAMA_IROHA"/>
+										<m_EntryName text="FALLBACK_NEUTRAL_HOLOX_SAKAMATA_CHLOE"/>
 										<m_XLPClass text="LeaderFallback"/>
 										<m_XLPPath text="LeaderFallbackImages.xlp"/>
 										<m_BLPPackage text="LeaderFallbackImages"/>
@@ -38,7 +38,7 @@
 						</Element>
 					</Element>
 				</m_ChildCollections>
-				<m_Name text="LEADER_HOLOX_KAZAMA_IROHA"/>
+				<m_Name text="LEADER_HOLOX_SAKAMATA_CHLOE"/>
 				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 			</Element>
 		</Element>

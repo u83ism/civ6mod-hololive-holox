@@ -1,21 +1,27 @@
 // Build XLPs/HoloX_Icons.xlp using the exact header/footer structure of Firaxis's own
 // Civ6 SDK Assets pantry/XLPs/Icons.xlp, with only our own icon entries.
-// Usage: tsx gen-xlp.ts <civilizationId> [<leaderId>]
-// Example: tsx gen-xlp.ts REGLOSS_ICHIJOU REGLOSS_ICHIJOU_RIRIKA
+// The XLP is regenerated from scratch every run, so every civilization/leader pair that should
+// stay in the package must be passed together (a trailing civilization may omit its leader).
+// Usage: tsx gen-xlp.ts <civilizationId> [<leaderId>] [<civilizationId> [<leaderId>]] ...
+// Example: tsx gen-xlp.ts HOLOX_ORCA_POD HOLOX_SAKAMATA_CHLOE HOLOX_KAZAMA_TAI HOLOX_KAZAMA_IROHA
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { civilizationIconName, civilizationIconSizes, leaderIconName, leaderIconSizes } from "./icon-manifest.js";
 
-const [, , civilizationId, leaderId] = process.argv;
-if (!civilizationId) {
-  console.error("Usage: tsx gen-xlp.ts <civilizationId> [<leaderId>]");
+const identifiers = process.argv.slice(2);
+if (identifiers.length === 0) {
+  console.error("Usage: tsx gen-xlp.ts <civilizationId> [<leaderId>] [<civilizationId> [<leaderId>]] ...");
   process.exit(1);
 }
 
-const entries = [
-  ...civilizationIconSizes.map((size) => civilizationIconName(civilizationId, size)),
-  ...(leaderId ? leaderIconSizes.map((size) => leaderIconName(leaderId, size)) : []),
-];
+const entries = Array.from({ length: Math.ceil(identifiers.length / 2) }, (_, pairIndex) => {
+  const civilizationId = identifiers[pairIndex * 2]!;
+  const leaderId = identifiers[pairIndex * 2 + 1];
+  return [
+    ...civilizationIconSizes.map((size) => civilizationIconName(civilizationId, size)),
+    ...(leaderId ? leaderIconSizes.map((size) => leaderIconName(leaderId, size)) : []),
+  ];
+}).flat();
 
 const elements = entries
   .map((name) => `\t\t<Element>\n\t\t\t<m_EntryID text="${name}"/>\n\t\t\t<m_ObjectName text="${name}"/>\n\t\t</Element>`)

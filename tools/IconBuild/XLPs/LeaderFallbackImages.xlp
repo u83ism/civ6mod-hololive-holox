@@ -10,8 +10,8 @@
 	<m_PackageName text="LeaderFallbackImages"/>
 	<m_Entries>
 		<Element>
-			<m_EntryID text="FALLBACK_NEUTRAL_HOLOX_KAZAMA_IROHA"/>
-			<m_ObjectName text="FALLBACK_NEUTRAL_HOLOX_KAZAMA_IROHA"/>
+			<m_EntryID text="FALLBACK_NEUTRAL_HOLOX_SAKAMATA_CHLOE"/>
+			<m_ObjectName text="FALLBACK_NEUTRAL_HOLOX_SAKAMATA_CHLOE"/>
 		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
