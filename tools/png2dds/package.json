@@ -15,7 +15,8 @@
     "gen-loading-background": "tsx gen-loading-background.ts",
     "gen-loading-portrait": "tsx gen-loading-portrait.ts",
     "preview-fallback-dark-bg": "tsx preview-fallback-dark-bg.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "gen-silhouette-master": "tsx gen-silhouette-master.ts"
   },
   "dependencies": {
     "pngjs": "^7.0.0",
