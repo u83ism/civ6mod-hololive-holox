@@ -125,12 +125,7 @@
 
 **施設の解禁段階**: 総合娯楽施設は区域・闘技場が遊びと娯楽、ウォーターパークは区域・観覧車が博物学で、ずれているのは区域と1段目だけ(表は`docs/civ6-research/vanilla-conventions.md`)。施設の解禁・前提施設は建造物側の定義なのでUDからは変えられず、区域だけ前倒しすると「古典時代から区域は置けるが中は空」になる。
 
-**施設の効果を変えるのにUB化は必須ではない**:
-
-- UB不要(Trait/UD側のModifierで施設を指定して上乗せできる): 傑作スロット追加(`MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS`)、産出の加算(`MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE`)/%増加(`..._BUILDING_YIELD_MODIFIER`)、生産力・購入コスト(`..._BUILDING_PRODUCTION`/`..._BUILDING_PURCHASE_COST`)、住宅(`..._BUILDING_HOUSING`)、区域単位の快適性(`MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_ENTERTAINMENT`)。いずれもゲーム本体の`Modifiers.xml`に実在
-- UB必須(施設そのものの定義): 解禁の社会制度、前提施設(「観覧車の後」を外す等)、基本コスト・維持費・快適性の範囲、施設の固有名
-- UB無しの欠点: 上乗せ効果は施設のツールチップに出ない(上乗せ分は文明能力の説明文に書くしかない)ので、プレイヤーから「水族館が強い」ことが見えにくい
-- 置き換え施設で元の効果を外した前例: 温泉(ハンガリー、動物園置換。熱帯雨林・湿原からの科学力を外して快適性・生産力・観光力に差し替え)、マラエ(マオリ、円形闘技場の文化力・書物スロット・大著作家ポイントを全部外す)、HOLOLIVE系ではセイレーンの岩礁(灯台の沿岸食料・住宅・経験値を外して音楽スロット等)、Hakos BaelzのImprovisation Theater(円形劇場の書物スロットを外す)など
+**UB化の要否**: 効果の上乗せだけならUB(固有建造物)にしなくても、UD側のModifierで水族館を指定して足せる。UB化を選んだのは、解禁などの施設の定義と、上乗せ効果を水族館のツールチップに出すため(施設の定義・前例は`docs/civ6-research/vanilla-conventions.md`)。
 
 **ウォーターパーク・水族館のバニラ仕様と、置換で引き継がれないもの**(仕様は`docs/civ6-research/vanilla-conventions.md`):
 
