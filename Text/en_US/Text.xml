@@ -377,7 +377,7 @@
 			<Text>Hidden Mountain Wilds</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="en_US">
-			<Text>A district unique to Kazama-tai. Replaces the Preserve district and cheaper to build.[NEWLINE][NEWLINE]Grants up to 3 [ICON_Housing] Housing based on Appeal. Increases the Appeal of adjacent tiles by 2. Adjacent unimproved tiles in this city gain +1 [ICON_Food] Food. Culture bombs adjacent neutral tiles, and increases their Appeal by 1. +1 [ICON_Production] Production for each adjacent Mountain tile. Cannot be built adjacent to the city center.</Text>
+			<Text>A district unique to Kazama-tai. Replaces the Preserve district and cheaper to build.[NEWLINE][NEWLINE]Grants up to 3 [ICON_Housing] Housing based on Appeal. Increases the Appeal of adjacent tiles by 2. Adjacent unimproved tiles in this city (excluding water, Mountains and districts) gain +1 [ICON_Food] Food. Culture bombs adjacent neutral tiles, and increases their Appeal by 1. +1 [ICON_Production] Production for each adjacent Mountain tile. Cannot be built adjacent to the city center.</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" Language="en_US">
 			<Text>+{1_num} [ICON_Production] Production from the adjacent Mountain {1_Num : plural 1?tile; other?tiles;}.</Text>

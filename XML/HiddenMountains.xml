@@ -120,7 +120,7 @@
 	<!--
 		この区域に隣接する、施設が築かれていないタイルの食料+1(アピール不問)。この都市のタイルの産出を増やすModifierを区域から付ける
 		(シャチたちの楽園の海タイル産出と同じMODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELDをDistrictModifiersに登録する型)。
-		林・聖域の産出(アピール条件付き)とは別に足される。「施設が築かれていない」はバニラのREQUIRES_PLOT_HAS_NO_IMPROVEMENTと同じ
+		水(沿岸・湖・深海)・山・区域のタイルは除く(山は隣接ボーナスで生産力を得るので二重取りしない)。林・聖域の産出(アピール条件付き)とは別に足される。「施設が築かれていない」はバニラのREQUIRES_PLOT_HAS_NO_IMPROVEMENTと同じ
 		REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENTのInverse(バニラのIDは嵐の訪れ限定の定義なので、自前のIDで同じものを書く)。
 	-->
 	<DistrictModifiers>
@@ -141,6 +141,22 @@
 			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
 			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_ADJACENT_DISTRICT</RequirementId>
 		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_COAST</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_OCEAN</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_MOUNTAIN</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_HAS_NO_DISTRICT</RequirementId>
+		</Row>
 	</RequirementSetRequirements>
 	<Requirements>
 		<Row>
@@ -151,6 +167,26 @@
 		<Row>
 			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_ADJACENT_DISTRICT</RequirementId>
 			<RequirementType>REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES</RequirementType>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_COAST</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_OCEAN</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_MOUNTAIN</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_IS_MOUNTAIN</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_HAS_NO_DISTRICT</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_HAS_ANY_DISTRICT</RequirementType>
+			<Inverse>true</Inverse>
 		</Row>
 	</Requirements>
 	<RequirementArguments>
@@ -168,6 +204,16 @@
 			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_ADJACENT_DISTRICT</RequirementId>
 			<Name>MaxRange</Name>
 			<Value>1</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_COAST</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_COAST</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_OCEAN</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_OCEAN</Value>
 		</Row>
 	</RequirementArguments>
 </GameData>
