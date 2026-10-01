@@ -407,10 +407,10 @@
 			<Text>山の秘境</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="ja_JP">
-			<Text>かざま隊固有の区域。保護区に取ってかわり、より安価に建設できる。[NEWLINE][NEWLINE]アピールに応じて最大で [ICON_Housing] 住宅+3。隣接タイルのアピール+2。隣接タイルで文化爆弾が発動し、発動したタイルのアピール+1。隣接する山岳タイルにより [ICON_Production] 生産力+1。都心に隣接させることはできない。</Text>
+			<Text>かざま隊固有の区域。保護区に取ってかわり、より安価に建設できる。[NEWLINE][NEWLINE]アピールに応じて最大で [ICON_Housing] 住宅+3。隣接タイルのアピール+2。隣接タイルで文化爆弾が発動し、発動したタイルのアピール+1。隣接する山岳タイルにより [ICON_Food] 食料+1。都心に隣接させることはできない。</Text>
 		</Row>
-		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" Language="ja_JP">
-			<Text>隣接する山岳タイルにより [ICON_Production] 生産力+{1_num}。</Text>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" Language="ja_JP">
+			<Text>隣接する山岳タイルにより [ICON_Food] 食料+{1_num}。</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_EXPANSION2_DESCRIPTION" Language="ja_JP">
 			<Text>すべての陸上ユニットの [ICON_Movement] 移動力+1。市民が山岳タイルを利用できるようになる。山岳タイルの [ICON_PRODUCTION] 生産力+2。産業時代に到達すると、さらに [ICON_PRODUCTION] 生産力+1。</Text>
