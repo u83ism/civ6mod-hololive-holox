@@ -52,7 +52,7 @@ Modifier/Requirementの組み合わせでは表現できない効果(例:「倒�
 - 戦闘力の基本値: ユニットの定義`GameInfo.Units[unit:GetType()]`の`Combat`/`RangedCombat`/`Bombard`。なお`Events.Combat`の戦闘結果テーブルの`COMBAT_STRENGTH`も補正前の基本値(遠隔攻撃なら遠隔戦闘力)で、補正は`STRENGTH_MODIFIER`に別に入っている(公式UIの`UnitPanel.lua`は両者を足して合計を表示する)
 - `Game.GetRandNum(n, "理由")` — 0〜n-1の整数を返す同期された乱数。1000回まとめて引いた場合・イベントごとに1回ずつ引いた場合のどちらも偏りは無かった(2026-09-28、civ6mod-hololive-holoxで計測)。端数のある確率は`Game.GetRandNum(10000, ...)`で万分率にして比べる
 
-実例は`Lua/SakamataChloeGameplayScript.lua`、詳細な実機デバッグ記録は`docs/design.md`の「沙花叉クロヱ」節を参照。
+実例は`Lua/SakamataChloeGameplayScript.lua`、詳細な実機デバッグ記録は`docs/implementation-notes.md`を参照。
 
 ## civ6wiki.info要約: Trait/Modifierの基本構造、文明カラー・AIの好み、多言語化(未検証)
 
