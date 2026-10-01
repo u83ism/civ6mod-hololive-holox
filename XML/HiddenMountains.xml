@@ -51,6 +51,11 @@
 			<ModifierId>HOLOX_ACTIVATE_HIDDEN_MOUNTAINS_CULTURE_BOMB</ModifierId>
 			<ModifierType>MODIFIER_ALL_PLAYERS_ADD_CULTURE_BOMB_TRIGGER</ModifierType>
 		</Row>
+		<Row>
+			<ModifierId>HOLOX_HIDDEN_MOUNTAINS_UNIMPROVED_FOOD</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</SubjectRequirementSetId>
+		</Row>
 	</Modifiers>
 	<ModifierArguments>
 		<Row>
@@ -62,6 +67,16 @@
 			<ModifierId>HOLOX_ACTIVATE_HIDDEN_MOUNTAINS_CULTURE_BOMB</ModifierId>
 			<Name>CaptureOwnedTerritory</Name>
 			<Value>False</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_HIDDEN_MOUNTAINS_UNIMPROVED_FOOD</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_FOOD</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_HIDDEN_MOUNTAINS_UNIMPROVED_FOOD</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
 		</Row>
 	</ModifierArguments>
 
@@ -101,4 +116,58 @@
 		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="2" MaximumValue="3" YieldChange="1" YieldType="YIELD_SCIENCE" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_CHARMING" BuildingType="BUILDING_SANCTUARY"/>
 		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="4" MaximumValue="100" YieldChange="2" YieldType="YIELD_PRODUCTION" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_BREATHTAKING" BuildingType="BUILDING_SANCTUARY"/>
 	</Adjacent_AppealYieldChanges>
+
+	<!--
+		この区域に隣接する、施設が築かれていないタイルの食料+1(アピール不問)。この都市のタイルの産出を増やすModifierを区域から付ける
+		(シャチたちの楽園の海タイル産出と同じMODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELDをDistrictModifiersに登録する型)。
+		林・聖域の産出(アピール条件付き)とは別に足される。「施設が築かれていない」はバニラのREQUIRES_PLOT_HAS_NO_IMPROVEMENTと同じ
+		REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENTのInverse(バニラのIDは嵐の訪れ限定の定義なので、自前のIDで同じものを書く)。
+	-->
+	<DistrictModifiers>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" ModifierId="HOLOX_HIDDEN_MOUNTAINS_UNIMPROVED_FOOD"/>
+	</DistrictModifiers>
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_HAS_NO_IMPROVEMENT</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_ADJACENT_DISTRICT</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<Requirements>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_HAS_NO_IMPROVEMENT</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_ADJACENT_DISTRICT</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES</RequirementType>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_ADJACENT_DISTRICT</RequirementId>
+			<Name>DistrictType</Name>
+			<Value>DISTRICT_HOLOX_HIDDEN_MOUNTAINS</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_ADJACENT_DISTRICT</RequirementId>
+			<Name>MinRange</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_ADJACENT_DISTRICT</RequirementId>
+			<Name>MaxRange</Name>
+			<Value>1</Value>
+		</Row>
+	</RequirementArguments>
 </GameData>
