@@ -125,7 +125,11 @@
 		読み込む(XML/OrcaParadise.xml、.modinfoのActionCriteria)ので、Expansion2_Playersにだけ登録する。
 		SortIndexはブラジル(ユニット10・区域20)に倣った。
 	-->
+	<!-- 風真いろはの固有ユニット「侍」(日本の侍を共有。ゲーム本体のBase・Expansion1・Expansion2のPlayers.xmlの日本の行と同じ値、ルールセットごとに3行) -->
 	<PlayerItems>
+		<Row Domain="Players:StandardPlayers" CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Type="UNIT_JAPANESE_SAMURAI" Icon="ICON_UNIT_JAPANESE_SAMURAI" Name="LOC_UNIT_JAPANESE_SAMURAI_NAME" Description="LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION" SortIndex="10"/>
+		<Row Domain="Players:Expansion1_Players" CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Type="UNIT_JAPANESE_SAMURAI" Icon="ICON_UNIT_JAPANESE_SAMURAI" Name="LOC_UNIT_JAPANESE_SAMURAI_NAME" Description="LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION" SortIndex="10"/>
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Type="UNIT_JAPANESE_SAMURAI" Icon="ICON_UNIT_JAPANESE_SAMURAI" Name="LOC_UNIT_JAPANESE_SAMURAI_NAME" Description="LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION" SortIndex="10"/>
 		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" LeaderType="LEADER_HOLOX_SAKAMATA_CHLOE" Type="DISTRICT_HOLOX_ORCA_PARADISE" Icon="ICON_DISTRICT_HOLOX_ORCA_PARADISE" Name="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Description="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" SortIndex="20"/>
 		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" LeaderType="LEADER_HOLOX_SAKAMATA_CHLOE" Type="BUILDING_HOLOX_ORCA_AQUARIUM" Icon="ICON_BUILDING_HOLOX_ORCA_AQUARIUM" Name="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Description="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" SortIndex="30"/>
 	</PlayerItems>

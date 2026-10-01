@@ -80,6 +80,14 @@
 
 - **実装**: 型は`MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER`(政策「調査」と同じ)。指導者Traitから直接付け、ゲーム本体定義済みのRequirementSet`UNIT_IS_DOMAIN_LAND`で陸上に絞る(ヌビアはユニット能力を付与してから別の型で上げる形だが、そちらにはしなかった)。2026-10-01に動作を実機確認した
 
+## 風真いろは: 固有ユニット「侍」(日本の侍を共有)
+
+- 実装は2行だけ。`XML/KazamaTai.xml`の`CivilizationTraits`に`TRAIT_CIVILIZATION_UNIT_JAPANESE_SAMURAI`を足し(日本と同じTraitを共有する)、`XML/Config.xml`の`PlayerItems`に侍の行を足した(選択画面・ローディング画面の固有要素一覧。Base・Expansion1・Expansion2のPlayers.xmlの日本の行と同じ値を、ルールセットごとに3行)
+- 侍のUnits行(`Base/Assets/Gameplay/Data/Units.xml`)は`TraitType="TRAIT_CIVILIZATION_UNIT_JAPANESE_SAMURAI"`を持つので、その文明がTraitを持てば建造できる。Trait・ユニット・置換(メンアットアーム)・アイコン・ユニット能力はすべてゲーム本体(Base)の定義で、このModでは何も定義していない。日本のTraitの行(`Traits`)は名前だけを持ち、効果のModifierは付いていない
+- 嵐の訪れでは、侍に`ResourceCost=10`(鉄)が付く(`Expansion2_Units.xml`)。これもゲーム本体の定義なのでそのまま引き継ぐ
+- 歴史的瞬間の挿絵は、ゲーム本体が侍用に登録済み(`Expansion1_Moments.xml`)
+- **未確認**: 日本以外の文明が、日本のTraitを共有した侍を実際に建造できるか(実機で確認)、選択画面の固有要素に侍が出るか
+
 ## 風真いろは: 文明能力の山の効果(嵐の訪れ限定)
 
 - ファイルは`XML/KazamaTaiMountains.xml`。インカの文明能力「ミタ制」の定義(`DLC/Expansion2/Data/Expansion2_Civilizations_Major.xml`)から、棚畑の効果を除いて写した: 山の地形5種ごとの`MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE`(引数`Ignore=true`/`TerrainType`)、山岳タイルの生産力+2(`MODIFIER_PLAYER_ADJUST_PLOT_YIELD`、RequirementSet`REQUIREMENTS_PLOT_IS_MOUNTAIN`)、産業時代以降の+1(`REQUIREMENTS_PLOT_IS_MOUNTAIN_LATE`)

@@ -37,8 +37,14 @@
 		<Row TraitType="TRAIT_LEADER_HOLOX_KAZAMA_IROHA" Name="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Description="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION"/>
 	</Traits>
 
+	<!--
+		固有ユニット「侍」: 日本の固有ユニット(UNIT_JAPANESE_SAMURAI、メンアットアーム置換)をそのまま共有する(本人の意向、docs/design.md参照)。
+		侍のUnits行はTraitType=TRAIT_CIVILIZATION_UNIT_JAPANESE_SAMURAIを持つので、この文明にそのTraitを付けるだけで建造できる。
+		Trait・ユニット・置換・アイコンはすべてゲーム本体(Base)の定義なのでこのModでは定義しない。
+	-->
 	<CivilizationTraits>
 		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TraitType="TRAIT_CIVILIZATION_UNIT_JAPANESE_SAMURAI"/>
 	</CivilizationTraits>
 
 	<!--
