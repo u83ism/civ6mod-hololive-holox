@@ -288,6 +288,15 @@
 
 - **山の近くから始まるようにする**(本人判断。2026-10-01): `StartBiasTerrains`で山4種(砂漠・草原・平原・ツンドラの山)をTier 3にする。公式の前例はマプチェ(同じ4種をTier 3)。インカは砂漠・草原・平原の山をTier 2、ツンドラ・雪の山をTier 5にしている。山のタイルの上には開始できず、偏りが付くのは山の近く
 
+**実装の記録(2026-10-01)**:
+
+- ファイルは`XML/HiddenMountains.xml`(区域本体・隣接ボーナス・林/聖域のタイル産出・文化爆弾)、`XML/HiddenMountainsMoments.xml`(歴史的瞬間の挿絵)、`XML/ConfigHiddenMountains.xml`(選択画面の固有要素)
+- **ベトナムDLCのときだけ読み込む**: `.modinfo`のActionCriteriaに、ベトナムDLC自身の読み込み条件(`KublaiKhanVietnam`、DLCの指導者が選べるルールセットのとき真)と同じ判定を写した。フロントエンド(選択画面)は、DLC自身が使う`ModIsEnabled`方式で判定する。歴史的瞬間の挿絵は、`MomentIllustrations`テーブルが拡張パック限定なので、拡張パックのルールセットのときだけ別ファイルで読む
+- **見た目・アイコンは保護区のまま**: 3D表示はベトナムDLCの`Districts.artdef`・`Landmarks.artdef`の保護区の定義を複製して名前だけ差し替えた(`ArtDefs/`。シャチたちの楽園と同じ手順)。林・聖域はバニラの建造物のままなので建造物の定義は複製していない。アイコンはシャチたちの楽園と同様に、DLCの保護区と同じ画像を指す自前のアトラスを`Art/Icons/Icons.xml`に定義した
+- **保護区の他の定義も写した**: アピールに応じた住宅(`AppealHousingChanges`)、文化爆弾(ゲーム全体のModifierのうち保護区用のもの。UD用に同じ構成を追加)、`StartingBuildings`
+- 林・聖域のタイル産出は`Adjacent_AppealYieldChanges`を、山の秘境の区域種別で書き直した。アピール1以下の帯の最小値は`-100`、アピール2以上の帯の最大値は`100`(住宅の`AppealHousingChanges`が同じ値を使っている)。実機で効くかは未確認(README.mdのTODO参照)
+- 山の隣接ボーナスは、山の地形5種(`TERRAIN_*_MOUNTAIN`)ごとに1行、生産力+1。火山は山の地形に乗る地物なので含まれる
+
 #### 固有ユニット「侍」
 
 - 既存の日本のUU(`UNIT_JAPANESE_SAMURAI`)を採用したい(本人の意向)。公式の定義は戦闘力48・封建制で解禁・維持費3・コスト160、メンアットアーム置換、ダメージによる戦闘ペナルティなし
