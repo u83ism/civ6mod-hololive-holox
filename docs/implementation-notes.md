@@ -47,3 +47,54 @@
   - 出典: [TerrainBuilder.GetRandomNumber vs Game.GetRandNum and other MP Desync Questions](https://forums.civfanatics.com/threads/terrainbuilder-getrandomnumber-vs-game-getrandnum-and-other-mp-desync-questions.672623/)、[gameplay related lua scripts in multiplayer](https://forums.civfanatics.com/threads/gameplay-related-lua-scripts-in-multiplayer.626600/)
 
 **2026-09-28、宮殿の音楽スロット+6が効いていないように見えた件**。左上の傑作一覧のボタンが出ないことから効いていないと判断したが、このボタンはスロットの有無ではなく「傑作を1つでも持っているか」で表示が決まる(`Base/Assets/UI/LaunchBar.lua`の`RefreshGreatWorks`/`OnGreatWorkCreated`)ので、判断材料にならない。宮殿のスロット数・種類を`GetNumGreatWorkSlots`/`GetGreatWorkSlotType`でログに出す診断を入れた。その後FireTunerで大音楽家を出して傑作(音楽)を置き、宮殿のスロットが元の1つ+音楽6つの計7つあること、傑作(音楽)1つあたり文化力6・観光力6(群れの絆の文化力+2・観光力+50%込み)になることを実機で確認した(2026-09-28)。書き方自体は公式に前例がある(スロットの種類を持たない建物に別の種類を足す: 総督の昇進で円形劇場に宮殿型、大商人メディチで銀行に宮殿型、スンジャタ・ケイタで市場に書物)
+
+---
+
+以下は、設計判断(design.md)と混ざっていた実装の詳細を2026-10-01に移したもの。
+
+## 群れの絆のModifier
+
+- 文化力+2: `MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD`(`GreatWorkObjectType=GREATWORKOBJECT_MUSIC`/`YieldType=YIELD_CULTURE`/`YieldChange=2`)。公式前例はコンゴの文明能力ンキシ(`TRAIT_CIVILIZATION_NKISI`の`TRAIT_GREAT_WORK_FAITH_SCULPTURE`等、傑作の種類ごとに産出を加算)
+- 観光力: 傑作1つに観光力を固定値で足すEffectは無い(Modding Companionの`Effects`・ゲーム本体XMLで確認。傑作の種類を指定できる観光力のEffectは倍率の`EFFECT_ADJUST_CITY_TOURISM`のみ)。そのため衛星放送と同じ`MODIFIER_PLAYER_CITIES_ADJUST_TOURISM`(`GreatWorkObjectType=GREATWORKOBJECT_MUSIC`/`ScalingFactor=150`)で+50%にする。音楽の傑作は全38件が観光力4なので4×1.5=6で+2と同値、端数も出ない。説明文は「観光力+50%」と書く
+- `MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS`(`BuildingType=BUILDING_PALACE`/`GreatWorkSlotType=GREATWORKSLOT_MUSIC`/`Amount=6`)。公式前例はコンゴのンキシ(`TRAIT_EXTRA_PALACE_SLOTS`、宮殿に`GREATWORKSLOT_PALACE`を+4)
+
+## シャチたちの楽園(UD)のModifier
+
+- 湖を除外するのは「シャチは湖にいない」から(本人判断)。Civ6の湖は地形上`TERRAIN_COAST`扱いなので、除外は`REQUIREMENT_PLOT_IS_LAKE`のInverseで行う
+- 条件は「(沿岸かつ湖でない)or 深海」で、1つのRequirementSetで書くと入れ子(`REQUIREMENT_REQUIREMENTSET_IS_MET`)が要る。入れ子を避けるため、条件を「沿岸かつ湖でない」(`REQUIREMENTSET_TEST_ALL`)と「深海」の2つのRequirementSetに分け、食料/生産力×2条件の計4本のModifierにする。沿岸と深海は排他の地形なので二重に効くことはない。旧群れの絆(ロシア`TRAIT_INCREASED_TUNDRA_*`・インカ`TRAIT_PRODUCTION_MOUNTAIN`と同じ`MODIFIER_PLAYER_ADJUST_PLOT_YIELD`型)ではこの形で2026-09-24に実機確認した(湖が対象外、深海に効く、タイルの産出表示に反映)
+- 区域から都市単位で付ける型は、湊あくあの「あくあ港」(`Hololive 2nd Generation`Mod、港の置換UD)が同じ効果を`MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD`を`DistrictModifiers`に登録して実装している(沿岸/外洋×食料/生産力の4本)。RequirementSetは旧群れの絆のものを流用する
+
+## シャチの水族館(UB)の実装と、UB化しない案の検討
+
+- **音楽スロット+2**(`Building_GreatWorks`に`GREATWORKSLOT_MUSIC`/`NumSlots=2`を1行。ネリッサ・レイヴンクロフトのセイレーンの岩礁(`HoloEN Advent`Mod、灯台置換に音楽スロット1)と同じ書き方)
+- **この都市の傑作(音楽)の観光力+150%**(群れの絆の+50%と足して、水族館のある都市で衛星放送と同じ+200%になる。`BuildingModifiers`に`MODIFIER_SINGLE_CITY_ADJUST_TOURISM`、引数`GreatWorkObjectType=GREATWORKOBJECT_MUSIC`/`ScalingFactor=250`。1都市版の公式前例は`CURATOR_DOUBLE_MUSIC_TOURISM`(`ScalingFactor=200`)、`RELIQUARIES_RELIC_TOURISM_MODIFIER`(遺物、`ScalingFactor=300`))。群れの絆込みで傑作(音楽)1つの観光力は4x(1+0.5+1.5)=12、スロット2つ分で24。当初は衛星放送と同じ+200%だったが、群れの絆と足すと+250%で衛星放送を超えるため+150%に下げた(2026-09-28本人判断。水族館+200%・群れの絆と合わせて+250%のときの実測は1つあたり14)。同じ都市の放送センター・遺産の音楽スロットにも効く
+- **バニラ効果の維持**: 置き換え施設は新しく定義し直した別の建造物で、元の効果(`BuildingModifiers`・産出・傑作スロット・偉人ポイント)は自動では引き継がれないので、自分で書き直す。バニラ水族館のModifierは`AQUARIUM_SEARESOURCE_SCIENCE`/`AQUARIUM_REEF_SCIENCE`の2本だけで、公式のModifierIdを`BuildingModifiers`にそのまま登録すればよい(セイレーンの岩礁が灯台の`LIGHTHOUSE_TRADE_ROUTE_CAPACITY`を使い回しているのと同じ)。残りは`Buildings`の列値(快適性`Entertainment=1`・`RegionalRange=9`・維持費2・コスト360(嵐の訪れの`Update`後)・解禁`CIVIC_NATURAL_HISTORY`・`PrereqDistrict`)で、XMLなので値を書き写す。`BuildingPrereqs`(観覧車が前提、水泳施設の前提)は`BuildingReplaces`で元の水族館と同じ扱いになる
+- **不採用: UB化せずUDだけで済ませる案**。バニラの水族館をそのまま活かしたいという本人の意向から、UDの`DistrictModifiers`から上記2つを足す案も検討した(スロットは`MODIFIER_SINGLE_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS`で`BuildingType=BUILDING_AQUARIUM`、観光力は`MODIFIER_SINGLE_CITY_ADJUST_TOURISM`。区域から`MODIFIER_SINGLE_CITY_*`を付ける前例は尾丸ポルカの「海のおまる座」)。スロットの前例は大商人ジョヴァンニ・デ・メディチ(区域に付けて本来スロットの無い銀行に傑作スロット2を足す。隠し施設やUBではなく、`MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE`でバニラの銀行をその場で建てた上で別のModifierでスロットを足す2本立て)だが、スロットを足す時点で銀行が建っているので、後から建つ水族館に効くかは分からない。加えて(1)スロットが水族館のツールチップに出ずUDの説明文でしか伝わらない (2)「水族館のある都市」の条件(`REQUIREMENT_CITY_HAS_BUILDING`)が区域に付けたModifierで正しく判定されるか未確認、のためUB化を選んだ
+
+## 風真いろは: 風真の一族のModifier
+
+- **公式の前例: グランコロンビアの文明能力「愛国軍」(`TRAIT_CIVILIZATION_EJERCITO_PATRIOTA`)**(すべてのユニットの移動力+1)。文明Traitが、タグ`CLASS_ALL_UNITS`(「全ユニット」のタグ)に付くユニット能力`ABILITY_EJERCITO_PATRIOTA_EXTRA_MOVEMENT`を付与し、その能力のModifier`MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT`(`Amount=1`)が移動力を足す。民間人も対象。DLC専用の型名(`..._GRANCOLOMBIA_MAYA`)で書かれているが、付与の型`MODIFIER_PLAYER_UNITS_GRANT_ABILITY`は本体の`Modifiers.xml`にもあるので、DLCに依存せず同じ形で書けるはず(未確認)。文明Traitに置く形も同じ
+- **陸上ユニットに絞る方法**: ゲーム本体定義済みのRequirementSet`UNIT_IS_DOMAIN_LAND`(中身は`REQUIREMENT_UNIT_DOMAIN_MATCHES`=ユニットの領域が陸)を、移動力のModifier`MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT`に付けた。前例はNubiaScenario DLCの政策`MILITARY_COMMUNICATION_LAND_MOVEMENT`。ユニット能力を付与する愛国軍の形ではなく、Traitから直接付けた。2026-10-01に動作を実機確認した(民間人・宗教ユニットへの効果、海軍・航空に効かないことは未確認)
+
+## 風真いろは: 武者修行のModifier
+
+- **実装**: 型は`MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER`(政策「調査」と同じ)。指導者Traitから直接付け、ゲーム本体定義済みのRequirementSet`UNIT_IS_DOMAIN_LAND`で陸上に絞る(ヌビアはユニット能力を付与してから別の型で上げる形だが、そちらにはしなかった)。2026-10-01に動作を実機確認した
+
+## 風真いろは: 固有区域「山の秘境」の実装の見込みと調べた内容
+
+- **実装の見込み(ゲーム本体XMLで確認)**: `Adjacent_AppealYieldChanges`は`DistrictType`と`BuildingType`(`BUILDING_GROVE`/`BUILDING_SANCTUARY`)をキーにした行の集まりなので、このUDの`DistrictType`で行を別に書けば、施設(林・聖域)を置換せず(UB不要で)バニラの施設のままUD側で強化できる見込み。行の列は、アピールの最小値・最大値、産出量、産出の種類、`Unimproved`、`BuildingType`
+- **山の隣接ボーナス: 生産力+1**(本人判断。2026-10-01。火山を含む各種の山に隣接していると+1)。ゲーム本体XMLで、火山(`FEATURE_VOLCANO`)は山の地形(草原・平原・砂漠・ツンドラ・雪の5種の`TERRAIN_*_MOUNTAIN`)に乗る地物と確認した。山の地形を条件にすれば火山のタイルも含まれる。キャンパスの山の隣接ボーナス(`Mountains_Science1`〜`5`、`AdjacentTerrain`ごとに1行、`YieldChange=1`/`TilesRequired=1`)が同じ書き方の前例
+- **アピール条件の変更は施設(林・聖域)の置換UBなしでできる見込み**。条件(アピールの最小値・最大値)は`Adjacent_AppealYieldChanges`の行の列で、施設(`BuildingType`)の定義ではない。ただし**実機未確認**: (1) 置き換え区域に、バニラ保護区の行が自動では適用されない可能性があり(アピール以外の隣接ボーナスは自動で引き継がれない前例がある)、その場合は同じ値も含めて全行を書き直す。(2) 最小値に負の値を入れてアピール条件を実質外せるか。(3) 区域の種類をキーにした行が、置き換え区域の種類でも読まれるか。うまくいかなければ予備案(Modifier方式)にする
+- **重ねがけはしない**(本人判断。2026-10-01): アピール2以上のタイルは+2のみで、+1と+2の合計(+3)にはならない。バニラの行はアピール帯が排他(2〜3は+1、4以上は+2)なので、新しい帯も重ならないように書く(アピール1以下は+1、2以上は+2。アピール条件なしの帯の最小値は大きな負の値。バニラの最大値は100)。この最小値に負の値が入るかは上記の未確認(2)と同じ
+- **アイコン・見た目はすべて保護区そのまま**(本人判断。2026-10-01)。区域・施設ともバニラのアイコンと見た目を流用する。注意: 置換UDの選択画面のアイコンは、シャチたちの楽園で「アイコンの別名(`IconAliases`)では解決できず、置換元と同じ画像を指す自前のアトラスを`Art/Icons/Icons.xml`に定義する」必要があった。保護区のアイコン定義がフロントエンドで読まれるかは実装時に確認する
+
+### 「未改善」の判定(調べた内容)
+
+
+- **タイル産出のModifierなら判定できる**(公式の前例あり)。`REQUIRES_PLOT_HAS_NO_IMPROVEMENT`は`REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT`に`Inverse=true`を付けたもので、嵐の訪れの`Expansion2_Civilizations.xml`・`Expansion2_Buildings.xml`・`Expansion1_Governors.xml`で使われている。保護区との隣接は`REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES`(引数`DistrictType`/`MinRange`/`MaxRange`、ゲーム本体で11回使用)。これらを`MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD`(シャチたちの楽園の海タイル産出と同じ型)に載せる
+- **区域の隣接ボーナス(`Adjacency_YieldChanges`)では判定できない**。条件に使えるのは地形・地物・自然遺産・特定の改善の種類だけで、「改善が無い」を表す列が無い(地物で数えると、森林を伐採所にしても残ってしまう)
+- **保護区専用の`Adjacent_AppealYieldChanges`には`Unimproved`列とアピールの最小値/最大値の列がある**(公式の使用例は保護区のみ)。最小値に負の値を入れてアピール条件を実質外せるかは**未確認**(実機で試すしかない)。外せなくてもModifier方式で同じことができる
+- **未確認**: 山などの改善できないタイルが「未改善」として数えられるか、略奪された改善・区域・道路が「改善」に当たるか(仕様からの推測は「山は常に未改善、道路は改善でない」)
+
+
+- 未決(実装済みの条件付き読み込みとは別に、公式前例は未調査): ベトナムDLC依存の扱い(保護区置換UDは`OrcaParadise.xml`と同様に条件付き読み込みが必要)。保護区を置換元とするUDの公式前例は未調査
