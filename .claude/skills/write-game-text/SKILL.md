@@ -32,7 +32,7 @@ description: Civ6 Modのゲーム内テキスト(LOCタグ。文明/指導者Tra
    4. 言語固有の規則を当てる: 英語は`references/lang-en.md`、中国語は`references/lang-zh.md`。**中国語の繁体字は簡体字からの機械変換ではなく、同じタグの繁体字版の手本から別に組み立てる**(語彙差があるため。`lang-zh.md` 1・3節)
 4. **機械的に検査する**: `tools/loc-lookup`で`npm run check`(ゲーム本体を読まず高速に済ませたいときは`npm run check -- --no-terms`)。このMod自身の`Text/`の全言語について、次を検査する(実装は`validate-text.ts`/`validate-terms.ts`)
    - タグ集合の一致(全言語に全タグがあるか) — error
-   - `[ICON_XXX]`・`[NEWLINE]`・`{1_Num}`等のプレースホルダーと、数字(数値)の集合が日本語と一致するか — error
+   - `[ICON_XXX]`・`[NEWLINE]`・`{1_Num}`等のプレースホルダーと、数字(数値)の集合が日本語と一致するか — error。数値の集合には、英語・中国語の公式文が使う複数形プレースホルダー`{1_Num : plural 1?tile; other?tiles;}`の中の数字は含めない(量ではないため、2026-10-01)
    - 記号の言語別ルール(全角/半角・引用符・残留した仮名。`references/lang-*.md`) — warning
    - 日本語側で使った公式用語(`*_NAME`)に対応する、他言語の公式訳が本文に含まれているか — warning(ヒューリスティックなので偽陽性は目で判断する)
 
