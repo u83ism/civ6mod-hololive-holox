@@ -16,6 +16,7 @@ Civ6のModBuddy/Art Pipeline周りは公式ドキュメントが薄く、英語�
    - `make-fallback-portrait/references/fallback-and-loading-schema.md`(外交交渉画面フォールバック・ローディング画面・外交交渉画面の背景・ゲーム設定画面の全身ポートレート「Leader Placard」、いずれも実機確認済み)
    - `docs/civ6-research/trait-and-identity-patterns.md`(文明特性・指導者特性・文明カラー・AIの好み・多言語対応、未検証)
    - `docs/civ6-research/unique-content-patterns.md`(固有ユニット/区域/施設/建造物=UU/UD/UI/UB、未検証)
+   - `docs/civ6-research/vanilla-conventions.md`(固有区域のコストは置換元の半額など、ゲーム本体のデータで確認した公式の慣習・仕様。置換元の値を写す前に見る)
    - `docs/civ6-research/bootstrap-leader-troubleshooting.md`(LeaderCriteriaクラッシュ対処・DLC対応、未検証)
    - `bootstrap-leader/references/firetuner.md`(FireTunerによる実機Live操作・God Mode的デバッグ、実機確認済み)
 2. **Modifier/Requirement/Collection/Event固有の疑問(引数・対象クラス・データ型・DLC対応)は「Civilization VI Modding Companion 2.0」を最優先で見る**。詳細は6節参照。DLLから抽出/実機検証されたコミュニティ製の逆引き辞典で、`implement-leader-abilities`のModifier実装時に「このEffectTypeにこの引数を渡せるか」「このModが対応するDLCでそのEffectが使えるか」を裏取りするのに向く
