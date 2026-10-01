@@ -27,6 +27,7 @@
 - ファイルは`XML/HiddenMountains.xml`(区域本体・隣接ボーナス・林/聖域のタイル産出・文化爆弾)、`XML/HiddenMountainsMoments.xml`(歴史的瞬間の挿絵)、`XML/ConfigHiddenMountains.xml`(選択画面の固有要素)
 - **ベトナムDLCのときだけ読み込む**: `.modinfo`のActionCriteriaに、ベトナムDLC自身の読み込み条件(`KublaiKhanVietnam`、DLCの指導者が選べるルールセットのとき真)と同じ判定を写した。フロントエンド(選択画面)は、DLC自身が使う`ModIsEnabled`方式で判定する。歴史的瞬間の挿絵は、`MomentIllustrations`テーブルが拡張パック限定なので、拡張パックのルールセットのときだけ別ファイルで読む
 - **見た目・アイコンは保護区のまま**: 3D表示はベトナムDLCの`Districts.artdef`・`Landmarks.artdef`の保護区の定義を複製して名前だけ差し替えた(`ArtDefs/`。シャチたちの楽園と同じ手順)。林・聖域はバニラの建造物のままなので建造物の定義は複製していない。アイコンはシャチたちの楽園と同様に、DLCの保護区と同じ画像を指す自前のアトラスを`Art/Icons/Icons.xml`に定義した
+- **建設コストは27**(置換元54の半額。固有区域の慣習、`docs/civ6-research/vanilla-conventions.md`参照)。説明文は「保護区に取ってかわり、より安価に建設できる」
 - **保護区の他の定義も写した**: アピールに応じた住宅(`AppealHousingChanges`)、文化爆弾(ゲーム全体のModifierのうち保護区用のもの。UD用に同じ構成を追加)、`StartingBuildings`
 - 林・聖域のタイル産出は`Adjacent_AppealYieldChanges`を、山の秘境の区域種別で書き直した。アピール1以下の帯の最小値は`-100`、アピール2以上の帯の最大値は`100`(住宅の`AppealHousingChanges`が同じ値を使っている)。実機で効くかは未確認(README.mdのTODO参照)
 - 山の隣接ボーナスは、山の地形5種(`TERRAIN_*_MOUNTAIN`)ごとに1行、生産力+1。火山は山の地形に乗る地物なので含まれる

@@ -24,9 +24,9 @@
 		<Row CivUniqueDistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" ReplacesDistrictType="DISTRICT_PRESERVE"/>
 	</DistrictReplaces>
 
-	<!-- 保護区との違いはTraitTypeだけ(区域本体の定義はバニラのまま) -->
+	<!-- 保護区との違いはコスト(固有区域の慣習で置換元の半額、54→27。docs/civ6-research/vanilla-conventions.md参照)とTraitTypeだけ -->
 	<Districts>
-		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Name="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" PrereqCivic="CIVIC_MYSTICISM" PlunderType="PLUNDER_GOLD" PlunderAmount="50" AdvisorType="ADVISOR_GENERIC" Cost="54" CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1000" RequiresPlacement="true" RequiresPopulation="true" Aqueduct="false" NoAdjacentCity="true" InternalOnly="false" ZOC="true" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Housing="1" Appeal="1" TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_HIDDEN_MOUNTAINS"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Name="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" PrereqCivic="CIVIC_MYSTICISM" PlunderType="PLUNDER_GOLD" PlunderAmount="50" AdvisorType="ADVISOR_GENERIC" Cost="27" CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1000" RequiresPlacement="true" RequiresPopulation="true" Aqueduct="false" NoAdjacentCity="true" InternalOnly="false" ZOC="true" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Housing="1" Appeal="1" TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_HIDDEN_MOUNTAINS"/>
 	</Districts>
 
 	<!-- アピールに応じた住宅(保護区と同じ値) -->
