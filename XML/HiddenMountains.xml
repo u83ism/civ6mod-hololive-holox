@@ -120,7 +120,7 @@
 	<!--
 		この区域に隣接する、施設が築かれていないタイルの食料+1(アピール不問)。この都市のタイルの産出を増やすModifierを区域から付ける
 		(シャチたちの楽園の海タイル産出と同じMODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELDをDistrictModifiersに登録する型)。
-		水(沿岸・湖・深海)・山・区域のタイルは除く(山は隣接ボーナスで生産力を得るので二重取りしない)。林・聖域の産出(アピール条件付き)とは別に足される。「施設が築かれていない」はバニラのREQUIRES_PLOT_HAS_NO_IMPROVEMENTと同じ
+		水(沿岸・湖・深海)・山・区域のタイルは除く(山は隣接ボーナスで生産力を得るので二重取りしない)。山はREQUIREMENT_PLOT_IS_MOUNTAINがBaseのゲームコアに無い(Rise and Fall以降のみ)ため、山の地形5種を地形の種類の条件で1つずつInverseで除外する。林・聖域の産出(アピール条件付き)とは別に足される。「施設が築かれていない」はバニラのREQUIRES_PLOT_HAS_NO_IMPROVEMENTと同じ
 		REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENTのInverse(バニラのIDは嵐の訪れ限定の定義なので、自前のIDで同じものを書く)。
 	-->
 	<DistrictModifiers>
@@ -151,7 +151,23 @@
 		</Row>
 		<Row>
 			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
-			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_MOUNTAIN</RequirementId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_GRASS_MOUNTAIN</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_PLAINS_MOUNTAIN</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_DESERT_MOUNTAIN</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_TUNDRA_MOUNTAIN</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_SNOW_MOUNTAIN</RequirementId>
 		</Row>
 		<Row>
 			<RequirementSetId>HOLOX_HIDDEN_MOUNTAINS_REQSET_ADJACENT_UNIMPROVED</RequirementSetId>
@@ -179,8 +195,28 @@
 			<Inverse>true</Inverse>
 		</Row>
 		<Row>
-			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_MOUNTAIN</RequirementId>
-			<RequirementType>REQUIREMENT_PLOT_IS_MOUNTAIN</RequirementType>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_GRASS_MOUNTAIN</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_PLAINS_MOUNTAIN</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_DESERT_MOUNTAIN</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_TUNDRA_MOUNTAIN</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_SNOW_MOUNTAIN</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES</RequirementType>
 			<Inverse>true</Inverse>
 		</Row>
 		<Row>
@@ -214,6 +250,31 @@
 			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_OCEAN</RequirementId>
 			<Name>TerrainType</Name>
 			<Value>TERRAIN_OCEAN</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_GRASS_MOUNTAIN</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_GRASS_MOUNTAIN</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_PLAINS_MOUNTAIN</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_PLAINS_MOUNTAIN</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_DESERT_MOUNTAIN</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_DESERT_MOUNTAIN</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_TUNDRA_MOUNTAIN</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_TUNDRA_MOUNTAIN</Value>
+		</Row>
+		<Row>
+			<RequirementId>HOLOX_HIDDEN_MOUNTAINS_REQ_PLOT_IS_NOT_SNOW_MOUNTAIN</RequirementId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_SNOW_MOUNTAIN</Value>
 		</Row>
 	</RequirementArguments>
 </GameData>
