@@ -377,13 +377,16 @@
 			<Text>山之祕境</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="zh_Hant_HK">
-			<Text>かざま隊特色區域，取代保留區且造價更為低廉。[NEWLINE][NEWLINE]根據魅力賦予最高3點 [ICON_Housing] 住房。使相鄰單元格的魅力增加2點。對相鄰中立單元格施放文化炸彈並且增加1點魅力。相鄰的山脈單元格提供+1 [ICON_Production] 生產力。無法建造在市中心旁。</Text>
+			<Text>かざま隊特色區域，取代保留區且造價更為低廉。[NEWLINE][NEWLINE]根據魅力賦予最高3點 [ICON_Housing] 住房。使相鄰單元格的魅力增加2點。對相鄰中立單元格施放文化炸彈並且增加1點魅力。相鄰的山脈單元格提供+1 [ICON_Production] 生產力、+1 [ICON_Food] 食物。無法建造在市中心旁。</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" Language="zh_Hant_HK">
 			<Text>+{1_num} [ICON_Production] 生產力來自相鄰山脈{1_Num : plural 1?單元格; other?單元格;}。</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_EXPANSION2_DESCRIPTION" Language="zh_Hant_HK">
 			<Text>所有陸地單位+1 [ICON_Movement] 移動力。公民可改良山脈單元格。山脈單元格提供+2 [ICON_PRODUCTION] 生產力，並在遊戲進入工業時代後額外+1 [ICON_PRODUCTION] 生產力。</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" Language="zh_Hant_HK">
+			<Text>+{1_num} [ICON_Food] 食物來自相鄰山脈{1_Num : plural 1?單元格; other?單元格;}。</Text>
 		</Row>
 	</LocalizedText>
 </GameData>
