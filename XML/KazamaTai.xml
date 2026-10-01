@@ -48,21 +48,21 @@
 	</CivilizationTraits>
 
 	<!--
-		指導者固有能力「武者修行」: 陸上ユニットの移動力+1、獲得経験値+50%(移動力は2026-10-02に文明能力から移した)。
-		文明固有能力「風真の一族」の効果は、山の効果(XML/KazamaTaiMountains.xml、嵐の訪れ限定)。
+		文明固有能力「風真の一族」: 陸上ユニットの移動力+1。
+		指導者固有能力「武者修行」: 陸上ユニットの獲得経験値+50%。
 		どちらもTraitから直接、対象ユニットを絞ったModifierを付ける。絞り込みはゲーム本体が定義済みのRequirementSet
 		UNIT_IS_DOMAIN_LAND(Base/Assets/Gameplay/Data/Civilizations.xml、ユニットの領域が陸)を参照するだけで、Mod側では定義しない。
 		前例: 移動力はNubiaScenario DLCの政策MILITARY_COMMUNICATION_LAND_MOVEMENT(MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT+UNIT_IS_DOMAIN_LAND)、
 		経験値は政策「調査」SURVEY_RECONUNITEXPERIENCE(MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER+SubjectRequirementSetId、Amount=100で2倍)。
 	-->
 	<TraitModifiers>
-		<Row TraitType="TRAIT_LEADER_HOLOX_KAZAMA_IROHA" ModifierId="TRAIT_HOLOX_KAZAMA_IROHA_LAND_MOVEMENT"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" ModifierId="TRAIT_HOLOX_KAZAMA_TAI_LAND_MOVEMENT"/>
 		<Row TraitType="TRAIT_LEADER_HOLOX_KAZAMA_IROHA" ModifierId="TRAIT_HOLOX_KAZAMA_IROHA_LAND_EXPERIENCE"/>
 	</TraitModifiers>
 
 	<Modifiers>
 		<Row>
-			<ModifierId>TRAIT_HOLOX_KAZAMA_IROHA_LAND_MOVEMENT</ModifierId>
+			<ModifierId>TRAIT_HOLOX_KAZAMA_TAI_LAND_MOVEMENT</ModifierId>
 			<ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT</ModifierType>
 			<SubjectRequirementSetId>UNIT_IS_DOMAIN_LAND</SubjectRequirementSetId>
 		</Row>
@@ -75,7 +75,7 @@
 
 	<ModifierArguments>
 		<Row>
-			<ModifierId>TRAIT_HOLOX_KAZAMA_IROHA_LAND_MOVEMENT</ModifierId>
+			<ModifierId>TRAIT_HOLOX_KAZAMA_TAI_LAND_MOVEMENT</ModifierId>
 			<Name>Amount</Name>
 			<Value>1</Value>
 		</Row>

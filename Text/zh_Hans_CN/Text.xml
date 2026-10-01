@@ -362,13 +362,13 @@
 			<Text>风真一族</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>（山脉效果仅在“风云变幻”规则集中有效。）</Text>
+			<Text>所有陆地单位+1 [ICON_Movement] 移动力。</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="zh_Hans_CN">
 			<Text>武者修行</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>所有陆地单位+1 [ICON_Movement] 移动力。所有陆地单位的战斗经验值+50%。</Text>
+			<Text>所有陆地单位的战斗经验值+50%。</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="zh_Hans_CN">
 			<Text>山里</Text>
@@ -383,7 +383,7 @@
 			<Text>+{1_num} [ICON_Production] 生产力来自相邻山脉{1_Num : plural 1?单元格; other?单元格;}。</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>公民可改良山脉单元格。山脉单元格提供+2 [ICON_PRODUCTION] 生产力，游戏进入工业时代后额外+1 [ICON_PRODUCTION] 生产力。</Text>
+			<Text>所有陆地单位+1 [ICON_Movement] 移动力。公民可改良山脉单元格。山脉单元格提供+2 [ICON_PRODUCTION] 生产力，游戏进入工业时代后额外+1 [ICON_PRODUCTION] 生产力。</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" Language="zh_Hans_CN">
 			<Text>+{1_num} [ICON_Food] 食物来自相邻山脉{1_Num : plural 1?单元格; other?单元格;}。</Text>
