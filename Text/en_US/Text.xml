@@ -373,5 +373,17 @@
 		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="en_US">
 			<Text>Yamazato</Text>
 		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Language="en_US">
+			<Text>Hidden Mountain Wilds</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="en_US">
+			<Text>A district unique to Kazama-tai. Replaces the Preserve district.[NEWLINE][NEWLINE]Grants up to 3 [ICON_Housing] Housing based on Appeal. Culture bombs adjacent neutral tiles, and increases their Appeal by 1. +1 [ICON_Production] Production for each adjacent Mountain tile. The Grove and Sanctuary here grant the Charming bonus regardless of Appeal, and the Breathtaking bonus at Charming Appeal or higher. Cannot be built adjacent to the city center.</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from the adjacent Mountain {1_Num : plural 1?tile; other?tiles;}.</Text>
+		</Row>
+		<Row Tag="LOC_HOLOX_HIDDEN_MOUNTAINS_APPEAL_ANY" Language="en_US">
+			<Text>Any Appeal</Text>
+		</Row>
 	</LocalizedText>
 </GameData>

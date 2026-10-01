@@ -28,7 +28,11 @@ export const placeholderPattern = /\[[A-Za-z0-9_]+\]|\{\d+_\w+\}/g;
 
 const extractPlaceholders = (text: string): readonly string[] => (text.match(placeholderPattern) ?? []).map((token) => token.toLowerCase());
 
-const extractNumbers = (text: string): readonly string[] => text.replace(placeholderPattern, "").match(/\d+(?:\.\d+)?/g) ?? [];
+// Plural-form placeholders such as {1_Num : plural 1?tile; other?tiles;} (used only by en/zh in official text) contain digits that are not quantities.
+const pluralFormPattern = /\{\d+_\w+\s*:[^}]*\}/g;
+
+const extractNumbers = (text: string): readonly string[] =>
+  text.replace(pluralFormPattern, "").replace(placeholderPattern, "").match(/\d+(?:\.\d+)?/g) ?? [];
 
 const countTokens = (tokens: readonly string[]): ReadonlyMap<string, number> =>
   tokens.reduce((counts, token) => new Map(counts).set(token, (counts.get(token) ?? 0) + 1), new Map<string, number>());
