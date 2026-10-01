@@ -374,7 +374,7 @@
 			<Text>山里</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Language="zh_Hans_CN">
-			<Text>山之秘境</Text>
+			<Text>未开之秘境</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>かざま隊特色区域，替代“保护区”，建造费用更低。[NEWLINE][NEWLINE]可基于魅力最高提供3点 [ICON_Housing] 住房。使相邻单元格的魅力增加2级。对相邻的中立单元格施放文化炸弹，并使其魅力增加1级。相邻的山脉单元格提供+1 [ICON_Production] 生产力、+1 [ICON_Food] 食物。无法建在市中心旁。</Text>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-	固有区域「山の秘境」(保護区置換UD)。設計はdocs/design.md「風真いろは」の「固有区域」参照。
+	固有区域「未開の秘境」(保護区置換UD)。設計はdocs/design.md「風真いろは」の「固有区域」参照。
 	保護区(DISTRICT_PRESERVE)・林・聖域はベトナムDLC(KublaiKhan_Vietnam)の要素なので、.modinfoのActionCriteria
 	(ベトナムDLCの指導者が選べるとき)だけで読み込む(置換元が無いと外部キー制約違反で起動不能になる)。
 	数値・列値はベトナムDLCのバニラ定義(DLC/KublaiKhan_Vietnam/Data/KublaiKhan_Vietnam_Districts.xml)を写したもの。
@@ -24,7 +24,7 @@
 		<Row CivUniqueDistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" ReplacesDistrictType="DISTRICT_PRESERVE"/>
 	</DistrictReplaces>
 
-	<!-- 保護区との違いはコスト(固有区域の慣習で置換元の半額、54→27。docs/civ6-research/vanilla-conventions.md参照)・周辺タイルのアピール補正(Appeal、保護区は1、山の秘境は2)・TraitTypeだけ -->
+	<!-- 保護区との違いはコスト(固有区域の慣習で置換元の半額、54→27。docs/civ6-research/vanilla-conventions.md参照)・周辺タイルのアピール補正(Appeal、保護区は1、未開の秘境は2)・TraitTypeだけ -->
 	<Districts>
 		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Name="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" PrereqCivic="CIVIC_MYSTICISM" PlunderType="PLUNDER_GOLD" PlunderAmount="50" AdvisorType="ADVISOR_GENERIC" Cost="27" CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1000" RequiresPlacement="true" RequiresPopulation="true" Aqueduct="false" NoAdjacentCity="true" InternalOnly="false" ZOC="true" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Housing="1" Appeal="2" TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_HIDDEN_MOUNTAINS"/>
 	</Districts>
@@ -96,7 +96,7 @@
 
 	<!--
 		林・聖域の、隣接する未改善タイルの産出。バニラ(保護区)の値をそのまま写す(アピール2〜3で+1、4以上で+2)。
-		置き換え区域には保護区の行が自動では適用されない可能性があるため、山の秘境の区域種別で全行を書く。
+		置き換え区域には保護区の行が自動では適用されない可能性があるため、未開の秘境の区域種別で全行を書く。
 		強化は条件の変更ではなく、区域のアピール補正(Appeal=2)で行う。
 	-->
 	<Adjacent_AppealYieldChanges>

@@ -62,7 +62,7 @@
 		解決できず、使い回しの枠に直前の指導者の画像が残る。画像(XP1_Districts*.dds・XP1_DistrictBuildings*.dds)自体は
 		文明の興亡のUI/Icons.blpに同梱されていて選択画面でも読めるので、同じ画像を指す自前のアトラスを定義する。
 		アトラスの寸法・Indexは公式(Expansion1_Icons_Districts.xml・Expansion1_Icons_District_Buildings.xml)の写し。
-		山の秘境(保護区置換)も同様に、ベトナムDLCの保護区と同じ画像(Vietnam_Districts*.dds、Index 1)を指す自前のアトラスを定義する(寸法・Indexは
+		未開の秘境(保護区置換)も同様に、ベトナムDLCの保護区と同じ画像(Vietnam_Districts*.dds、Index 1)を指す自前のアトラスを定義する(寸法・Indexは
 		DLC/KublaiKhan_Vietnam/Data/KublaiKhan_Vietnam_Icons_Districts.xmlの写し)。林・聖域はバニラの建造物のままなのでアイコンの追加は無い。
 	-->
 	<IconTextureAtlases>

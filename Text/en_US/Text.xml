@@ -374,7 +374,7 @@
 			<Text>Yamazato</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Language="en_US">
-			<Text>Hidden Mountain Wilds</Text>
+			<Text>Untamed Wilds</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="en_US">
 			<Text>A district unique to Kazama-tai. Replaces the Preserve district and cheaper to build.[NEWLINE][NEWLINE]Grants up to 3 [ICON_Housing] Housing based on Appeal. Increases the Appeal of adjacent tiles by 2. Culture bombs adjacent neutral tiles, and increases their Appeal by 1. +1 [ICON_Production] Production and +1 [ICON_Food] Food for each adjacent Mountain tile. Cannot be built adjacent to the city center.</Text>

@@ -20,7 +20,7 @@
 			<GameCoreInUse>Expansion2</GameCoreInUse>
 		</Criteria>
 		<!--
-			ベトナムDLC(KublaiKhan_Vietnam)の保護区・林・聖域を置き換える固有区域「山の秘境」の読み込み条件。
+			ベトナムDLC(KublaiKhan_Vietnam)の保護区・林・聖域を置き換える固有区域「未開の秘境」の読み込み条件。
 			ベトナムDLC自身の条件(KublaiKhanVietnam・KublaiKhanVietnam_Expansion1)と同じ判定(DLCの指導者が選べるルールセットのとき真)。
 		-->
 		<Criteria id="HoloXVietnam" any="1">
@@ -44,7 +44,7 @@
 		<UpdateDatabase id="Config">
 			<File>XML/Config.xml</File>
 		</UpdateDatabase>
-		<!-- 選択画面の固有要素一覧に固有区域「山の秘境」を出す。ベトナムDLCが有効なときだけ -->
+		<!-- 選択画面の固有要素一覧に固有区域「未開の秘境」を出す。ベトナムDLCが有効なときだけ -->
 		<UpdateDatabase id="ConfigHiddenMountains">
 			<Criteria>HoloXVietnamEnabled</Criteria>
 			<File>XML/ConfigHiddenMountains.xml</File>
@@ -95,7 +95,7 @@
 			<File>XML/KazamaTaiMountains.xml</File>
 		</UpdateDatabase>
 		<!--
-			固有区域「山の秘境」(保護区置換)。置換元がベトナムDLC限定なのでベトナムDLCのときだけ読み込む。
+			固有区域「未開の秘境」(保護区置換)。置換元がベトナムDLC限定なのでベトナムDLCのときだけ読み込む。
 			DLCのデータ・文明本体より後に読むためLoadOrderを上げる。歴史的瞬間の挿絵(MomentIllustrationsは拡張パック限定のテーブル)は
 			拡張パックのルールセットのときだけ別ファイルで読み込む。
 		-->
