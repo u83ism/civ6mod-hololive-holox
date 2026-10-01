@@ -377,13 +377,10 @@
 			<Text>山之祕境</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="zh_Hant_HK">
-			<Text>かざま隊特色區域，取代保留區且造價更為低廉。[NEWLINE][NEWLINE]根據魅力賦予最高3點 [ICON_Housing] 住房。對相鄰中立單元格施放文化炸彈並且增加1點魅力。相鄰的山脈單元格提供+1 [ICON_Production] 生產力。此區域的古樹林賦予相鄰未改良的單元格+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值，魅力為「迷人的」以上的單元格則賦予+2 [ICON_FOOD] 食物、+2 [ICON_FAITH] 信仰值和+2 [ICON_CULTURE] 文化值。此區域的庇護所賦予相鄰未改良的單元格+1 [ICON_SCIENCE] 科技值和+1 [ICON_GOLD] 金幣，魅力為「迷人的」以上的單元格則賦予+2 [ICON_SCIENCE] 科技值、+2 [ICON_GOLD] 金幣和+2 [ICON_PRODUCTION] 生產力。無法建造在市中心旁。</Text>
+			<Text>かざま隊特色區域，取代保留區且造價更為低廉。[NEWLINE][NEWLINE]根據魅力賦予最高3點 [ICON_Housing] 住房。使相鄰單元格的魅力增加2點。對相鄰中立單元格施放文化炸彈並且增加1點魅力。相鄰的山脈單元格提供+1 [ICON_Production] 生產力。無法建造在市中心旁。</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" Language="zh_Hant_HK">
 			<Text>+{1_num} [ICON_Production] 生產力來自相鄰山脈{1_Num : plural 1?單元格; other?單元格;}。</Text>
-		</Row>
-		<Row Tag="LOC_HOLOX_HIDDEN_MOUNTAINS_APPEAL_ANY" Language="zh_Hant_HK">
-			<Text>任意魅力</Text>
 		</Row>
 	</LocalizedText>
 </GameData>

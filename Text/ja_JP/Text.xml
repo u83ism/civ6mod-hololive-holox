@@ -407,13 +407,10 @@
 			<Text>山の秘境</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="ja_JP">
-			<Text>かざま隊固有の区域。保護区に取ってかわり、より安価に建設できる。[NEWLINE][NEWLINE]アピールに応じて最大で [ICON_Housing] 住宅+3。隣接タイルで文化爆弾が発動し、発動したタイルのアピール+1。隣接する山岳タイルにより [ICON_Production] 生産力+1。この区域の林は、隣接する施設が築かれていないタイルの [ICON_Food] 食料+1、 [ICON_Faith] 信仰力+1。アピールが「素敵」以上のタイルでは [ICON_Food] 食料+2、 [ICON_Faith] 信仰力+2、 [ICON_Culture] 文化力+2。この区域の聖域は、隣接する施設が築かれていないタイルの [ICON_Science] 科学力+1、 [ICON_Gold] ゴールド+1。アピールが「素敵」以上のタイルでは [ICON_Science] 科学力+2、 [ICON_Gold] ゴールド+2、 [ICON_Production] 生産力+2。都心に隣接させることはできない。</Text>
+			<Text>かざま隊固有の区域。保護区に取ってかわり、より安価に建設できる。[NEWLINE][NEWLINE]アピールに応じて最大で [ICON_Housing] 住宅+3。隣接タイルのアピール+2。隣接タイルで文化爆弾が発動し、発動したタイルのアピール+1。隣接する山岳タイルにより [ICON_Production] 生産力+1。都心に隣接させることはできない。</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" Language="ja_JP">
 			<Text>隣接する山岳タイルにより [ICON_Production] 生産力+{1_num}。</Text>
-		</Row>
-		<Row Tag="LOC_HOLOX_HIDDEN_MOUNTAINS_APPEAL_ANY" Language="ja_JP">
-			<Text>アピール不問</Text>
 		</Row>
 	</LocalizedText>
 </GameData>
