@@ -66,15 +66,15 @@
 	</ModifierArguments>
 
 	<!--
-		山の隣接ボーナス: 火山を含む各種の山(火山は山の地形に乗る地物なので地形で数えれば含まれる)に隣接で食料+1(生産力は文明能力の山の効果が増やすので、隣接ボーナスは食料にした)。
+		山の隣接ボーナス: 火山を含む各種の山(火山は山の地形に乗る地物なので地形で数えれば含まれる)に隣接で生産力+1。
 		キャンパスのMountains_Science1〜5と同じ書き方(地形の種類ごとに1行)。
 	-->
 	<Adjacency_YieldChanges>
-		<Row ID="HOLOX_HiddenMountains_Mountain1" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_GRASS_MOUNTAIN"/>
-		<Row ID="HOLOX_HiddenMountains_Mountain2" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_PLAINS_MOUNTAIN"/>
-		<Row ID="HOLOX_HiddenMountains_Mountain3" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_DESERT_MOUNTAIN"/>
-		<Row ID="HOLOX_HiddenMountains_Mountain4" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_TUNDRA_MOUNTAIN"/>
-		<Row ID="HOLOX_HiddenMountains_Mountain5" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_SNOW_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_Mountain1" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_GRASS_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_Mountain2" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_PLAINS_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_Mountain3" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_DESERT_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_Mountain4" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_TUNDRA_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_Mountain5" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_SNOW_MOUNTAIN"/>
 	</Adjacency_YieldChanges>
 	<District_Adjacencies>
 		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_Mountain1"/>

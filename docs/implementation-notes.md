@@ -30,7 +30,7 @@
 - **建設コストは27**(置換元54の半額。固有区域の慣習、`docs/civ6-research/vanilla-conventions.md`参照)。説明文は「保護区に取ってかわり、より安価に建設できる」
 - **保護区の他の定義も写した**: アピールに応じた住宅(`AppealHousingChanges`)、文化爆弾(ゲーム全体のModifierのうち保護区用のもの。UD用に同じ構成を追加)、`StartingBuildings`
 - 林・聖域のタイル産出は`Adjacent_AppealYieldChanges`を、山の秘境の区域種別で、バニラ(保護区)と同じ値で書き直した(条件は変えない)。強化は区域の`Appeal`列を2にして行う。実機で効くかは未確認(README.mdのTODO参照)
-- 山の隣接ボーナスは、山の地形5種(`TERRAIN_*_MOUNTAIN`)ごとに1行、食料+1。火山は山の地形に乗る地物なので含まれる
+- 山の隣接ボーナスは、山の地形5種(`TERRAIN_*_MOUNTAIN`)ごとに1行、生産力+1。火山は山の地形に乗る地物なので含まれる
 
 ## 実機デバッグ記録
 
@@ -91,7 +91,7 @@
 ## 風真いろは: 固有区域「山の秘境」の実装の見込みと調べた内容
 
 - **林・聖域のタイル産出**(`Adjacent_AppealYieldChanges`)は`DistrictType`と`BuildingType`(`BUILDING_GROVE`/`BUILDING_SANCTUARY`)をキーにした行の集まり。山の秘境の区域種別で、バニラ(保護区)と同じ値の行を全部書く(置き換え区域にバニラ保護区の行が自動で適用されるかは未確認なので、書かないと林・聖域の産出が無くなるおそれがある)。施設はバニラのままなので固有建造物にしない
-- **山の隣接ボーナス: 食料+1**(本人判断。2026-10-01。火山を含む各種の山に隣接していると+1。当初は生産力+1で、文明能力の山の効果で生産力が過剰になるため食料に変えた)。ゲーム本体XMLで、火山(`FEATURE_VOLCANO`)は山の地形(草原・平原・砂漠・ツンドラ・雪の5種の`TERRAIN_*_MOUNTAIN`)に乗る地物と確認した。山の地形を条件にすれば火山のタイルも含まれる。キャンパスの山の隣接ボーナス(`Mountains_Science1`〜`5`、`AdjacentTerrain`ごとに1行、`YieldChange=1`/`TilesRequired=1`)が同じ書き方の前例
+- **山の隣接ボーナス: 生産力+1**(本人判断。2026-10-01。火山を含む各種の山に隣接していると+1。一度食料+1に変えて、すぐ生産力に戻した)。ゲーム本体XMLで、火山(`FEATURE_VOLCANO`)は山の地形(草原・平原・砂漠・ツンドラ・雪の5種の`TERRAIN_*_MOUNTAIN`)に乗る地物と確認した。山の地形を条件にすれば火山のタイルも含まれる。キャンパスの山の隣接ボーナス(`Mountains_Science1`〜`5`、`AdjacentTerrain`ごとに1行、`YieldChange=1`/`TilesRequired=1`)が同じ書き方の前例
 - **区域に隣接する未改善タイルの食料+1(取り下げ済み)**: 一度、`MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD`を`DistrictModifiers`に登録して実装し、説明文が長いため外した(コミット`b63d12c`〜`f726d28`で追加・調整)。知見だけ残す: `REQUIREMENT_PLOT_IS_MOUNTAIN`はBase(Standard)のゲームコアのDLLに無く(Rise and Fall・嵐の訪れのDLLにだけある。2026-10-01、DLLの文字列で確認)、山の除外には`REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES`のInverseを山の地形5種に1つずつ使う。`REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT`・`REQUIREMENT_PLOT_HAS_ANY_DISTRICT`・`REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES`・`REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES`は3つのルールセットのDLCすべてにある
 - **区域のアピール補正(`Districts.Appeal`)は+2**(保護区は+1)。強化はアピール条件の書き換えではなく、この値で行う。アピール条件を書き換えると施設の説明文と食い違い、直すには林・聖域を置換する固有建造物にする必要がある(説明文は建造物の種類ごとに1つで、文明ごとに出し分けられない)
 - **アイコン・見た目はすべて保護区そのまま**(本人判断。2026-10-01)。区域・施設ともバニラのアイコンと見た目を流用する。注意: 置換UDの選択画面のアイコンは、シャチたちの楽園で「アイコンの別名(`IconAliases`)では解決できず、置換元と同じ画像を指す自前のアトラスを`Art/Icons/Icons.xml`に定義する」必要があった。保護区のアイコン定義がフロントエンドで読まれるかは実装時に確認する
