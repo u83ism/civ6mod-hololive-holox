@@ -362,13 +362,13 @@
 			<Text>Kazama Clan</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Movement] Movement to all land units.</Text>
+			<Text>(The Mountain effect is only available in the Gathering Storm ruleset.)</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="en_US">
 			<Text>Warrior's Pilgrimage</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="en_US">
-			<Text>All land units gain +50% combat experience.</Text>
+			<Text>+1 [ICON_Movement] Movement to all land units. All land units gain +50% combat experience.</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="en_US">
 			<Text>Yamazato</Text>
@@ -383,7 +383,7 @@
 			<Text>+{1_num} [ICON_Production] Production from the adjacent Mountain {1_Num : plural 1?tile; other?tiles;}.</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_EXPANSION2_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Movement] Movement to all land units. Citizens may work Mountain tiles. Mountain tiles provide +2 [ICON_PRODUCTION] Production and an additional +1 [ICON_PRODUCTION] Production when the game reaches the Industrial Era.</Text>
+			<Text>Citizens may work Mountain tiles. Mountain tiles provide +2 [ICON_PRODUCTION] Production and an additional +1 [ICON_PRODUCTION] Production when the game reaches the Industrial Era.</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" Language="en_US">
 			<Text>+{1_num} [ICON_Food] Food from the adjacent Mountain {1_Num : plural 1?tile; other?tiles;}.</Text>

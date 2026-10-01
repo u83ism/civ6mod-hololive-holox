@@ -86,7 +86,8 @@
 - 侍のUnits行(`Base/Assets/Gameplay/Data/Units.xml`)は`TraitType="TRAIT_CIVILIZATION_UNIT_JAPANESE_SAMURAI"`を持つので、その文明がTraitを持てば建造できる。Trait・ユニット・置換(メンアットアーム)・アイコン・ユニット能力はすべてゲーム本体(Base)の定義で、このModでは何も定義していない。日本のTraitの行(`Traits`)は名前だけを持ち、効果のModifierは付いていない
 - 嵐の訪れでは、侍に`ResourceCost=10`(鉄)が付く(`Expansion2_Units.xml`)。これもゲーム本体の定義なのでそのまま引き継ぐ
 - 歴史的瞬間の挿絵は、ゲーム本体が侍用に登録済み(`Expansion1_Moments.xml`)
-- **未確認**: 日本以外の文明が、日本のTraitを共有した侍を実際に建造できるか(実機で確認)、選択画面の固有要素に侍が出るか
+- **前例**: 他のホロライブModも、他文明の固有ユニット・区域・建造物・施設を、文明(またはリーダー)にゲーム本体のTraitを付けて共有している(2026-10-02、インストール済みのModで確認。例: Hololive GAMERSの大神ミオが日本の侍を同じ形で共有し、選択画面の登録(`Type="UNIT_JAPANESE_SAMURAI"`、`Icon="ICON_UNIT_JAPANESE_SAMURAI"`、ゲーム本体の名前・説明文のタグ)も同じ。ほかにルシアのコサック・ぼたんのレギオン・ねねのシュメール/モンゴルのUU・ラミィのラヴラなど多数)
+- **2026-10-02に本人が動作を確認した**(「動いてる」)
 
 ## 風真いろは: 文明能力の山の効果(嵐の訪れ限定)
 
