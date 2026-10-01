@@ -36,7 +36,7 @@
 			<Text>シャチたちの楽園</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" Language="ja_JP">
-			<Text>シャチの群れ固有の区域。ウォーターパークに取ってかわる。社会制度「遊びと娯楽」で建設可能になる。[NEWLINE][NEWLINE]この都市の湖を除く沿岸タイルと海タイルから [ICON_Food] 食料+1、 [ICON_Production] 生産力+1。[ICON_Amenities] 快適性を増やして人々の幸福の維持に貢献する。ターン毎の [ICON_GreatMusician] 大音楽家ポイント+2。総合娯楽施設がある都市には建設できない。礁には建設できない。</Text>
+			<Text>シャチの群れ固有の区域。ウォーターパークに取ってかわり、より安価に建設できる。社会制度「遊びと娯楽」で建設可能になる。[NEWLINE][NEWLINE]この都市の湖を除く沿岸タイルと海タイルから [ICON_Food] 食料+1、 [ICON_Production] 生産力+1。[ICON_Amenities] 快適性を増やして人々の幸福の維持に貢献する。ターン毎の [ICON_GreatMusician] 大音楽家ポイント+2。総合娯楽施設がある都市には建設できない。礁には建設できない。</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Language="ja_JP">
 			<Text>シャチの水族館</Text>

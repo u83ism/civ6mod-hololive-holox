@@ -36,7 +36,7 @@
 			<Text>杀人鲸乐园</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>杀人鲸群特色区域，代替水上乐园。研究“游戏和娱乐”市政后可建造。[NEWLINE][NEWLINE]该城市中每个海岸（不含湖泊）和海洋单元格+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。可增加 [ICON_Amenities] 宜居度，让人民生活幸福。每回合+2 [ICON_GreatMusician] 大音乐家点数。无法建在拥有“娱乐中心”的城市中。无法建在礁石上。</Text>
+			<Text>杀人鲸群特色区域，代替水上乐园，建造费用更低。研究“游戏和娱乐”市政后可建造。[NEWLINE][NEWLINE]该城市中每个海岸（不含湖泊）和海洋单元格+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。可增加 [ICON_Amenities] 宜居度，让人民生活幸福。每回合+2 [ICON_GreatMusician] 大音乐家点数。无法建在拥有“娱乐中心”的城市中。无法建在礁石上。</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Language="zh_Hans_CN">
 			<Text>杀人鲸水族馆</Text>
