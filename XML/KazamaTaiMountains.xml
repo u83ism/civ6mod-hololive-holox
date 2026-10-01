@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	文明固有能力「風真の一族」の山の効果(インカの文明能力「ミタ制」(TRAIT_CIVILIZATION_GREAT_MOUNTAINS)から、棚畑の効果を除いて写したもの)。
+	- 市民が山岳タイルを利用できるようになる(5種の山の地形ごとにMODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE)
+	- 山岳タイルの生産力+2、産業時代に到達するとさらに+1
+	設計はdocs/design.md「風真いろは」の文明固有能力を参照。
+	「山で働けるようにする」効果(EFFECT_ADJUST_PLAYER_TERRAIN_WORK_IMPASSABLE_MODIFIER)は嵐の訪れのゲームコアにしか無い
+	(Base・Rise and FallのDLLに文字列が無いことを2026-10-01に確認)ので、嵐の訪れのときだけ読み込む(.modinfoのActionCriteria)。
+	RequirementSet(REQUIREMENTS_PLOT_IS_MOUNTAIN等)は嵐の訪れのデータでインカのために定義済みのものをそのまま参照する。
+	嵐の訪れでは、移動力の効果だけだった文明能力の説明文を、山の効果を含む文に差し替える(Traitsの<Update>。選択画面はConfig.xml)。
+-->
+<GameData>
+	<TraitModifiers>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" ModifierId="HOLOX_KAZAMA_TAI_WORK_GRASS_MOUNTAIN"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" ModifierId="HOLOX_KAZAMA_TAI_WORK_PLAINS_MOUNTAIN"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" ModifierId="HOLOX_KAZAMA_TAI_WORK_DESERT_MOUNTAIN"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" ModifierId="HOLOX_KAZAMA_TAI_WORK_TUNDRA_MOUNTAIN"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" ModifierId="HOLOX_KAZAMA_TAI_WORK_SNOW_MOUNTAIN"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" ModifierId="HOLOX_KAZAMA_TAI_PRODUCTION_MOUNTAIN"/>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" ModifierId="HOLOX_KAZAMA_TAI_PRODUCTION_MOUNTAIN_LATE"/>
+	</TraitModifiers>
+
+	<Modifiers>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_GRASS_MOUNTAIN</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_PLAINS_MOUNTAIN</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_DESERT_MOUNTAIN</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_TUNDRA_MOUNTAIN</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_SNOW_MOUNTAIN</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_PRODUCTION_MOUNTAIN</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>REQUIREMENTS_PLOT_IS_MOUNTAIN</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_PRODUCTION_MOUNTAIN_LATE</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>REQUIREMENTS_PLOT_IS_MOUNTAIN_LATE</SubjectRequirementSetId>
+		</Row>
+	</Modifiers>
+
+	<ModifierArguments>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_GRASS_MOUNTAIN</ModifierId>
+			<Name>Ignore</Name>
+			<Value>true</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_GRASS_MOUNTAIN</ModifierId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_GRASS_MOUNTAIN</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_PLAINS_MOUNTAIN</ModifierId>
+			<Name>Ignore</Name>
+			<Value>true</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_PLAINS_MOUNTAIN</ModifierId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_PLAINS_MOUNTAIN</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_DESERT_MOUNTAIN</ModifierId>
+			<Name>Ignore</Name>
+			<Value>true</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_DESERT_MOUNTAIN</ModifierId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_DESERT_MOUNTAIN</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_TUNDRA_MOUNTAIN</ModifierId>
+			<Name>Ignore</Name>
+			<Value>true</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_TUNDRA_MOUNTAIN</ModifierId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_TUNDRA_MOUNTAIN</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_SNOW_MOUNTAIN</ModifierId>
+			<Name>Ignore</Name>
+			<Value>true</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_WORK_SNOW_MOUNTAIN</ModifierId>
+			<Name>TerrainType</Name>
+			<Value>TERRAIN_SNOW_MOUNTAIN</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_PRODUCTION_MOUNTAIN</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_PRODUCTION</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_PRODUCTION_MOUNTAIN</ModifierId>
+			<Name>Amount</Name>
+			<Value>2</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_PRODUCTION_MOUNTAIN_LATE</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_PRODUCTION</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_KAZAMA_TAI_PRODUCTION_MOUNTAIN_LATE</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+	</ModifierArguments>
+
+	<!-- 嵐の訪れでは、文明能力の説明文を山の効果を含むものに差し替える -->
+	<Traits>
+		<Update>
+			<Where TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI"/>
+			<Set>
+				<Description>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_EXPANSION2_DESCRIPTION</Description>
+			</Set>
+		</Update>
+	</Traits>
+</GameData>

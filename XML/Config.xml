@@ -7,6 +7,7 @@
 		選択画面には出る(bootstrap-leader Skill 3節・4節参照)。実際の絵作りはmake-leader-icons/
 		make-fallback-portrait Skillで別途行う。
 		Domainはプレイ中のルールセット(Standard/Rise and Fall/Gathering Storm)ごとに別なので3つとも登録する。
+		風真いろは(KAZAMA)の文明能力の説明文は、山の効果が嵐の訪れ限定なので、Expansion2_Playersの行だけ_EXPANSION2_DESCRIPTIONを指す。
 	-->
 	<Players>
 		<Row>
@@ -109,7 +110,7 @@
 			<CivilizationIcon>ICON_CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationIcon>
 			<LeaderIcon>ICON_LEADER_HOLOX_KAZAMA_IROHA</LeaderIcon>
 			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME</CivilizationAbilityName>
-			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_EXPANSION2_DESCRIPTION</CivilizationAbilityDescription>
 			<CivilizationAbilityIcon>ICON_CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationAbilityIcon>
 			<LeaderAbilityIcon>ICON_LEADER_HOLOX_KAZAMA_IROHA</LeaderAbilityIcon>
 			<LeaderAbilityName>LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME</LeaderAbilityName>

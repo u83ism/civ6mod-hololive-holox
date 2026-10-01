@@ -80,6 +80,14 @@
 
 - **実装**: 型は`MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER`(政策「調査」と同じ)。指導者Traitから直接付け、ゲーム本体定義済みのRequirementSet`UNIT_IS_DOMAIN_LAND`で陸上に絞る(ヌビアはユニット能力を付与してから別の型で上げる形だが、そちらにはしなかった)。2026-10-01に動作を実機確認した
 
+## 風真いろは: 文明能力の山の効果(嵐の訪れ限定)
+
+- ファイルは`XML/KazamaTaiMountains.xml`。インカの文明能力「ミタ制」の定義(`DLC/Expansion2/Data/Expansion2_Civilizations_Major.xml`)から、棚畑の効果を除いて写した: 山の地形5種ごとの`MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE`(引数`Ignore=true`/`TerrainType`)、山岳タイルの生産力+2(`MODIFIER_PLAYER_ADJUST_PLOT_YIELD`、RequirementSet`REQUIREMENTS_PLOT_IS_MOUNTAIN`)、産業時代以降の+1(`REQUIREMENTS_PLOT_IS_MOUNTAIN_LATE`)
+- **嵐の訪れのときだけ読み込む**(`.modinfo`の`ActionCriteria``Expansion2`、`LoadOrder`100)。理由: 「山で働けるようにする」のEffect(`EFFECT_ADJUST_PLAYER_TERRAIN_WORK_IMPASSABLE_MODIFIER`)と、それを使うModifierType(`MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE`)は、嵐の訪れのデータとゲームコアにしか無い(2026-10-01、Base・Rise and FallのDLLに文字列が無いことを確認)
+- RequirementSet(`REQUIREMENTS_PLOT_IS_MOUNTAIN`、`..._LATE`)と、その中のRequirement(`PLOT_IS_MOUNTAIN`、`REQUIRES_ERA_ATLEASTEXPANSION_INDUSTRIAL`)は、嵐の訪れのデータでインカ用に定義済みのものを、そのまま参照する
+- **説明文**: 山の効果は嵐の訪れ限定なので、文明能力の説明文を2種類にした。通常は`..._DESCRIPTION`(移動力+1だけ)、嵐の訪れでは`..._EXPANSION2_DESCRIPTION`(移動力+1と山の効果)。ゲーム内は`XML/KazamaTaiMountains.xml`の`Traits`の`<Update>`で差し替え、選択画面は`XML/Config.xml`の`Players:Expansion2_Players`の行だけ`_EXPANSION2_DESCRIPTION`を指す(選択画面は`ActionCriteria`を評価しないため)。山の効果の文はインカの`LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION`から棚畑の文を除いてそのまま写した
+- 注意: 能力名は「風真の一族」のまま。ミタ制の名前は使わない
+
 ## 風真いろは: 固有区域「山の秘境」の実装の見込みと調べた内容
 
 - **林・聖域のタイル産出**(`Adjacent_AppealYieldChanges`)は`DistrictType`と`BuildingType`(`BUILDING_GROVE`/`BUILDING_SANCTUARY`)をキーにした行の集まり。山の秘境の区域種別で、バニラ(保護区)と同じ値の行を全部書く(置き換え区域にバニラ保護区の行が自動で適用されるかは未確認なので、書かないと林・聖域の産出が無くなるおそれがある)。施設はバニラのままなので固有建造物にしない

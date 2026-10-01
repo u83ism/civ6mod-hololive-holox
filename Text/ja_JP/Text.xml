@@ -412,5 +412,8 @@
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" Language="ja_JP">
 			<Text>隣接する山岳タイルにより [ICON_Production] 生産力+{1_num}。</Text>
 		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_EXPANSION2_DESCRIPTION" Language="ja_JP">
+			<Text>すべての陸上ユニットの [ICON_Movement] 移動力+1。市民が山岳タイルを利用できるようになる。山岳タイルの [ICON_PRODUCTION] 生産力+2。産業時代に到達すると、さらに [ICON_PRODUCTION] 生産力+1。</Text>
+		</Row>
 	</LocalizedText>
 </GameData>
