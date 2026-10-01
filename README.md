@@ -1,6 +1,6 @@
 # civ6mod-hololive-holox
 
-Civilization VI の新規文明追加Mod。hololive holoXをモチーフにした文明を実装する。設計判断の理由・実機で踏んだ罠は[docs/design.md](docs/design.md)を参照(役割分担の詳細は`.claude/rules/documentation.md`)。
+Civilization VI の新規文明追加Mod。hololive holoXをモチーフにした文明を実装する。ゲームデザインの判断理由は[docs/design.md](docs/design.md)、実装の仕組み・実機で踏んだ罠は[docs/implementation-notes.md](docs/implementation-notes.md)を参照(役割分担の詳細は`.claude/rules/documentation.md`)。
 
 ## 現状
 
