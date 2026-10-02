@@ -370,8 +370,95 @@
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="en_US">
 			<Text>All land units gain +50% combat experience.</Text>
 		</Row>
-		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="en_US">
-			<Text>Yamazato</Text>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_FUJI" Language="en_US">
+			<Text>Fuji</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TATEYAMA" Language="en_US">
+			<Text>Tateyama</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKUSAN" Language="en_US">
+			<Text>Hakusan</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YARIGATAKE" Language="en_US">
+			<Text>Yarigatake</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KITADAKE" Language="en_US">
+			<Text>Kitadake</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASO" Language="en_US">
+			<Text>Aso</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISEN" Language="en_US">
+			<Text>Daisen</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ONTAKE" Language="en_US">
+			<Text>Ontake</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YOTEI" Language="en_US">
+			<Text>Yotei</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSUKUBA" Language="en_US">
+			<Text>Tsukuba</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_RISHIRI" Language="en_US">
+			<Text>Rishiri</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISETSUZAN" Language="en_US">
+			<Text>Daisetsuzan</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_IWAKISAN" Language="en_US">
+			<Text>Iwakisan</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKKODA" Language="en_US">
+			<Text>Hakkoda</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_GASSAN" Language="en_US">
+			<Text>Gassan</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CHOKAI" Language="en_US">
+			<Text>Chokai</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ZAO" Language="en_US">
+			<Text>Zao</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_BANDAI" Language="en_US">
+			<Text>Bandai</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NANTAI" Language="en_US">
+			<Text>Nantai</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_AKAGI" Language="en_US">
+			<Text>Akagi</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASAMA" Language="en_US">
+			<Text>Asama</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MYOKO" Language="en_US">
+			<Text>Myoko</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YATSUGATAKE" Language="en_US">
+			<Text>Yatsugatake</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NORIKURA" Language="en_US">
+			<Text>Norikura</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HOTAKA" Language="en_US">
+			<Text>Hotakadake</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSURUGI" Language="en_US">
+			<Text>Tsurugisan</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ISHIZUCHI" Language="en_US">
+			<Text>Ishizuchi</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KIRISHIMA" Language="en_US">
+			<Text>Kirishima</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KAIMONDAKE" Language="en_US">
+			<Text>Kaimondake</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MIYANOURADAKE" Language="en_US">
+			<Text>Miyanouradake</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Language="en_US">
 			<Text>Untamed Wilds</Text>

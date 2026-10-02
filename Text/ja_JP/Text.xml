@@ -400,8 +400,95 @@
 		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="ja_JP">
 			<Text>すべての陸上ユニットの戦闘経験値+50%。</Text>
 		</Row>
-		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CAPITAL" Language="ja_JP">
-			<Text>山里</Text>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_FUJI" Language="ja_JP">
+			<Text>富士山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TATEYAMA" Language="ja_JP">
+			<Text>立山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKUSAN" Language="ja_JP">
+			<Text>白山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YARIGATAKE" Language="ja_JP">
+			<Text>槍ヶ岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KITADAKE" Language="ja_JP">
+			<Text>北岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASO" Language="ja_JP">
+			<Text>阿蘇山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISEN" Language="ja_JP">
+			<Text>大山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ONTAKE" Language="ja_JP">
+			<Text>御嶽山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YOTEI" Language="ja_JP">
+			<Text>羊蹄山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSUKUBA" Language="ja_JP">
+			<Text>筑波山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_RISHIRI" Language="ja_JP">
+			<Text>利尻山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISETSUZAN" Language="ja_JP">
+			<Text>大雪山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_IWAKISAN" Language="ja_JP">
+			<Text>岩木山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKKODA" Language="ja_JP">
+			<Text>八甲田山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_GASSAN" Language="ja_JP">
+			<Text>月山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CHOKAI" Language="ja_JP">
+			<Text>鳥海山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ZAO" Language="ja_JP">
+			<Text>蔵王山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_BANDAI" Language="ja_JP">
+			<Text>磐梯山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NANTAI" Language="ja_JP">
+			<Text>男体山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_AKAGI" Language="ja_JP">
+			<Text>赤城山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASAMA" Language="ja_JP">
+			<Text>浅間山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MYOKO" Language="ja_JP">
+			<Text>妙高山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YATSUGATAKE" Language="ja_JP">
+			<Text>八ヶ岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NORIKURA" Language="ja_JP">
+			<Text>乗鞍岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HOTAKA" Language="ja_JP">
+			<Text>穂高岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSURUGI" Language="ja_JP">
+			<Text>剣山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ISHIZUCHI" Language="ja_JP">
+			<Text>石鎚山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KIRISHIMA" Language="ja_JP">
+			<Text>霧島山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KAIMONDAKE" Language="ja_JP">
+			<Text>開聞岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MIYANOURADAKE" Language="ja_JP">
+			<Text>宮之浦岳</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Language="ja_JP">
 			<Text>未開の秘境</Text>
