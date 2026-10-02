@@ -33,5 +33,6 @@ Civilization VI の新規文明追加Mod。hololive holoXをモチーフにし�
 - [ ] バッジアイコン・ポートレートの作り込み(`make-leader-icons`/`make-fallback-portrait` Skill)
 - [ ] 中国語(簡体字/繁体字)の全テキストを実機確認(表示・文字化けの有無、`.modinfo`に登録済み)
 - [ ] 外交交渉画面の台詞の英語版(en_US、76タグ追加済み)を実機確認(日本語版76タグは`Text/ja_JP/Text.xml`に実装・実機確認済み、原案は`docs/diplomacy-statements-sakamata-chloe.md`)
+- [ ] 風真いろはの外交交渉画面の台詞の英語・中国語版を作る(日本語版76タグは`Text/ja_JP/Text.xml`に実装・実機確認済み、原案は`docs/diplomacy-statements-kazama-iroha.md`。口調の方針は`docs/glossary.md`の「未確定」に先に決める)
 - [ ] ユニークアジェンダを設計・実装(アジェンダの理由文`LOC_DIPLO_KUDO/WARNING_LEADER_ANY_REASON_AGENDA_*`もこの時に書く)
 - [ ] 指導者/文明能力のテキストを`write-game-text` Skillで文体調整(現状は暫定文言)
