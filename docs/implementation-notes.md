@@ -29,7 +29,8 @@
 - **ベトナムDLCのときだけ読み込む**: `.modinfo`のActionCriteriaに、ベトナムDLC自身の読み込み条件(`KublaiKhanVietnam`、DLCの指導者が選べるルールセットのとき真)と同じ判定を写した。フロントエンド(選択画面)は、DLC自身が使う`ModIsEnabled`方式で判定する。歴史的瞬間の挿絵は、`MomentIllustrations`テーブルが拡張パック限定なので、拡張パックのルールセットのときだけ別ファイルで読む
 - **見た目・アイコンは保護区のまま**: 3D表示はベトナムDLCの`Districts.artdef`・`Landmarks.artdef`の保護区の定義を複製して名前だけ差し替えた(`ArtDefs/`。シャチたちの楽園と同じ手順)。林・聖域はバニラの建造物のままなので建造物の定義は複製していない。アイコンはシャチたちの楽園と同様に、DLCの保護区と同じ画像を指す自前のアトラスを`Art/Icons/Icons.xml`に定義した
 - **建設コストは27**(置換元54の半額。固有区域の慣習、`docs/civ6-research/vanilla-conventions.md`参照)。説明文は「保護区に取ってかわり、より安価に建設できる」
-- **保護区の他の定義も写した**: アピールに応じた住宅(`AppealHousingChanges`)、文化爆弾(ゲーム全体のModifierのうち保護区用のもの。UD用に同じ構成を追加。ただし`CaptureOwnedTerritory`は保護区(`False`、中立タイルのみ)と違い`True`にして他国の領土も奪う)、`StartingBuildings`
+- **保護区の他の定義も写した**: アピールに応じた住宅(`AppealHousingChanges`)、文化爆弾(ゲーム全体のModifierのうち保護区用のもの。UD用に同じ構成を追加。ただし`CaptureOwnedTerritory`は保護区(`False`、中立タイルのみ)と違い`True`にして他国の領土も奪う。`True`の明示で他国の領土を奪えることは2026-10-04に実機確認済み。バニラに`True`を明示した前例はなかった。仕組みは`docs/civ6-research/vanilla-conventions.md`参照)、`StartingBuildings`
+- **文化爆弾が発動しないときは、ゲームが新規かロードしたセーブかを疑う**(2026-10-04): `GameModifiers`の変更は、既存のセーブをロードしても反映されない可能性がある(AIの推測で未検証。セーブをロードした状態で発動しなかったが、その後の動作確認では発動した。その確認が新規ゲームだったかは記録していないので、原因は特定できていない)。迷ったら新規ゲームで確認する
 - 林・聖域のタイル産出は`Adjacent_AppealYieldChanges`を、未開の秘境の区域種別で、バニラ(保護区)と同じ値で書き直した(条件は変えない)。強化は区域の`Appeal`列を2にして行う。実機で効くかは未確認(README.mdのTODO参照)
 - 山の隣接ボーナスは、山の地形5種(`TERRAIN_*_MOUNTAIN`)ごとに生産力の行と食料の行を1本ずつ(計10行、1行に付く産出は1種類)、各+1。火山は山の地形に乗る地物なので含まれる
 

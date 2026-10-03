@@ -23,6 +23,13 @@
 - 排他の例: ヒッポドローム(総合娯楽施設置換)は`DISTRICT_WATER_ENTERTAINMENT_COMPLEX`との排他を両方向で書いている(`DLC/Byzantium_Gaul/Data/Byzantium_Gaul_Expansion1.xml`)。ブラジルの水上ストリートカーニバル(コパカバーナ、ウォーターパーク置換)は、陸のストリートカーニバルとの排他だけを両方向で書き、総合娯楽施設との排他行は無い(`DLC/Expansion1/Data/Expansion1_Districts.xml`の12〜16行目)。置換元が総合娯楽施設と排他でも、書かなければ置換先は共存できる
 - 隣接ボーナスの例: ウォーターパークに隣接した劇場広場・アクロポリスの文化力+2は`WaterPark_Culture`(`AdjacentDistrict`=ウォーターパーク)。コパカバーナ用には`Copacabana_Culture`が別に書かれていて、登録先は劇場広場のみ(`DLC/Expansion2/Data/Expansion2_Districts.xml`の74〜93行目)
 
+## 文化爆弾が他国の領土を奪うかは`CaptureOwnedTerritory`で決まる
+
+- 確認日: 2026-10-04。文化爆弾のModifier(`MODIFIER_ALL_PLAYERS_ADD_CULTURE_BOMB_TRIGGER`、`EFFECT_ADD_CULTURE_BOMB_TRIGGER`)の引数`CaptureOwnedTerritory`が、他国の領土のタイルも奪うかを切り替える。`False`なら中立タイルだけ。`True`なら他国の領土も奪う
+- バニラで`CaptureOwnedTerritory`を書いているのは、ベトナムDLCの保護区(`MAJOR_PLAYERS_ACTIVATE_PRESERVE_CULTURE_BOMB`、`DLC/KublaiKhan_Vietnam/Data/KublaiKhan_Vietnam_Districts.xml`)とガリアの鉱山(`GAUL_MINE_CULTURE_BOMB`、`DLC/Byzantium_Gaul/Data/Byzantium_Gaul_Civilizations.xml`)の2か所だけで、どちらも`False`。引数を書かない文化爆弾(ポーランドの黄金の自由など)は、他国の領土を奪う(引数省略時の既定)と見られる
+- 保護区の説明文は、en_US・zh_Hans_CN・zh_Hant_HKでは「中立」(neutral)と明記しているが、ja_JPだけ「隣接タイルで文化爆弾が発動し」と「中立」を省いている。挙動は他言語と同じ(中立タイルのみ)
+- 実機で`True`を明示すれば、他国の領土を奪えることを確認した(下の`docs/implementation-notes.md`参照)
+
 ## ウォーターパーク・水族館のバニラ仕様(嵐の訪れ)
 
 - ウォーターパーク: 沿岸タイルかつ陸地隣接(`Coast="true"`/`AdjacentToLand="true"`)、礁には不可、総合娯楽施設と同じ都市に共存不可(`MutuallyExclusiveDistricts`)、人口による区域数上限の対象。快適性+1・アピール+1。劇場広場とアクロポリスがウォーターパーク隣接で文化力+2の隣接ボーナスを得る
