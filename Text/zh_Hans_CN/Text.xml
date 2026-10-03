@@ -377,7 +377,7 @@
 			<Text>所有陆地单位+1 [ICON_Movement] 移动力。公民可改良山脉单元格。山脉单元格提供+2 [ICON_PRODUCTION] 生产力，游戏进入工业时代后额外+1 [ICON_PRODUCTION] 生产力。</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>风真队特色区域。取代保护区，建造费用更低。[NEWLINE][NEWLINE]可基于魅力最高提供3点 [ICON_Housing] 住房。相邻单元格+2魅力。对相邻的中立单元格施放文化炸弹，并使其魅力增加1级。每个相邻山脉单元格+1 [ICON_Production] 生产力、+1 [ICON_Food] 食物。无法建造在市中心旁。</Text>
+			<Text>风真队特色区域。取代保护区，建造费用更低。[NEWLINE][NEWLINE]可基于魅力最高提供3点 [ICON_Housing] 住房。相邻单元格+2魅力。对相邻单元格施放文化炸弹，并使其魅力增加1级。每个相邻山脉单元格+1 [ICON_Production] 生产力、+1 [ICON_Food] 食物。无法建造在市中心旁。</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" Language="zh_Hans_CN">
 			<Text>+{1_num} [ICON_Production] 生产力来自相邻山脉{1_Num : plural 1?单元格; other?单元格;}。</Text>
