@@ -158,6 +158,7 @@
 		<File>Lua/SakamataChloeGameplayScript.lua</File>
 		<File>civ6mod-hololive-holox.dep</File>
 		<File>ArtDefs/Buildings.artdef</File>
+		<File>ArtDefs/Civilizations.artdef</File>
 		<File>ArtDefs/Districts.artdef</File>
 		<File>ArtDefs/Landmarks.artdef</File>
 		<File>Platforms/Windows/BLPs/LeaderFallbackImages.blp</File>
