@@ -33,6 +33,6 @@ Civilization VI の新規文明追加Mod。hololive holoXをモチーフにし�
 - [ ] バッジアイコン・ポートレートの作り込み(`make-leader-icons`/`make-fallback-portrait` Skill)
 - [ ] 中国語(簡体字/繁体字)の全テキストを実機確認(表示・文字化けの有無、`.modinfo`に登録済み)
 - [ ] 外交交渉画面の台詞の英語版(en_US、76タグ追加済み)を実機確認(日本語版76タグは`Text/ja_JP/Text.xml`に実装・実機確認済み、原案は`docs/diplomacy-statements-sakamata-chloe.md`)
-- [ ] 風真いろは関連(文明・指導者・能力・固有区域・都市名・外交台詞)の英語・中国語(簡体字/繁体字)を0から作り直す(2026-10-03に仮案を全削除済みで、現状`Text/en_US|zh_Hans_CN|zh_Hant_HK`に風真関連のタグは無い。名詞は`docs/glossary.md`に先に決める。日本語版は`Text/ja_JP/Text.xml`が正本、外交台詞の原案は`docs/diplomacy-statements-kazama-iroha.md`)
+- [ ] 風真いろは関連(文明・指導者・能力・固有区域・都市名・外交台詞)の英語・中国語(簡体字/繁体字)を0から作り直す(本人の指示済み2026-10-03。他の指導者には広げない。仮案は全削除済みで、現状`Text/en_US|zh_Hans_CN|zh_Hant_HK`に風真関連のタグは無い。名詞は`docs/glossary.md`に先に決める。日本語版は`Text/ja_JP/Text.xml`が正本、外交台詞の原案は`docs/diplomacy-statements-kazama-iroha.md`)
 - [ ] ユニークアジェンダを設計・実装(アジェンダの理由文`LOC_DIPLO_KUDO/WARNING_LEADER_ANY_REASON_AGENDA_*`もこの時に書く)
 - [ ] 指導者/文明能力のテキストを`write-game-text` Skillで文体調整(現状は暫定文言)

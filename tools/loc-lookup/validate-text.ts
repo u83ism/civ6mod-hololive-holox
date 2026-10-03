@@ -45,11 +45,15 @@ const describeDifferences = (baseTokens: readonly string[], otherTokens: readonl
     .map((token) => `${token} (${baseLanguage}:${baseCounts.get(token) ?? 0}, here:${otherCounts.get(token) ?? 0})`);
 };
 
-export const validateTagParity = (index: TextIndex, languages: readonly string[]): readonly Finding[] =>
+export const validateTagParity = (
+  index: TextIndex,
+  languages: readonly string[],
+  severity: Finding["severity"],
+): readonly Finding[] =>
   [...index.entries()].flatMap(([tag, byLanguage]) =>
     languages
       .filter((language) => !byLanguage.has(language))
-      .map((language): Finding => ({ severity: "error", tag, language, message: "この言語にタグが無い" })),
+      .map((language): Finding => ({ severity, tag, language, message: "この言語にタグが無い" })),
   );
 
 const validateAgainstBase = (
