@@ -346,5 +346,26 @@
 		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="zh_Hant_HK">
 			<Text>我家孩子們在哪裡，不都是沙花叉的自由嗎？</Text>
 		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="zh_Hant_HK">
+			<Text>風真隊</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>風真隊</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_ADJECTIVE" Language="zh_Hant_HK">
+			<Text>風真隊</Text>
+		</Row>
+		<Row Tag="LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="zh_Hant_HK">
+			<Text>風真伊呂波</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="zh_Hant_HK">
+			<Text>風真一族</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="zh_Hant_HK">
+			<Text>武者修行</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Language="zh_Hant_HK">
+			<Text>未開之秘境</Text>
+		</Row>
 	</LocalizedText>
 </GameData>
