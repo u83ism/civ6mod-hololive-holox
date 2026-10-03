@@ -476,7 +476,7 @@
 			<Text>宫之浦岳</Text>
 		</Row>
 		<Row Tag="LOC_DIPLO_GREETING_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
-			<Text>找风真有什么事吗，ござる？</Text>
+			<Text>找风真有什么事吗ござる？</Text>
 		</Row>
 		<Row Tag="LOC_DIPLO_FIRST_MEET_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
 			<Text>hololive 6期生、秘密结社holoX的保镖，风真伊吕波ござる。</Text>
@@ -620,7 +620,7 @@
 			<Text>这样啊。那我就奉陪到底！</Text>
 		</Row>
 		<Row Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
-			<Text>真拿你没办法ござる呢……就这一次哦。</Text>
+			<Text>真拿你没办法呢ござる……就这一次哦。</Text>
 		</Row>
 		<Row Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
 			<Text>这个做不到呢。风真也有必须守护的东西……</Text>
