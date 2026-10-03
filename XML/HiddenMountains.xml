@@ -42,7 +42,7 @@
 		<Row Era="ERA_RENAISSANCE" Building="BUILDING_GROVE" District="DISTRICT_HOLOX_HIDDEN_MOUNTAINS"/>
 	</StartingBuildings>
 
-	<!-- 隣接する中立タイルへの文化爆弾。保護区用のMAJOR_PLAYERS_ACTIVATE_PRESERVE_CULTURE_BOMBと同じ構成 -->
+	<!-- 隣接タイルへの文化爆弾。保護区用のMAJOR_PLAYERS_ACTIVATE_PRESERVE_CULTURE_BOMBと同じ構成だが、保護区(中立タイルのみ)と違い他国の領土も奪う(CaptureOwnedTerritory=True) -->
 	<GameModifiers>
 		<Row ModifierId="HOLOX_ACTIVATE_HIDDEN_MOUNTAINS_CULTURE_BOMB"/>
 	</GameModifiers>
@@ -61,7 +61,7 @@
 		<Row>
 			<ModifierId>HOLOX_ACTIVATE_HIDDEN_MOUNTAINS_CULTURE_BOMB</ModifierId>
 			<Name>CaptureOwnedTerritory</Name>
-			<Value>False</Value>
+			<Value>True</Value>
 		</Row>
 	</ModifierArguments>
 
