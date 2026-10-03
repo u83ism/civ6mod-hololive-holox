@@ -6,4 +6,6 @@
 - 指示の範囲を越えて広げない。「風真いろはの多言語対応」と言われたら風真いろは関連だけで、他の指導者には広げない。
 - 指示を受けたら、`docs/glossary.md`でそのMod固有の名詞の各言語表記を先に決める(`add-language` Skill 4節)。手順は`add-language`/`write-game-text`/`implement-diplomacy-statements`の各Skillに従う。
 - `ja_JP`にだけあるタグは、`npm run check`では警告(未対応タグの一覧)として出る。`--strict`を付けるとerrorになる(リリース前の確認用)。警告を消すためにen/zhを埋めない。
+- 他言語版がすでにあるタグの`ja_JP`を直したときは、他言語版を黙って直さない。READMEの`## TODO`に「◯◯のen/zhを再確認」と積み、直すのは指示後。
+- リリース前(`develop`を`main`にマージする前)は`npm run check -- --strict`で欠落を確認する(`branching.md`)。
 - 由来: 2026-10-03、風真いろはの日本語が固まる前に英語・中国語の仮案(能力名・固有区域名・都市名)が登録され、本人の指示で全削除して0から作り直した。
