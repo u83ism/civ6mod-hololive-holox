@@ -385,5 +385,95 @@
 		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" Language="en_US">
 			<Text>+{1_num} [ICON_Food] Food from the adjacent Mountain {1_Num : plural 1?tile; other?tiles;}.</Text>
 		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_FUJI" Language="en_US">
+			<Text>Mount Fuji</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TATEYAMA" Language="en_US">
+			<Text>Mount Tate</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKUSAN" Language="en_US">
+			<Text>Mount Haku</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YARIGATAKE" Language="en_US">
+			<Text>Mount Yari</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KITADAKE" Language="en_US">
+			<Text>Mount Kita</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASO" Language="en_US">
+			<Text>Mount Aso</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISEN" Language="en_US">
+			<Text>Daisen</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ONTAKE" Language="en_US">
+			<Text>Mount Ontake</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YOTEI" Language="en_US">
+			<Text>Mount Yotei</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSUKUBA" Language="en_US">
+			<Text>Mount Tsukuba</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_RISHIRI" Language="en_US">
+			<Text>Mount Rishiri</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISETSUZAN" Language="en_US">
+			<Text>Daisetsuzan</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_IWAKISAN" Language="en_US">
+			<Text>Mount Iwaki</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKKODA" Language="en_US">
+			<Text>Hakkoda</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_GASSAN" Language="en_US">
+			<Text>Mount Gassan</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CHOKAI" Language="en_US">
+			<Text>Mount Chokai</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ZAO" Language="en_US">
+			<Text>Mount Zao</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_BANDAI" Language="en_US">
+			<Text>Mount Bandai</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NANTAI" Language="en_US">
+			<Text>Mount Nantai</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_AKAGI" Language="en_US">
+			<Text>Mount Akagi</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASAMA" Language="en_US">
+			<Text>Mount Asama</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MYOKO" Language="en_US">
+			<Text>Mount Myoko</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YATSUGATAKE" Language="en_US">
+			<Text>Yatsugatake</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NORIKURA" Language="en_US">
+			<Text>Mount Norikura</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HOTAKA" Language="en_US">
+			<Text>Mount Hotaka</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSURUGI" Language="en_US">
+			<Text>Mount Tsurugi</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ISHIZUCHI" Language="en_US">
+			<Text>Mount Ishizuchi</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KIRISHIMA" Language="en_US">
+			<Text>Mount Kirishima</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KAIMONDAKE" Language="en_US">
+			<Text>Mount Kaimon</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MIYANOURADAKE" Language="en_US">
+			<Text>Mount Miyanoura</Text>
+		</Row>
 	</LocalizedText>
 </GameData>
