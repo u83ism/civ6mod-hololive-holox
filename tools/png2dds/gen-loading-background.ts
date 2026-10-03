@@ -12,10 +12,11 @@
 // matching official template with mipmap count substituted) and .xlp.
 // Usage: tsx gen-loading-background.ts <leaderId> <wallpaperFileName>
 // Example: tsx gen-loading-background.ts REGLOSS_ICHIJOU_RIRIKA wallpaper-broadcast-night.webp
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 import { convertPngToDds, computeMipCount } from "./png2dds.js";
+import { addXlpEntry } from "./merge-generated-entries.js";
 
 const [, , leaderId, wallpaperFileName] = process.argv;
 if (!leaderId || !wallpaperFileName) {
@@ -86,7 +87,8 @@ const buildBackgroundXlp = (): void => {
 </AssetObjects..XLP>
 `;
   const outputPath = join(xlpOutputDirectory, "HoloX_Loading.xlp");
-  writeFileSync(outputPath, xml);
+  // The XLP is shared by every leader: add this leader's entry instead of overwriting the file.
+  writeFileSync(outputPath, existsSync(outputPath) ? addXlpEntry(readFileSync(outputPath, "utf8"), OUR_NAME) : xml);
   console.log(outputPath);
 };
 

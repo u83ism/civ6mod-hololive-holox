@@ -7,6 +7,7 @@
 		選択画面には出る(bootstrap-leader Skill 3節・4節参照)。実際の絵作りはmake-leader-icons/
 		make-fallback-portrait Skillで別途行う。
 		Domainはプレイ中のルールセット(Standard/Rise and Fall/Gathering Storm)ごとに別なので3つとも登録する。
+		風真いろは(KAZAMA)の文明能力の説明文は、山の効果が嵐の訪れ限定なので、Expansion2_Playersの行だけ_EXPANSION2_DESCRIPTIONを指す。
 	-->
 	<Players>
 		<Row>
@@ -63,6 +64,60 @@
 			<Portrait>LEADER_HOLOX_SAKAMATA_CHLOE_NEUTRAL</Portrait>
 			<PortraitBackground>LEADER_HOLOX_SAKAMATA_CHLOE_BACKGROUND</PortraitBackground>
 		</Row>
+		<Row>
+			<Domain>Players:StandardPlayers</Domain>
+			<CivilizationType>CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationType>
+			<LeaderType>LEADER_HOLOX_KAZAMA_IROHA</LeaderType>
+			<PlayerColor>LEADER_HOLOX_KAZAMA_IROHA</PlayerColor>
+			<CivilizationName>LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME</CivilizationName>
+			<LeaderName>LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME</LeaderName>
+			<CivilizationIcon>ICON_CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationIcon>
+			<LeaderIcon>ICON_LEADER_HOLOX_KAZAMA_IROHA</LeaderIcon>
+			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME</CivilizationAbilityName>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityIcon>ICON_CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationAbilityIcon>
+			<LeaderAbilityIcon>ICON_LEADER_HOLOX_KAZAMA_IROHA</LeaderAbilityIcon>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION</LeaderAbilityDescription>
+			<Portrait>LEADER_HOLOX_KAZAMA_IROHA_NEUTRAL</Portrait>
+			<PortraitBackground>LEADER_HOLOX_KAZAMA_IROHA_BACKGROUND</PortraitBackground>
+		</Row>
+		<Row>
+			<Domain>Players:Expansion1_Players</Domain>
+			<CivilizationType>CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationType>
+			<LeaderType>LEADER_HOLOX_KAZAMA_IROHA</LeaderType>
+			<PlayerColor>LEADER_HOLOX_KAZAMA_IROHA</PlayerColor>
+			<CivilizationName>LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME</CivilizationName>
+			<LeaderName>LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME</LeaderName>
+			<CivilizationIcon>ICON_CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationIcon>
+			<LeaderIcon>ICON_LEADER_HOLOX_KAZAMA_IROHA</LeaderIcon>
+			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME</CivilizationAbilityName>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityIcon>ICON_CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationAbilityIcon>
+			<LeaderAbilityIcon>ICON_LEADER_HOLOX_KAZAMA_IROHA</LeaderAbilityIcon>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION</LeaderAbilityDescription>
+			<Portrait>LEADER_HOLOX_KAZAMA_IROHA_NEUTRAL</Portrait>
+			<PortraitBackground>LEADER_HOLOX_KAZAMA_IROHA_BACKGROUND</PortraitBackground>
+		</Row>
+		<Row>
+			<Domain>Players:Expansion2_Players</Domain>
+			<CivilizationType>CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationType>
+			<LeaderType>LEADER_HOLOX_KAZAMA_IROHA</LeaderType>
+			<PlayerColor>LEADER_HOLOX_KAZAMA_IROHA</PlayerColor>
+			<CivilizationName>LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME</CivilizationName>
+			<LeaderName>LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME</LeaderName>
+			<CivilizationIcon>ICON_CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationIcon>
+			<LeaderIcon>ICON_LEADER_HOLOX_KAZAMA_IROHA</LeaderIcon>
+			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME</CivilizationAbilityName>
+			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_EXPANSION2_DESCRIPTION</CivilizationAbilityDescription>
+			<CivilizationAbilityIcon>ICON_CIVILIZATION_HOLOX_KAZAMA_TAI</CivilizationAbilityIcon>
+			<LeaderAbilityIcon>ICON_LEADER_HOLOX_KAZAMA_IROHA</LeaderAbilityIcon>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION</LeaderAbilityDescription>
+			<Portrait>LEADER_HOLOX_KAZAMA_IROHA_NEUTRAL</Portrait>
+			<PortraitBackground>LEADER_HOLOX_KAZAMA_IROHA_BACKGROUND</PortraitBackground>
+		</Row>
 	</Players>
 
 	<!--
@@ -70,7 +125,11 @@
 		読み込む(XML/OrcaParadise.xml、.modinfoのActionCriteria)ので、Expansion2_Playersにだけ登録する。
 		SortIndexはブラジル(ユニット10・区域20)に倣った。
 	-->
+	<!-- 風真いろはの固有ユニット「侍」(日本の侍を共有。ゲーム本体のBase・Expansion1・Expansion2のPlayers.xmlの日本の行と同じ値、ルールセットごとに3行) -->
 	<PlayerItems>
+		<Row Domain="Players:StandardPlayers" CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Type="UNIT_JAPANESE_SAMURAI" Icon="ICON_UNIT_JAPANESE_SAMURAI" Name="LOC_UNIT_JAPANESE_SAMURAI_NAME" Description="LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION" SortIndex="10"/>
+		<Row Domain="Players:Expansion1_Players" CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Type="UNIT_JAPANESE_SAMURAI" Icon="ICON_UNIT_JAPANESE_SAMURAI" Name="LOC_UNIT_JAPANESE_SAMURAI_NAME" Description="LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION" SortIndex="10"/>
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Type="UNIT_JAPANESE_SAMURAI" Icon="ICON_UNIT_JAPANESE_SAMURAI" Name="LOC_UNIT_JAPANESE_SAMURAI_NAME" Description="LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION" SortIndex="10"/>
 		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" LeaderType="LEADER_HOLOX_SAKAMATA_CHLOE" Type="DISTRICT_HOLOX_ORCA_PARADISE" Icon="ICON_DISTRICT_HOLOX_ORCA_PARADISE" Name="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Description="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" SortIndex="20"/>
 		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_HOLOX_ORCA_POD" LeaderType="LEADER_HOLOX_SAKAMATA_CHLOE" Type="BUILDING_HOLOX_ORCA_AQUARIUM" Icon="ICON_BUILDING_HOLOX_ORCA_AQUARIUM" Name="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Description="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" SortIndex="30"/>
 	</PlayerItems>

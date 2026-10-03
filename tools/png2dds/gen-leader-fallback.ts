@@ -11,10 +11,11 @@
 // fixed-size badge icon templates) and .xlp.
 // Usage: tsx gen-leader-fallback.ts <leaderId> <standingArtFileName>
 // Example: tsx gen-leader-fallback.ts REGLOSS_ICHIJOU_RIRIKA ichijou-ririka-stand.webp
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 import { convertPngToDds, computeMipCount } from "./png2dds.js";
+import { addFallbackLeaderToArtDef, addXlpEntry } from "./merge-generated-entries.js";
 import { padTopMargin, applyBottomFade } from "./leader-fallback-compositing.js";
 
 const [, , leaderId, standingArtFileName] = process.argv;
@@ -111,7 +112,8 @@ const buildFallbackPortraitXlp = (): void => {
 </AssetObjects..XLP>
 `;
   const outputPath = join(xlpOutputDirectory, "LeaderFallbackImages.xlp");
-  writeFileSync(outputPath, xml);
+  // The XLP is shared by every leader: add this leader's entry instead of overwriting the file.
+  writeFileSync(outputPath, existsSync(outputPath) ? addXlpEntry(readFileSync(outputPath, "utf8"), OUR_NAME) : xml);
   console.log(outputPath);
 };
 
@@ -120,20 +122,7 @@ const buildFallbackPortraitXlp = (): void => {
 // "DEFAULT" animation state pointing at the fallback image (no per-mood HAPPY/UNHAPPY/etc.
 // variants; official leaders only define DEFAULT too, e.g. LEADER_POUNDMAKER/LEADER_ROBERT_THE_BRUCE).
 const buildFallbackLeadersArtDef = (): void => {
-  const xml = `<?xml version="1.0" encoding="UTF-8" ?>
-<AssetObjects..ArtDefSet>
-\t<m_Version>
-\t\t<major>4</major>
-\t\t<minor>0</minor>
-\t\t<build>312</build>
-\t\t<revision>68</revision>
-\t</m_Version>
-\t<m_TemplateName text="LeaderFallback"/>
-\t<m_RootCollections>
-\t\t<Element>
-\t\t\t<m_CollectionName text="Leaders"/>
-\t\t\t<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-\t\t\t<Element>
+  const leaderElementXml = `\t\t\t<Element>
 \t\t\t\t<m_Fields>
 \t\t\t\t\t<m_Values/>
 \t\t\t\t</m_Fields>
@@ -163,13 +152,33 @@ const buildFallbackLeadersArtDef = (): void => {
 \t\t\t\t<m_Name text="${LEADER_TYPE}"/>
 \t\t\t\t<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 \t\t\t</Element>
-\t\t</Element>
+`;
+  const xml = `<?xml version="1.0" encoding="UTF-8" ?>
+<AssetObjects..ArtDefSet>
+\t<m_Version>
+\t\t<major>4</major>
+\t\t<minor>0</minor>
+\t\t<build>312</build>
+\t\t<revision>68</revision>
+\t</m_Version>
+\t<m_TemplateName text="LeaderFallback"/>
+\t<m_RootCollections>
+\t\t<Element>
+\t\t\t<m_CollectionName text="Leaders"/>
+\t\t\t<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+${leaderElementXml}\t\t</Element>
 \t</m_RootCollections>
 </AssetObjects..ArtDefSet>
 `;
   for (const directory of [iconBuildArtDefDirectory, modArtDefDirectory]) {
     const outputPath = join(directory, "FallbackLeaders.artdef");
-    writeFileSync(outputPath, xml);
+    // The artdef is shared by every leader: add this leader instead of overwriting the file.
+    writeFileSync(
+      outputPath,
+      existsSync(outputPath)
+        ? addFallbackLeaderToArtDef(readFileSync(outputPath, "utf8"), LEADER_TYPE, leaderElementXml)
+        : xml,
+    );
     console.log(outputPath);
   }
 };

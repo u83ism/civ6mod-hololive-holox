@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Types>
+		<Row Type="CIVILIZATION_HOLOX_KAZAMA_TAI" Kind="KIND_CIVILIZATION"/>
+		<Row Type="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" Kind="KIND_TRAIT"/>
+		<Row Type="LEADER_HOLOX_KAZAMA_IROHA" Kind="KIND_LEADER"/>
+		<Row Type="TRAIT_LEADER_HOLOX_KAZAMA_IROHA" Kind="KIND_TRAIT"/>
+	</Types>
+
+	<Civilizations>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" Name="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Description="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Adjective="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_ADJECTIVE" StartingCivilizationLevelType="CIVILIZATION_LEVEL_FULL_CIV" RandomCityNameDepth="10"/>
+	</Civilizations>
+
+	<!-- 町の名前: 日本百名山(深田久弥選、順位ではなく100山の選定)から30山。先頭10件が通常文明のRandomCityNameDepth=10の抽選対象 -->
+	<CityNames>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_FUJI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TATEYAMA"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKUSAN"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YARIGATAKE"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KITADAKE"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASO"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISEN"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ONTAKE"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YOTEI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSUKUBA"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_RISHIRI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISETSUZAN"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_IWAKISAN"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKKODA"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_GASSAN"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CHOKAI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ZAO"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_BANDAI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NANTAI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_AKAGI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASAMA"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MYOKO"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YATSUGATAKE"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NORIKURA"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HOTAKA"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSURUGI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ISHIZUCHI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KIRISHIMA"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KAIMONDAKE"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" CityName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MIYANOURADAKE"/>
+	</CityNames>
+
+	<CivilizationLeaders>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" CapitalName="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_FUJI"/>
+	</CivilizationLeaders>
+
+	<Leaders>
+		<Row LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Name="LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME" InheritFrom="LEADER_DEFAULT"/>
+	</Leaders>
+
+	<LeaderTraits>
+		<Row LeaderType="LEADER_HOLOX_KAZAMA_IROHA" TraitType="TRAIT_LEADER_HOLOX_KAZAMA_IROHA"/>
+	</LeaderTraits>
+
+	<!-- 能力の設計はdocs/design.mdの「風真いろは」を参照 -->
+	<!-- 開始地点補正: 山の近く。山奥育ちの設定に合わせ、マプチェ(TERRAIN_*_MOUNTAINの4種すべてTier 3)と同じ値(docs/design.md参照) -->
+	<StartBiasTerrains>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TerrainType="TERRAIN_DESERT_MOUNTAIN" Tier="3"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TerrainType="TERRAIN_GRASS_MOUNTAIN" Tier="3"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TerrainType="TERRAIN_PLAINS_MOUNTAIN" Tier="3"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TerrainType="TERRAIN_TUNDRA_MOUNTAIN" Tier="3"/>
+	</StartBiasTerrains>
+
+	<Traits>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" Name="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Description="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION"/>
+		<Row TraitType="TRAIT_LEADER_HOLOX_KAZAMA_IROHA" Name="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Description="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION"/>
+	</Traits>
+
+	<!--
+		固有ユニット「侍」: 日本の固有ユニット(UNIT_JAPANESE_SAMURAI、メンアットアーム置換)をそのまま共有する(本人の意向、docs/design.md参照)。
+		侍のUnits行はTraitType=TRAIT_CIVILIZATION_UNIT_JAPANESE_SAMURAIを持つので、この文明にそのTraitを付けるだけで建造できる。
+		Trait・ユニット・置換・アイコンはすべてゲーム本体(Base)の定義なのでこのModでは定義しない。
+	-->
+	<CivilizationTraits>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI"/>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TraitType="TRAIT_CIVILIZATION_UNIT_JAPANESE_SAMURAI"/>
+	</CivilizationTraits>
+
+	<!--
+		文明固有能力「風真の一族」: 陸上ユニットの移動力+1。
+		指導者固有能力「武者修行」: 陸上ユニットの獲得経験値+50%。
+		どちらもTraitから直接、対象ユニットを絞ったModifierを付ける。絞り込みはゲーム本体が定義済みのRequirementSet
+		UNIT_IS_DOMAIN_LAND(Base/Assets/Gameplay/Data/Civilizations.xml、ユニットの領域が陸)を参照するだけで、Mod側では定義しない。
+		前例: 移動力はNubiaScenario DLCの政策MILITARY_COMMUNICATION_LAND_MOVEMENT(MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT+UNIT_IS_DOMAIN_LAND)、
+		経験値は政策「調査」SURVEY_RECONUNITEXPERIENCE(MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER+SubjectRequirementSetId、Amount=100で2倍)。
+	-->
+	<TraitModifiers>
+		<Row TraitType="TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI" ModifierId="TRAIT_HOLOX_KAZAMA_TAI_LAND_MOVEMENT"/>
+		<Row TraitType="TRAIT_LEADER_HOLOX_KAZAMA_IROHA" ModifierId="TRAIT_HOLOX_KAZAMA_IROHA_LAND_EXPERIENCE"/>
+	</TraitModifiers>
+
+	<Modifiers>
+		<Row>
+			<ModifierId>TRAIT_HOLOX_KAZAMA_TAI_LAND_MOVEMENT</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT</ModifierType>
+			<SubjectRequirementSetId>UNIT_IS_DOMAIN_LAND</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>TRAIT_HOLOX_KAZAMA_IROHA_LAND_EXPERIENCE</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>UNIT_IS_DOMAIN_LAND</SubjectRequirementSetId>
+		</Row>
+	</Modifiers>
+
+	<ModifierArguments>
+		<Row>
+			<ModifierId>TRAIT_HOLOX_KAZAMA_TAI_LAND_MOVEMENT</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<ModifierId>TRAIT_HOLOX_KAZAMA_IROHA_LAND_EXPERIENCE</ModifierId>
+			<Name>Amount</Name>
+			<Value>50</Value>
+		</Row>
+	</ModifierArguments>
+
+	<!-- ローディング画面・外交交渉画面の背景。沙花叉と同じく、生成済みの_NEUTRAL/_BACKGROUNDをそのまま流用する(Leaders.xmlのコメント参照) -->
+	<LoadingInfo>
+		<Row LeaderType="LEADER_HOLOX_KAZAMA_IROHA" ForegroundImage="LEADER_HOLOX_KAZAMA_IROHA_NEUTRAL" BackgroundImage="LEADER_HOLOX_KAZAMA_IROHA_BACKGROUND"/>
+	</LoadingInfo>
+
+	<DiplomacyInfo>
+		<Row Type="LEADER_HOLOX_KAZAMA_IROHA" BackgroundImage="LEADER_HOLOX_KAZAMA_IROHA_BACKGROUND"/>
+	</DiplomacyInfo>
+</GameData>

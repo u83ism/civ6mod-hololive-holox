@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	固有区域「未開の秘境」の歴史的瞬間の挿絵。保護区と同じ画像(ベトナムDLCのMomentSTK_Preserve.dds)を使う。
+	MomentIllustrationsテーブルは拡張パック(Expansion1以降)にしか存在しないので、Standardルールセットでは読み込まない(.modinfoのActionCriteria)。
+-->
+<GameData>
+	<MomentIllustrations>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_DISTRICT" MomentDataType="MOMENT_DATA_DISTRICT" GameDataType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Texture="MomentSTK_Preserve.dds"/>
+	</MomentIllustrations>
+</GameData>

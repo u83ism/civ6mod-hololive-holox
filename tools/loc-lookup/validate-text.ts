@@ -28,7 +28,11 @@ export const placeholderPattern = /\[[A-Za-z0-9_]+\]|\{\d+_\w+\}/g;
 
 const extractPlaceholders = (text: string): readonly string[] => (text.match(placeholderPattern) ?? []).map((token) => token.toLowerCase());
 
-const extractNumbers = (text: string): readonly string[] => text.replace(placeholderPattern, "").match(/\d+(?:\.\d+)?/g) ?? [];
+// Plural-form placeholders such as {1_Num : plural 1?tile; other?tiles;} (used only by en/zh in official text) contain digits that are not quantities.
+const pluralFormPattern = /\{\d+_\w+\s*:[^}]*\}/g;
+
+const extractNumbers = (text: string): readonly string[] =>
+  text.replace(pluralFormPattern, "").replace(placeholderPattern, "").match(/\d+(?:\.\d+)?/g) ?? [];
 
 const countTokens = (tokens: readonly string[]): ReadonlyMap<string, number> =>
   tokens.reduce((counts, token) => new Map(counts).set(token, (counts.get(token) ?? 0) + 1), new Map<string, number>());
@@ -41,11 +45,15 @@ const describeDifferences = (baseTokens: readonly string[], otherTokens: readonl
     .map((token) => `${token} (${baseLanguage}:${baseCounts.get(token) ?? 0}, here:${otherCounts.get(token) ?? 0})`);
 };
 
-export const validateTagParity = (index: TextIndex, languages: readonly string[]): readonly Finding[] =>
+export const validateTagParity = (
+  index: TextIndex,
+  languages: readonly string[],
+  severity: Finding["severity"],
+): readonly Finding[] =>
   [...index.entries()].flatMap(([tag, byLanguage]) =>
     languages
       .filter((language) => !byLanguage.has(language))
-      .map((language): Finding => ({ severity: "error", tag, language, message: "この言語にタグが無い" })),
+      .map((language): Finding => ({ severity, tag, language, message: "この言語にタグが無い" })),
   );
 
 const validateAgainstBase = (
@@ -71,17 +79,26 @@ export const validatePlaceholders = (index: TextIndex): readonly Finding[] =>
 
 export const validateNumbers = (index: TextIndex): readonly Finding[] => validateAgainstBase(index, "数値", extractNumbers);
 
-type PunctuationRule = { readonly pattern: RegExp; readonly severity: "error" | "warning"; readonly message: string };
+type PunctuationRule = {
+  readonly pattern: RegExp;
+  readonly severity: "error" | "warning";
+  readonly message: string;
+  // Text matching this is removed before the pattern is tested (intentional exceptions).
+  readonly ignore?: RegExp;
+};
 
 const kanaPattern = /[぀-ヿ]/;
 const halfWidthPunctuationPattern = /(?<!\d)[,:]|[,:](?!\d)|[;?!]/;
 const cjkPattern = /[぀-ヿ一-鿿]/;
 
+// Kazama Iroha's verbal tic "ござる" and her sword name "チャキ丸" are kept in kana in Chinese text (docs/glossary.md).
+const keptKanaPattern = /ござる|チャキ丸/g;
+
 // Rules come from references/lang-*.md of the write-game-text Skill.
 const chineseRules: readonly PunctuationRule[] = [
   { pattern: halfWidthPunctuationPattern, severity: "warning", message: "半角の句読点がある(全角にする。数字の桁区切り・小数点は除く)" },
   { pattern: /％/, severity: "warning", message: "全角の%がある(%だけは半角)" },
-  { pattern: kanaPattern, severity: "warning", message: "日本語の仮名が残っている" },
+  { pattern: kanaPattern, severity: "warning", message: "日本語の仮名が残っている(「ござる」「チャキ丸」は除く)", ignore: keptKanaPattern },
 ];
 
 const punctuationRules: ReadonlyMap<string, readonly PunctuationRule[]> = new Map([
@@ -105,7 +122,7 @@ export const validatePunctuation = (index: TextIndex): readonly Finding[] =>
   [...index.entries()].flatMap(([tag, byLanguage]) =>
     [...byLanguage.entries()].flatMap(([language, text]) =>
       (punctuationRules.get(language) ?? [])
-        .filter((rule) => rule.pattern.test(text))
+        .filter((rule) => rule.pattern.test(rule.ignore === undefined ? text : text.replace(rule.ignore, "")))
         .map((rule): Finding => ({ severity: rule.severity, tag, language, message: rule.message })),
     ),
   );

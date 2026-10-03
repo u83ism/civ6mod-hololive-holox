@@ -11,10 +11,11 @@
 // FALLBACK_NEUTRAL_* which goes through FallbackLeaders.artdef's LeaderFallback class).
 // Usage: tsx gen-loading-portrait.ts <leaderId> <standingArtFileName>
 // Example: tsx gen-loading-portrait.ts REGLOSS_ICHIJOU_RIRIKA ichijou-ririka-stand.webp
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 import { convertPngToDds, computeMipCount } from "./png2dds.js";
+import { addXlpEntry } from "./merge-generated-entries.js";
 import { padTopMargin, applyBottomFade } from "./leader-fallback-compositing.js";
 
 const [, , leaderId, standingArtFileName] = process.argv;
@@ -105,7 +106,8 @@ const buildPortraitXlp = (): void => {
 </AssetObjects..XLP>
 `;
   const outputPath = join(xlpOutputDirectory, "HoloX_LoadingPortrait.xlp");
-  writeFileSync(outputPath, xml);
+  // The XLP is shared by every leader: add this leader's entry instead of overwriting the file.
+  writeFileSync(outputPath, existsSync(outputPath) ? addXlpEntry(readFileSync(outputPath, "utf8"), OUR_NAME) : xml);
   console.log(outputPath);
 };
 

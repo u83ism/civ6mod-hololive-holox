@@ -26,10 +26,34 @@
 		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_64.dds"/>
 		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_80.dds"/>
 		<Row Name="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_SAKAMATA_CHLOE_256.dds"/>
+
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_22.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="30" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_30.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_32.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="36" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_36.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="44" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_44.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_45.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_48.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_50.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_64.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_80.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_128.dds"/>
+		<Row Name="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI_256.dds"/>
+
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_KAZAMA_IROHA" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_KAZAMA_IROHA_32.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_KAZAMA_IROHA" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_KAZAMA_IROHA_45.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_KAZAMA_IROHA" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_KAZAMA_IROHA_48.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_KAZAMA_IROHA" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_KAZAMA_IROHA_50.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_KAZAMA_IROHA" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_KAZAMA_IROHA_55.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_KAZAMA_IROHA" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_KAZAMA_IROHA_64.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_KAZAMA_IROHA" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_KAZAMA_IROHA_80.dds"/>
+		<Row Name="ICON_ATLAS_LEADER_HOLOX_KAZAMA_IROHA" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_HOLOX_KAZAMA_IROHA_256.dds"/>
 	</IconTextureAtlases>
 	<IconDefinitions>
 		<Row Name="ICON_CIVILIZATION_HOLOX_ORCA_POD" Atlas="ICON_ATLAS_CIV_HOLOX_ORCA_POD" Index="0"/>
 		<Row Name="ICON_LEADER_HOLOX_SAKAMATA_CHLOE" Atlas="ICON_ATLAS_LEADER_HOLOX_SAKAMATA_CHLOE" Index="0"/>
+		<Row Name="ICON_CIVILIZATION_HOLOX_KAZAMA_TAI" Atlas="ICON_ATLAS_CIV_HOLOX_KAZAMA_TAI" Index="0"/>
+		<Row Name="ICON_LEADER_HOLOX_KAZAMA_IROHA" Atlas="ICON_ATLAS_LEADER_HOLOX_KAZAMA_IROHA" Index="0"/>
 	</IconDefinitions>
 	<!--
 		固有区域・固有建造物のアイコンは置き換え元(ウォーターパーク・水族館)と同じ画像を使う。
@@ -38,6 +62,8 @@
 		解決できず、使い回しの枠に直前の指導者の画像が残る。画像(XP1_Districts*.dds・XP1_DistrictBuildings*.dds)自体は
 		文明の興亡のUI/Icons.blpに同梱されていて選択画面でも読めるので、同じ画像を指す自前のアトラスを定義する。
 		アトラスの寸法・Indexは公式(Expansion1_Icons_Districts.xml・Expansion1_Icons_District_Buildings.xml)の写し。
+		未開の秘境(保護区置換)も同様に、ベトナムDLCの保護区と同じ画像(Vietnam_Districts*.dds、Index 1)を指す自前のアトラスを定義する(寸法・Indexは
+		DLC/KublaiKhan_Vietnam/Data/KublaiKhan_Vietnam_Icons_Districts.xmlの写し)。林・聖域はバニラの建造物のままなのでアイコンの追加は無い。
 	-->
 	<IconTextureAtlases>
 		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICTS" IconSize="22" IconsPerRow="8" IconsPerColumn="8" Filename="XP1_Districts22.dds"/>
@@ -61,11 +87,22 @@
 		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" IconSize="80" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings80_FOW.dds"/>
 		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" IconSize="128" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings128_FOW.dds"/>
 		<Row Name="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" IconSize="256" IconsPerRow="4" IconsPerColumn="4" Filename="XP1_DistrictBuildings256_FOW.dds"/>
+
+		<Row Name="ICON_ATLAS_HOLOX_VIETNAM_DISTRICTS" IconSize="22" IconsPerRow="4" IconsPerColumn="1" Filename="Vietnam_Districts22.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_VIETNAM_DISTRICTS" IconSize="32" IconsPerRow="4" IconsPerColumn="1" Filename="Vietnam_Districts32.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_VIETNAM_DISTRICTS" IconSize="38" IconsPerRow="4" IconsPerColumn="1" Filename="Vietnam_Districts38.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_VIETNAM_DISTRICTS" IconSize="50" IconsPerRow="4" IconsPerColumn="1" Filename="Vietnam_Districts50.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_VIETNAM_DISTRICTS" IconSize="80" IconsPerRow="4" IconsPerColumn="1" Filename="Vietnam_Districts80.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_VIETNAM_DISTRICTS" IconSize="128" IconsPerRow="4" IconsPerColumn="1" Filename="Vietnam_Districts128.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_VIETNAM_DISTRICTS" IconSize="256" IconsPerRow="4" IconsPerColumn="1" Filename="Vietnam_Districts256.dds"/>
+		<Row Name="ICON_ATLAS_HOLOX_VIETNAM_FONT_ICONS_DISTRICTS" Baseline="4" IconSize="22" IconsPerRow="4" IconsPerColumn="1" Filename="Vietnam_Districts22.dds"/>
 	</IconTextureAtlases>
 	<IconDefinitions>
 		<Row Name="ICON_DISTRICT_HOLOX_ORCA_PARADISE" Atlas="ICON_ATLAS_HOLOX_XP1_DISTRICTS" Index="1"/>
 		<Row Name="ICON_DISTRICT_HOLOX_ORCA_PARADISE_FOW" Atlas="ICON_ATLAS_HOLOX_XP1_DISTRICTS_FOW" Index="1"/>
 		<Row Name="ICON_BUILDING_HOLOX_ORCA_AQUARIUM" Atlas="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS" Index="9"/>
 		<Row Name="ICON_BUILDING_HOLOX_ORCA_AQUARIUM_FOW" Atlas="ICON_ATLAS_HOLOX_XP1_DISTRICT_BUILDINGS_FOW" Index="9"/>
+		<Row Name="ICON_DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Atlas="ICON_ATLAS_HOLOX_VIETNAM_DISTRICTS" Index="1"/>
+		<Row Name="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Atlas="ICON_ATLAS_HOLOX_VIETNAM_FONT_ICONS_DISTRICTS" Index="1"/>
 	</IconDefinitions>
 </GameData>

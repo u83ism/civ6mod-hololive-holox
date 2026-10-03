@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	選択画面・ローディング画面の「この文明の固有要素」一覧に、固有区域「未開の秘境」を出す。
+	保護区はベトナムDLCの区域なので、ベトナムDLCが有効なときだけ読み込む(.modinfoのFrontEndActionsのCriteria)。
+	SortIndexはシャチたちの楽園・ブラジル(区域20)に倣った。
+-->
+<GameData>
+	<PlayerItems>
+		<Row Domain="Players:StandardPlayers" CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Type="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Icon="ICON_DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Name="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" SortIndex="20"/>
+		<Row Domain="Players:Expansion1_Players" CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Type="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Icon="ICON_DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Name="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" SortIndex="20"/>
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" LeaderType="LEADER_HOLOX_KAZAMA_IROHA" Type="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Icon="ICON_DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Name="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" SortIndex="20"/>
+	</PlayerItems>
+</GameData>

@@ -260,6 +260,7 @@
 		<Element>
 			<ConsumerName text="Civilizations"/>
 			<ArtDefDependencyPaths>
+				<Element text="Civilizations.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>

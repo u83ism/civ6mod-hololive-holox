@@ -4,6 +4,9 @@
 // Usage:
 //   npm run check                 all checks (reads the game install for the official-term check)
 //   npm run check -- --no-terms   skip the official-term check (no game install needed, much faster)
+//   npm run check -- --strict     treat missing tags (a language lacking a tag another language has) as errors
+// Missing tags are warnings by default: ja_JP is written first and the other languages are added only when the user asks
+// (.claude/rules/localization-order.md). Use --strict for the release gate.
 // Exit code is 1 when there are errors (warnings alone do not fail).
 // Environment:
 //   CIV6_PATH              game install directory (default: the standard Steam location)
@@ -35,7 +38,7 @@ const officialIndex = process.argv.includes("--no-terms")
     ]);
 
 const findings: readonly Finding[] = [
-  ...validateTagParity(modIndex, languages),
+  ...validateTagParity(modIndex, languages, process.argv.includes("--strict") ? "error" : "warning"),
   ...validatePlaceholders(modIndex),
   ...validateNumbers(modIndex),
   ...validatePunctuation(modIndex),

@@ -19,10 +19,35 @@
 		<Criteria id="Expansion2">
 			<GameCoreInUse>Expansion2</GameCoreInUse>
 		</Criteria>
+		<!--
+			ベトナムDLC(KublaiKhan_Vietnam)の保護区・林・聖域を置き換える固有区域「未開の秘境」の読み込み条件。
+			ベトナムDLC自身の条件(KublaiKhanVietnam・KublaiKhanVietnam_Expansion1)と同じ判定(DLCの指導者が選べるルールセットのとき真)。
+		-->
+		<Criteria id="HoloXVietnam" any="1">
+			<LeaderPlayable>Players:StandardPlayers::LEADER_LADY_TRIEU,Players:Expansion1_Players::LEADER_LADY_TRIEU,Players:Expansion2_Players::LEADER_LADY_TRIEU</LeaderPlayable>
+			<LeaderPlayable>Players:StandardPlayers::LEADER_KUBLAI_KHAN_CHINA,Players:Expansion1_Players::LEADER_KUBLAI_KHAN_CHINA,Players:Expansion2_Players::LEADER_KUBLAI_KHAN_CHINA</LeaderPlayable>
+			<LeaderPlayable>Players:Expansion1_Players::LEADER_KUBLAI_KHAN_MONGOLIA,Players:Expansion2_Players::LEADER_KUBLAI_KHAN_MONGOLIA</LeaderPlayable>
+			<RuleSetInUse>RULESET_STANDARD,RULESET_EXPANSION_1,RULESET_EXPANSION_2</RuleSetInUse>
+		</Criteria>
+		<!-- ベトナムDLCがあり、かつ歴史的瞬間のテーブルがある拡張パック(Rise and Fall・嵐の訪れ)のルールセットのとき真 -->
+		<Criteria id="HoloXVietnamExpansion" any="1">
+			<LeaderPlayable>Players:Expansion1_Players::LEADER_KUBLAI_KHAN_MONGOLIA, Players:Expansion1_Players::LEADER_KUBLAI_KHAN_CHINA, Players:Expansion1_Players::LEADER_LADY_TRIEU</LeaderPlayable>
+			<LeaderPlayable>Players:Expansion2_Players::LEADER_KUBLAI_KHAN_MONGOLIA, Players:Expansion2_Players::LEADER_KUBLAI_KHAN_CHINA, Players:Expansion2_Players::LEADER_LADY_TRIEU</LeaderPlayable>
+			<RuleSetInUse>RULESET_EXPANSION_1,RULESET_EXPANSION_2</RuleSetInUse>
+		</Criteria>
+		<!-- フロントエンド用: ベトナムDLCが有効なとき真(ベトナムDLC自身のKublaiKhanVietnam_Expansion1Enabledと同じModIsEnabled方式) -->
+		<Criteria id="HoloXVietnamEnabled">
+			<ModIsEnabled>A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C</ModIsEnabled>
+		</Criteria>
 	</ActionCriteria>
 	<FrontEndActions>
 		<UpdateDatabase id="Config">
 			<File>XML/Config.xml</File>
+		</UpdateDatabase>
+		<!-- 選択画面の固有要素一覧に固有区域「未開の秘境」を出す。ベトナムDLCが有効なときだけ -->
+		<UpdateDatabase id="ConfigHiddenMountains">
+			<Criteria>HoloXVietnamEnabled</Criteria>
+			<File>XML/ConfigHiddenMountains.xml</File>
 		</UpdateDatabase>
 		<!-- 2026-09-23実験: PlayerColors解決バグの切り分けのためColors.xmlではなくColors.sqlを読ませる(docs/civ6-icon-color-bug-investigation.md参照) -->
 		<UpdateColors id="ConfigColors">
@@ -45,6 +70,7 @@
 		<UpdateDatabase id="Gameplay">
 			<File>XML/Civilizations.xml</File>
 			<File>XML/Leaders.xml</File>
+			<File>XML/KazamaTai.xml</File>
 		</UpdateDatabase>
 		<!--
 			固有区域「シャチたちの楽園」・固有建造物「シャチの水族館」。置換元が拡張パック限定なので嵐の訪れのときだけ読み込む
@@ -56,6 +82,36 @@
 				<LoadOrder>100</LoadOrder>
 			</Properties>
 			<File>XML/OrcaParadise.xml</File>
+		</UpdateDatabase>
+		<!--
+			文明固有能力「風真の一族」の山の効果(市民が山岳タイルを利用できる・山の生産力+2)。山で働けるようにする効果は嵐の訪れのゲームコアにしか無いので、
+			嵐の訪れのときだけ読み込む。インカ用に定義済みのRequirementSetを参照するのでDLCのデータより後に読む。
+		-->
+		<UpdateDatabase id="KazamaTaiMountains">
+			<Criteria>Expansion2</Criteria>
+			<Properties>
+				<LoadOrder>100</LoadOrder>
+			</Properties>
+			<File>XML/KazamaTaiMountains.xml</File>
+		</UpdateDatabase>
+		<!--
+			固有区域「未開の秘境」(保護区置換)。置換元がベトナムDLC限定なのでベトナムDLCのときだけ読み込む。
+			DLCのデータ・文明本体より後に読むためLoadOrderを上げる。歴史的瞬間の挿絵(MomentIllustrationsは拡張パック限定のテーブル)は
+			拡張パックのルールセットのときだけ別ファイルで読み込む。
+		-->
+		<UpdateDatabase id="HiddenMountains">
+			<Criteria>HoloXVietnam</Criteria>
+			<Properties>
+				<LoadOrder>100</LoadOrder>
+			</Properties>
+			<File>XML/HiddenMountains.xml</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="HiddenMountainsMoments">
+			<Criteria>HoloXVietnamExpansion</Criteria>
+			<Properties>
+				<LoadOrder>101</LoadOrder>
+			</Properties>
+			<File>XML/HiddenMountainsMoments.xml</File>
 		</UpdateDatabase>
 		<!-- 2026-09-23実験: PlayerColors解決バグの切り分けのためColors.xmlではなくColors.sqlを読ませる(docs/civ6-icon-color-bug-investigation.md参照) -->
 		<UpdateColors id="Colors">
@@ -87,6 +143,11 @@
 		<File>XML/Civilizations.xml</File>
 		<File>XML/Leaders.xml</File>
 		<File>XML/OrcaParadise.xml</File>
+		<File>XML/KazamaTai.xml</File>
+		<File>XML/KazamaTaiMountains.xml</File>
+		<File>XML/HiddenMountains.xml</File>
+		<File>XML/HiddenMountainsMoments.xml</File>
+		<File>XML/ConfigHiddenMountains.xml</File>
 		<File>XML/Colors.sql</File>
 		<File>XML/Config.xml</File>
 		<File>Text/en_US/Text.xml</File>
@@ -97,6 +158,7 @@
 		<File>Lua/SakamataChloeGameplayScript.lua</File>
 		<File>civ6mod-hololive-holox.dep</File>
 		<File>ArtDefs/Buildings.artdef</File>
+		<File>ArtDefs/Civilizations.artdef</File>
 		<File>ArtDefs/Districts.artdef</File>
 		<File>ArtDefs/Landmarks.artdef</File>
 		<File>Platforms/Windows/BLPs/LeaderFallbackImages.blp</File>

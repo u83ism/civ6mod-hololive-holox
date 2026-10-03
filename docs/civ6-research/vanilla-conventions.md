@@ -1,0 +1,63 @@
+# Civ6本体の慣習・詳細仕様(ゲーム本体のデータで確認したもの)
+
+> `unique-content-patterns.md`等はWiki要約(未検証)だが、このファイルは**ゲーム本体のデータ(`Base`・`DLC`配下のXML)を直接読んで確認した事実**だけを書く。このModの設計判断(なぜそうしたか)は`docs/design.md`、ここは「公式がどうなっているか」。
+> ゲーム本体の場所: `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization VI\`
+
+## 固有区域の建設コストは置換元の半額
+
+- 確認日: 2026-10-01。`Base/Assets/Gameplay/Data/Districts.xml`と`DLC/*/Data/*Districts*.xml`の`DistrictReplaces`全ペアのコストを突き合わせた。固有区域18件すべてが置換元のちょうど半額
+- 一般の区域は54(水道橋のみ36)、固有区域は27(浴場のみ18)
+- 水上ストリートカーニバル(コパカバーナ、ウォーターパーク置換)も54→27。ウォーターパークを置き換える区域の前例
+- 由来: 沙花叉クロヱの固有区域がウォーターパークのバニラ値54を写したままリリースされ、利用者から「固有区域は慣習的に半額では」と指摘された。置換元の値を写すときは、固有要素の慣習を先に確認すること
+- 未確認: 固有建造物・固有ユニット・固有改善にも同様の「安い」慣習があるか(今回は区域のみ確認した)
+
+## 固有区域の説明文に「安価に建設できる」と書くか
+
+- 確認日: 2026-10-01。`tools/loc-lookup`で固有区域16件の`LOC_DISTRICT_*_DESCRIPTION`(ja/en/zh_Hans/zh_Hant)を確認した
+- 半額(27)の12件は、全言語で「置換元に取ってかわる」と同じ文の中で安価さに触れている。日本語の定型は「〜に取ってかわり、より安価に建設できる。」(アクロポリス・浴場・ハンザ・ラヴラ・ヒッポドローム・オッピドゥム・王立海軍造船所・観測所)。コトンは「建設コストも港より低い」、ムバンザは「より初期の段階から、より安価に建設できる」、ベトナムのタインは他の特徴の列挙の中に「より安価に建設できる」
+- 例外は記載なし: 水上ストリートカーニバル(27)・イカンダ(27)・ソウォン(27)・スグバ(27、この区域は説明に書く別の特徴が多い)は、半額でも説明文に安さが書かれていない。ストリートカーニバル(陸の方)は「より安価に建設できる」を書いている。つまり公式でも統一されておらず、書くのが多数派だが必須ではない
+
+## 置換した区域は元の区域の設定を自動では引き継がない
+
+- 確認日: 2026-10-01(ゲーム本体のXMLを読んだもので、実機での挙動は未確認)。`DistrictReplaces`は「置換元の代わりに建てる」という対応だけで、置換元に付いた排他(`MutuallyExclusiveDistricts`)や、他の区域が置換元から得る隣接ボーナス(`District_Adjacencies`)は新しい区域に付かない。公式は固有区域ごとに個別の行を書いている
+- 排他の例: ヒッポドローム(総合娯楽施設置換)は`DISTRICT_WATER_ENTERTAINMENT_COMPLEX`との排他を両方向で書いている(`DLC/Byzantium_Gaul/Data/Byzantium_Gaul_Expansion1.xml`)。ブラジルの水上ストリートカーニバル(コパカバーナ、ウォーターパーク置換)は、陸のストリートカーニバルとの排他だけを両方向で書き、総合娯楽施設との排他行は無い(`DLC/Expansion1/Data/Expansion1_Districts.xml`の12〜16行目)。置換元が総合娯楽施設と排他でも、書かなければ置換先は共存できる
+- 隣接ボーナスの例: ウォーターパークに隣接した劇場広場・アクロポリスの文化力+2は`WaterPark_Culture`(`AdjacentDistrict`=ウォーターパーク)。コパカバーナ用には`Copacabana_Culture`が別に書かれていて、登録先は劇場広場のみ(`DLC/Expansion2/Data/Expansion2_Districts.xml`の74〜93行目)
+
+## 文化爆弾が他国の領土を奪うかは`CaptureOwnedTerritory`で決まる
+
+- 確認日: 2026-10-04。文化爆弾のModifier(`MODIFIER_ALL_PLAYERS_ADD_CULTURE_BOMB_TRIGGER`、`EFFECT_ADD_CULTURE_BOMB_TRIGGER`)の引数`CaptureOwnedTerritory`が、他国の領土のタイルも奪うかを切り替える。`False`なら中立タイルだけ。`True`なら他国の領土も奪う
+- バニラで`CaptureOwnedTerritory`を書いているのは、ベトナムDLCの保護区(`MAJOR_PLAYERS_ACTIVATE_PRESERVE_CULTURE_BOMB`、`DLC/KublaiKhan_Vietnam/Data/KublaiKhan_Vietnam_Districts.xml`)とガリアの鉱山(`GAUL_MINE_CULTURE_BOMB`、`DLC/Byzantium_Gaul/Data/Byzantium_Gaul_Civilizations.xml`)の2か所だけで、どちらも`False`。引数を書かない文化爆弾(ポーランドの黄金の自由など)は、他国の領土を奪う(引数省略時の既定)と見られる
+- 保護区の説明文は、en_US・zh_Hans_CN・zh_Hant_HKでは「中立」(neutral)と明記しているが、ja_JPだけ「隣接タイルで文化爆弾が発動し」と「中立」を省いている。挙動は他言語と同じ(中立タイルのみ)
+- 実機で`True`を明示すれば、他国の領土を奪えることを確認した(下の`docs/implementation-notes.md`参照)
+
+## ウォーターパーク・水族館のバニラ仕様(嵐の訪れ)
+
+- ウォーターパーク: 沿岸タイルかつ陸地隣接(`Coast="true"`/`AdjacentToLand="true"`)、礁には不可、総合娯楽施設と同じ都市に共存不可(`MutuallyExclusiveDistricts`)、人口による区域数上限の対象。快適性+1・アピール+1。劇場広場とアクロポリスがウォーターパーク隣接で文化力+2の隣接ボーナスを得る
+- 水族館(`BUILDING_AQUARIUM`): 快適性+1(9タイル以内の都心に及ぶ)、この都市の沿岸資源・沈没船・礁タイル1つにつき科学力+1。後者は`BUILDING_AQUARIUM`に付いたModifierで、ウォーターパーク(区域)側の効果ではない。バニラは科学寄りで文化/音楽とは無関係
+- 文明の興亡で追加された区域・施設なので、Standardルールセットには存在しない。`.modinfo`の`Dependencies`で拡張を要求しても、そのルールセットでゲームを始めればModは読み込まれ、置換元が無いまま`DistrictReplaces`等が外部キー制約違反になって起動不能になる(`add-unique-content` Skillの落とし穴3)。文明の興亡のルールセットは水族館のコスト(445、嵐の訪れの`Update`前)なども違う
+
+### 施設の解禁段階
+
+| 段階 | 総合娯楽施設 | ウォーターパーク |
+|---|---|---|
+| 区域 | 遊びと娯楽(古典時代) | 博物学(産業時代) |
+| 1段目 | 闘技場: 遊びと娯楽 | フェリス式観覧車: 博物学 |
+| 2段目 | 動物園: 博物学 | 水族館: 博物学(観覧車が前提) |
+| 3段目 | スタジアム: プロスポーツ | 水泳施設: プロスポーツ(水族館が前提) |
+
+2・3段目はもともと同時期で、ずれているのは区域と1段目(観覧車)だけ。区域の解禁(`PrereqCivic`)は区域の定義で変えられるが、施設の解禁・前提施設(`BuildingPrereqs`)は建造物側の定義なので、区域の定義からは変えられない(直接書き換えると全プレイヤーに影響する)。区域だけ前倒しすると、施設は元の解禁まで建たない。
+
+## 施設の効果を変えるのにUB化(固有建造物)は必須か
+
+- UB不要(Trait/UD側のModifierで施設を指定して上乗せできる): 傑作スロット追加(`MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS`)、産出の加算(`MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE`)/%増加(`..._BUILDING_YIELD_MODIFIER`)、生産力・購入コスト(`..._BUILDING_PRODUCTION`/`..._BUILDING_PURCHASE_COST`)、住宅(`..._BUILDING_HOUSING`)、区域単位の快適性(`MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_ENTERTAINMENT`)。いずれもゲーム本体の`Modifiers.xml`に実在する
+- UB必須(施設そのものの定義): 解禁の社会制度、前提施設(「観覧車の後」を外す等)、基本コスト・維持費・快適性の範囲、施設の固有名
+- UB無しの欠点: 上乗せ効果は施設のツールチップに出ない(上乗せ分は文明能力の説明文に書くしかない)
+- 置き換え施設で元の効果を外した前例: 温泉(ハンガリー、動物園置換。熱帯雨林・湿原からの科学力を外して快適性・生産力・観光力に差し替え)、マラエ(マオリ、円形闘技場の文化力・書物スロット・大著作家ポイントを全部外す)、HOLOLIVE系ではセイレーンの岩礁(灯台の沿岸食料・住宅・経験値を外して音楽スロット等)、Hakos BaelzのImprovisation Theater(円形劇場の書物スロットを外す)など
+
+## 深海は仕様上の除外ではない
+
+- 深海が「ありとあらゆるボーナスの対象外」に見えるのは仕様上の除外ではなく、バニラのボーナスの条件が浅瀬しか指定していないだけ(例: 灯台の沿岸食料+1`LIGHTHOUSE_COAST_FOOD`は`REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES`で`TERRAIN_COAST`のみ)。条件に`TERRAIN_OCEAN`を入れれば深海も普通に対象になる。地形の素の産出は沿岸=食料1+ゴールド1、深海=食料1のみ(`Terrains.xml`)
+
+## 傑作スロットを増やす文明能力の公式の前例
+
+- コンゴ(ンキシ、宮殿の傑作スロット+4、`TRAIT_EXTRA_PALACE_SLOTS`)、イングランド(考古学博物館の秘宝スロット倍増、`TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS`)。いずれも`MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS`で、引数に建造物・スロット種類・数を指定するだけ

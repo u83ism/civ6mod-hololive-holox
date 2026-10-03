@@ -35,9 +35,9 @@
 		<Row District="DISTRICT_HOLOX_ORCA_PARADISE" MutuallyExclusiveDistrict="DISTRICT_ENTERTAINMENT_COMPLEX"/>
 	</MutuallyExclusiveDistricts>
 
-	<!-- ウォーターパークとの違いは解禁(博物学→遊びと娯楽)とTraitTypeのみ -->
+	<!-- ウォーターパークとの違いは解禁(博物学→遊びと娯楽)・TraitType・コスト(公式の固有区域の慣習どおり、置換元の半額の27)のみ -->
 	<Districts>
-		<Row DistrictType="DISTRICT_HOLOX_ORCA_PARADISE" Name="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Description="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" PrereqCivic="CIVIC_GAMES_RECREATION" PlunderType="PLUNDER_HEAL" PlunderAmount="50" AdvisorType="ADVISOR_GENERIC" Cost="54" Entertainment="1" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH" CostProgressionParam1="40" Maintenance="1" Coast="true" AdjacentToLand="true" RequiresPlacement="true" RequiresPopulation="true" Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Appeal="1" CityStrengthModifier="2" TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_ORCA_PARADISE"/>
+		<Row DistrictType="DISTRICT_HOLOX_ORCA_PARADISE" Name="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Description="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" PrereqCivic="CIVIC_GAMES_RECREATION" PlunderType="PLUNDER_HEAL" PlunderAmount="50" AdvisorType="ADVISOR_GENERIC" Cost="27" Entertainment="1" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH" CostProgressionParam1="40" Maintenance="1" Coast="true" AdjacentToLand="true" RequiresPlacement="true" RequiresPopulation="true" Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="false" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Appeal="1" CityStrengthModifier="2" TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_ORCA_PARADISE"/>
 	</Districts>
 
 	<District_TradeRouteYields>

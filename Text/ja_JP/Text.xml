@@ -31,18 +31,18 @@
 			<Text>[ICON_GreatWork_Music] 傑作 (音楽) から得られる [ICON_Culture] 文化力+2、 [ICON_Tourism] 観光力+50%。宮殿に [ICON_GreatWork_Music] 音楽を入れられるスロットが6つ追加される。</Text>
 		</Row>
 
-		<!-- 固有区域「シャチたちの楽園」・固有建造物「シャチの水族館」(XML/OrcaParadise.xml)。公式の固有区域・固有建造物に倣い、置き換え元と違う効果と設置制限だけを書く(文面はコパカバーナ・女王の図書館・航海学校等に合わせた) -->
+		<!-- 固有区域「シャチたちの楽園」・固有建造物「シャチの水族館」(XML/OrcaParadise.xml)。公式の固有区域・固有建造物に倣い、置き換え元の説明文にある特殊効果は公式の文のまま再掲し、固有の効果と設置制限を書き足す(文面はコパカバーナ・女王の図書館・航海学校等に合わせた) -->
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_NAME" Language="ja_JP">
 			<Text>シャチたちの楽園</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_HOLOX_ORCA_PARADISE_DESCRIPTION" Language="ja_JP">
-			<Text>シャチの群れ固有の区域。ウォーターパークに取ってかわる。社会制度「遊びと娯楽」で建設可能になる。[NEWLINE][NEWLINE]この都市の湖を除く沿岸タイルと海タイルから [ICON_Food] 食料+1、 [ICON_Production] 生産力+1。ターン毎の [ICON_GreatMusician] 大音楽家ポイント+2。総合娯楽施設がある都市には建設できない。礁には建設できない。</Text>
+			<Text>シャチの群れ固有の区域。ウォーターパークに取ってかわり、より安価に建設できる。社会制度「遊びと娯楽」で建設可能になる。[NEWLINE][NEWLINE]この都市の湖を除く沿岸タイルと海タイルから [ICON_Food] 食料+1、 [ICON_Production] 生産力+1。[ICON_Amenities] 快適性を増やして人々の幸福の維持に貢献する。ターン毎の [ICON_GreatMusician] 大音楽家ポイント+2。総合娯楽施設がある都市には建設できない。礁には建設できない。</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_NAME" Language="ja_JP">
 			<Text>シャチの水族館</Text>
 		</Row>
 		<Row Tag="LOC_BUILDING_HOLOX_ORCA_AQUARIUM_DESCRIPTION" Language="ja_JP">
-			<Text>シャチの群れ固有の建造物。 [ICON_GreatWork_Music] 音楽を入れられるスロットを2つ持つ。この都市の [ICON_GreatWork_Music] 傑作 (音楽) による [ICON_Tourism] 観光力+150%。</Text>
+			<Text>シャチの群れ固有の建造物。9タイル以内にある都心に [ICON_Amenities] 快適性ボーナスが及ぶ。このボーナスは1つの都市に対して一度だけ適用され、都心の9タイル以内に同種の建造物が2つ以上あってもボーナスが増えることはない。この都市の沿岸資源、沈没船、礁タイル1つにつき [ICON_SCIENCE] 科学力+1。 [ICON_GreatWork_Music] 音楽を入れられるスロットを2つ持つ。この都市の [ICON_GreatWork_Music] 傑作 (音楽) による [ICON_Tourism] 観光力+150%。</Text>
 		</Row>
 
 		<Row Tag="LOC_CITY_NAME_HOLOX_ORCA_POD_RAUSU" Language="ja_JP">
@@ -375,6 +375,378 @@
 		</Row>
 		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_SAKAMATA_CHLOE_ANY" Language="ja_JP">
 			<Text>うちの子たちがどこにいようと、沙花叉の勝手でしょ？</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="ja_JP">
+			<Text>かざま隊</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="ja_JP">
+			<Text>かざま隊</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_HOLOX_KAZAMA_TAI_ADJECTIVE" Language="ja_JP">
+			<Text>かざま隊</Text>
+		</Row>
+		<Row Tag="LOC_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="ja_JP">
+			<Text>風真いろは</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_NAME" Language="ja_JP">
+			<Text>風真の一族</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_DESCRIPTION" Language="ja_JP">
+			<Text>すべての陸上ユニットの [ICON_Movement] 移動力+1。</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_NAME" Language="ja_JP">
+			<Text>武者修行</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HOLOX_KAZAMA_IROHA_DESCRIPTION" Language="ja_JP">
+			<Text>すべての陸上ユニットの戦闘経験値+50%。</Text>
+		</Row>
+		<!-- 外交台詞: 初対面・挨拶 -->
+		<Row Tag="LOC_DIPLO_GREETING_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かざまに何か用でござるか？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>ホロライブ6期生 holoXの用心棒、風真いろはでござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>近くにかざま隊の里があるでござる。立ち寄っていかない？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かたじけない！ぜひ行ってみたい。そっちの町が楽しみです！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>だいぶ遠いんだ～。地図を交換しない？かざま、すぐ迷子になっちゃうので</Text>
+		</Row>
+		<!-- 外交台詞: 宣戦布告・敗北 -->
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>恨みはないけど、これもお務めでござる。……いざ、参る！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>本当に言ってる？……売られた喧嘩は買うでござる。チャキ丸を甘く見ちゃダメだぞ？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>なんでぇ〜……かざま、まだ修行の途中だったのに</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>なんでぇ〜……かざま、まだ修行の途中だったのに</Text>
+		</Row>
+		<!-- 外交台詞: 非難 -->
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そのやり方は、かざま、ちょっと見過ごせないな？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>え……かざま、何かしちゃった？……そこまで言うなら、考えがあるでござる</Text>
+		</Row>
+		<!-- 外交台詞: 友好宣言 -->
+		<Row Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっちとは気が合いそう！かざまと、お友達にならない？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>やったあ！今日から友達だね。困ったことがあったら、すぐ駆けつけるでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>なんでぇ〜？……そっか。じゃあ、また今度お願いします</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かざまでよければ、喜んで！これからよろしくお願いします</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>うーん、まだそっちのこと、よく知らないんだよね。もう少し様子を見させてほしいでござる</Text>
+		</Row>
+		<!-- 外交台詞: 同盟 -->
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっちなら、背中を預けられそう。かざまと同盟を結ばない？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かたじけない！これからは一蓮托生、かざまがそっちを守るでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっか……無理にとは言わないんで。気が変わったら、いつでも言って</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>もちろん！用心棒のお仕事は慣れてるので、任せて！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>ありがたいお話だけど、まだ決められないんだ。かざまにも事情があるので</Text>
+		</Row>
+		<!-- 外交台詞: 退室時の褒め言葉・警告(理由は書かない。理由付きの文はアジェンダ側の別系統) -->
+		<Row Tag="LOC_DIPLO_KUDO_EXIT_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっちの国、いい国だね！かざま、気に入ったな～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_EXIT_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>最近のそっち、ちょっと気になるなぁ……気をつけたほうがいいでござるよ</Text>
+		</Row>
+		<!-- 外交台詞: 使節団・大使館・国境開放 -->
+		<Row Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かざま隊から使者を送ってもいい？手土産に、ござるクッキーを持たせるよ</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>ありがとう！使者がお世話になります</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>なんでぇ〜？……クッキー、焼いたのに</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>いらっしゃい！かざま隊の里を案内するね……迷わなければ、でござるが</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>ごめんね、今はちょっと都合が悪いんで……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっちの国に、かざま隊の屋敷を置かせてほしいな。しっかりお勤めするでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かたじけない！そっちの国のこと、いっぱい見させてもらうぞ</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>なんでぇ〜？……かざま、何か失礼なことしちゃった？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>いいよ。かざま隊の里は山の幸がいっぱいなので、ゆっくりしていってね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>ごめん、まだそこまでは許せないでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>お互いの国を、自由に行き来できるようにしない？かざま、旅が好きなんだ</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>やったあ！これで、いろんな場所を見に行けるね！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっか……残念でござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>いいよ。でも、悪さをしたら、かざまが成敗するからね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>やめとけやめとけ〜。まだそこまで信用してないです</Text>
+		</Row>
+		<!-- 外交台詞: 取引 -->
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かたじけない、その条件でいいよ。……5円チョコよりは、ずっと高給でござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>それはさすがに飲めないなぁ。かざまをなめないでほしいでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>惜しい！ここだけ、ちょっと直してもいい？これでどうかな？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>交渉成立！天才では？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっか……いい話だと思ったんだけどなぁ</Text>
+		</Row>
+		<!-- 外交台詞: 講和 -->
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>これ以上の争いは、お互い無益でござる。そろそろ刀を納めない？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>その条件でいいよ。刀を納めるね</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そんな条件、飲めるわけない！かざま、怒ってるでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>ありがとうございます……これで、やっと一息つけるでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっか。じゃあ、最後まで受けて立つ！</Text>
+		</Row>
+		<!-- 外交台詞: 要求 -->
+		<Row Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>しょうがないでござるなぁ……今回だけだよ</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>それはできないなぁ。かざまにも、守らなきゃいけないものがあるので</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かたじけない！話がわかる人でござるな</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_REFUSE_DEMAND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっか……このこと、ちゃんと覚えておくね</Text>
+		</Row>
+		<!-- 外交台詞: 個別警告: 近くに入植するな -->
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そこはうちの縄張りでござる。それ以上近づくのは、やめてほしいな</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>わかってくれてありがとう～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>……そっか。じゃあ、かざまにも考えがあるでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そんなに近かった？ごめん、地図を読むのが苦手なんで……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>この土地は誰のものでもなくない？かざまにも住む権利はあると思うけどな</Text>
+		</Row>
+		<!-- 外交台詞: 個別警告: 布教するな -->
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>隊員に勝手に教えを説かないでほしいな！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かたじけない、助かるでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>……そこまで言うなら、かざまも黙っていられないでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>あっ、迷惑だった？ごめん、これから気をつけるでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>いい教えだと思うんだけどなぁ。無理にとは言わないけど</Text>
+		</Row>
+		<!-- 外交台詞: 個別警告: 遺物を掘るな -->
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>かざま隊の土地を勝手に掘らないでほしいな！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>わかってくれてありがとう！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>……掘った分はちゃんと返してもらうでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そこ、そっちの土地だった？ごめんなさい、気がつかなかったでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>土の中から出てきたものは、見つけた人のものでしょ？</Text>
+		</Row>
+		<!-- 外交台詞: 個別警告: スパイするな -->
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>こそこそ覗くのは、やめてほしいな～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>素直でよろしい！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>……じゃあ、容赦はしないよ？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>……バレちゃった？ごめんなさい～もうしません～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>情報を集めるのも、用心棒のお仕事でござる</Text>
+		</Row>
+		<!-- 外交台詞: 個別警告: 国境に軍を集めすぎ -->
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>そっちの軍、国境に集まりすぎじゃない？かざま、気が気じゃないんだけどなぁ</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>わかってくれて安心したでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>あっ、ごめん。蛮族を退治しに来ただけでござる</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="ja_JP">
+			<Text>うちの隊がどこにいても、かざまの勝手では？</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_FUJI" Language="ja_JP">
+			<Text>富士山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TATEYAMA" Language="ja_JP">
+			<Text>立山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKUSAN" Language="ja_JP">
+			<Text>白山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YARIGATAKE" Language="ja_JP">
+			<Text>槍ヶ岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KITADAKE" Language="ja_JP">
+			<Text>北岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASO" Language="ja_JP">
+			<Text>阿蘇山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISEN" Language="ja_JP">
+			<Text>大山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ONTAKE" Language="ja_JP">
+			<Text>御嶽山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YOTEI" Language="ja_JP">
+			<Text>羊蹄山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSUKUBA" Language="ja_JP">
+			<Text>筑波山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_RISHIRI" Language="ja_JP">
+			<Text>利尻山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_DAISETSUZAN" Language="ja_JP">
+			<Text>大雪山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_IWAKISAN" Language="ja_JP">
+			<Text>岩木山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HAKKODA" Language="ja_JP">
+			<Text>八甲田山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_GASSAN" Language="ja_JP">
+			<Text>月山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_CHOKAI" Language="ja_JP">
+			<Text>鳥海山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ZAO" Language="ja_JP">
+			<Text>蔵王山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_BANDAI" Language="ja_JP">
+			<Text>磐梯山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NANTAI" Language="ja_JP">
+			<Text>男体山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_AKAGI" Language="ja_JP">
+			<Text>赤城山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ASAMA" Language="ja_JP">
+			<Text>浅間山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MYOKO" Language="ja_JP">
+			<Text>妙高山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_YATSUGATAKE" Language="ja_JP">
+			<Text>八ヶ岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_NORIKURA" Language="ja_JP">
+			<Text>乗鞍岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_HOTAKA" Language="ja_JP">
+			<Text>穂高岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_TSURUGI" Language="ja_JP">
+			<Text>剣山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_ISHIZUCHI" Language="ja_JP">
+			<Text>石鎚山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KIRISHIMA" Language="ja_JP">
+			<Text>霧島山</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_KAIMONDAKE" Language="ja_JP">
+			<Text>開聞岳</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MIYANOURADAKE" Language="ja_JP">
+			<Text>宮之浦岳</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Language="ja_JP">
+			<Text>未開の秘境</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" Language="ja_JP">
+			<Text>かざま隊固有の区域。保護区に取ってかわり、より安価に建設できる。[NEWLINE][NEWLINE]アピールに応じて最大で [ICON_Housing] 住宅+3。隣接タイルのアピール+2。隣接タイルで文化爆弾が発動し、発動したタイルのアピール+1。隣接する山岳タイルにより [ICON_Production] 生産力+1、 [ICON_Food] 食料+1。都心に隣接させることはできない。</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" Language="ja_JP">
+			<Text>隣接する山岳タイルにより [ICON_Production] 生産力+{1_num}。</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_HOLOX_KAZAMA_TAI_EXPANSION2_DESCRIPTION" Language="ja_JP">
+			<Text>すべての陸上ユニットの [ICON_Movement] 移動力+1。市民が山岳タイルを利用できるようになる。山岳タイルの [ICON_PRODUCTION] 生産力+2。産業時代に到達すると、さらに [ICON_PRODUCTION] 生産力+1。</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" Language="ja_JP">
+			<Text>隣接する山岳タイルにより [ICON_Food] 食料+{1_num}。</Text>
 		</Row>
 	</LocalizedText>
 </GameData>

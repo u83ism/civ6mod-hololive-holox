@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	固有区域「未開の秘境」(保護区置換UD)。設計はdocs/design.md「風真いろは」の「固有区域」参照。
+	保護区(DISTRICT_PRESERVE)・林・聖域はベトナムDLC(KublaiKhan_Vietnam)の要素なので、.modinfoのActionCriteria
+	(ベトナムDLCの指導者が選べるとき)だけで読み込む(置換元が無いと外部キー制約違反で起動不能になる)。
+	数値・列値はベトナムDLCのバニラ定義(DLC/KublaiKhan_Vietnam/Data/KublaiKhan_Vietnam_Districts.xml)を写したもの。
+	見た目・アイコンはすべて保護区のまま(Art/Icons/Icons.xml、ArtDefs/参照)。
+-->
+<GameData>
+	<Types>
+		<Row Type="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Kind="KIND_DISTRICT"/>
+		<Row Type="TRAIT_CIVILIZATION_DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Kind="KIND_TRAIT"/>
+	</Types>
+
+	<!-- 固有要素ごとに専用Traitを新設する(add-unique-content Skill参照) -->
+	<Traits>
+		<Row TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Name="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME"/>
+	</Traits>
+	<CivilizationTraits>
+		<Row CivilizationType="CIVILIZATION_HOLOX_KAZAMA_TAI" TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_HIDDEN_MOUNTAINS"/>
+	</CivilizationTraits>
+
+	<DistrictReplaces>
+		<Row CivUniqueDistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" ReplacesDistrictType="DISTRICT_PRESERVE"/>
+	</DistrictReplaces>
+
+	<!-- 保護区との違いはコスト(固有区域の慣習で置換元の半額、54→27。docs/civ6-research/vanilla-conventions.md参照)・周辺タイルのアピール補正(Appeal、保護区は1、未開の秘境は2)・TraitTypeだけ -->
+	<Districts>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" Name="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_NAME" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_DESCRIPTION" PrereqCivic="CIVIC_MYSTICISM" PlunderType="PLUNDER_GOLD" PlunderAmount="50" AdvisorType="ADVISOR_GENERIC" Cost="27" CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1000" RequiresPlacement="true" RequiresPopulation="true" Aqueduct="false" NoAdjacentCity="true" InternalOnly="false" ZOC="true" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" Housing="1" Appeal="2" TraitType="TRAIT_CIVILIZATION_DISTRICT_HOLOX_HIDDEN_MOUNTAINS"/>
+	</Districts>
+
+	<!-- アピールに応じた住宅(保護区と同じ値) -->
+	<AppealHousingChanges>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="4" AppealChange="2" Description="LOC_TOOLTIP_APPEAL_BREATHTAKING"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="2" AppealChange="1" Description="LOC_TOOLTIP_APPEAL_CHARMING"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="-1" AppealChange="0" Description="LOC_TOOLTIP_APPEAL_AVERAGE"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="-3" AppealChange="-1" Description="LOC_TOOLTIP_APPEAL_UNINVITING"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="-100" AppealChange="-1" Description="LOC_TOOLTIP_APPEAL_DISGUSTING"/>
+	</AppealHousingChanges>
+
+	<StartingBuildings>
+		<Row Era="ERA_RENAISSANCE" Building="BUILDING_GROVE" District="DISTRICT_HOLOX_HIDDEN_MOUNTAINS"/>
+	</StartingBuildings>
+
+	<!-- 隣接タイルへの文化爆弾。保護区用のMAJOR_PLAYERS_ACTIVATE_PRESERVE_CULTURE_BOMBと同じ構成だが、保護区(中立タイルのみ)と違い他国の領土も奪う(CaptureOwnedTerritory=True) -->
+	<GameModifiers>
+		<Row ModifierId="HOLOX_ACTIVATE_HIDDEN_MOUNTAINS_CULTURE_BOMB"/>
+	</GameModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>HOLOX_ACTIVATE_HIDDEN_MOUNTAINS_CULTURE_BOMB</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ADD_CULTURE_BOMB_TRIGGER</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>HOLOX_ACTIVATE_HIDDEN_MOUNTAINS_CULTURE_BOMB</ModifierId>
+			<Name>DistrictType</Name>
+			<Value>DISTRICT_HOLOX_HIDDEN_MOUNTAINS</Value>
+		</Row>
+		<Row>
+			<ModifierId>HOLOX_ACTIVATE_HIDDEN_MOUNTAINS_CULTURE_BOMB</ModifierId>
+			<Name>CaptureOwnedTerritory</Name>
+			<Value>True</Value>
+		</Row>
+	</ModifierArguments>
+
+	<!--
+		山の隣接ボーナス: 火山を含む各種の山(火山は山の地形に乗る地物なので地形で数えれば含まれる)に隣接で生産力+1・食料+1(それぞれ別の行)。
+		キャンパスのMountains_Science1〜5と同じ書き方(地形の種類ごとに1行)。
+	-->
+	<Adjacency_YieldChanges>
+		<Row ID="HOLOX_HiddenMountains_Mountain1" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_GRASS_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_Mountain2" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_PLAINS_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_Mountain3" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_DESERT_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_Mountain4" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_TUNDRA_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_Mountain5" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_SNOW_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_MountainFood1" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_GRASS_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_MountainFood2" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_PLAINS_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_MountainFood3" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_DESERT_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_MountainFood4" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_TUNDRA_MOUNTAIN"/>
+		<Row ID="HOLOX_HiddenMountains_MountainFood5" Description="LOC_DISTRICT_HOLOX_HIDDEN_MOUNTAINS_MOUNTAIN_FOOD" YieldType="YIELD_FOOD" YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_SNOW_MOUNTAIN"/>
+	</Adjacency_YieldChanges>
+	<District_Adjacencies>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_Mountain1"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_Mountain2"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_Mountain3"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_Mountain4"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_Mountain5"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_MountainFood1"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_MountainFood2"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_MountainFood3"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_MountainFood4"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" YieldChangeId="HOLOX_HiddenMountains_MountainFood5"/>
+	</District_Adjacencies>
+
+	<!--
+		林・聖域の、隣接する未改善タイルの産出。バニラ(保護区)の値をそのまま写す(アピール2〜3で+1、4以上で+2)。
+		置き換え区域には保護区の行が自動では適用されない可能性があるため、未開の秘境の区域種別で全行を書く。
+		強化は条件の変更ではなく、区域のアピール補正(Appeal=2)で行う。
+	-->
+	<Adjacent_AppealYieldChanges>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="4" MaximumValue="100" YieldChange="2" YieldType="YIELD_FAITH" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_BREATHTAKING" BuildingType="BUILDING_GROVE"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="2" MaximumValue="3" YieldChange="1" YieldType="YIELD_FAITH" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_CHARMING" BuildingType="BUILDING_GROVE"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="4" MaximumValue="100" YieldChange="2" YieldType="YIELD_FOOD" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_BREATHTAKING" BuildingType="BUILDING_GROVE"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="2" MaximumValue="3" YieldChange="1" YieldType="YIELD_FOOD" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_CHARMING" BuildingType="BUILDING_GROVE"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="4" MaximumValue="100" YieldChange="2" YieldType="YIELD_CULTURE" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_BREATHTAKING" BuildingType="BUILDING_GROVE"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="4" MaximumValue="100" YieldChange="2" YieldType="YIELD_GOLD" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_BREATHTAKING" BuildingType="BUILDING_SANCTUARY"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="2" MaximumValue="3" YieldChange="1" YieldType="YIELD_GOLD" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_CHARMING" BuildingType="BUILDING_SANCTUARY"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="4" MaximumValue="100" YieldChange="2" YieldType="YIELD_SCIENCE" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_BREATHTAKING" BuildingType="BUILDING_SANCTUARY"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="2" MaximumValue="3" YieldChange="1" YieldType="YIELD_SCIENCE" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_CHARMING" BuildingType="BUILDING_SANCTUARY"/>
+		<Row DistrictType="DISTRICT_HOLOX_HIDDEN_MOUNTAINS" MinimumValue="4" MaximumValue="100" YieldChange="2" YieldType="YIELD_PRODUCTION" Unimproved="true" Description="LOC_TOOLTIP_APPEAL_BREATHTAKING" BuildingType="BUILDING_SANCTUARY"/>
+	</Adjacent_AppealYieldChanges>
+</GameData>

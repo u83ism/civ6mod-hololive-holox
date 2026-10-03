@@ -1,6 +1,6 @@
 # civ6mod-hololive-holox
 
-Civilization VI の新規文明追加Mod。hololive holoXをモチーフにした文明を実装する。設計判断の理由・実機で踏んだ罠は[docs/design.md](docs/design.md)を参照(役割分担の詳細は`.claude/rules/documentation.md`)。
+Civilization VI の新規文明追加Mod。hololive holoXをモチーフにした文明を実装する。ゲームデザインの判断理由は[docs/design.md](docs/design.md)、実装の仕組み・実機で踏んだ罠は[docs/implementation-notes.md](docs/implementation-notes.md)を参照(役割分担の詳細は`.claude/rules/documentation.md`)。
 
 ## 現状
 
@@ -27,8 +27,9 @@ Civilization VI の新規文明追加Mod。hololive holoXをモチーフにし�
 - [ ] シャチの水族館の観光力を+150%に下げた後の値を実機確認(群れの絆込みで傑作(音楽)1つあたり観光力12になるはず)
 - [ ] シャチたちの楽園の未決の論点(観覧車の解禁、水族館の前提、建設コスト・設置条件)を決める(`docs/design.md`参照。現状の実装はいずれもバニラのまま)
 - [ ] 指導者固有能力の未確認ケースを実機確認(防御側の反撃キルでの大音楽家ポイント、都市への攻撃時の扱い、ダメージ0/100の境界)、および音楽家ポイントの浮遊テキストの色
+- [ ] 風真いろはの文明能力「風真の一族」・指導者能力「武者修行」の残りの確認(両能力が動作することは2026-10-01に実機確認済み。民間人・宗教ユニットにも効くか、海軍・航空に効かないかは未確認)
+- [ ] 固有区域「未開の秘境」(保護区置換、`XML/HiddenMountains.xml`)を実機確認(建設コストが27(置換元54の半額)か、ベトナムDLCあり/なしの両方で起動できるか、保護区が未開の秘境に置き換わるか、3D表示・アイコン・歴史的瞬間の挿絵、山の隣接ボーナス(生産力+1、火山を含む)、林・聖域の周辺タイルのアピール+2が効くか(区域の`Appeal`列)、林・聖域のタイル産出が未開の秘境でも出るか、文化爆弾(他国の領土を奪えることは2026-10-04に実機確認済み。奪ったときのAIの外交評価は未確認)、選択画面の固有要素表示)
+- [ ] 文明能力「風真の一族」の山の効果(`XML/KazamaTaiMountains.xml`、嵐の訪れ限定)を実機確認(山に市民を配置できるか、山の生産力+2が出るか、産業時代以降+1、Standard/Rise and Fallで起動できるか、選択画面の説明文が嵐の訪れのときだけ山の効果を含むか)
 - [ ] バッジアイコン・ポートレートの作り込み(`make-leader-icons`/`make-fallback-portrait` Skill)
-- [ ] 中国語(簡体字/繁体字)の全テキストを実機確認(表示・文字化けの有無、`.modinfo`に登録済み)
-- [ ] 外交交渉画面の台詞の英語版(en_US、76タグ追加済み)を実機確認(日本語版76タグは`Text/ja_JP/Text.xml`に実装・実機確認済み、原案は`docs/diplomacy-statements-sakamata-chloe.md`)
 - [ ] ユニークアジェンダを設計・実装(アジェンダの理由文`LOC_DIPLO_KUDO/WARNING_LEADER_ANY_REASON_AGENDA_*`もこの時に書く)
 - [ ] 指導者/文明能力のテキストを`write-game-text` Skillで文体調整(現状は暫定文言)
