@@ -85,13 +85,13 @@ function SakamataChloeOnCombatOccurred(attackerPlayerID, attackerUnitID, defende
 		end
 
 		if ( defender_dead ) then
-			SakamataChloeGrantMusicianPoints(attackerPlayerID, defender_strength, x, y)
+			SakamataChloeGrantMusicianPoints(attackerPlayerID, defender_strength, attacking_unit:GetX(), attacking_unit:GetY())
 		end
 	end
 
 	-- クロヱが防御側の場合: 即死効果は発動しない(攻撃時限定の仕様)が、反撃で敵を倒したら大音楽家ポイントは獲得する
 	if ( SakamataChloeIsChloe(defenderPlayerID) ) and ( SakamataChloeIsUnitDead(attacking_unit) ) then
-		SakamataChloeGrantMusicianPoints(defenderPlayerID, SakamataChloeAttackStrength(attacking_unit), attacking_unit:GetX(), attacking_unit:GetY())
+		SakamataChloeGrantMusicianPoints(defenderPlayerID, SakamataChloeAttackStrength(attacking_unit), defending_unit:GetX(), defending_unit:GetY())
 	end
 end
 GameEvents.OnCombatOccurred.Add( SakamataChloeOnCombatOccurred )
