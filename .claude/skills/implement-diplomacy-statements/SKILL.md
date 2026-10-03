@@ -36,6 +36,8 @@ description: Civ6 Modで外交交渉画面の台詞(`LOC_DIPLO_*`、DiplomacySta
 
 ## 他言語への展開
 
+**本人が他言語対応を指示するまで着手しない**(`.claude/rules/localization-order.md`)。台詞は日本語版を実装・実機確認し、本人が確認してから展開する。
+
 台詞の翻訳元は、効果テキストのようなXMLではなく、日本語台詞と`docs/diplomacy-statements-sakamata-chloe.md`(キャラクター性の原案)。ただし逐語訳はしない。**その言語で「同じ性格の人がその場面で言いそうな言い方」に書き直す**(`add-language` Skill 4節)。
 
 1. **口癖・固有語の型を先に確認する**(方針は`docs/glossary.md`の「未確定」に書いていくこと。無ければ本人に決めてもらう):
