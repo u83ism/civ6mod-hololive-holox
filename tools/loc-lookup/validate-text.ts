@@ -79,17 +79,26 @@ export const validatePlaceholders = (index: TextIndex): readonly Finding[] =>
 
 export const validateNumbers = (index: TextIndex): readonly Finding[] => validateAgainstBase(index, "数値", extractNumbers);
 
-type PunctuationRule = { readonly pattern: RegExp; readonly severity: "error" | "warning"; readonly message: string };
+type PunctuationRule = {
+  readonly pattern: RegExp;
+  readonly severity: "error" | "warning";
+  readonly message: string;
+  // Text matching this is removed before the pattern is tested (intentional exceptions).
+  readonly ignore?: RegExp;
+};
 
 const kanaPattern = /[぀-ヿ]/;
 const halfWidthPunctuationPattern = /(?<!\d)[,:]|[,:](?!\d)|[;?!]/;
 const cjkPattern = /[぀-ヿ一-鿿]/;
 
+// Kazama Iroha's verbal tic "ござる" and her sword name "チャキ丸" are kept in kana in Chinese text (docs/glossary.md).
+const keptKanaPattern = /ござる|チャキ丸/g;
+
 // Rules come from references/lang-*.md of the write-game-text Skill.
 const chineseRules: readonly PunctuationRule[] = [
   { pattern: halfWidthPunctuationPattern, severity: "warning", message: "半角の句読点がある(全角にする。数字の桁区切り・小数点は除く)" },
   { pattern: /％/, severity: "warning", message: "全角の%がある(%だけは半角)" },
-  { pattern: kanaPattern, severity: "warning", message: "日本語の仮名が残っている" },
+  { pattern: kanaPattern, severity: "warning", message: "日本語の仮名が残っている(「ござる」「チャキ丸」は除く)", ignore: keptKanaPattern },
 ];
 
 const punctuationRules: ReadonlyMap<string, readonly PunctuationRule[]> = new Map([
@@ -113,7 +122,7 @@ export const validatePunctuation = (index: TextIndex): readonly Finding[] =>
   [...index.entries()].flatMap(([tag, byLanguage]) =>
     [...byLanguage.entries()].flatMap(([language, text]) =>
       (punctuationRules.get(language) ?? [])
-        .filter((rule) => rule.pattern.test(text))
+        .filter((rule) => rule.pattern.test(rule.ignore === undefined ? text : text.replace(rule.ignore, "")))
         .map((rule): Finding => ({ severity: rule.severity, tag, language, message: rule.message })),
     ),
   );
