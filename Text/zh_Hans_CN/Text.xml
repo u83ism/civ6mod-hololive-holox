@@ -475,5 +475,233 @@
 		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MIYANOURADAKE" Language="zh_Hans_CN">
 			<Text>宫之浦岳</Text>
 		</Row>
+		<Row Tag="LOC_DIPLO_GREETING_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>找风真有什么事吗，ござる？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>hololive 6期生、秘密结社holoX的保镖，风真伊吕波ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>附近有风真队的村子ござる。要不要顺路来看看？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>多谢！一定要去看看。好期待你们的城市！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>离得好远呀～。要不要交换一下地图？风真很容易迷路的……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>虽然没有仇怨，但这也是份内的工作ござる。……我来了！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>你是认真的吗？……既然你挑衅，那我奉陪ござる。别小看チャキ丸哦？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>为什么啦～……风真的修行才进行到一半呢！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>为什么啦～……风真的修行才进行到一半呢！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>你这种做法，风真有点不能当作没看见呢？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>诶……风真做了什么吗？……你都这么说了，那我也有我的打算ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>感觉和你很合得来！要不要和风真做朋友？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>太好啦！从今天起我们就是朋友了。有什么困难，我马上赶过去ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>为什么啦～？……这样啊。那下次再拜托你了。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>如果你不嫌弃风真的话，非常乐意！今后请多关照！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>唔，我还不太了解你呢。让我再观察一阵子吧ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>是你的话，感觉可以放心把后背交给你。要不要和风真结成同盟？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>多谢！从今以后我们荣辱与共，风真会保护你ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这样啊……我不勉强你。如果改变主意了，随时告诉我。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>当然！保镖的工作我做惯了，交给我吧！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你的好意，但我还没法决定。风真也有自己的情况……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_KUDO_EXIT_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>你们的国家真不错呢！风真很喜欢～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_EXIT_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>最近的你们，让人有点在意呢……最好小心一点ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>风真队可以派使者过去吗？会让他们带上ござる饼干当礼物。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>谢谢！使者就拜托你们照顾了。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>为什么啦～？……饼干都烤好了呢。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>欢迎！我来带你参观风真队的村子……只要不迷路的话ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>对不起，现在有点不太方便……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>能让风真队在你们的国家设一座宅邸吗？我们会好好尽职ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>多谢！你们的国家，我要好好看个够！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>为什么啦～？……风真是不是做了什么失礼的事？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>可以哦。风真队的村子里有很多山里的特产，请慢慢待着吧。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>对不起，还没法允许到那种程度ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>我们互相开放边界，让彼此能自由往来好不好？风真最喜欢旅行了。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>太好啦！这样就能去看很多地方了！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这样啊……真遗憾ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>可以哦。不过要是敢捣乱，风真会惩治你的哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>别了别了～。我还没有那么信任你。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>多谢，就按这个条件吧。……比起5日元巧克力，这可是高薪ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这个实在是接受不了呢。别小看风真ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>就差一点！只改这里一点点可以吗？这样怎么样？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>交涉成功！这不是天才吗？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这样啊……我还以为是笔不错的交易呢。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>再打下去对彼此都没有好处ござる。差不多该收刀了吧？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这个条件可以。我收刀了。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这种条件怎么可能接受！风真生气了ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>非常感谢……这下终于能松一口气了ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这样啊。那我就奉陪到底！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>真拿你没办法ござる呢……就这一次哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这个做不到呢。风真也有必须守护的东西……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>多谢！你真是个明事理的人ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_REFUSE_DEMAND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这样啊……我会好好记住这件事的哦。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>那里是我们的地盘ござる。希望你别再靠近了。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你能明白～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>……这样啊。那我也有我的打算ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>有那么近吗？抱歉，我不太会看地图……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>这片土地不是谁的吧？我觉得风真也有居住的权利。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>希望你别擅自向我的队员传教！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>多谢，帮大忙了ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>……你都这么说了，风真也不能保持沉默ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>啊，造成困扰了吗？抱歉，以后会注意ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>我觉得是很好的教诲呢。虽然不会勉强你……</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>希望你别擅自挖风真队的土地！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你能明白！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>……挖走的东西，要好好还回来ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>那里是你们的土地吗？对不起，没注意到ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>从土里出来的东西，不就归找到的人吗？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>希望你别再偷偷窥探了～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>很好，很老实！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>……那我就不客气了哦？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>……被发现了？对不起～不会再做了～</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>收集情报也是保镖的工作ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>你们的军队，在边境聚集得是不是太多了？风真心里很不安呢。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>你能明白，我就放心了ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>啊，抱歉。我们只是来讨伐野蛮人的ござる。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="zh_Hans_CN">
+			<Text>我们的队伍在哪里，不都是风真的自由吗？</Text>
+		</Row>
 	</LocalizedText>
 </GameData>

@@ -475,5 +475,233 @@
 		<Row Tag="LOC_CITY_NAME_HOLOX_KAZAMA_TAI_MIYANOURADAKE" Language="en_US">
 			<Text>Mount Miyanoura</Text>
 		</Row>
+		<Row Tag="LOC_DIPLO_GREETING_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Need something from Kazama, I daresay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>hololive 6th gen, Secret Society holoX's insurance policy, Kazama Iroha here, I daresay!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>There's a Kazama Tai village nearby, I daresay. Wanna stop by?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Much obliged! I'd love to visit. I'm looking forward to your city!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Wow, that's pretty far~. Wanna swap maps? Kazama gets lost super easily, so…</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>No hard feelings, but it's all part of the job, I daresay. …Here I come!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Are you serious? …I'll take that fight, I daresay. Don't underestimate Chakimaru, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Whyyy~… Kazama was still in the middle of training!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Whyyy~… Kazama was still in the middle of training!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>That way of doing things… Kazama can't really let it slide, y'know?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Huh… did Kazama do something? …If that's how you feel, I know what I'll do, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>I feel like we'd get along! Wanna be friends with Kazama?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Yay! We're friends starting today! If you're ever in trouble, I'll come running right away, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Whyyy~? …Oh, I see. Then, maybe next time, please.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>If you're fine with Kazama, I'd be glad to! Please take care of me from now on!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Hmm, I don't really know you well yet, you know? Let me watch for a little while longer, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>I feel like I could trust you to watch my back. Wanna form an alliance with Kazama?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Much obliged! From now on we sink or swim together. Kazama will protect you, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Oh… I won't force you. If you change your mind, just say so anytime.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Of course! I'm used to bodyguard work, so leave it to me!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>It's a generous offer, but I can't decide yet. Kazama has reasons too, so…</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_KUDO_EXIT_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Your country's really nice! Kazama likes it~</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_EXIT_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>I've been a bit worried about you lately… You should be careful, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Can Kazama Tai send envoys over? We'll have them bring Gozaru cookies as a gift.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Thanks! Please take good care of our envoys.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Whyyy~? …I even baked cookies.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Welcome! I'll show you around the Kazama Tai village… if we don't get lost, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Sorry, it's not a great time right now…</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Could Kazama Tai set up a residence in your country? We'll do our duties properly, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Much obliged! I'm gonna take a good look around your country!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Whyyy~? …Did Kazama do something rude?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Sure. The Kazama Tai village is full of mountain delicacies, so make yourself at home!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Sorry, I can't allow that much yet, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Wanna open our borders so we can come and go freely? Kazama loves traveling!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Yay! Now I can go see all kinds of places!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Oh… what a shame, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Sure. But if you make trouble, Kazama will punish you, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Nope nope nope~. I don't trust you that much yet.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Much obliged, those terms are fine. …Way better pay than a 5-yen chocolate, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Okay, I really can't accept that one. Don't underestimate Kazama, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>So close! Can I fix just this part a little? How about this?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Deal! Genius, no?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Oh… I thought it was a good deal, though.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>More fighting is pointless for both of us, I daresay. Shall we sheathe our swords?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Those terms are fine. I'll sheathe my sword.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>There's no way I'd accept terms like that! Kazama is angry, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Thank you very much… Now I can finally catch my breath, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>I see. Then I'll take you on to the very end!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Oh, what am I going to do with you, I daresay… Just this once, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>I can't do that one. Kazama has things to protect too, so…</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Much obliged! You're an understanding person, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_HUMAN_REFUSE_DEMAND_FROM_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>I see… I'll remember this, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>That's our territory, I daresay. I'd like you to stop coming any closer.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Thanks for understanding~</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>…I see. Then I've got my own plans, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Was it that close? Sorry, I'm bad at reading maps…</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Doesn't this land belong to no one? I think Kazama has a right to live here too.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Please don't just go preaching to my team members!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Much obliged, that helps a lot, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>…If you're going to say that, Kazama can't stay quiet either, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Oh, was that a bother? Sorry, I'll be more careful from now on, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>I think it's a good teaching, though. I won't force you, but…</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Please don't dig up Kazama Tai's land without asking!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Thanks for understanding!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>…You'll be giving back everything you dug up, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Was that your land? I'm so sorry, I didn't notice, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Whatever comes out of the ground belongs to whoever finds it, right?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Please stop sneaking a peek at us~</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Good! Nice and honest!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>…Then I won't go easy on you, okay?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>…Busted? Sorry~ I won't do it again~</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Gathering information is part of a bodyguard's job too, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Aren't there too many of your troops gathering at the border? Kazama can't help feeling uneasy, y'know.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>I'm relieved you understand, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Oh, sorry. We only came to take care of the barbarians, I daresay.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_HOLOX_KAZAMA_IROHA_ANY" Language="en_US">
+			<Text>Wherever our team is, that's up to Kazama, isn't it?</Text>
+		</Row>
 	</LocalizedText>
 </GameData>
