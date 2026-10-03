@@ -11,6 +11,7 @@
 - **大音楽家ポイントもLuaで加算する**(`GetGreatPeoplePoints():ChangePointsTotal(8, amount)`)。元ネタのヴォリンはXML(`EFFECT_ADJUST_GREAT_PEOPLE_POINTS_PER_KILL_BY_DEFEATED_STRENGTH`)で、固定量版の`EFFECT_ADJUST_GREAT_PEOPLE_POINTS_PER_KILL`(ヘタイロイ・近衛兵)もあるが、即死効果は`UnitManager.Kill`で消すため撃破扱いにならずポイントが出ない見込みで、即死分だけLuaが残る二重実装になるため、Luaに一本化した
 - **`ChangePointsTotal(classID, amount)`のclassID**: `0`=Great General、`1`=Great Admiral、`2`=Great Engineer、`3`=Great Merchant、`4`=Great Prophet、`5`=Great Scientist、`6`=Great Writer、`7`=Great Artist、`8`=Great Musician(FireTunerパネル`Debug/Player.ltp`の各アクションボタンのLua実装で確認)
 - **浮遊テキスト**: 指導者固有能力は1つのTrait「歌好きの掃除屋」として見せたいので、内部の2効果(即死/音楽家ポイント)の分割は前面に出さない。即死が発動した時だけ追加で`[COLOR_RED]クリティカル！[ENDCOLOR]`(バニラのダメージ表示`LOC_WORLD_UNIT_DAMAGE_INCREASE_FLOATER`と同じ`[COLOR_RED]`)を出し、音楽家ポイントは経路を問わず常に獲得量を`+{1_Num}`で見せる。音楽家ポイントの色は、バニラの撃破時偉人ポイント(`LOC_KILL_GREATPERSON_BONUS`)と同じ`[COLOR_FLOAT_FOOD]`。Luaの`AddWorldViewText`は色タグが無いと白になる。テキストは`Locale.Lookup("LOC_...")`経由で多言語対応
+- **音楽家ポイントの浮遊テキストは、沙花叉側のユニットのマスに出す**(攻撃時は攻撃ユニット、反撃キル時は防御ユニット)。敵ユニットのマスに出すと、ヴォリンの宗主国ボーナスの大将軍/大提督ポイントの浮遊テキストと同じマスに重なり、音楽家側が見えないことがあった(下記「実機デバッグ記録」2026-10-03)
 
 即死は`UnitManager.Kill(unit, false)`で行う。ころねと同じ`SetDamage`では実際の生死判定に反映されない(下記「実機デバッグ記録」参照)。
 
@@ -115,3 +116,15 @@
 
 
 - 未決(実装済みの条件付き読み込みとは別に、公式前例は未調査): ベトナムDLC依存の扱い(保護区置換UDは`OrcaParadise.xml`と同様に条件付き読み込みが必要)。保護区を置換元とするUDの公式前例は未調査
+
+**2026-10-03、ヴォリンの宗主国ボーナスと併用すると、大将軍/大提督ポイントの浮遊テキストしか見えない → 表示位置を沙花叉側のユニットのマスにずらして解消**。症状は、都市国家の軍事ユニットや通常の敵ユニットを倒したとき、ヴォリンの大将軍(海軍なら大提督)ポイントの表示だけが出て、音楽家ポイントの表示が出ないことだった。ポイント自体が入っているかを切り分けるため、`GrantMusicianPoints`と戦闘イベントの入口に`print`を一時的に入れた(`Lua.log`に`SakamataChloeGameplayScript: ...`の形で出る。確認後に削除済み)。ログで、表示が出なかった撃破でも`musician points +N`の行が出ていたことは確認できていない(ずらした後に再現を見ていないため)。ずらした後は、戦艦でカドレリームを撃破した場合を含む計3〜4回の撃破で、両方のポイントの表示が出て、ログにも毎回`musician points`が出た。
+
+- 原因は、確定していないが、**同じマスに複数の浮遊テキストを同時に出すと片方が見えなくなる**ことと考えている(バニラのLuaには同じマスに2回続けて出す例もあるので、常に消えるわけではなさそう)。`Game.AddWorldViewText`には表示位置をずらす引数が無い(バニラの`messageData`形式にあるのは`PlotX`/`PlotY`/`Visibility`/`TargetID`)ので、**マスそのものを変える**方法を取った
+- 加算されたかどうかを偉人パネルで見るより、`Lua.log`の`print`を見る方が確実(表示は見落としやすい)。ヴォリンの宗主国ボーナスはXML側、こちらはLua側の別処理なので、お互いを打ち消さず二重に入る
+- **手動セーブが壊れて読めなくなったことがある**(2026-10-03、「ゲーム開始時にエラーが発生しました。セーブデータのバージョンに互換性がありません」)。ログに原因の手がかりは出ず、原因は不明。`Lua`を元に戻しても、再起動しても、その手動セーブだけ読めず、同時刻前後の`AutoSave_*.Civ6Save`は読めた。Modの変更・ゲーム本体・ワークショップの更新は関係なさそうだった。デバッグ中は手動セーブを複数のスロットに残し、オートセーブからやり直せるようにしておく
+
+## 文明のBGM(`ArtDefs/Civilizations.artdef`)
+
+- 文明のBGMは、`ArtDefs/Civilizations.artdef`の`Audio`コレクションに書いた`XrefName`(バニラの文明名、例:`Japan`・`America`)で決まる。要素名(`m_Name`)は文明タイプ(`CIVILIZATION_HOLOX_ORCA_POD`等)。バニラの`Base/ArtDefs/Civilizations.artdef`から、必要な文明の要素だけ複製して`XrefName`を差し替えた
+- 登録は`.dep`の`Civilizations`コンシューマの`ArtDefDependencyPaths`に`Civilizations.artdef`を追加し、`.modinfo`の`<Files>`にも足す。`.artdef`はビルド(AssetCooker)で変換されるものではないので、ModBuddyでビルドしなくても、`Mods`フォルダ(リポジトリへのリンク)から読まれる
+- 現状: 沙花叉クロヱ=`America`、風真いろは=`Japan`(本人の指定)。`ArtDef.log`/`Modding.log`に警告・エラーは出なかった。独自のBGMを入れるにはWwise(v2015.1.9)でSoundBankを作る必要があり、未着手
